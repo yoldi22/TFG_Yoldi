@@ -32,6 +32,5 @@ output: pdf_document
 - Interpretación
 - Comparación (con los resultados teóricos previamente explicados?)
 - Diseño de un mapa vectorial con las diferencias
-## Conclusiones  
-prueba   
+## Conclusiones     
     
