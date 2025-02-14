@@ -27,16 +27,4 @@ El comportamiento asintótico de la media es:
 $$
 \sqrt{n}(S_n - \mu) \xrightarrow{d} \mathcal{N}(0, \sigma^2)
 $$
-
-### Cómo Incluir Imágenes
-
-Primero debes cargar la imagen desde tu computadora. Luego puedes incluirla en el documento usando este código:
-
-```{r}
-knitr::include_graphics("ruta/a/tu/imagen.png")
-
-
-
-
-
-
+esto es un cambio
