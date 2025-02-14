@@ -33,4 +33,4 @@ output: pdf_document
 - Comparación (con los resultados teóricos previamente explicados?)
 - Diseño de un mapa vectorial con las diferencias
 ## Conclusiones     
-    
+    prueba nombre
