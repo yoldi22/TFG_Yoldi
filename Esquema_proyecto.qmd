@@ -1,0 +1,36 @@
+---
+title: "Esquema general del TFG"
+author: "Xabier Yoldi"
+output: pdf_document
+---
+## Introducción 
+- Introducción a la óptica muy suave
+- Ennumeración de diferentes aberraciones
+- Introducir la distorsión
+
+## Diferentes tipos de distorsion 
+- Breve introducción de cada uno 
+- Introducir la distorsión que vamos a trabajar
+
+## Definir el problema  
+    ### Satlantis 
+    - Construyen cámaras
+    - Procesado de imágenes 
+    - Corrección de distorsión
+    - Nunca an medido experimentalmente la distorsión
+## Disposición experimental
+- Foto de la disposición experimental
+    ### Pinholes
+    - 
+    ### Laser
+    ### Colimador
+    ### Sistema optico
+        #### Sensor
+- Diferentes combianciones
+## Medidas y Resultados 
+## Tratamiento de los resultados
+- Interpretación
+- Comparación (con los resultados teóricos previamente explicados?)
+- Diseño de un mapa vectorial con las diferencias
+## Conclusiones     
+    
