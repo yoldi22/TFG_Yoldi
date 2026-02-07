@@ -1,0 +1,962 @@
+% $ biblatex auxiliary file $
+% $ biblatex bbl format version 3.2 $
+% Do not modify the above lines!
+%
+% This is an auxiliary file used by the 'biblatex' package.
+% This file may safely be deleted. It will be recreated by
+% biber as required.
+%
+\begingroup
+\makeatletter
+\@ifundefined{ver@biblatex.sty}
+  {\@latex@error
+     {Missing 'biblatex' package}
+     {The bibliography requires the 'biblatex' package.}
+      \aftergroup\endinput}
+  {}
+\endgroup
+
+
+\refsection{0}
+  \datalist[entry]{none/global//global/global}
+    \entry{williamsOTF}{online}{}
+      \name{author}{1}{}{%
+        {{hash=ffb0b88f1b8f9c1fcdd0b338ff3538c4}{%
+           family={Williams},
+           familyi={W\bibinitperiod},
+           given={Charles\bibnamedelima S.},
+           giveni={C\bibinitperiod\bibinitdelim S\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {SPIE – The International Society for Optical Engineering}%
+      }
+      \strng{namehash}{ffb0b88f1b8f9c1fcdd0b338ff3538c4}
+      \strng{fullhash}{ffb0b88f1b8f9c1fcdd0b338ff3538c4}
+      \strng{bibnamehash}{ffb0b88f1b8f9c1fcdd0b338ff3538c4}
+      \strng{authorbibnamehash}{ffb0b88f1b8f9c1fcdd0b338ff3538c4}
+      \strng{authornamehash}{ffb0b88f1b8f9c1fcdd0b338ff3538c4}
+      \strng{authorfullhash}{ffb0b88f1b8f9c1fcdd0b338ff3538c4}
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{Introduction to the Optical Transfer Function}
+      \field{year}{2002}
+      \verb{urlraw}
+      \verb https://archive.org/details/introductiontoop0000will
+      \endverb
+      \verb{url}
+      \verb https://archive.org/details/introductiontoop0000will
+      \endverb
+    \endentry
+    \entry{bracewell2000}{book}{}
+      \name{author}{1}{}{%
+        {{hash=e6b9d34a32f6bf50b4a7085961278fd7}{%
+           family={Bracewell},
+           familyi={B\bibinitperiod},
+           given={Ronald\bibnamedelima N.},
+           giveni={R\bibinitperiod\bibinitdelim N\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {McGraw-Hill}%
+      }
+      \strng{namehash}{e6b9d34a32f6bf50b4a7085961278fd7}
+      \strng{fullhash}{e6b9d34a32f6bf50b4a7085961278fd7}
+      \strng{bibnamehash}{e6b9d34a32f6bf50b4a7085961278fd7}
+      \strng{authorbibnamehash}{e6b9d34a32f6bf50b4a7085961278fd7}
+      \strng{authornamehash}{e6b9d34a32f6bf50b4a7085961278fd7}
+      \strng{authorfullhash}{e6b9d34a32f6bf50b4a7085961278fd7}
+      \field{sortinit}{2}
+      \field{sortinithash}{8b555b3791beccb63322c22f3320aa9a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{edition}{3rd}
+      \field{title}{The Fourier Transform and Its Applications}
+      \field{year}{2000}
+    \endentry
+    \entry{EdmundOpticsMTF}{misc}{}
+      \name{author}{1}{}{%
+        {{hash=b279a26a5b0ff45e5ce954cd8e305cb7}{%
+           family={Optics},
+           familyi={O\bibinitperiod},
+           given={Edmund},
+           giveni={E\bibinitperiod}}}%
+      }
+      \strng{namehash}{b279a26a5b0ff45e5ce954cd8e305cb7}
+      \strng{fullhash}{b279a26a5b0ff45e5ce954cd8e305cb7}
+      \strng{bibnamehash}{b279a26a5b0ff45e5ce954cd8e305cb7}
+      \strng{authorbibnamehash}{b279a26a5b0ff45e5ce954cd8e305cb7}
+      \strng{authornamehash}{b279a26a5b0ff45e5ce954cd8e305cb7}
+      \strng{authorfullhash}{b279a26a5b0ff45e5ce954cd8e305cb7}
+      \field{sortinit}{3}
+      \field{sortinithash}{ad6fe7482ffbd7b9f99c9e8b5dccd3d7}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{howpublished}{\url{https://www.edmundoptics.eu/knowledge-center/application-notes/optics/introduction-to-modulation-transfer-function/}}
+      \field{note}{Accedido el 17 de junio de 2025}
+      \field{title}{Introduction to modulation transfer function}
+      \field{year}{n.d.}
+    \endentry
+    \entry{Duane}{article}{}
+      \name{author}{1}{}{%
+        {{hash=cef983baf9419e6031a5316e58e5115a}{%
+           family={Brown},
+           familyi={B\bibinitperiod},
+           given={Duane\bibnamedelima C.},
+           giveni={D\bibinitperiod\bibinitdelim C\bibinitperiod}}}%
+      }
+      \strng{namehash}{cef983baf9419e6031a5316e58e5115a}
+      \strng{fullhash}{cef983baf9419e6031a5316e58e5115a}
+      \strng{bibnamehash}{cef983baf9419e6031a5316e58e5115a}
+      \strng{authorbibnamehash}{cef983baf9419e6031a5316e58e5115a}
+      \strng{authornamehash}{cef983baf9419e6031a5316e58e5115a}
+      \strng{authorfullhash}{cef983baf9419e6031a5316e58e5115a}
+      \field{sortinit}{5}
+      \field{sortinithash}{20e9b4b0b173788c5dace24730f47d8c}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Photogrammetric Engineering}
+      \field{note}{Accedido el 15 de septiembre de 2021}
+      \field{number}{5}
+      \field{title}{Close-Range Camera Calibration}
+      \field{volume}{37}
+      \field{year}{1971}
+      \field{pages}{855\bibrangedash 866}
+      \range{pages}{12}
+      \verb{urlraw}
+      \verb https://archive.org/details/introductiontoop0000will
+      \endverb
+      \verb{url}
+      \verb https://archive.org/details/introductiontoop0000will
+      \endverb
+    \endentry
+    \entry{Fitzgibbon}{inproceedings}{}
+      \name{author}{1}{}{%
+        {{hash=1091cf68594d509c8ab56ecfb0e14732}{%
+           family={Fitzgibbon},
+           familyi={F\bibinitperiod},
+           given={A.W.},
+           giveni={A\bibinitperiod}}}%
+      }
+      \strng{namehash}{1091cf68594d509c8ab56ecfb0e14732}
+      \strng{fullhash}{1091cf68594d509c8ab56ecfb0e14732}
+      \strng{bibnamehash}{1091cf68594d509c8ab56ecfb0e14732}
+      \strng{authorbibnamehash}{1091cf68594d509c8ab56ecfb0e14732}
+      \strng{authornamehash}{1091cf68594d509c8ab56ecfb0e14732}
+      \strng{authorfullhash}{1091cf68594d509c8ab56ecfb0e14732}
+      \field{sortinit}{6}
+      \field{sortinithash}{b33bc299efb3c36abec520a4c896a66d}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{booktitle}{Proceedings of the 2001 IEEE Computer Society Conference on Computer Vision and Pattern Recognition. CVPR 2001}
+      \field{title}{Simultaneous linear estimation of multiple view geometry and lens distortion}
+      \field{volume}{1}
+      \field{year}{2001}
+      \field{pages}{I\bibrangedash I}
+      \range{pages}{1}
+      \verb{doi}
+      \verb 10.1109/CVPR.2001.990465
+      \endverb
+    \endentry
+    \entry{bukhari2013automatic}{article}{}
+      \name{author}{2}{}{%
+        {{hash=663c48bd88aa9eb326f350eb5de66042}{%
+           family={Bukhari},
+           familyi={B\bibinitperiod},
+           given={F.},
+           giveni={F\bibinitperiod}}}%
+        {{hash=f26142e0a0e616cd52ee7fb7256500f4}{%
+           family={Dailey},
+           familyi={D\bibinitperiod},
+           given={M.N.},
+           giveni={M\bibinitperiod}}}%
+      }
+      \strng{namehash}{ccce597f69eab79eb1aa975ec50f64bf}
+      \strng{fullhash}{ccce597f69eab79eb1aa975ec50f64bf}
+      \strng{bibnamehash}{ccce597f69eab79eb1aa975ec50f64bf}
+      \strng{authorbibnamehash}{ccce597f69eab79eb1aa975ec50f64bf}
+      \strng{authornamehash}{ccce597f69eab79eb1aa975ec50f64bf}
+      \strng{authorfullhash}{ccce597f69eab79eb1aa975ec50f64bf}
+      \field{sortinit}{7}
+      \field{sortinithash}{108d0be1b1bee9773a1173443802c0a3}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Journal of Mathematical Imaging and Vision}
+      \field{number}{1}
+      \field{title}{Automatic radial distortion estimation from a single image}
+      \field{volume}{45}
+      \field{year}{2013}
+      \field{pages}{31\bibrangedash 45}
+      \range{pages}{15}
+    \endentry
+    \entry{aleman2014line}{article}{}
+      \name{author}{4}{}{%
+        {{hash=349782a42aba97c5822bf49f9dda2a7b}{%
+           family={Alemán-Flores},
+           familyi={A\bibinithyphendelim F\bibinitperiod},
+           given={M.},
+           giveni={M\bibinitperiod}}}%
+        {{hash=5f1f23de9939c31da5ab28ef47901b82}{%
+           family={Alvarez},
+           familyi={A\bibinitperiod},
+           given={L.},
+           giveni={L\bibinitperiod}}}%
+        {{hash=83e0472cc797037f9ee3a9b648900394}{%
+           family={Gomez},
+           familyi={G\bibinitperiod},
+           given={L.},
+           giveni={L\bibinitperiod}}}%
+        {{hash=553de59b8a77d59cde97c766c51a84f3}{%
+           family={Santana-Cedrés},
+           familyi={S\bibinithyphendelim C\bibinitperiod},
+           given={D.},
+           giveni={D\bibinitperiod}}}%
+      }
+      \strng{namehash}{cf9926b7a6d9d55c07c9563602fae7d9}
+      \strng{fullhash}{9d1b9b67d2abd0ac72b3ad72c4a470c6}
+      \strng{bibnamehash}{9d1b9b67d2abd0ac72b3ad72c4a470c6}
+      \strng{authorbibnamehash}{9d1b9b67d2abd0ac72b3ad72c4a470c6}
+      \strng{authornamehash}{cf9926b7a6d9d55c07c9563602fae7d9}
+      \strng{authorfullhash}{9d1b9b67d2abd0ac72b3ad72c4a470c6}
+      \field{extraname}{1}
+      \field{sortinit}{8}
+      \field{sortinithash}{a231b008ebf0ecbe0b4d96dcc159445f}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Pattern Recognition Letters}
+      \field{title}{Line detection in images showing significant lens distortion and application to distortion correction}
+      \field{volume}{36}
+      \field{year}{2014}
+      \field{pages}{261\bibrangedash 271}
+      \range{pages}{11}
+    \endentry
+    \entry{aleman2014automatic}{article}{}
+      \name{author}{4}{}{%
+        {{hash=349782a42aba97c5822bf49f9dda2a7b}{%
+           family={Alemán-Flores},
+           familyi={A\bibinithyphendelim F\bibinitperiod},
+           given={M.},
+           giveni={M\bibinitperiod}}}%
+        {{hash=5f1f23de9939c31da5ab28ef47901b82}{%
+           family={Alvarez},
+           familyi={A\bibinitperiod},
+           given={L.},
+           giveni={L\bibinitperiod}}}%
+        {{hash=83e0472cc797037f9ee3a9b648900394}{%
+           family={Gomez},
+           familyi={G\bibinitperiod},
+           given={L.},
+           giveni={L\bibinitperiod}}}%
+        {{hash=553de59b8a77d59cde97c766c51a84f3}{%
+           family={Santana-Cedrés},
+           familyi={S\bibinithyphendelim C\bibinitperiod},
+           given={D.},
+           giveni={D\bibinitperiod}}}%
+      }
+      \strng{namehash}{cf9926b7a6d9d55c07c9563602fae7d9}
+      \strng{fullhash}{9d1b9b67d2abd0ac72b3ad72c4a470c6}
+      \strng{bibnamehash}{9d1b9b67d2abd0ac72b3ad72c4a470c6}
+      \strng{authorbibnamehash}{9d1b9b67d2abd0ac72b3ad72c4a470c6}
+      \strng{authornamehash}{cf9926b7a6d9d55c07c9563602fae7d9}
+      \strng{authorfullhash}{9d1b9b67d2abd0ac72b3ad72c4a470c6}
+      \field{extraname}{2}
+      \field{sortinit}{9}
+      \field{sortinithash}{0a5ebc79d83c96b6579069544c73c7d4}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Image Processing On Line}
+      \field{title}{Automatic lens distortion correction using one-parameter division models}
+      \field{volume}{4}
+      \field{year}{2014}
+      \field{pages}{327\bibrangedash 343}
+      \range{pages}{17}
+    \endentry
+    \entry{santana2016iterative}{article}{}
+      \name{author}{7}{}{%
+        {{hash=553de59b8a77d59cde97c766c51a84f3}{%
+           family={Santana-Cedrés},
+           familyi={S\bibinithyphendelim C\bibinitperiod},
+           given={D.},
+           giveni={D\bibinitperiod}}}%
+        {{hash=83e0472cc797037f9ee3a9b648900394}{%
+           family={Gomez},
+           familyi={G\bibinitperiod},
+           given={L.},
+           giveni={L\bibinitperiod}}}%
+        {{hash=349782a42aba97c5822bf49f9dda2a7b}{%
+           family={Alemán-Flores},
+           familyi={A\bibinithyphendelim F\bibinitperiod},
+           given={M.},
+           giveni={M\bibinitperiod}}}%
+        {{hash=3b08b001052d238bb5cb9405a74ebae1}{%
+           family={Salgado},
+           familyi={S\bibinitperiod},
+           given={A.},
+           giveni={A\bibinitperiod}}}%
+        {{hash=7135c4d22035d289f4447600fcf0aa69}{%
+           family={Esclarín},
+           familyi={E\bibinitperiod},
+           given={J.},
+           giveni={J\bibinitperiod}}}%
+        {{hash=f824b140b811cad69653d784cf0640f6}{%
+           family={Mazorra},
+           familyi={M\bibinitperiod},
+           given={L.},
+           giveni={L\bibinitperiod}}}%
+        {{hash=5f1f23de9939c31da5ab28ef47901b82}{%
+           family={Alvarez},
+           familyi={A\bibinitperiod},
+           given={L.},
+           giveni={L\bibinitperiod}}}%
+      }
+      \strng{namehash}{ed82750d4b49196657b8ca5b465d6904}
+      \strng{fullhash}{7d8a6ed8b2e55f5d0a6a414cc51a340a}
+      \strng{bibnamehash}{7d8a6ed8b2e55f5d0a6a414cc51a340a}
+      \strng{authorbibnamehash}{7d8a6ed8b2e55f5d0a6a414cc51a340a}
+      \strng{authornamehash}{ed82750d4b49196657b8ca5b465d6904}
+      \strng{authorfullhash}{7d8a6ed8b2e55f5d0a6a414cc51a340a}
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Image Processing On Line}
+      \field{title}{An iterative optimization algorithm for lens distortion correction using two-parameter models}
+      \field{volume}{6}
+      \field{year}{2016}
+      \field{pages}{326\bibrangedash 364}
+      \range{pages}{39}
+    \endentry
+    \entry{rong2016radial}{inproceedings}{}
+      \name{author}{4}{}{%
+        {{hash=3c22256fd4a1c8b81f213965f8ff10bc}{%
+           family={Rong},
+           familyi={R\bibinitperiod},
+           given={J.},
+           giveni={J\bibinitperiod}}}%
+        {{hash=6d4d76d3dacb90eb76d32a306c6c87fd}{%
+           family={Huang},
+           familyi={H\bibinitperiod},
+           given={S.},
+           giveni={S\bibinitperiod}}}%
+        {{hash=12173cf35ee9e0358714a3fa8fe5ca94}{%
+           family={Shang},
+           familyi={S\bibinitperiod},
+           given={Z.},
+           giveni={Z\bibinitperiod}}}%
+        {{hash=3dda797f89df30cde3093b4b41185410}{%
+           family={Ying},
+           familyi={Y\bibinitperiod},
+           given={X.},
+           giveni={X\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {Springer}%
+      }
+      \strng{namehash}{9e27a227c6d53ce061e03b31a937d2a5}
+      \strng{fullhash}{af0d7ecc515bd4a16f513e541d012bbb}
+      \strng{bibnamehash}{af0d7ecc515bd4a16f513e541d012bbb}
+      \strng{authorbibnamehash}{af0d7ecc515bd4a16f513e541d012bbb}
+      \strng{authornamehash}{9e27a227c6d53ce061e03b31a937d2a5}
+      \strng{authorfullhash}{af0d7ecc515bd4a16f513e541d012bbb}
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{booktitle}{Asian Conference on Computer Vision}
+      \field{title}{Radial lens distortion correction using convolutional neural networks trained with synthesized images}
+      \field{year}{2016}
+      \field{pages}{35\bibrangedash 49}
+      \range{pages}{15}
+    \endentry
+    \entry{lopez2019deep}{inproceedings}{}
+      \name{author}{6}{}{%
+        {{hash=952fd9af56683555cf2e8825da5e574c}{%
+           family={Lopez},
+           familyi={L\bibinitperiod},
+           given={M.},
+           giveni={M\bibinitperiod}}}%
+        {{hash=3896a615788feb45b0fe109a3778c3d3}{%
+           family={Mari},
+           familyi={M\bibinitperiod},
+           given={R.},
+           giveni={R\bibinitperiod}}}%
+        {{hash=8ef8b179dc96ddf4f0e7c0ce0726344e}{%
+           family={Gargallo},
+           familyi={G\bibinitperiod},
+           given={P.},
+           giveni={P\bibinitperiod}}}%
+        {{hash=364dd40f1e54ef5b40af88b645e28ca1}{%
+           family={Kuang},
+           familyi={K\bibinitperiod},
+           given={Y.},
+           giveni={Y\bibinitperiod}}}%
+        {{hash=0d3ea7aa242e060395b85d2ac170f644}{%
+           family={Gonzalez-Jimenez},
+           familyi={G\bibinithyphendelim J\bibinitperiod},
+           given={J.},
+           giveni={J\bibinitperiod}}}%
+        {{hash=9980a3c9fd7f8ec16a1598469e3ff502}{%
+           family={Haro},
+           familyi={H\bibinitperiod},
+           given={G.},
+           giveni={G\bibinitperiod}}}%
+      }
+      \strng{namehash}{b7f5422994a5341be42c3956a109b91d}
+      \strng{fullhash}{b7c40b761c2d304ab90dcbcae7a932f0}
+      \strng{bibnamehash}{b7c40b761c2d304ab90dcbcae7a932f0}
+      \strng{authorbibnamehash}{b7c40b761c2d304ab90dcbcae7a932f0}
+      \strng{authornamehash}{b7f5422994a5341be42c3956a109b91d}
+      \strng{authorfullhash}{b7c40b761c2d304ab90dcbcae7a932f0}
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{booktitle}{Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition}
+      \field{title}{Deep single image camera calibration with radial distortion}
+      \field{year}{2019}
+      \field{pages}{11817\bibrangedash 11825}
+      \range{pages}{9}
+    \endentry
+    \entry{xiao2012recognizing}{inproceedings}{}
+      \name{author}{4}{}{%
+        {{hash=68f0988326aeeca2e5444dcaf314ca52}{%
+           family={Xiao},
+           familyi={X\bibinitperiod},
+           given={J.},
+           giveni={J\bibinitperiod}}}%
+        {{hash=987250457bcc93aafcdf372c05d4e577}{%
+           family={Ehinger},
+           familyi={E\bibinitperiod},
+           given={K.A.},
+           giveni={K\bibinitperiod}}}%
+        {{hash=038fabca136d062362da77986396d9c3}{%
+           family={Oliva},
+           familyi={O\bibinitperiod},
+           given={A.},
+           giveni={A\bibinitperiod}}}%
+        {{hash=cfd9108f364afaa900ee3da4c638bb2e}{%
+           family={Torralba},
+           familyi={T\bibinitperiod},
+           given={A.},
+           giveni={A\bibinitperiod}}}%
+      }
+      \strng{namehash}{121e57ee12623b2fbd5770b7338c952c}
+      \strng{fullhash}{c3374836c2329edc024d564894fbd088}
+      \strng{bibnamehash}{c3374836c2329edc024d564894fbd088}
+      \strng{authorbibnamehash}{c3374836c2329edc024d564894fbd088}
+      \strng{authornamehash}{121e57ee12623b2fbd5770b7338c952c}
+      \strng{authorfullhash}{c3374836c2329edc024d564894fbd088}
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{booktitle}{Proceedings of the IEEE Conference on Computer Vision and Pattern Recognition}
+      \field{title}{Recognizing scene viewpoint using panoramic place representation}
+      \field{year}{2012}
+      \field{pages}{2695\bibrangedash 2702}
+      \range{pages}{8}
+    \endentry
+    \entry{liao2021deep}{article}{}
+      \name{author}{3}{}{%
+        {{hash=99e88808bfe48ecd5fcf07c6ca07636b}{%
+           family={Liao},
+           familyi={L\bibinitperiod},
+           given={K.},
+           giveni={K\bibinitperiod}}}%
+        {{hash=4ba20cab839f1fa37eda3adfc1b61b0c}{%
+           family={Lin},
+           familyi={L\bibinitperiod},
+           given={C.},
+           giveni={C\bibinitperiod}}}%
+        {{hash=d5ff4bd5ca210dc62374b1352daac212}{%
+           family={Zhao},
+           familyi={Z\bibinitperiod},
+           given={Y.},
+           giveni={Y\bibinitperiod}}}%
+      }
+      \strng{namehash}{a5897f7b4140d10b6212bd9319a95521}
+      \strng{fullhash}{023a1e6786128634979355f1992d2083}
+      \strng{bibnamehash}{023a1e6786128634979355f1992d2083}
+      \strng{authorbibnamehash}{023a1e6786128634979355f1992d2083}
+      \strng{authornamehash}{a5897f7b4140d10b6212bd9319a95521}
+      \strng{authorfullhash}{023a1e6786128634979355f1992d2083}
+      \field{extraname}{1}
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{IEEE Transactions on Image Processing}
+      \field{title}{A deep ordinal distortion estimation approach for distortion rectification}
+      \field{volume}{30}
+      \field{year}{2021}
+      \field{pages}{3362\bibrangedash 3375}
+      \range{pages}{14}
+    \endentry
+    \entry{liao2019dr}{article}{}
+      \name{author}{4}{}{%
+        {{hash=99e88808bfe48ecd5fcf07c6ca07636b}{%
+           family={Liao},
+           familyi={L\bibinitperiod},
+           given={K.},
+           giveni={K\bibinitperiod}}}%
+        {{hash=4ba20cab839f1fa37eda3adfc1b61b0c}{%
+           family={Lin},
+           familyi={L\bibinitperiod},
+           given={C.},
+           giveni={C\bibinitperiod}}}%
+        {{hash=d5ff4bd5ca210dc62374b1352daac212}{%
+           family={Zhao},
+           familyi={Z\bibinitperiod},
+           given={Y.},
+           giveni={Y\bibinitperiod}}}%
+        {{hash=db18464e8dc36880c4cad237f133c939}{%
+           family={Gabbouj},
+           familyi={G\bibinitperiod},
+           given={M.},
+           giveni={M\bibinitperiod}}}%
+      }
+      \strng{namehash}{a5897f7b4140d10b6212bd9319a95521}
+      \strng{fullhash}{38433a5fdb50bcdb6122a3b7b8e0c598}
+      \strng{bibnamehash}{38433a5fdb50bcdb6122a3b7b8e0c598}
+      \strng{authorbibnamehash}{38433a5fdb50bcdb6122a3b7b8e0c598}
+      \strng{authornamehash}{a5897f7b4140d10b6212bd9319a95521}
+      \strng{authorfullhash}{38433a5fdb50bcdb6122a3b7b8e0c598}
+      \field{extraname}{2}
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{IEEE Transactions on Circuits and Systems for Video Technology}
+      \field{number}{3}
+      \field{title}{{DR-GAN}: Automatic radial distortion rectification using conditional {GAN} in real-time}
+      \field{volume}{30}
+      \field{year}{2019}
+      \field{pages}{725\bibrangedash 733}
+      \range{pages}{9}
+    \endentry
+    \entry{li2019blind}{inproceedings}{}
+      \name{author}{4}{}{%
+        {{hash=c9a3728dcc2397d1bab78a791b51779b}{%
+           family={Li},
+           familyi={L\bibinitperiod},
+           given={X.},
+           giveni={X\bibinitperiod}}}%
+        {{hash=14fd6c4762d5113df9a2a4c45d09c456}{%
+           family={Zhang},
+           familyi={Z\bibinitperiod},
+           given={B.},
+           giveni={B\bibinitperiod}}}%
+        {{hash=503dff8ad0e8b7b2cc66f39ed5030696}{%
+           family={Sander},
+           familyi={S\bibinitperiod},
+           given={P.V.},
+           giveni={P\bibinitperiod}}}%
+        {{hash=84d6ef89f153772bbdf8e701861d405a}{%
+           family={Liao},
+           familyi={L\bibinitperiod},
+           given={J.},
+           giveni={J\bibinitperiod}}}%
+      }
+      \strng{namehash}{0b26886cabde4f6202af5174b37a09ec}
+      \strng{fullhash}{a37c82073d53debbcecc4db45b2734a1}
+      \strng{bibnamehash}{a37c82073d53debbcecc4db45b2734a1}
+      \strng{authorbibnamehash}{a37c82073d53debbcecc4db45b2734a1}
+      \strng{authornamehash}{0b26886cabde4f6202af5174b37a09ec}
+      \strng{authorfullhash}{a37c82073d53debbcecc4db45b2734a1}
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{booktitle}{Proceedings of the IEEE Conference on Computer Vision and Pattern Recognition}
+      \field{title}{Blind geometric distortion correction on images through deep learning}
+      \field{year}{2019}
+      \field{pages}{4855\bibrangedash 4864}
+      \range{pages}{10}
+    \endentry
+    \entry{chao2020self}{inproceedings}{}
+      \name{author}{4}{}{%
+        {{hash=28e579e6ae7a3648fb01de85ec11d362}{%
+           family={Chao},
+           familyi={C\bibinitperiod},
+           given={C.-H.},
+           giveni={C\bibinithyphendelim H\bibinitperiod}}}%
+        {{hash=c46ff3ce1f0cd820ff113828fc4bbfb6}{%
+           family={Hsu},
+           familyi={H\bibinitperiod},
+           given={P.-L.},
+           giveni={P\bibinithyphendelim L\bibinitperiod}}}%
+        {{hash=977223303715d445162d8c787c12f2a2}{%
+           family={Lee},
+           familyi={L\bibinitperiod},
+           given={H.-Y.},
+           giveni={H\bibinithyphendelim Y\bibinitperiod}}}%
+        {{hash=adedf3ea164b7f588b528a92633b68cd}{%
+           family={Wang},
+           familyi={W\bibinitperiod},
+           given={Y.-C.F.},
+           giveni={Y\bibinithyphendelim C\bibinitperiod}}}%
+      }
+      \list{organization}{1}{%
+        {IEEE}%
+      }
+      \strng{namehash}{d32180db6b52929508eb75d398562d0f}
+      \strng{fullhash}{4b1db6c81a49c22f4da2f4b260708f22}
+      \strng{bibnamehash}{4b1db6c81a49c22f4da2f4b260708f22}
+      \strng{authorbibnamehash}{4b1db6c81a49c22f4da2f4b260708f22}
+      \strng{authornamehash}{d32180db6b52929508eb75d398562d0f}
+      \strng{authorfullhash}{4b1db6c81a49c22f4da2f4b260708f22}
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{booktitle}{ICASSP 2020-2020 IEEE International Conference on Acoustics, Speech and Signal Processing}
+      \field{title}{Self-supervised deep learning for fisheye image rectification}
+      \field{year}{2020}
+      \field{pages}{2248\bibrangedash 2252}
+      \range{pages}{5}
+    \endentry
+    \entry{zhu2022semi}{inproceedings}{}
+      \name{author}{6}{}{%
+        {{hash=2e9a8642beedb5e0011c92134c079990}{%
+           family={Zhu},
+           familyi={Z\bibinitperiod},
+           given={F.},
+           giveni={F\bibinitperiod}}}%
+        {{hash=2103a088c0216ee336ca8b820fbefc02}{%
+           family={Zhao},
+           familyi={Z\bibinitperiod},
+           given={S.},
+           giveni={S\bibinitperiod}}}%
+        {{hash=f94399510b1be6d7fab7d889d00b68d8}{%
+           family={Wang},
+           familyi={W\bibinitperiod},
+           given={P.},
+           giveni={P\bibinitperiod}}}%
+        {{hash=39856f0439f35f79a8eed8b12d26166c}{%
+           family={Wang},
+           familyi={W\bibinitperiod},
+           given={H.},
+           giveni={H\bibinitperiod}}}%
+        {{hash=2b9d05be40eef94c345e6989c30daf40}{%
+           family={Yan},
+           familyi={Y\bibinitperiod},
+           given={H.},
+           giveni={H\bibinitperiod}}}%
+        {{hash=92faacc6874983183ce7fb86e39f31ec}{%
+           family={Liu},
+           familyi={L\bibinitperiod},
+           given={S.},
+           giveni={S\bibinitperiod}}}%
+      }
+      \strng{namehash}{c0a8c60f00997e5b4031d727dbcc3abf}
+      \strng{fullhash}{68b9431ba7952abc4051b1e1bc015f85}
+      \strng{bibnamehash}{68b9431ba7952abc4051b1e1bc015f85}
+      \strng{authorbibnamehash}{68b9431ba7952abc4051b1e1bc015f85}
+      \strng{authornamehash}{c0a8c60f00997e5b4031d727dbcc3abf}
+      \strng{authorfullhash}{68b9431ba7952abc4051b1e1bc015f85}
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{booktitle}{Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition}
+      \field{title}{Semi-supervised wide-angle portraits correction by multi-scale transformer}
+      \field{year}{2022}
+      \field{pages}{19689\bibrangedash 19698}
+      \range{pages}{10}
+    \endentry
+    \entry{yang2021progressively}{inproceedings}{}
+      \name{author}{5}{}{%
+        {{hash=41ee36ec00931ecec42a4aea91d776eb}{%
+           family={Yang},
+           familyi={Y\bibinitperiod},
+           given={S.},
+           giveni={S\bibinitperiod}}}%
+        {{hash=4ba20cab839f1fa37eda3adfc1b61b0c}{%
+           family={Lin},
+           familyi={L\bibinitperiod},
+           given={C.},
+           giveni={C\bibinitperiod}}}%
+        {{hash=99e88808bfe48ecd5fcf07c6ca07636b}{%
+           family={Liao},
+           familyi={L\bibinitperiod},
+           given={K.},
+           giveni={K\bibinitperiod}}}%
+        {{hash=08835018e7f90fcf262517bf88eb4d72}{%
+           family={Zhang},
+           familyi={Z\bibinitperiod},
+           given={C.},
+           giveni={C\bibinitperiod}}}%
+        {{hash=d5ff4bd5ca210dc62374b1352daac212}{%
+           family={Zhao},
+           familyi={Z\bibinitperiod},
+           given={Y.},
+           giveni={Y\bibinitperiod}}}%
+      }
+      \strng{namehash}{4e960cf846f3d923bf98a11bebab0e0d}
+      \strng{fullhash}{ea68c2d22b9a55a9a18b776a8e364d26}
+      \strng{bibnamehash}{ea68c2d22b9a55a9a18b776a8e364d26}
+      \strng{authorbibnamehash}{ea68c2d22b9a55a9a18b776a8e364d26}
+      \strng{authornamehash}{4e960cf846f3d923bf98a11bebab0e0d}
+      \strng{authorfullhash}{ea68c2d22b9a55a9a18b776a8e364d26}
+      \field{sortinit}{2}
+      \field{sortinithash}{8b555b3791beccb63322c22f3320aa9a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{booktitle}{Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition}
+      \field{title}{Progressively complementary network for fisheye image rectification using appearance flow}
+      \field{year}{2021}
+      \field{pages}{6348\bibrangedash 6357}
+      \range{pages}{10}
+    \endentry
+    \entry{wang2023model}{article}{}
+      \name{author}{5}{}{%
+        {{hash=8c0d8d495d30364a6fdc14d3ee19f5b7}{%
+           family={Wang},
+           familyi={W\bibinitperiod},
+           given={W.},
+           giveni={W\bibinitperiod}}}%
+        {{hash=f1410e7406846dd24b0cefc8b5978dc5}{%
+           family={Feng},
+           familyi={F\bibinitperiod},
+           given={H.},
+           giveni={H\bibinitperiod}}}%
+        {{hash=8bee622d1b143f26fb1aa74b61da290a}{%
+           family={Zhou},
+           familyi={Z\bibinitperiod},
+           given={W.},
+           giveni={W\bibinitperiod}}}%
+        {{hash=64b3370589d339b34be4d983e14ff10e}{%
+           family={Liao},
+           familyi={L\bibinitperiod},
+           given={Z.},
+           giveni={Z\bibinitperiod}}}%
+        {{hash=e2e65bc31792929cfaa15cecf7f23965}{%
+           family={Li},
+           familyi={L\bibinitperiod},
+           given={H.},
+           giveni={H\bibinitperiod}}}%
+      }
+      \strng{namehash}{82258e666869d4f882ef5ec016bc3fdb}
+      \strng{fullhash}{d43b5c9185836bc37db7b03b072edd61}
+      \strng{bibnamehash}{d43b5c9185836bc37db7b03b072edd61}
+      \strng{authorbibnamehash}{d43b5c9185836bc37db7b03b072edd61}
+      \strng{authornamehash}{82258e666869d4f882ef5ec016bc3fdb}
+      \strng{authorfullhash}{d43b5c9185836bc37db7b03b072edd61}
+      \field{extraname}{1}
+      \field{sortinit}{2}
+      \field{sortinithash}{8b555b3791beccb63322c22f3320aa9a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{IEEE Transactions on Image Processing}
+      \field{title}{Model-aware pre-training for radial distortion rectification}
+      \field{year}{2023}
+    \endentry
+    \entry{Yin2010Centroid}{article}{}
+      \name{author}{4}{}{%
+        {{hash=e8a2b2fde4d03529b0b4fd88708ff29c}{%
+           family={Yin},
+           familyi={Y\bibinitperiod},
+           given={Xiaoming},
+           giveni={X\bibinitperiod}}}%
+        {{hash=608c4944a242e7c9103f6e1c1b02cc2e}{%
+           family={Zhao},
+           familyi={Z\bibinitperiod},
+           given={Liping},
+           giveni={L\bibinitperiod}}}%
+        {{hash=09e1a64c667557dd7866bc4e66d193ce}{%
+           family={Li},
+           familyi={L\bibinitperiod},
+           given={Xiang},
+           giveni={X\bibinitperiod}}}%
+        {{hash=369b04dbd290f2eead8c2a1af5e3d4c4}{%
+           family={Fang},
+           familyi={F\bibinitperiod},
+           given={Zhongping},
+           giveni={Z\bibinitperiod}}}%
+      }
+      \strng{namehash}{9e56e0f17c3be64b40ed1667babdcb63}
+      \strng{fullhash}{a332c1e261ed4a16db5640aa16a622dd}
+      \strng{bibnamehash}{a332c1e261ed4a16db5640aa16a622dd}
+      \strng{authorbibnamehash}{a332c1e261ed4a16db5640aa16a622dd}
+      \strng{authornamehash}{9e56e0f17c3be64b40ed1667babdcb63}
+      \strng{authorfullhash}{a332c1e261ed4a16db5640aa16a622dd}
+      \field{sortinit}{2}
+      \field{sortinithash}{8b555b3791beccb63322c22f3320aa9a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Measurement Science and Technology}
+      \field{number}{1}
+      \field{title}{Automatic centroid detection and surface measurement with a digital {Shack--Hartmann} wavefront sensor}
+      \field{volume}{21}
+      \field{year}{2010}
+      \field{pages}{015304}
+      \range{pages}{1}
+      \verb{doi}
+      \verb 10.1088/0957-0233/21/1/015304
+      \endverb
+    \endentry
+    \entry{kuhn1955hungarian}{article}{}
+      \name{author}{1}{}{%
+        {{hash=9ed32c5059c74c243ab6d851d2010faf}{%
+           family={Kuhn},
+           familyi={K\bibinitperiod},
+           given={Harold\bibnamedelima W.},
+           giveni={H\bibinitperiod\bibinitdelim W\bibinitperiod}}}%
+      }
+      \strng{namehash}{9ed32c5059c74c243ab6d851d2010faf}
+      \strng{fullhash}{9ed32c5059c74c243ab6d851d2010faf}
+      \strng{bibnamehash}{9ed32c5059c74c243ab6d851d2010faf}
+      \strng{authorbibnamehash}{9ed32c5059c74c243ab6d851d2010faf}
+      \strng{authornamehash}{9ed32c5059c74c243ab6d851d2010faf}
+      \strng{authorfullhash}{9ed32c5059c74c243ab6d851d2010faf}
+      \field{sortinit}{2}
+      \field{sortinithash}{8b555b3791beccb63322c22f3320aa9a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Naval Research Logistics Quarterly}
+      \field{number}{1--2}
+      \field{title}{The Hungarian method for the assignment problem}
+      \field{volume}{2}
+      \field{year}{1955}
+      \field{pages}{83\bibrangedash 97}
+      \range{pages}{15}
+    \endentry
+    \entry{virtanen2020scipy}{article}{}
+      \true{moreauthor}
+      \true{morelabelname}
+      \name{author}{1}{}{%
+        {{hash=18703a2bb6a62484483c193a212da2f8}{%
+           family={Virtanen},
+           familyi={V\bibinitperiod},
+           given={Pauli},
+           giveni={P\bibinitperiod}}}%
+      }
+      \strng{namehash}{f252038edd7f112d75da3bf0c1edecbc}
+      \strng{fullhash}{f252038edd7f112d75da3bf0c1edecbc}
+      \strng{bibnamehash}{f252038edd7f112d75da3bf0c1edecbc}
+      \strng{authorbibnamehash}{f252038edd7f112d75da3bf0c1edecbc}
+      \strng{authornamehash}{f252038edd7f112d75da3bf0c1edecbc}
+      \strng{authorfullhash}{f252038edd7f112d75da3bf0c1edecbc}
+      \field{sortinit}{3}
+      \field{sortinithash}{ad6fe7482ffbd7b9f99c9e8b5dccd3d7}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Nature Methods}
+      \field{title}{SciPy 1.0: fundamental algorithms for scientific computing in Python}
+      \field{volume}{17}
+      \field{year}{2020}
+      \field{pages}{261\bibrangedash 272}
+      \range{pages}{12}
+    \endentry
+    \entry{montgomery2014}{book}{}
+      \name{author}{2}{}{%
+        {{hash=7d4a838891cb5c31eb1e3e089777efa0}{%
+           family={Montgomery},
+           familyi={M\bibinitperiod},
+           given={Douglas\bibnamedelima C.},
+           giveni={D\bibinitperiod\bibinitdelim C\bibinitperiod}}}%
+        {{hash=8108d2e426afcc5c75c1354a09e619c9}{%
+           family={Runger},
+           familyi={R\bibinitperiod},
+           given={George\bibnamedelima C.},
+           giveni={G\bibinitperiod\bibinitdelim C\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {Wiley}%
+      }
+      \strng{namehash}{067de60f00c7226f2b76c917ad4941f5}
+      \strng{fullhash}{067de60f00c7226f2b76c917ad4941f5}
+      \strng{bibnamehash}{067de60f00c7226f2b76c917ad4941f5}
+      \strng{authorbibnamehash}{067de60f00c7226f2b76c917ad4941f5}
+      \strng{authornamehash}{067de60f00c7226f2b76c917ad4941f5}
+      \strng{authorfullhash}{067de60f00c7226f2b76c917ad4941f5}
+      \field{sortinit}{3}
+      \field{sortinithash}{ad6fe7482ffbd7b9f99c9e8b5dccd3d7}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{edition}{6}
+      \field{title}{Applied Statistics and Probability for Engineers}
+      \field{year}{2014}
+    \endentry
+    \entry{Wang2019DistortionDBS}{article}{}
+      \name{author}{10}{}{%
+        {{hash=ee2b4a15025ecfaafcb95983b2d2623d}{%
+           family={Wang},
+           familyi={W\bibinitperiod},
+           given={Feng},
+           giveni={F\bibinitperiod}}}%
+        {{hash=751cbe8b31adace0aaba586229808118}{%
+           family={Zhang},
+           familyi={Z\bibinitperiod},
+           given={Zhiyu},
+           giveni={Z\bibinitperiod}}}%
+        {{hash=4c231105cc9164a1f1ad9521f584c81f}{%
+           family={Wang},
+           familyi={W\bibinitperiod},
+           given={Ruoqiu},
+           giveni={R\bibinitperiod}}}%
+        {{hash=9e70f95f89da527e167ef6286f1020a0}{%
+           family={Zeng},
+           familyi={Z\bibinitperiod},
+           given={Xuefeng},
+           giveni={X\bibinitperiod}}}%
+        {{hash=9eda43a644030ac3eceaf837cb2489ac}{%
+           family={Xu},
+           familyi={X\bibinitperiod},
+           given={Yang},
+           giveni={Y\bibinitperiod}}}%
+        {{hash=b9aa95a8d45b45b949e18994242e7236}{%
+           family={Lv},
+           familyi={L\bibinitperiod},
+           given={Shiliang},
+           giveni={S\bibinitperiod}}}%
+        {{hash=65afd11c8e50cacdbd6ae4f35d03e308}{%
+           family={Zhang},
+           familyi={Z\bibinitperiod},
+           given={Feng},
+           giveni={F\bibinitperiod}}}%
+        {{hash=46590b03a242b93dbe6af17c22164376}{%
+           family={Xue},
+           familyi={X\bibinitperiod},
+           given={Donglin},
+           giveni={D\bibinitperiod}}}%
+        {{hash=9ac6b990fa85d4b7ed77f720cd55aaf8}{%
+           family={Yan},
+           familyi={Y\bibinitperiod},
+           given={Jiwang},
+           giveni={J\bibinitperiod}}}%
+        {{hash=1aafbdbd13c2d9a5aa9016059c099948}{%
+           family={Zhang},
+           familyi={Z\bibinitperiod},
+           given={Xuejun},
+           giveni={X\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {Optical Society of America}%
+      }
+      \strng{namehash}{4fad24a73fd343b446f9bae8b7b79d4a}
+      \strng{fullhash}{03578d20a348e1a0842ccbe267133d86}
+      \strng{bibnamehash}{03578d20a348e1a0842ccbe267133d86}
+      \strng{authorbibnamehash}{03578d20a348e1a0842ccbe267133d86}
+      \strng{authornamehash}{4fad24a73fd343b446f9bae8b7b79d4a}
+      \strng{authorfullhash}{03578d20a348e1a0842ccbe267133d86}
+      \field{extraname}{2}
+      \field{sortinit}{3}
+      \field{sortinithash}{ad6fe7482ffbd7b9f99c9e8b5dccd3d7}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Optics Express}
+      \field{number}{21}
+      \field{title}{Distortion measurement of optical system using phase diffractive beam splitter}
+      \field{volume}{27}
+      \field{year}{2019}
+      \field{pages}{29803\bibrangedash 29817}
+      \range{pages}{15}
+      \verb{doi}
+      \verb 10.1364/OE.27.029803
+      \endverb
+    \endentry
+  \enddatalist
+\endrefsection
+\endinput
+
