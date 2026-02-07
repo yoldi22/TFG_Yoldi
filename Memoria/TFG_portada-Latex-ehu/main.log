@@ -1,0 +1,2225 @@
+This is XeTeX, Version 3.141592653-2.6-0.999995 (MiKTeX 24.1) (preloaded format=xelatex 2025.10.15)  7 FEB 2026 03:31
+entering extended mode
+ restricted \write18 enabled.
+ file:line:error style messages enabled.
+ %&-line parsing enabled.
+**c:/Users/xabie/Documents/TFG/Memoria/TFG_portada-Latex-ehu/main.tex
+(c:/Users/xabie/Documents/TFG/Memoria/TFG_portada-Latex-ehu/main.tex
+LaTeX2e <2023-11-01> patch level 1
+L3 programming layer <2024-01-04>
+(C:\Users\xabie\AppData\Local\Programs\MiKTeX\tex/latex/base\article.cls
+Document Class: article 2023/05/17 v1.4n Standard LaTeX document class
+(C:\Users\xabie\AppData\Local\Programs\MiKTeX\tex/latex/base\size12.clo
+File: size12.clo 2023/05/17 v1.4n Standard LaTeX file (size option)
+)
+\c@part=\count183
+\c@section=\count184
+\c@subsection=\count185
+\c@subsubsection=\count186
+\c@paragraph=\count187
+\c@subparagraph=\count188
+\c@figure=\count189
+\c@table=\count190
+\abovecaptionskip=\skip48
+\belowcaptionskip=\skip49
+\bibindent=\dimen140
+)
+(C:\Users\xabie\AppData\Local\Programs\MiKTeX\tex/latex/base\inputenc.sty
+Package: inputenc 2021/02/14 v1.3d Input encoding file
+\inpenc@prehook=\toks17
+\inpenc@posthook=\toks18
+
+
+Package inputenc Warning: inputenc package ignored with utf8 based engines.
+
+) (C:\Users\xabie\AppData\Local\Programs\MiKTeX\tex/latex/geometry\geometry.sty
+Package: geometry 2020/01/02 v5.9 Page Geometry
+(C:\Users\xabie\AppData\Local\Programs\MiKTeX\tex/latex/graphics\keyval.sty
+Package: keyval 2022/05/29 v1.15 key=value parser (DPC)
+\KV@toks@=\toks19
+)
+(C:\Users\xabie\AppData\Local\Programs\MiKTeX\tex/generic/iftex\ifvtex.sty
+Package: ifvtex 2019/10/25 v1.7 ifvtex legacy package. Use iftex instead.
+
+(C:\Users\xabie\AppData\Local\Programs\MiKTeX\tex/generic/iftex\iftex.sty
+Package: iftex 2022/02/03 v1.0f TeX engine tests
+))
+\Gm@cnth=\count191
+\Gm@cntv=\count192
+\c@Gm@tempcnt=\count193
+\Gm@bindingoffset=\dimen141
+\Gm@wd@mp=\dimen142
+\Gm@odd@mp=\dimen143
+\Gm@even@mp=\dimen144
+\Gm@layoutwidth=\dimen145
+\Gm@layoutheight=\dimen146
+\Gm@layouthoffset=\dimen147
+\Gm@layoutvoffset=\dimen148
+\Gm@dimlist=\toks20
+
+(C:\Users\xabie\AppData\Local\Programs\MiKTeX\tex/latex/geometry\geometry.cfg))
+(C:\Users\xabie\AppData\Local\Programs\MiKTeX\tex/latex/xcolor\xcolor.sty
+Package: xcolor 2023/11/15 v3.01 LaTeX color extensions (UK)
+
+(C:\Users\xabie\AppData\Local\Programs\MiKTeX\tex/latex/graphics-cfg\color.cfg
+File: color.cfg 2016/01/02 v1.6 sample color configuration
+)
+Package xcolor Info: Driver file: xetex.def on input line 274.
+(C:\Users\xabie\AppData\Local\Programs\MiKTeX\tex/latex/graphics-def\xetex.def
+File: xetex.def 2022/09/22 v5.0n Graphics/color driver for xetex
+) (C:\Users\xabie\AppData\Local\Programs\MiKTeX\tex/latex/graphics\mathcolor.lt
+x)
+Package xcolor Info: Model `cmy' substituted by `cmy0' on input line 1350.
+Package xcolor Info: Model `RGB' extended on input line 1366.
+Package xcolor Info: Model `HTML' substituted by `rgb' on input line 1368.
+Package xcolor Info: Model `Hsb' substituted by `hsb' on input line 1369.
+Package xcolor Info: Model `tHsb' substituted by `hsb' on input line 1370.
+Package xcolor Info: Model `HSB' substituted by `hsb' on input line 1371.
+Package xcolor Info: Model `Gray' substituted by `gray' on input line 1372.
+Package xcolor Info: Model `wave' substituted by `hsb' on input line 1373.
+)
+(C:\Users\xabie\AppData\Local\Programs\MiKTeX\tex/latex/graphics\dvipsnam.def
+File: dvipsnam.def 2016/06/17 v3.0m Driver-dependent file (DPC,SPQR)
+)
+(C:\Users\xabie\AppData\Local\Programs\MiKTeX\tex/latex/hyperref\hyperref.sty
+Package: hyperref 2023-11-26 v7.01g Hypertext links for LaTeX
+
+(C:\Users\xabie\AppData\Local\Programs\MiKTeX\tex/generic/infwarerr\infwarerr.s
+ty
+Package: infwarerr 2019/12/03 v1.5 Providing info/warning/error messages (HO)
+)
+(C:\Users\xabie\AppData\Local\Programs\MiKTeX\tex/latex/kvsetkeys\kvsetkeys.sty
+Package: kvsetkeys 2022-10-05 v1.19 Key value parser (HO)
+)
+(C:\Users\xabie\AppData\Local\Programs\MiKTeX\tex/generic/kvdefinekeys\kvdefine
+keys.sty
+Package: kvdefinekeys 2019-12-19 v1.6 Define keys (HO)
+)
+(C:\Users\xabie\AppData\Local\Programs\MiKTeX\tex/generic/pdfescape\pdfescape.s
+ty
+Package: pdfescape 2019/12/09 v1.15 Implements pdfTeX's escape features (HO)
+
+(C:\Users\xabie\AppData\Local\Programs\MiKTeX\tex/generic/ltxcmds\ltxcmds.sty
+Package: ltxcmds 2023-12-04 v1.26 LaTeX kernel commands for general use (HO)
+)
+(C:\Users\xabie\AppData\Local\Programs\MiKTeX\tex/generic/pdftexcmds\pdftexcmds
+.sty
+Package: pdftexcmds 2020-06-27 v0.33 Utility functions of pdfTeX for LuaTeX (HO
+)
+Package pdftexcmds Info: \pdf@primitive is available.
+Package pdftexcmds Info: \pdf@ifprimitive is available.
+Package pdftexcmds Info: \pdfdraftmode not found.
+))
+(C:\Users\xabie\AppData\Local\Programs\MiKTeX\tex/latex/hycolor\hycolor.sty
+Package: hycolor 2020-01-27 v1.10 Color options for hyperref/bookmark (HO)
+)
+(C:\Users\xabie\AppData\Local\Programs\MiKTeX\tex/latex/letltxmacro\letltxmacro
+.sty
+Package: letltxmacro 2019/12/03 v1.6 Let assignment for LaTeX macros (HO)
+)
+(C:\Users\xabie\AppData\Local\Programs\MiKTeX\tex/latex/auxhook\auxhook.sty
+Package: auxhook 2019-12-17 v1.6 Hooks for auxiliary files (HO)
+)
+(C:\Users\xabie\AppData\Local\Programs\MiKTeX\tex/latex/hyperref\nameref.sty
+Package: nameref 2023-11-26 v2.56 Cross-referencing by name of section
+
+(C:\Users\xabie\AppData\Local\Programs\MiKTeX\tex/latex/refcount\refcount.sty
+Package: refcount 2019/12/15 v3.6 Data extraction from label references (HO)
+)
+(C:\Users\xabie\AppData\Local\Programs\MiKTeX\tex/generic/gettitlestring\gettit
+lestring.sty
+Package: gettitlestring 2019/12/15 v1.6 Cleanup title references (HO)
+
+(C:\Users\xabie\AppData\Local\Programs\MiKTeX\tex/latex/kvoptions\kvoptions.sty
+Package: kvoptions 2022-06-15 v3.15 Key value format for package options (HO)
+))
+\c@section@level=\count194
+)
+(C:\Users\xabie\AppData\Local\Programs\MiKTeX\tex/latex/etoolbox\etoolbox.sty
+Package: etoolbox 2020/10/05 v2.5k e-TeX tools for LaTeX (JAW)
+\etb@tempcnta=\count195
+)
+\@linkdim=\dimen149
+\Hy@linkcounter=\count196
+\Hy@pagecounter=\count197
+
+(C:\Users\xabie\AppData\Local\Programs\MiKTeX\tex/latex/hyperref\pd1enc.def
+File: pd1enc.def 2023-11-26 v7.01g Hyperref: PDFDocEncoding definition (HO)
+)
+(C:\Users\xabie\AppData\Local\Programs\MiKTeX\tex/generic/intcalc\intcalc.sty
+Package: intcalc 2019/12/15 v1.3 Expandable calculations with integers (HO)
+)
+\Hy@SavedSpaceFactor=\count198
+
+(C:\Users\xabie\AppData\Local\Programs\MiKTeX\tex/latex/hyperref\puenc.def
+File: puenc.def 2023-11-26 v7.01g Hyperref: PDF Unicode definition (HO)
+)
+Package hyperref Info: Option `colorlinks' set `true' on input line 4064.
+Package hyperref Info: Hyper figures OFF on input line 4181.
+Package hyperref Info: Link nesting OFF on input line 4186.
+Package hyperref Info: Hyper index ON on input line 4189.
+Package hyperref Info: Plain pages OFF on input line 4196.
+Package hyperref Info: Backreferencing OFF on input line 4201.
+Package hyperref Info: Implicit mode ON; LaTeX internals redefined.
+Package hyperref Info: Bookmarks ON on input line 4448.
+\c@Hy@tempcnt=\count199
+
+(C:\Users\xabie\AppData\Local\Programs\MiKTeX\tex/latex/url\url.sty
+\Urlmuskip=\muskip16
+Package: url 2013/09/16  ver 3.4  Verb mode for urls, etc.
+)
+LaTeX Info: Redefining \url on input line 4786.
+\XeTeXLinkMargin=\dimen150
+
+(C:\Users\xabie\AppData\Local\Programs\MiKTeX\tex/generic/bitset\bitset.sty
+Package: bitset 2019/12/09 v1.3 Handle bit-vector datatype (HO)
+
+(C:\Users\xabie\AppData\Local\Programs\MiKTeX\tex/generic/bigintcalc\bigintcalc
+.sty
+Package: bigintcalc 2019/12/15 v1.5 Expandable calculations on big integers (HO
+)
+))
+\Fld@menulength=\count266
+\Field@Width=\dimen151
+\Fld@charsize=\dimen152
+Package hyperref Info: Hyper figures OFF on input line 6065.
+Package hyperref Info: Link nesting OFF on input line 6070.
+Package hyperref Info: Hyper index ON on input line 6073.
+Package hyperref Info: backreferencing OFF on input line 6080.
+Package hyperref Info: Link coloring ON on input line 6083.
+Package hyperref Info: Link coloring with OCG OFF on input line 6090.
+Package hyperref Info: PDF/A mode OFF on input line 6095.
+
+(C:\Users\xabie\AppData\Local\Programs\MiKTeX\tex/latex/base\atbegshi-ltx.sty
+Package: atbegshi-ltx 2021/01/10 v1.0c Emulation of the original atbegshi
+package with kernel methods
+)
+\Hy@abspage=\count267
+\c@Item=\count268
+\c@Hfootnote=\count269
+)
+Package hyperref Info: Driver (autodetected): hxetex.
+(C:\Users\xabie\AppData\Local\Programs\MiKTeX\tex/latex/hyperref\hxetex.def
+File: hxetex.def 2023-11-26 v7.01g Hyperref driver for XeTeX
+
+(C:\Users\xabie\AppData\Local\Programs\MiKTeX\tex/generic/stringenc\stringenc.s
+ty
+Package: stringenc 2019/11/29 v1.12 Convert strings between diff. encodings (HO
+)
+)
+\pdfm@box=\box51
+\c@Hy@AnnotLevel=\count270
+\HyField@AnnotCount=\count271
+\Fld@listcount=\count272
+\c@bookmark@seq@number=\count273
+
+(C:\Users\xabie\AppData\Local\Programs\MiKTeX\tex/latex/rerunfilecheck\rerunfil
+echeck.sty
+Package: rerunfilecheck 2025-06-21 v1.11 Rerun checks for auxiliary files (HO)
+
+(C:\Users\xabie\AppData\Local\Programs\MiKTeX\tex/generic/uniquecounter\uniquec
+ounter.sty
+Package: uniquecounter 2019/12/15 v1.4 Provide unlimited unique counter (HO)
+)
+Package uniquecounter Info: New unique counter `rerunfilecheck' on input line 2
+84.
+)
+\Hy@SectionHShift=\skip50
+)
+(C:\Users\xabie\AppData\Local\Programs\MiKTeX\tex/latex/tocloft\tocloft.sty
+Package: tocloft 2017/08/31 v2.3i parameterised ToC, etc., typesetting
+Package tocloft Info: The document has section divisions on input line 51.
+\cftparskip=\skip51
+\cftbeforetoctitleskip=\skip52
+\cftaftertoctitleskip=\skip53
+\cftbeforepartskip=\skip54
+\cftpartnumwidth=\skip55
+\cftpartindent=\skip56
+\cftbeforesecskip=\skip57
+\cftsecindent=\skip58
+\cftsecnumwidth=\skip59
+\cftbeforesubsecskip=\skip60
+\cftsubsecindent=\skip61
+\cftsubsecnumwidth=\skip62
+\cftbeforesubsubsecskip=\skip63
+\cftsubsubsecindent=\skip64
+\cftsubsubsecnumwidth=\skip65
+\cftbeforeparaskip=\skip66
+\cftparaindent=\skip67
+\cftparanumwidth=\skip68
+\cftbeforesubparaskip=\skip69
+\cftsubparaindent=\skip70
+\cftsubparanumwidth=\skip71
+\cftbeforeloftitleskip=\skip72
+\cftafterloftitleskip=\skip73
+\cftbeforefigskip=\skip74
+\cftfigindent=\skip75
+\cftfignumwidth=\skip76
+\c@lofdepth=\count274
+\c@lotdepth=\count275
+\cftbeforelottitleskip=\skip77
+\cftafterlottitleskip=\skip78
+\cftbeforetabskip=\skip79
+\cfttabindent=\skip80
+\cfttabnumwidth=\skip81
+)
+(C:\Users\xabie\AppData\Local\Programs\MiKTeX\tex/latex/amsfonts\amssymb.sty
+Package: amssymb 2013/01/14 v3.01 AMS font symbols
+
+(C:\Users\xabie\AppData\Local\Programs\MiKTeX\tex/latex/amsfonts\amsfonts.sty
+Package: amsfonts 2013/01/14 v3.01 Basic AMSFonts support
+\@emptytoks=\toks21
+\symAMSa=\mathgroup4
+\symAMSb=\mathgroup5
+LaTeX Font Info:    Redeclaring math symbol \hbar on input line 98.
+LaTeX Font Info:    Overwriting math alphabet `\mathfrak' in version `bold'
+(Font)                  U/euf/m/n --> U/euf/b/n on input line 106.
+)) (C:\Users\xabie\AppData\Local\Programs\MiKTeX\tex/latex/jknappen\mathrsfs.st
+y
+Package: mathrsfs 1996/01/01 Math RSFS package v1.0 (jk)
+\symrsfs=\mathgroup6
+) (C:\Users\xabie\AppData\Local\Programs\MiKTeX\tex/latex/amscls\amsthm.sty
+Package: amsthm 2020/05/29 v2.20.6
+\thm@style=\toks22
+\thm@bodyfont=\toks23
+\thm@headfont=\toks24
+\thm@notefont=\toks25
+\thm@headpunct=\toks26
+\thm@preskip=\skip82
+\thm@postskip=\skip83
+\thm@headsep=\skip84
+\dth@everypar=\toks27
+)
+(C:\Users\xabie\AppData\Local\Programs\MiKTeX\tex/latex/amsmath\amsmath.sty
+Package: amsmath 2023/05/13 v2.17o AMS math features
+\@mathmargin=\skip85
+
+For additional information on amsmath, use the `?' option.
+(C:\Users\xabie\AppData\Local\Programs\MiKTeX\tex/latex/amsmath\amstext.sty
+Package: amstext 2021/08/26 v2.01 AMS text
+
+(C:\Users\xabie\AppData\Local\Programs\MiKTeX\tex/latex/amsmath\amsgen.sty
+File: amsgen.sty 1999/11/30 v2.0 generic functions
+\@emptytoks=\toks28
+\ex@=\dimen153
+))
+(C:\Users\xabie\AppData\Local\Programs\MiKTeX\tex/latex/amsmath\amsbsy.sty
+Package: amsbsy 1999/11/29 v1.2d Bold Symbols
+\pmbraise@=\dimen154
+)
+(C:\Users\xabie\AppData\Local\Programs\MiKTeX\tex/latex/amsmath\amsopn.sty
+Package: amsopn 2022/04/08 v2.04 operator names
+)
+\inf@bad=\count276
+LaTeX Info: Redefining \frac on input line 234.
+\uproot@=\count277
+\leftroot@=\count278
+LaTeX Info: Redefining \overline on input line 399.
+LaTeX Info: Redefining \colon on input line 410.
+\classnum@=\count279
+\DOTSCASE@=\count280
+LaTeX Info: Redefining \ldots on input line 496.
+LaTeX Info: Redefining \dots on input line 499.
+LaTeX Info: Redefining \cdots on input line 620.
+\Mathstrutbox@=\box52
+\strutbox@=\box53
+LaTeX Info: Redefining \big on input line 722.
+LaTeX Info: Redefining \Big on input line 723.
+LaTeX Info: Redefining \bigg on input line 724.
+LaTeX Info: Redefining \Bigg on input line 725.
+\big@size=\dimen155
+LaTeX Font Info:    Redeclaring font encoding OML on input line 743.
+LaTeX Font Info:    Redeclaring font encoding OMS on input line 744.
+\macc@depth=\count281
+LaTeX Info: Redefining \bmod on input line 905.
+LaTeX Info: Redefining \pmod on input line 910.
+LaTeX Info: Redefining \smash on input line 940.
+LaTeX Info: Redefining \relbar on input line 970.
+LaTeX Info: Redefining \Relbar on input line 971.
+\c@MaxMatrixCols=\count282
+\dotsspace@=\muskip17
+\c@parentequation=\count283
+\dspbrk@lvl=\count284
+\tag@help=\toks29
+\row@=\count285
+\column@=\count286
+\maxfields@=\count287
+\andhelp@=\toks30
+\eqnshift@=\dimen156
+\alignsep@=\dimen157
+\tagshift@=\dimen158
+\tagwidth@=\dimen159
+\totwidth@=\dimen160
+\lineht@=\dimen161
+\@envbody=\toks31
+\multlinegap=\skip86
+\multlinetaggap=\skip87
+\mathdisplay@stack=\toks32
+LaTeX Info: Redefining \[ on input line 2953.
+LaTeX Info: Redefining \] on input line 2954.
+)
+(C:\Users\xabie\AppData\Local\Programs\MiKTeX\tex/latex/multirow\multirow.sty
+Package: multirow 2024/11/12 v2.9 Span multiple rows of a table
+\multirow@colwidth=\skip88
+\multirow@cntb=\count288
+\multirow@dima=\skip89
+\bigstrutjot=\dimen162
+)
+(C:\Users\xabie\AppData\Local\Programs\MiKTeX\tex/latex/adjustbox\adjustbox.sty
+Package: adjustbox 2025/02/26 v1.3c Adjusting TeX boxes (trim, clip, ...)
+(C:\Users\xabie\AppData\Local\Programs\MiKTeX\tex/latex/xkeyval\xkeyval.sty
+Package: xkeyval 2022/06/16 v2.9 package option processing (HA)
+
+(C:\Users\xabie\AppData\Local\Programs\MiKTeX\tex/generic/xkeyval\xkeyval.tex
+(C:\Users\xabie\AppData\Local\Programs\MiKTeX\tex/generic/xkeyval\xkvutils.tex
+\XKV@toks=\toks33
+\XKV@tempa@toks=\toks34
+)
+\XKV@depth=\count289
+File: xkeyval.tex 2014/12/03 v2.7a key=value parser (HA)
+))
+(C:\Users\xabie\AppData\Local\Programs\MiKTeX\tex/latex/adjustbox\adjcalc.sty
+Package: adjcalc 2012/05/16 v1.1 Provides advanced setlength with multiple back
+-ends (calc, etex, pgfmath)
+)
+(C:\Users\xabie\AppData\Local\Programs\MiKTeX\tex/latex/adjustbox\trimclip.sty
+Package: trimclip 2025/02/21 v1.2a Trim and clip general TeX material
+
+(C:\Users\xabie\AppData\Local\Programs\MiKTeX\tex/latex/graphics\graphicx.sty
+Package: graphicx 2021/09/16 v1.2d Enhanced LaTeX Graphics (DPC,SPQR)
+
+(C:\Users\xabie\AppData\Local\Programs\MiKTeX\tex/latex/graphics\graphics.sty
+Package: graphics 2022/03/10 v1.4e Standard LaTeX Graphics (DPC,SPQR)
+
+(C:\Users\xabie\AppData\Local\Programs\MiKTeX\tex/latex/graphics\trig.sty
+Package: trig 2021/08/11 v1.11 sin cos tan (DPC)
+)
+(C:\Users\xabie\AppData\Local\Programs\MiKTeX\tex/latex/graphics-cfg\graphics.c
+fg
+File: graphics.cfg 2016/06/04 v1.11 sample graphics configuration
+)
+Package graphics Info: Driver file: xetex.def on input line 107.
+)
+\Gin@req@height=\dimen163
+\Gin@req@width=\dimen164
+)
+(C:\Users\xabie\AppData\Local\Programs\MiKTeX\tex/latex/collectbox\collectbox.s
+ty
+Package: collectbox 2022/10/17 v0.4c Collect macro arguments as boxes
+\collectedbox=\box54
+)
+\tc@llx=\dimen165
+\tc@lly=\dimen166
+\tc@urx=\dimen167
+\tc@ury=\dimen168
+Package trimclip Info: Using driver 'tc-xetex.def'.
+
+(C:\Users\xabie\AppData\Local\Programs\MiKTeX\tex/latex/adjustbox\tc-xetex.def
+File: tc-xetex.def 2019/01/04 v2.2 Clipping driver for xetex
+))
+\adjbox@Width=\dimen169
+\adjbox@Height=\dimen170
+\adjbox@Depth=\dimen171
+\adjbox@Totalheight=\dimen172
+\adjbox@pwidth=\dimen173
+\adjbox@pheight=\dimen174
+\adjbox@pdepth=\dimen175
+\adjbox@ptotalheight=\dimen176
+
+(C:\Users\xabie\AppData\Local\Programs\MiKTeX\tex/latex/ifoddpage\ifoddpage.sty
+Package: ifoddpage 2022/10/18 v1.2 Conditionals for odd/even page detection
+\c@checkoddpage=\count290
+) (C:\Users\xabie\AppData\Local\Programs\MiKTeX\tex/latex/varwidth\varwidth.sty
+Package: varwidth 2009/03/30 ver 0.92;  Variable-width minipages
+\@vwid@box=\box55
+\sift@deathcycles=\count291
+\@vwid@loff=\dimen177
+\@vwid@roff=\dimen178
+))
+(C:\Users\xabie\AppData\Local\Programs\MiKTeX\tex/latex/pgf/frontendlayer\tikz.
+sty
+(C:\Users\xabie\AppData\Local\Programs\MiKTeX\tex/latex/pgf/basiclayer\pgf.sty
+(C:\Users\xabie\AppData\Local\Programs\MiKTeX\tex/latex/pgf/utilities\pgfrcs.st
+y
+(C:\Users\xabie\AppData\Local\Programs\MiKTeX\tex/generic/pgf/utilities\pgfutil
+-common.tex
+\pgfutil@everybye=\toks35
+\pgfutil@tempdima=\dimen179
+\pgfutil@tempdimb=\dimen180
+)
+(C:\Users\xabie\AppData\Local\Programs\MiKTeX\tex/generic/pgf/utilities\pgfutil
+-latex.def
+\pgfutil@abb=\box56
+)
+(C:\Users\xabie\AppData\Local\Programs\MiKTeX\tex/generic/pgf/utilities\pgfrcs.
+code.tex
+(C:\Users\xabie\AppData\Local\Programs\MiKTeX\tex/generic/pgf\pgf.revision.tex)
+Package: pgfrcs 2023-01-15 v3.1.10 (3.1.10)
+))
+Package: pgf 2023-01-15 v3.1.10 (3.1.10)
+
+(C:\Users\xabie\AppData\Local\Programs\MiKTeX\tex/latex/pgf/basiclayer\pgfcore.
+sty
+(C:\Users\xabie\AppData\Local\Programs\MiKTeX\tex/latex/pgf/systemlayer\pgfsys.
+sty
+(C:\Users\xabie\AppData\Local\Programs\MiKTeX\tex/generic/pgf/systemlayer\pgfsy
+s.code.tex
+Package: pgfsys 2023-01-15 v3.1.10 (3.1.10)
+
+(C:\Users\xabie\AppData\Local\Programs\MiKTeX\tex/generic/pgf/utilities\pgfkeys
+.code.tex
+\pgfkeys@pathtoks=\toks36
+\pgfkeys@temptoks=\toks37
+
+(C:\Users\xabie\AppData\Local\Programs\MiKTeX\tex/generic/pgf/utilities\pgfkeys
+libraryfiltered.code.tex
+\pgfkeys@tmptoks=\toks38
+))
+\pgf@x=\dimen181
+\pgf@y=\dimen182
+\pgf@xa=\dimen183
+\pgf@ya=\dimen184
+\pgf@xb=\dimen185
+\pgf@yb=\dimen186
+\pgf@xc=\dimen187
+\pgf@yc=\dimen188
+\pgf@xd=\dimen189
+\pgf@yd=\dimen190
+\w@pgf@writea=\write3
+\r@pgf@reada=\read2
+\c@pgf@counta=\count292
+\c@pgf@countb=\count293
+\c@pgf@countc=\count294
+\c@pgf@countd=\count295
+\t@pgf@toka=\toks39
+\t@pgf@tokb=\toks40
+\t@pgf@tokc=\toks41
+\pgf@sys@id@count=\count296
+
+(C:\Users\xabie\AppData\Local\Programs\MiKTeX\tex/generic/pgf/systemlayer\pgf.c
+fg
+File: pgf.cfg 2023-01-15 v3.1.10 (3.1.10)
+)
+Driver file for pgf: pgfsys-xetex.def
+
+(C:\Users\xabie\AppData\Local\Programs\MiKTeX\tex/generic/pgf/systemlayer\pgfsy
+s-xetex.def
+File: pgfsys-xetex.def 2023-01-15 v3.1.10 (3.1.10)
+
+(C:\Users\xabie\AppData\Local\Programs\MiKTeX\tex/generic/pgf/systemlayer\pgfsy
+s-dvipdfmx.def
+File: pgfsys-dvipdfmx.def 2023-01-15 v3.1.10 (3.1.10)
+
+(C:\Users\xabie\AppData\Local\Programs\MiKTeX\tex/generic/pgf/systemlayer\pgfsy
+s-common-pdf.def
+File: pgfsys-common-pdf.def 2023-01-15 v3.1.10 (3.1.10)
+)
+\pgfsys@objnum=\count297
+)))
+(C:\Users\xabie\AppData\Local\Programs\MiKTeX\tex/generic/pgf/systemlayer\pgfsy
+ssoftpath.code.tex
+File: pgfsyssoftpath.code.tex 2023-01-15 v3.1.10 (3.1.10)
+\pgfsyssoftpath@smallbuffer@items=\count298
+\pgfsyssoftpath@bigbuffer@items=\count299
+)
+(C:\Users\xabie\AppData\Local\Programs\MiKTeX\tex/generic/pgf/systemlayer\pgfsy
+sprotocol.code.tex
+File: pgfsysprotocol.code.tex 2023-01-15 v3.1.10 (3.1.10)
+))
+(C:\Users\xabie\AppData\Local\Programs\MiKTeX\tex/generic/pgf/basiclayer\pgfcor
+e.code.tex
+Package: pgfcore 2023-01-15 v3.1.10 (3.1.10)
+
+(C:\Users\xabie\AppData\Local\Programs\MiKTeX\tex/generic/pgf/math\pgfmath.code
+.tex
+(C:\Users\xabie\AppData\Local\Programs\MiKTeX\tex/generic/pgf/math\pgfmathutil.
+code.tex)
+(C:\Users\xabie\AppData\Local\Programs\MiKTeX\tex/generic/pgf/math\pgfmathparse
+r.code.tex
+\pgfmath@dimen=\dimen191
+\pgfmath@count=\count300
+\pgfmath@box=\box57
+\pgfmath@toks=\toks42
+\pgfmath@stack@operand=\toks43
+\pgfmath@stack@operation=\toks44
+)
+(C:\Users\xabie\AppData\Local\Programs\MiKTeX\tex/generic/pgf/math\pgfmathfunct
+ions.code.tex)
+(C:\Users\xabie\AppData\Local\Programs\MiKTeX\tex/generic/pgf/math\pgfmathfunct
+ions.basic.code.tex)
+(C:\Users\xabie\AppData\Local\Programs\MiKTeX\tex/generic/pgf/math\pgfmathfunct
+ions.trigonometric.code.tex)
+(C:\Users\xabie\AppData\Local\Programs\MiKTeX\tex/generic/pgf/math\pgfmathfunct
+ions.random.code.tex)
+(C:\Users\xabie\AppData\Local\Programs\MiKTeX\tex/generic/pgf/math\pgfmathfunct
+ions.comparison.code.tex)
+(C:\Users\xabie\AppData\Local\Programs\MiKTeX\tex/generic/pgf/math\pgfmathfunct
+ions.base.code.tex)
+(C:\Users\xabie\AppData\Local\Programs\MiKTeX\tex/generic/pgf/math\pgfmathfunct
+ions.round.code.tex)
+(C:\Users\xabie\AppData\Local\Programs\MiKTeX\tex/generic/pgf/math\pgfmathfunct
+ions.misc.code.tex)
+(C:\Users\xabie\AppData\Local\Programs\MiKTeX\tex/generic/pgf/math\pgfmathfunct
+ions.integerarithmetics.code.tex)
+(C:\Users\xabie\AppData\Local\Programs\MiKTeX\tex/generic/pgf/math\pgfmathcalc.
+code.tex)
+(C:\Users\xabie\AppData\Local\Programs\MiKTeX\tex/generic/pgf/math\pgfmathfloat
+.code.tex
+\c@pgfmathroundto@lastzeros=\count301
+))
+(C:\Users\xabie\AppData\Local\Programs\MiKTeX\tex/generic/pgf/math\pgfint.code.
+tex)
+(C:\Users\xabie\AppData\Local\Programs\MiKTeX\tex/generic/pgf/basiclayer\pgfcor
+epoints.code.tex
+File: pgfcorepoints.code.tex 2023-01-15 v3.1.10 (3.1.10)
+\pgf@picminx=\dimen192
+\pgf@picmaxx=\dimen193
+\pgf@picminy=\dimen194
+\pgf@picmaxy=\dimen195
+\pgf@pathminx=\dimen196
+\pgf@pathmaxx=\dimen197
+\pgf@pathminy=\dimen198
+\pgf@pathmaxy=\dimen199
+\pgf@xx=\dimen256
+\pgf@xy=\dimen257
+\pgf@yx=\dimen258
+\pgf@yy=\dimen259
+\pgf@zx=\dimen260
+\pgf@zy=\dimen261
+)
+(C:\Users\xabie\AppData\Local\Programs\MiKTeX\tex/generic/pgf/basiclayer\pgfcor
+epathconstruct.code.tex
+File: pgfcorepathconstruct.code.tex 2023-01-15 v3.1.10 (3.1.10)
+\pgf@path@lastx=\dimen262
+\pgf@path@lasty=\dimen263
+)
+(C:\Users\xabie\AppData\Local\Programs\MiKTeX\tex/generic/pgf/basiclayer\pgfcor
+epathusage.code.tex
+File: pgfcorepathusage.code.tex 2023-01-15 v3.1.10 (3.1.10)
+\pgf@shorten@end@additional=\dimen264
+\pgf@shorten@start@additional=\dimen265
+)
+(C:\Users\xabie\AppData\Local\Programs\MiKTeX\tex/generic/pgf/basiclayer\pgfcor
+escopes.code.tex
+File: pgfcorescopes.code.tex 2023-01-15 v3.1.10 (3.1.10)
+\pgfpic=\box58
+\pgf@hbox=\box59
+\pgf@layerbox@main=\box60
+\pgf@picture@serial@count=\count302
+)
+(C:\Users\xabie\AppData\Local\Programs\MiKTeX\tex/generic/pgf/basiclayer\pgfcor
+egraphicstate.code.tex
+File: pgfcoregraphicstate.code.tex 2023-01-15 v3.1.10 (3.1.10)
+\pgflinewidth=\dimen266
+)
+(C:\Users\xabie\AppData\Local\Programs\MiKTeX\tex/generic/pgf/basiclayer\pgfcor
+etransformations.code.tex
+File: pgfcoretransformations.code.tex 2023-01-15 v3.1.10 (3.1.10)
+\pgf@pt@x=\dimen267
+\pgf@pt@y=\dimen268
+\pgf@pt@temp=\dimen269
+)
+(C:\Users\xabie\AppData\Local\Programs\MiKTeX\tex/generic/pgf/basiclayer\pgfcor
+equick.code.tex
+File: pgfcorequick.code.tex 2023-01-15 v3.1.10 (3.1.10)
+)
+(C:\Users\xabie\AppData\Local\Programs\MiKTeX\tex/generic/pgf/basiclayer\pgfcor
+eobjects.code.tex
+File: pgfcoreobjects.code.tex 2023-01-15 v3.1.10 (3.1.10)
+)
+(C:\Users\xabie\AppData\Local\Programs\MiKTeX\tex/generic/pgf/basiclayer\pgfcor
+epathprocessing.code.tex
+File: pgfcorepathprocessing.code.tex 2023-01-15 v3.1.10 (3.1.10)
+)
+(C:\Users\xabie\AppData\Local\Programs\MiKTeX\tex/generic/pgf/basiclayer\pgfcor
+earrows.code.tex
+File: pgfcorearrows.code.tex 2023-01-15 v3.1.10 (3.1.10)
+\pgfarrowsep=\dimen270
+)
+(C:\Users\xabie\AppData\Local\Programs\MiKTeX\tex/generic/pgf/basiclayer\pgfcor
+eshade.code.tex
+File: pgfcoreshade.code.tex 2023-01-15 v3.1.10 (3.1.10)
+\pgf@max=\dimen271
+\pgf@sys@shading@range@num=\count303
+\pgf@shadingcount=\count304
+)
+(C:\Users\xabie\AppData\Local\Programs\MiKTeX\tex/generic/pgf/basiclayer\pgfcor
+eimage.code.tex
+File: pgfcoreimage.code.tex 2023-01-15 v3.1.10 (3.1.10)
+)
+(C:\Users\xabie\AppData\Local\Programs\MiKTeX\tex/generic/pgf/basiclayer\pgfcor
+eexternal.code.tex
+File: pgfcoreexternal.code.tex 2023-01-15 v3.1.10 (3.1.10)
+\pgfexternal@startupbox=\box61
+)
+(C:\Users\xabie\AppData\Local\Programs\MiKTeX\tex/generic/pgf/basiclayer\pgfcor
+elayers.code.tex
+File: pgfcorelayers.code.tex 2023-01-15 v3.1.10 (3.1.10)
+)
+(C:\Users\xabie\AppData\Local\Programs\MiKTeX\tex/generic/pgf/basiclayer\pgfcor
+etransparency.code.tex
+File: pgfcoretransparency.code.tex 2023-01-15 v3.1.10 (3.1.10)
+)
+(C:\Users\xabie\AppData\Local\Programs\MiKTeX\tex/generic/pgf/basiclayer\pgfcor
+epatterns.code.tex
+File: pgfcorepatterns.code.tex 2023-01-15 v3.1.10 (3.1.10)
+)
+(C:\Users\xabie\AppData\Local\Programs\MiKTeX\tex/generic/pgf/basiclayer\pgfcor
+erdf.code.tex
+File: pgfcorerdf.code.tex 2023-01-15 v3.1.10 (3.1.10)
+)))
+(C:\Users\xabie\AppData\Local\Programs\MiKTeX\tex/generic/pgf/modules\pgfmodule
+shapes.code.tex
+File: pgfmoduleshapes.code.tex 2023-01-15 v3.1.10 (3.1.10)
+\pgfnodeparttextbox=\box62
+)
+(C:\Users\xabie\AppData\Local\Programs\MiKTeX\tex/generic/pgf/modules\pgfmodule
+plot.code.tex
+File: pgfmoduleplot.code.tex 2023-01-15 v3.1.10 (3.1.10)
+)
+(C:\Users\xabie\AppData\Local\Programs\MiKTeX\tex/latex/pgf/compatibility\pgfco
+mp-version-0-65.sty
+Package: pgfcomp-version-0-65 2023-01-15 v3.1.10 (3.1.10)
+\pgf@nodesepstart=\dimen272
+\pgf@nodesepend=\dimen273
+)
+(C:\Users\xabie\AppData\Local\Programs\MiKTeX\tex/latex/pgf/compatibility\pgfco
+mp-version-1-18.sty
+Package: pgfcomp-version-1-18 2023-01-15 v3.1.10 (3.1.10)
+))
+(C:\Users\xabie\AppData\Local\Programs\MiKTeX\tex/latex/pgf/utilities\pgffor.st
+y
+(C:\Users\xabie\AppData\Local\Programs\MiKTeX\tex/latex/pgf/utilities\pgfkeys.s
+ty
+(C:\Users\xabie\AppData\Local\Programs\MiKTeX\tex/generic/pgf/utilities\pgfkeys
+.code.tex))
+(C:\Users\xabie\AppData\Local\Programs\MiKTeX\tex/latex/pgf/math\pgfmath.sty
+(C:\Users\xabie\AppData\Local\Programs\MiKTeX\tex/generic/pgf/math\pgfmath.code
+.tex))
+(C:\Users\xabie\AppData\Local\Programs\MiKTeX\tex/generic/pgf/utilities\pgffor.
+code.tex
+Package: pgffor 2023-01-15 v3.1.10 (3.1.10)
+\pgffor@iter=\dimen274
+\pgffor@skip=\dimen275
+\pgffor@stack=\toks45
+\pgffor@toks=\toks46
+))
+(C:\Users\xabie\AppData\Local\Programs\MiKTeX\tex/generic/pgf/frontendlayer/tik
+z\tikz.code.tex
+Package: tikz 2023-01-15 v3.1.10 (3.1.10)
+
+(C:\Users\xabie\AppData\Local\Programs\MiKTeX\tex/generic/pgf/libraries\pgflibr
+aryplothandlers.code.tex
+File: pgflibraryplothandlers.code.tex 2023-01-15 v3.1.10 (3.1.10)
+\pgf@plot@mark@count=\count305
+\pgfplotmarksize=\dimen276
+)
+\tikz@lastx=\dimen277
+\tikz@lasty=\dimen278
+\tikz@lastxsaved=\dimen279
+\tikz@lastysaved=\dimen280
+\tikz@lastmovetox=\dimen281
+\tikz@lastmovetoy=\dimen282
+\tikzleveldistance=\dimen283
+\tikzsiblingdistance=\dimen284
+\tikz@figbox=\box63
+\tikz@figbox@bg=\box64
+\tikz@tempbox=\box65
+\tikz@tempbox@bg=\box66
+\tikztreelevel=\count306
+\tikznumberofchildren=\count307
+\tikznumberofcurrentchild=\count308
+\tikz@fig@count=\count309
+
+(C:\Users\xabie\AppData\Local\Programs\MiKTeX\tex/generic/pgf/modules\pgfmodule
+matrix.code.tex
+File: pgfmodulematrix.code.tex 2023-01-15 v3.1.10 (3.1.10)
+\pgfmatrixcurrentrow=\count310
+\pgfmatrixcurrentcolumn=\count311
+\pgf@matrix@numberofcolumns=\count312
+)
+\tikz@expandcount=\count313
+
+(C:\Users\xabie\AppData\Local\Programs\MiKTeX\tex/generic/pgf/frontendlayer/tik
+z/libraries\tikzlibrarytopaths.code.tex
+File: tikzlibrarytopaths.code.tex 2023-01-15 v3.1.10 (3.1.10)
+)))
+(C:\Users\xabie\AppData\Local\Programs\MiKTeX\tex/latex/lineno\lineno.sty
+Package: lineno 2025/05/13 line numbers on paragraphs v5.5
+\linenopenalty=\count314
+\output=\toks47
+\linenoprevgraf=\count315
+\linenumbersep=\dimen285
+\linenumberwidth=\dimen286
+\c@linenumber=\count316
+\c@pagewiselinenumber=\count317
+\c@LN@truepage=\count318
+\c@internallinenumber=\count319
+\c@internallinenumbers=\count320
+\quotelinenumbersep=\dimen287
+\bframerule=\dimen288
+\bframesep=\dimen289
+\bframebox=\box67
+\@LN@amsmath@ams@eqpen=\count321
+)
+(C:\Users\xabie\AppData\Local\Programs\MiKTeX\tex/latex/ragged2e\ragged2e.sty
+Package: ragged2e 2023/06/22 v3.6 ragged2e Package
+\CenteringLeftskip=\skip90
+\RaggedLeftLeftskip=\skip91
+\RaggedRightLeftskip=\skip92
+\CenteringRightskip=\skip93
+\RaggedLeftRightskip=\skip94
+\RaggedRightRightskip=\skip95
+\CenteringParfillskip=\skip96
+\RaggedLeftParfillskip=\skip97
+\RaggedRightParfillskip=\skip98
+\JustifyingParfillskip=\skip99
+\CenteringParindent=\skip100
+\RaggedLeftParindent=\skip101
+\RaggedRightParindent=\skip102
+\JustifyingParindent=\skip103
+)
+(C:\Users\xabie\AppData\Local\Programs\MiKTeX\tex/latex/sidecap\sidecap.sty
+Package: sidecap 2023/01/24 v1.7a SideCap Package (RN/HjG)
+
+(C:\Users\xabie\AppData\Local\Programs\MiKTeX\tex/latex/base\ifthen.sty
+Package: ifthen 2022/04/13 v1.1d Standard LaTeX ifthen package (DPC)
+)
+\SC@BOXWD=\dimen290
+\SC@CAPWD=\dimen291
+\SC@tempdima=\dimen292
+\SC@tempdimb=\dimen293
+\c@SC@C=\count322
+\SC@BOX=\box68
+)
+(C:\Users\xabie\AppData\Local\Programs\MiKTeX\tex/latex/lipsum\lipsum.sty
+(C:\Users\xabie\AppData\Local\Programs\MiKTeX\tex/latex/l3packages/l3keys2e\l3k
+eys2e.sty
+(C:\Users\xabie\AppData\Local\Programs\MiKTeX\tex/latex/l3kernel\expl3.sty
+Package: expl3 2024-01-04 L3 programming layer (loader) 
+
+(C:\Users\xabie\AppData\Local\Programs\MiKTeX\tex/latex/l3backend\l3backend-xet
+ex.def
+File: l3backend-xetex.def 2024-01-04 L3 backend support: XeTeX
+\g__graphics_track_int=\count323
+\l__pdf_internal_box=\box69
+\g__pdf_backend_object_int=\count324
+\g__pdf_backend_annotation_int=\count325
+\g__pdf_backend_link_int=\count326
+))
+Package: l3keys2e 2023-10-10 LaTeX2e option processing using LaTeX3 keys
+)
+Package: lipsum 2021-09-20 v2.7 150 paragraphs of Lorem Ipsum dummy text
+\g__lipsum_par_int=\count327
+\l__lipsum_a_int=\count328
+\l__lipsum_b_int=\count329
+
+(C:\Users\xabie\AppData\Local\Programs\MiKTeX\tex/latex/lipsum\lipsum.ltd.tex))
+(C:\Users\xabie\AppData\Local\Programs\MiKTeX\tex/latex/framed\framed.sty
+Package: framed 2011/10/22 v 0.96: framed or shaded text with page breaks
+\OuterFrameSep=\skip104
+\fb@frw=\dimen294
+\fb@frh=\dimen295
+\FrameRule=\dimen296
+\FrameSep=\dimen297
+)
+(C:\Users\xabie\AppData\Local\Programs\MiKTeX\tex/latex/caption\subcaption.sty
+Package: subcaption 2023/07/28 v1.6b Sub-captions (AR)
+
+(C:\Users\xabie\AppData\Local\Programs\MiKTeX\tex/latex/caption\caption.sty
+Package: caption 2023/08/05 v3.6o Customizing captions (AR)
+
+(C:\Users\xabie\AppData\Local\Programs\MiKTeX\tex/latex/caption\caption3.sty
+Package: caption3 2023/07/31 v2.4d caption3 kernel (AR)
+\caption@tempdima=\dimen298
+\captionmargin=\dimen299
+\caption@leftmargin=\dimen300
+\caption@rightmargin=\dimen301
+\caption@width=\dimen302
+\caption@indent=\dimen303
+\caption@parindent=\dimen304
+\caption@hangindent=\dimen305
+Package caption Info: Standard document class detected.
+)
+\c@caption@flags=\count330
+\c@continuedfloat=\count331
+Package caption Info: hyperref package is loaded.
+Package caption Info: sidecap package is loaded.
+)
+Package caption Info: New subtype `subfigure' on input line 238.
+\c@subfigure=\count332
+Package caption Info: New subtype `subtable' on input line 238.
+\c@subtable=\count333
+) (C:\Users\xabie\AppData\Local\Programs\MiKTeX\tex/latex/tools\afterpage.sty
+Package: afterpage 2023/07/04 v1.08 After-Page Package (DPC)
+\AP@output=\toks48
+\AP@partial=\box70
+\AP@footins=\box71
+)
+(C:\Users\xabie\AppData\Local\Programs\MiKTeX\tex/latex/fancyhdr\fancyhdr.sty
+Package: fancyhdr 2025/02/07 v5.2 Extensive control of page headers and footers
+
+\f@nch@headwidth=\skip105
+\f@nch@offset@elh=\skip106
+\f@nch@offset@erh=\skip107
+\f@nch@offset@olh=\skip108
+\f@nch@offset@orh=\skip109
+\f@nch@offset@elf=\skip110
+\f@nch@offset@erf=\skip111
+\f@nch@offset@olf=\skip112
+\f@nch@offset@orf=\skip113
+\f@nch@height=\skip114
+\f@nch@footalignment=\skip115
+\f@nch@widthL=\skip116
+\f@nch@widthC=\skip117
+\f@nch@widthR=\skip118
+\@temptokenb=\toks49
+)
+(C:\Users\xabie\AppData\Local\Programs\MiKTeX\tex/latex/fancyvrb\fancyvrb.sty
+Package: fancyvrb 2025/07/28 4.6 verbatim text (tvz,hv)
+\FV@CodeLineNo=\count334
+\FV@InFile=\read3
+\FV@TabBox=\box72
+\c@FancyVerbLine=\count335
+\FV@StepNumber=\count336
+\FV@OutFile=\write4
+)
+(C:\Users\xabie\AppData\Local\Programs\MiKTeX\tex/latex/fontspec\fontspec.sty
+(C:\Users\xabie\AppData\Local\Programs\MiKTeX\tex/latex/l3packages/xparse\xpars
+e.sty
+Package: xparse 2023-10-10 L3 Experimental document command parser
+)
+Package: fontspec 2022/01/15 v2.8a Font selection for XeLaTeX and LuaLaTeX
+
+(C:\Users\xabie\AppData\Local\Programs\MiKTeX\tex/latex/fontspec\fontspec-xetex
+.sty
+Package: fontspec-xetex 2022/01/15 v2.8a Font selection for XeLaTeX and LuaLaTe
+X
+\l__fontspec_script_int=\count337
+\l__fontspec_language_int=\count338
+\l__fontspec_strnum_int=\count339
+\l__fontspec_tmp_int=\count340
+\l__fontspec_tmpa_int=\count341
+\l__fontspec_tmpb_int=\count342
+\l__fontspec_tmpc_int=\count343
+\l__fontspec_em_int=\count344
+\l__fontspec_emdef_int=\count345
+\l__fontspec_strong_int=\count346
+\l__fontspec_strongdef_int=\count347
+\l__fontspec_tmpa_dim=\dimen306
+\l__fontspec_tmpb_dim=\dimen307
+\l__fontspec_tmpc_dim=\dimen308
+ (C:\Users\xabie\AppData\Local\Programs\MiKTeX\tex/latex/base\fontenc.sty
+Package: fontenc 2021/04/29 v2.0v Standard LaTeX package
+)
+(C:\Users\xabie\AppData\Local\Programs\MiKTeX\tex/latex/fontspec\fontspec.cfg))
+) (C:\Users\xabie\AppData\Local\Programs\MiKTeX\tex/latex/float\float.sty
+Package: float 2001/11/08 v1.3d Float enhancements (AL)
+\c@float@type=\count348
+\float@exts=\toks50
+\float@box=\box73
+\@float@everytoks=\toks51
+\@floatcapt=\box74
+)
+(C:\Users\xabie\AppData\Local\Programs\MiKTeX\tex/latex/booktabs\booktabs.sty
+Package: booktabs 2020/01/12 v1.61803398 Publication quality tables
+\heavyrulewidth=\dimen309
+\lightrulewidth=\dimen310
+\cmidrulewidth=\dimen311
+\belowrulesep=\dimen312
+\belowbottomsep=\dimen313
+\aboverulesep=\dimen314
+\abovetopsep=\dimen315
+\cmidrulesep=\dimen316
+\cmidrulekern=\dimen317
+\defaultaddspace=\dimen318
+\@cmidla=\count349
+\@cmidlb=\count350
+\@aboverulesep=\dimen319
+\@belowrulesep=\dimen320
+\@thisruleclass=\count351
+\@lastruleclass=\count352
+\@thisrulewidth=\dimen321
+)
+(C:\Users\xabie\AppData\Local\Programs\MiKTeX\tex/latex/siunitx\siunitx.sty
+Package: siunitx 2025-07-09 v3.4.14 A comprehensive (SI) units package
+\l__siunitx_number_uncert_offset_int=\count353
+\l__siunitx_number_exponent_fixed_int=\count354
+\l__siunitx_number_min_decimal_int=\count355
+\l__siunitx_number_min_integer_int=\count356
+\l__siunitx_number_round_precision_int=\count357
+\l__siunitx_number_lower_threshold_int=\count358
+\l__siunitx_number_upper_threshold_int=\count359
+\l__siunitx_number_group_first_int=\count360
+\l__siunitx_number_group_size_int=\count361
+\l__siunitx_number_group_minimum_int=\count362
+\l__siunitx_angle_tmp_dim=\dimen322
+\l__siunitx_angle_marker_box=\box75
+\l__siunitx_angle_unit_box=\box76
+\l__siunitx_compound_count_int=\count363
+
+(C:\Users\xabie\AppData\Local\Programs\MiKTeX\tex/latex/translations\translatio
+ns.sty
+Package: translations 2022/02/05 v1.12 internationalization of LaTeX2e packages
+ (CN)
+)
+\l__siunitx_table_tmp_box=\box77
+\l__siunitx_table_tmp_dim=\dimen323
+\l__siunitx_table_column_width_dim=\dimen324
+\l__siunitx_table_integer_box=\box78
+\l__siunitx_table_decimal_box=\box79
+\l__siunitx_table_uncert_box=\box80
+\l__siunitx_table_before_box=\box81
+\l__siunitx_table_after_box=\box82
+\l__siunitx_table_before_dim=\dimen325
+\l__siunitx_table_carry_dim=\dimen326
+\l__siunitx_unit_tmp_int=\count364
+\l__siunitx_unit_position_int=\count365
+\l__siunitx_unit_total_int=\count366
+ (C:\Users\xabie\AppData\Local\Programs\MiKTeX\tex/latex/tools\array.sty
+Package: array 2023/10/16 v2.5g Tabular extension package (FMi)
+\col@sep=\dimen327
+\ar@mcellbox=\box83
+\extrarowheight=\dimen328
+\NC@list=\toks52
+\extratabsurround=\skip119
+\backup@length=\skip120
+\ar@cellbox=\box84
+))
+(C:\Users\xabie\AppData\Local\Programs\MiKTeX\tex/latex/biblatex\biblatex.sty
+Package: biblatex 2023/03/05 v3.19 programmable bibliographies (PK/MW)
+
+(C:\Users\xabie\AppData\Local\Programs\MiKTeX\tex/latex/logreq\logreq.sty
+Package: logreq 2010/08/04 v1.0 xml request logger
+\lrq@indent=\count367
+
+(C:\Users\xabie\AppData\Local\Programs\MiKTeX\tex/latex/logreq\logreq.def
+File: logreq.def 2010/08/04 v1.0 logreq spec v1.0
+))
+\c@tabx@nest=\count368
+\c@listtotal=\count369
+\c@listcount=\count370
+\c@liststart=\count371
+\c@liststop=\count372
+\c@citecount=\count373
+\c@citetotal=\count374
+\c@multicitecount=\count375
+\c@multicitetotal=\count376
+\c@instcount=\count377
+\c@maxnames=\count378
+\c@minnames=\count379
+\c@maxitems=\count380
+\c@minitems=\count381
+\c@citecounter=\count382
+\c@maxcitecounter=\count383
+\c@savedcitecounter=\count384
+\c@uniquelist=\count385
+\c@uniquename=\count386
+\c@refsection=\count387
+\c@refsegment=\count388
+\c@maxextratitle=\count389
+\c@maxextratitleyear=\count390
+\c@maxextraname=\count391
+\c@maxextradate=\count392
+\c@maxextraalpha=\count393
+\c@abbrvpenalty=\count394
+\c@highnamepenalty=\count395
+\c@lownamepenalty=\count396
+\c@maxparens=\count397
+\c@parenlevel=\count398
+\blx@tempcnta=\count399
+\blx@tempcntb=\count400
+\blx@tempcntc=\count401
+\c@blx@maxsection=\count402
+\blx@maxsegment@0=\count403
+\blx@notetype=\count404
+\blx@parenlevel@text=\count405
+\blx@parenlevel@foot=\count406
+\blx@sectionciteorder@0=\count407
+\blx@sectionciteorderinternal@0=\count408
+\blx@entrysetcounter=\count409
+\blx@biblioinstance=\count410
+\labelnumberwidth=\skip121
+\labelalphawidth=\skip122
+\biblabelsep=\skip123
+\bibitemsep=\skip124
+\bibnamesep=\skip125
+\bibinitsep=\skip126
+\bibparsep=\skip127
+\bibhang=\skip128
+\blx@bcfin=\read4
+\blx@bcfout=\write5
+\blx@langwohyphens=\language79
+\c@mincomprange=\count411
+\c@maxcomprange=\count412
+\c@mincompwidth=\count413
+Package biblatex Info: Trying to load biblatex default data model...
+Package biblatex Info: ... file 'blx-dm.def' found.
+
+(C:\Users\xabie\AppData\Local\Programs\MiKTeX\tex/latex/biblatex\blx-dm.def
+File: blx-dm.def 2023/03/05 v3.19 biblatex localization (PK/MW)
+)
+Package biblatex Info: Trying to load biblatex style data model...
+Package biblatex Info: ... file 'phys.dbx' found.
+
+(C:\Users\xabie\AppData\Local\Programs\MiKTeX\tex/latex/biblatex-phys\phys.dbx
+File: phys.dbx 2025/04/09 v1.1e biblatex database model extension
+)
+Package biblatex Info: Trying to load biblatex custom data model...
+Package biblatex Info: ... file 'biblatex-dm.cfg' not found.
+\c@afterword=\count414
+\c@savedafterword=\count415
+\c@annotator=\count416
+\c@savedannotator=\count417
+\c@author=\count418
+\c@savedauthor=\count419
+\c@bookauthor=\count420
+\c@savedbookauthor=\count421
+\c@commentator=\count422
+\c@savedcommentator=\count423
+\c@editor=\count424
+\c@savededitor=\count425
+\c@editora=\count426
+\c@savededitora=\count427
+\c@editorb=\count428
+\c@savededitorb=\count429
+\c@editorc=\count430
+\c@savededitorc=\count431
+\c@foreword=\count432
+\c@savedforeword=\count433
+\c@holder=\count434
+\c@savedholder=\count435
+\c@introduction=\count436
+\c@savedintroduction=\count437
+\c@namea=\count438
+\c@savednamea=\count439
+\c@nameb=\count440
+\c@savednameb=\count441
+\c@namec=\count442
+\c@savednamec=\count443
+\c@translator=\count444
+\c@savedtranslator=\count445
+\c@shortauthor=\count446
+\c@savedshortauthor=\count447
+\c@shorteditor=\count448
+\c@savedshorteditor=\count449
+\c@labelname=\count450
+\c@savedlabelname=\count451
+\c@institution=\count452
+\c@savedinstitution=\count453
+\c@lista=\count454
+\c@savedlista=\count455
+\c@listb=\count456
+\c@savedlistb=\count457
+\c@listc=\count458
+\c@savedlistc=\count459
+\c@listd=\count460
+\c@savedlistd=\count461
+\c@liste=\count462
+\c@savedliste=\count463
+\c@listf=\count464
+\c@savedlistf=\count465
+\c@location=\count466
+\c@savedlocation=\count467
+\c@organization=\count468
+\c@savedorganization=\count469
+\c@origlocation=\count470
+\c@savedoriglocation=\count471
+\c@origpublisher=\count472
+\c@savedorigpublisher=\count473
+\c@publisher=\count474
+\c@savedpublisher=\count475
+\c@language=\count476
+\c@savedlanguage=\count477
+\c@origlanguage=\count478
+\c@savedoriglanguage=\count479
+\c@pageref=\count480
+\c@savedpageref=\count481
+\shorthandwidth=\skip129
+\shortjournalwidth=\skip130
+\shortserieswidth=\skip131
+\shorttitlewidth=\skip132
+\shortauthorwidth=\skip133
+\shorteditorwidth=\skip134
+\locallabelnumberwidth=\skip135
+\locallabelalphawidth=\skip136
+\localshorthandwidth=\skip137
+\localshortjournalwidth=\skip138
+\localshortserieswidth=\skip139
+\localshorttitlewidth=\skip140
+\localshortauthorwidth=\skip141
+\localshorteditorwidth=\skip142
+Package biblatex Info: Trying to load enhanced support for Unicode engines...
+Package biblatex Info: ... file 'blx-unicode.def' found.
+
+(C:\Users\xabie\AppData\Local\Programs\MiKTeX\tex/latex/biblatex\blx-unicode.de
+f)
+Package biblatex Info: Trying to load compatibility code...
+Package biblatex Info: ... file 'blx-compat.def' found.
+
+(C:\Users\xabie\AppData\Local\Programs\MiKTeX\tex/latex/biblatex\blx-compat.def
+File: blx-compat.def 2023/03/05 v3.19 biblatex compatibility (PK/MW)
+)
+Package biblatex Info: Trying to load generic definitions...
+Package biblatex Info: ... file 'biblatex.def' found.
+ (C:\Users\xabie\AppData\Local\Programs\MiKTeX\tex/latex/biblatex\biblatex.def
+File: biblatex.def 2023/03/05 v3.19 biblatex compatibility (PK/MW)
+\c@textcitecount=\count482
+\c@textcitetotal=\count483
+\c@textcitemaxnames=\count484
+\c@biburlbigbreakpenalty=\count485
+\c@biburlbreakpenalty=\count486
+\c@biburlnumpenalty=\count487
+\c@biburlucpenalty=\count488
+\c@biburllcpenalty=\count489
+\biburlbigskip=\muskip18
+\biburlnumskip=\muskip19
+\biburlucskip=\muskip20
+\biburllcskip=\muskip21
+\c@smartand=\count490
+)
+Package biblatex Info: Trying to load bibliography style 'phys'...
+Package biblatex Info: ... file 'phys.bbx' found.
+
+(C:\Users\xabie\AppData\Local\Programs\MiKTeX\tex/latex/biblatex-phys\phys.bbx
+File: phys.bbx 2025/04/09 v1.1e biblatex bibliography style
+Package biblatex Info: Trying to load bibliography style 'numeric-comp'...
+Package biblatex Info: ... file 'numeric-comp.bbx' found.
+
+(C:\Users\xabie\AppData\Local\Programs\MiKTeX\tex/latex/biblatex/bbx\numeric-co
+mp.bbx
+File: numeric-comp.bbx 2023/03/05 v3.19 biblatex bibliography style (PK/MW)
+Package biblatex Info: Trying to load bibliography style 'numeric'...
+Package biblatex Info: ... file 'numeric.bbx' found.
+
+(C:\Users\xabie\AppData\Local\Programs\MiKTeX\tex/latex/biblatex/bbx\numeric.bb
+x
+File: numeric.bbx 2023/03/05 v3.19 biblatex bibliography style (PK/MW)
+Package biblatex Info: Trying to load bibliography style 'standard'...
+Package biblatex Info: ... file 'standard.bbx' found.
+
+(C:\Users\xabie\AppData\Local\Programs\MiKTeX\tex/latex/biblatex/bbx\standard.b
+bx
+File: standard.bbx 2023/03/05 v3.19 biblatex bibliography style (PK/MW)
+\c@bbx:relatedcount=\count491
+\c@bbx:relatedtotal=\count492
+))))
+Package biblatex Info: Trying to load citation style 'phys'...
+Package biblatex Info: ... file 'phys.cbx' found.
+
+(C:\Users\xabie\AppData\Local\Programs\MiKTeX\tex/latex/biblatex-phys\phys.cbx
+File: phys.cbx 2025/04/09 v1.1e biblatex citation style
+Package biblatex Info: Trying to load citation style 'numeric-comp'...
+Package biblatex Info: ... file 'numeric-comp.cbx' found.
+
+(C:\Users\xabie\AppData\Local\Programs\MiKTeX\tex/latex/biblatex/cbx\numeric-co
+mp.cbx
+File: numeric-comp.cbx 2023/03/05 v3.19 biblatex citation style (PK/MW)
+\c@cbx@tempcnta=\count493
+\c@cbx@tempcntb=\count494
+\c@cbx@tempcntc=\count495
+\c@cbx@tempcntd=\count496
+Package biblatex Info: Redefining '\cite'.
+Package biblatex Info: Redefining '\parencite'.
+Package biblatex Info: Redefining '\footcite'.
+Package biblatex Info: Redefining '\footcitetext'.
+Package biblatex Info: Redefining '\smartcite'.
+Package biblatex Info: Redefining '\supercite'.
+Package biblatex Info: Redefining '\textcite'.
+Package biblatex Info: Redefining '\textcites'.
+Package biblatex Info: Redefining '\cites'.
+Package biblatex Info: Redefining '\parencites'.
+Package biblatex Info: Redefining '\smartcites'.
+))
+Package biblatex Info: Trying to load configuration file...
+Package biblatex Info: ... file 'biblatex.cfg' found.
+
+(C:\Users\xabie\AppData\Local\Programs\MiKTeX\tex/latex/biblatex\biblatex.cfg
+File: biblatex.cfg 
+)
+Package biblatex Info: XeTeX detected.
+(biblatex)             Assuming input encoding 'utf8'.
+Package biblatex Info: Document encoding is UTF8 ....
+Package biblatex Info: ... and expl3
+(biblatex)             2024-01-04 L3 programming layer (loader) 
+(biblatex)             is new enough (at least 2020/04/06),
+(biblatex)             setting 'casechanger=expl3'.
+
+(C:\Users\xabie\AppData\Local\Programs\MiKTeX\tex/latex/biblatex\blx-case-expl3
+.sty
+Package: blx-case-expl3 2023/03/05 v3.19 expl3 case changing code for biblatex
+))
+(C:\Users\xabie\AppData\Local\Programs\MiKTeX\tex/latex/wrapfig\wrapfig.sty
+\wrapoverhang=\dimen329
+\WF@size=\dimen330
+\c@WF@wrappedlines=\count497
+\WF@box=\box85
+\WF@everypar=\toks53
+Package: wrapfig 2003/01/31  v 3.6
+)
+(C:\Users\xabie\AppData\Local\Programs\MiKTeX\tex/generic/pgf/frontendlayer/tik
+z/libraries\tikzlibrarypositioning.code.tex
+File: tikzlibrarypositioning.code.tex 2023-01-15 v3.1.10 (3.1.10)
+)
+(C:\Users\xabie\AppData\Local\Programs\MiKTeX\tex/generic/pgf/libraries\pgflibr
+aryarrows.meta.code.tex
+File: pgflibraryarrows.meta.code.tex 2023-01-15 v3.1.10 (3.1.10)
+\pgfarrowinset=\dimen331
+\pgfarrowlength=\dimen332
+\pgfarrowwidth=\dimen333
+\pgfarrowlinewidth=\dimen334
+)
+Package hyperref Info: Option `colorlinks' set `true' on input line 65.
+
+Package fontspec Info: Font family 'EHUSans-Light.otf(0)' created for font
+(fontspec)             'EHUSans-Light.otf' with options [Ligatures=TeX,Path =
+(fontspec)             ./EHU Sans/,BoldFont = EHUSans-Regular,ItalicFont =
+(fontspec)             EHUSans-Italic,BoldItalicFont = EHUSans-BoldItalic].
+(fontspec)              
+(fontspec)              This font family consists of the following NFSS
+(fontspec)             series/shapes:
+(fontspec)              
+(fontspec)             - 'normal' (m/n) with NFSS spec.: <->"[./EHU
+(fontspec)             Sans/EHUSans-Light.otf]/OT:script=latn;language=dflt;map
+ping=tex-text;"
+(fontspec)             - 'small caps'  (m/sc) with NFSS spec.: 
+(fontspec)             - 'bold' (b/n) with NFSS spec.: <->"[./EHU
+(fontspec)             Sans/EHUSans-Regular.otf]/OT:script=latn;language=dflt;m
+apping=tex-text;"
+(fontspec)             - 'bold small caps'  (b/sc) with NFSS spec.: 
+(fontspec)             - 'italic' (m/it) with NFSS spec.: <->"[./EHU
+(fontspec)             Sans/EHUSans-Italic.otf]/OT:script=latn;language=dflt;ma
+pping=tex-text;"
+(fontspec)             - 'italic small caps'  (m/scit) with NFSS spec.: 
+(fontspec)             - 'bold italic' (b/it) with NFSS spec.: <->"[./EHU
+(fontspec)             Sans/EHUSans-BoldItalic.otf]/OT:script=latn;language=dfl
+t;mapping=tex-text;"
+(fontspec)             - 'bold italic small caps'  (b/scit) with NFSS spec.: 
+
+
+Package fontspec Info: Font family 'EHUSans-Light.otf(1)' created for font
+(fontspec)             'EHUSans-Light.otf' with options
+(fontspec)             [BoldFont={},ItalicFont={},SmallCapsFont={},Path=./EHU
+(fontspec)             Sans/].
+(fontspec)              
+(fontspec)              This font family consists of the following NFSS
+(fontspec)             series/shapes:
+(fontspec)              
+(fontspec)             - 'normal' (m/n) with NFSS spec.: <->"[./EHU
+(fontspec)             Sans/EHUSans-Light.otf]/OT:script=latn;language=dflt;"
+(fontspec)             - 'small caps'  (m/sc) with NFSS spec.: 
+
+
+Package fontspec Info: Font family 'EHUSans-Black.otf(0)' created for font
+(fontspec)             'EHUSans-Black.otf' with options
+(fontspec)             [BoldFont={},ItalicFont={},SmallCapsFont={},Path=./EHU
+(fontspec)             Sans/].
+(fontspec)              
+(fontspec)              This font family consists of the following NFSS
+(fontspec)             series/shapes:
+(fontspec)              
+(fontspec)             - 'normal' (m/n) with NFSS spec.: <->"[./EHU
+(fontspec)             Sans/EHUSans-Black.otf]/OT:script=latn;language=dflt;"
+(fontspec)             - 'small caps'  (m/sc) with NFSS spec.: 
+
+Package translations Info: No language package found. I am going to use `englis
+h' as default language. on input line 83.
+\@quotelevel=\count498
+\@quotereset=\count499
+ (main.aux)
+\openout1 = `main.aux'.
+
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 83.
+LaTeX Font Info:    ... okay on input line 83.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 83.
+LaTeX Font Info:    ... okay on input line 83.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 83.
+LaTeX Font Info:    ... okay on input line 83.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 83.
+LaTeX Font Info:    ... okay on input line 83.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 83.
+LaTeX Font Info:    Trying to load font information for TS1+cmr on input line 8
+3.
+
+(C:\Users\xabie\AppData\Local\Programs\MiKTeX\tex/latex/base\ts1cmr.fd
+File: ts1cmr.fd 2023/04/13 v2.5m Standard LaTeX font definitions
+)
+LaTeX Font Info:    ... okay on input line 83.
+LaTeX Font Info:    Checking defaults for TU/lmr/m/n on input line 83.
+LaTeX Font Info:    ... okay on input line 83.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 83.
+LaTeX Font Info:    ... okay on input line 83.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 83.
+LaTeX Font Info:    ... okay on input line 83.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 83.
+LaTeX Font Info:    ... okay on input line 83.
+LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 83.
+LaTeX Font Info:    ... okay on input line 83.
+
+*geometry* driver: auto-detecting
+*geometry* detected driver: xetex
+*geometry* verbose mode - [ preamble ] result:
+* driver: xetex
+* paper: a4paper
+* layout: <same size as paper>
+* layoutoffset:(h,v)=(0.0pt,0.0pt)
+* modes: 
+* h-part:(L,W,R)=(71.13188pt, 455.24411pt, 71.13188pt)
+* v-part:(T,H,B)=(71.13188pt, 702.78308pt, 71.13188pt)
+* \paperwidth=597.50787pt
+* \paperheight=845.04684pt
+* \textwidth=455.24411pt
+* \textheight=702.78308pt
+* \oddsidemargin=-1.1381pt
+* \evensidemargin=-1.1381pt
+* \topmargin=-38.1381pt
+* \headheight=12.0pt
+* \headsep=25.0pt
+* \topskip=12.0pt
+* \footskip=30.0pt
+* \marginparwidth=44.0pt
+* \marginparsep=10.0pt
+* \columnsep=10.0pt
+* \skip\footins=10.8pt plus 4.0pt minus 2.0pt
+* \hoffset=0.0pt
+* \voffset=0.0pt
+* \mag=1000
+* \@twocolumnfalse
+* \@twosidefalse
+* \@mparswitchfalse
+* \@reversemarginfalse
+* (1in=72.27pt=25.4mm, 1cm=28.453pt)
+
+Package hyperref Info: Link coloring ON on input line 83.
+(main.out) (main.out)
+\@outlinefile=\write6
+\openout6 = `main.out'.
+
+Package caption Info: Begin \AtBeginDocument code.
+Package caption Info: float package is loaded.
+Package caption Info: wrapfig package is loaded.
+Package caption Info: End \AtBeginDocument code.
+
+Package fontspec Info: Adjusting the maths setup (use [no-math] to avoid
+(fontspec)             this).
+
+\symlegacymaths=\mathgroup7
+LaTeX Font Info:    Overwriting symbol font `legacymaths' in version `bold'
+(Font)                  OT1/cmr/m/n --> OT1/cmr/bx/n on input line 83.
+LaTeX Font Info:    Redeclaring math accent \acute on input line 83.
+LaTeX Font Info:    Redeclaring math accent \grave on input line 83.
+LaTeX Font Info:    Redeclaring math accent \ddot on input line 83.
+LaTeX Font Info:    Redeclaring math accent \tilde on input line 83.
+LaTeX Font Info:    Redeclaring math accent \bar on input line 83.
+LaTeX Font Info:    Redeclaring math accent \breve on input line 83.
+LaTeX Font Info:    Redeclaring math accent \check on input line 83.
+LaTeX Font Info:    Redeclaring math accent \hat on input line 83.
+LaTeX Font Info:    Redeclaring math accent \dot on input line 83.
+LaTeX Font Info:    Redeclaring math accent \mathring on input line 83.
+LaTeX Font Info:    Redeclaring math symbol \Gamma on input line 83.
+LaTeX Font Info:    Redeclaring math symbol \Delta on input line 83.
+LaTeX Font Info:    Redeclaring math symbol \Theta on input line 83.
+LaTeX Font Info:    Redeclaring math symbol \Lambda on input line 83.
+LaTeX Font Info:    Redeclaring math symbol \Xi on input line 83.
+LaTeX Font Info:    Redeclaring math symbol \Pi on input line 83.
+LaTeX Font Info:    Redeclaring math symbol \Sigma on input line 83.
+LaTeX Font Info:    Redeclaring math symbol \Upsilon on input line 83.
+LaTeX Font Info:    Redeclaring math symbol \Phi on input line 83.
+LaTeX Font Info:    Redeclaring math symbol \Psi on input line 83.
+LaTeX Font Info:    Redeclaring math symbol \Omega on input line 83.
+LaTeX Font Info:    Redeclaring math symbol \mathdollar on input line 83.
+LaTeX Font Info:    Redeclaring symbol font `operators' on input line 83.
+LaTeX Font Info:    Encoding `OT1' has changed to `TU' for symbol font
+(Font)              `operators' in the math version `normal' on input line 83.
+LaTeX Font Info:    Overwriting symbol font `operators' in version `normal'
+(Font)                  OT1/cmr/m/n --> TU/EHUSans-Light.otf(0)/m/n on input li
+ne 83.
+LaTeX Font Info:    Encoding `OT1' has changed to `TU' for symbol font
+(Font)              `operators' in the math version `bold' on input line 83.
+LaTeX Font Info:    Overwriting symbol font `operators' in version `bold'
+(Font)                  OT1/cmr/bx/n --> TU/EHUSans-Light.otf(0)/m/n on input l
+ine 83.
+LaTeX Font Info:    Overwriting symbol font `operators' in version `normal'
+(Font)                  TU/EHUSans-Light.otf(0)/m/n --> TU/EHUSans-Light.otf(0)
+/m/n on input line 83.
+LaTeX Font Info:    Overwriting math alphabet `\mathit' in version `normal'
+(Font)                  OT1/cmr/m/it --> TU/EHUSans-Light.otf(0)/m/it on input 
+line 83.
+LaTeX Font Info:    Overwriting math alphabet `\mathbf' in version `normal'
+(Font)                  OT1/cmr/bx/n --> TU/EHUSans-Light.otf(0)/b/n on input l
+ine 83.
+LaTeX Font Info:    Overwriting math alphabet `\mathsf' in version `normal'
+(Font)                  OT1/cmss/m/n --> TU/lmss/m/n on input line 83.
+LaTeX Font Info:    Overwriting math alphabet `\mathtt' in version `normal'
+(Font)                  OT1/cmtt/m/n --> TU/lmtt/m/n on input line 83.
+LaTeX Font Info:    Overwriting symbol font `operators' in version `bold'
+(Font)                  TU/EHUSans-Light.otf(0)/m/n --> TU/EHUSans-Light.otf(0)
+/b/n on input line 83.
+LaTeX Font Info:    Overwriting math alphabet `\mathit' in version `bold'
+(Font)                  OT1/cmr/bx/it --> TU/EHUSans-Light.otf(0)/b/it on input
+ line 83.
+LaTeX Font Info:    Overwriting math alphabet `\mathsf' in version `bold'
+(Font)                  OT1/cmss/bx/n --> TU/lmss/b/n on input line 83.
+LaTeX Font Info:    Overwriting math alphabet `\mathtt' in version `bold'
+(Font)                  OT1/cmtt/m/n --> TU/lmtt/b/n on input line 83.
+
+(C:\Users\xabie\AppData\Local\Programs\MiKTeX\tex/latex/translations/dicts\tran
+slations-basic-dictionary-english.trsl
+File: translations-basic-dictionary-english.trsl (english translation file `tra
+nslations-basic-dictionary')
+)
+Package translations Info: loading dictionary `translations-basic-dictionary' f
+or `english'. on input line 83.
+Package biblatex Info: Trying to load language 'english'...
+Package biblatex Info: ... file 'english.lbx' found.
+
+(C:\Users\xabie\AppData\Local\Programs\MiKTeX\tex/latex/biblatex/lbx\english.lb
+x
+File: english.lbx 2023/03/05 v3.19 biblatex localization (PK/MW)
+)
+Package biblatex Info: XeTeX detected.
+(biblatex)             Assuming input encoding 'utf8'.
+Package biblatex Info: Automatic encoding selection.
+(biblatex)             Assuming data encoding 'utf8'.
+\openout5 = `main.bcf'.
+
+Package biblatex Info: Trying to load bibliographic data...
+Package biblatex Info: ... file 'main.bbl' found.
+ (main.bbl)
+Package biblatex Info: Reference section=0 on input line 83.
+Package biblatex Info: Reference segment=0 on input line 83.
+File: TFG_portada-Latex/LogoEHU.PNG Graphic file (type bmp)
+<TFG_portada-Latex/LogoEHU.PNG>
+
+Overfull \hbox (142.26376pt too wide) in paragraph at lines 92--93
+ [] 
+ []
+
+LaTeX Font Info:    Trying to load font information for U+msa on input line 94.
+
+(C:\Users\xabie\AppData\Local\Programs\MiKTeX\tex/latex/amsfonts\umsa.fd
+File: umsa.fd 2013/01/14 v3.01 AMS symbols A
+)
+LaTeX Font Info:    Trying to load font information for U+msb on input line 94.
+
+
+(C:\Users\xabie\AppData\Local\Programs\MiKTeX\tex/latex/amsfonts\umsb.fd
+File: umsb.fd 2013/01/14 v3.01 AMS symbols B
+)
+LaTeX Font Info:    Trying to load font information for U+rsfs on input line 94
+.
+
+(C:\Users\xabie\AppData\Local\Programs\MiKTeX\tex/latex/jknappen\ursfs.fd
+File: ursfs.fd 1998/03/24 rsfs font definition file (jk)
+)
+Overfull \hbox (85.58006pt too wide) in paragraph at lines 98--110
+[]  [][][] 
+ []
+
+
+Overfull \hbox (79.65189pt too wide) in paragraph at lines 114--129
+| [][][][][][] 
+ []
+
+
+Overfull \hbox (485.22717pt too wide) in paragraph at lines 157--170
+[]  [][][] 
+ []
+
+[1
+
+] (main.toc
+Overfull \hbox (0.852pt too wide) in paragraph at lines 18--18
+ [][] [][][]\TU/EHUSans-Light.otf(0)/m/n/12 Segundo paso: caracterización de la
+ placa de pinholes, y modelización 
+ []
+
+)
+\tf@toc=\write7
+\openout7 = `main.toc'.
+
+ [1]
+Overfull \hbox (6.44405pt too wide) in paragraph at lines 189--190
+\TU/EHUSans-Light.otf(0)/m/n/12 para futuras aplicaciones \TU/EHUSans-Light.otf
+(0)/m/it/12 (en Satlantis la detección de metano es un proyecto en curso)\TU/EH
+USans-Light.otf(0)/m/n/12 . 
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 189--190
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 191--192
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 193--194
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 195--196
+
+ []
+
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 14.49998pt, for example:
+(fancyhdr)                \setlength{\headheight}{14.49998pt}.
+(fancyhdr)                You might also make \topmargin smaller:
+(fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
+
+[2]
+Underfull \hbox (badness 10000) in paragraph at lines 208--209
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 210--211
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 216--217
+
+ []
+
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 15.29404pt, for example:
+(fancyhdr)                \setlength{\headheight}{15.29404pt}.
+(fancyhdr)                You might also make \topmargin smaller:
+(fancyhdr)                \addtolength{\topmargin}{-3.29404pt}.
+
+[3]
+Underfull \hbox (badness 10000) in paragraph at lines 226--227
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 270--271
+
+ []
+
+File: Imagenes/convolucion.png Graphic file (type bmp)
+<Imagenes/convolucion.png>
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 282--283
+
+ []
+
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 15.29404pt, for example:
+(fancyhdr)                \setlength{\headheight}{15.29404pt}.
+(fancyhdr)                You might also make \topmargin smaller:
+(fancyhdr)                \addtolength{\topmargin}{-3.29404pt}.
+
+[4]
+Underfull \hbox (badness 10000) in paragraph at lines 296--297
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 304--305
+
+ []
+
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 15.29404pt, for example:
+(fancyhdr)                \setlength{\headheight}{15.29404pt}.
+(fancyhdr)                You might also make \topmargin smaller:
+(fancyhdr)                \addtolength{\topmargin}{-3.29404pt}.
+
+[5]
+Underfull \hbox (badness 10000) in paragraph at lines 323--324
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 331--332
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 333--334
+
+ []
+
+File: Imagenes/contraste.png Graphic file (type bmp)
+<Imagenes/contraste.png>
+
+Underfull \hbox (badness 10000) in paragraph at lines 346--347
+
+ []
+
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 15.29404pt, for example:
+(fancyhdr)                \setlength{\headheight}{15.29404pt}.
+(fancyhdr)                You might also make \topmargin smaller:
+(fancyhdr)                \addtolength{\topmargin}{-3.29404pt}.
+
+[6]
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 15.29404pt, for example:
+(fancyhdr)                \setlength{\headheight}{15.29404pt}.
+(fancyhdr)                You might also make \topmargin smaller:
+(fancyhdr)                \addtolength{\topmargin}{-3.29404pt}.
+
+[7]
+Underfull \hbox (badness 10000) in paragraph at lines 379--381
+
+ []
+
+
+Overfull \hbox (3.42pt too wide) in paragraph at lines 384--385
+[]\TU/EHUSans-Light.otf(0)/m/n/12 Como los diferentes ruidos no están correlaci
+onados, el ruido total será simplemente
+ []
+
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 15.29404pt, for example:
+(fancyhdr)                \setlength{\headheight}{15.29404pt}.
+(fancyhdr)                You might also make \topmargin smaller:
+(fancyhdr)                \addtolength{\topmargin}{-3.29404pt}.
+
+[8]
+File: Imagenes/imagen_original.jpg Graphic file (type bmp)
+<Imagenes/imagen_original.jpg>
+File: Imagenes/imagen_distorsionada_pincushion.png Graphic file (type bmp)
+<Imagenes/imagen_distorsionada_pincushion.png>
+File: Imagenes/imagen_distorsionada_barrel.png Graphic file (type bmp)
+<Imagenes/imagen_distorsionada_barrel.png>
+
+Underfull \hbox (badness 10000) in paragraph at lines 446--448
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 449--450
+
+ []
+
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 15.29404pt, for example:
+(fancyhdr)                \setlength{\headheight}{15.29404pt}.
+(fancyhdr)                You might also make \topmargin smaller:
+(fancyhdr)                \addtolength{\topmargin}{-3.29404pt}.
+
+[9]
+Underfull \hbox (badness 10000) in paragraph at lines 451--452
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 457--459
+
+ []
+
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 15.29404pt, for example:
+(fancyhdr)                \setlength{\headheight}{15.29404pt}.
+(fancyhdr)                You might also make \topmargin smaller:
+(fancyhdr)                \addtolength{\topmargin}{-3.29404pt}.
+
+[10]
+Underfull \hbox (badness 10000) in paragraph at lines 480--481
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 488--489
+
+ []
+
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 15.29404pt, for example:
+(fancyhdr)                \setlength{\headheight}{15.29404pt}.
+(fancyhdr)                You might also make \topmargin smaller:
+(fancyhdr)                \addtolength{\topmargin}{-3.29404pt}.
+
+[11]
+Underfull \hbox (badness 10000) in paragraph at lines 516--517
+
+ []
+
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 14.49998pt, for example:
+(fancyhdr)                \setlength{\headheight}{14.49998pt}.
+(fancyhdr)                You might also make \topmargin smaller:
+(fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
+
+[12]
+Underfull \hbox (badness 10000) in paragraph at lines 518--519
+
+ []
+
+File: Imagenes/Centroide_candidatos.png Graphic file (type bmp)
+<Imagenes/Centroide_candidatos.png>
+
+Underfull \hbox (badness 10000) in paragraph at lines 531--533
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 534--535
+
+ []
+
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 14.49998pt, for example:
+(fancyhdr)                \setlength{\headheight}{14.49998pt}.
+(fancyhdr)                You might also make \topmargin smaller:
+(fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
+
+[13]
+File: Imagenes/Centroide_ventana.png Graphic file (type bmp)
+<Imagenes/Centroide_ventana.png>
+File: Imagenes/Centroide_ventana_binaria.png Graphic file (type bmp)
+<Imagenes/Centroide_ventana_binaria.png>
+File: Imagenes/Centroides.png Graphic file (type bmp)
+<Imagenes/Centroides.png>
+
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 603--604
+
+ []
+
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 14.49998pt, for example:
+(fancyhdr)                \setlength{\headheight}{14.49998pt}.
+(fancyhdr)                You might also make \topmargin smaller:
+(fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
+
+[14]
+Underfull \hbox (badness 10000) in paragraph at lines 605--606
+
+ []
+
+File: Imagenes/img_RotMap_000.png Graphic file (type bmp)
+<Imagenes/img_RotMap_000.png>
+
+Underfull \hbox (badness 10000) in paragraph at lines 618--620
+
+ []
+
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 14.49998pt, for example:
+(fancyhdr)                \setlength{\headheight}{14.49998pt}.
+(fancyhdr)                You might also make \topmargin smaller:
+(fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
+
+[15]
+Overfull \hbox (10.42801pt too wide) in paragraph at lines 625--626
+\TU/EHUSans-Light.otf(0)/m/n/12 En este paso se calcula la constante de distors
+ión mediante un ajuste de mínimos cuadra-
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 629--631
+
+ []
+
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 14.49998pt, for example:
+(fancyhdr)                \setlength{\headheight}{14.49998pt}.
+(fancyhdr)                You might also make \topmargin smaller:
+(fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
+
+[16]
+Underfull \hbox (badness 10000) in paragraph at lines 650--652
+
+ []
+
+
+Overfull \hbox (8.80801pt too wide) in paragraph at lines 653--654
+\TU/EHUSans-Light.otf(0)/m/n/12 Este método consiste en normalizar cada muestra
+ con respecto a la media y la desviación
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 656--658
+
+ []
+
+
+Overfull \hbox (1.08pt too wide) in paragraph at lines 664--665
+\TU/EHUSans-Light.otf(0)/m/n/12 Los objetivos principales de esta etapa se basa
+n en el desarrollo y validación del método
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 677--678
+
+ []
+
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 14.49998pt, for example:
+(fancyhdr)                \setlength{\headheight}{14.49998pt}.
+(fancyhdr)                You might also make \topmargin smaller:
+(fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
+
+[17]
+Underfull \hbox (badness 10000) in paragraph at lines 686--687
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 697--698
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 699--700
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 702--703
+
+ []
+
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 14.49998pt, for example:
+(fancyhdr)                \setlength{\headheight}{14.49998pt}.
+(fancyhdr)                You might also make \topmargin smaller:
+(fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
+
+[18]
+Overfull \hbox (2.052pt too wide) in paragraph at lines 704--705
+[]\TU/EHUSans-Light.otf(0)/m/n/12 Como pequeño apunte, es después de distorsion
+ar la imagen cuando se añade ruido
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 704--705
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 706--707
+
+ []
+
+File: Imagenes/Pinholes.PNG Graphic file (type bmp)
+<Imagenes/Pinholes.PNG>
+File: Imagenes/img_distor_ruido.png Graphic file (type bmp)
+<Imagenes/img_distor_ruido.png>
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 14.49998pt, for example:
+(fancyhdr)                \setlength{\headheight}{14.49998pt}.
+(fancyhdr)                You might also make \topmargin smaller:
+(fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
+
+[19]
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 14.49998pt, for example:
+(fancyhdr)                \setlength{\headheight}{14.49998pt}.
+(fancyhdr)                You might also make \topmargin smaller:
+(fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
+
+[20]
+Underfull \hbox (badness 10000) in paragraph at lines 788--789
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 833--834
+
+ []
+
+File: Imagenes/RelativeError_vs_k.png Graphic file (type bmp)
+<Imagenes/RelativeError_vs_k.png>
+File: Imagenes/R2_vs_k.png Graphic file (type bmp)
+<Imagenes/R2_vs_k.png>
+
+Underfull \hbox (badness 10000) in paragraph at lines 858--859
+
+ []
+
+File: Imagenes/img_KValuesMap_0012_kreal.png Graphic file (type bmp)
+<Imagenes/img_KValuesMap_0012_kreal.png>
+File: Imagenes/img_KValuesMap_0013_kreal.png Graphic file (type bmp)
+<Imagenes/img_KValuesMap_0013_kreal.png>
+
+Underfull \hbox (badness 1205) in paragraph at lines 876--876
+\TU/EHUSans-Light.otf(0)/m/n/10.95 dos para $\OML/cmm/m/it/10.95 k[] \OT1/cmr/m
+/n/10.95 = \OMS/cmsy/m/n/10.95 ^^@\OT1/cmr/m/n/10.95 36\OML/cmm/m/it/10.95 :\OT
+1/cmr/m/n/10.95 1677[][]$\TU/EHUSans-Light.otf(0)/m/n/10.95 , $\OML/cmm/m/it/10
+.95 R[] \OT1/cmr/m/n/10.95 =
+ []
+
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 14.49998pt, for example:
+(fancyhdr)                \setlength{\headheight}{14.49998pt}.
+(fancyhdr)                You might also make \topmargin smaller:
+(fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
+
+[21]
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 14.49998pt, for example:
+(fancyhdr)                \setlength{\headheight}{14.49998pt}.
+(fancyhdr)                You might also make \topmargin smaller:
+(fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
+
+[22]
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 14.49998pt, for example:
+(fancyhdr)                \setlength{\headheight}{14.49998pt}.
+(fancyhdr)                You might also make \topmargin smaller:
+(fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
+
+[23]
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 14.49998pt, for example:
+(fancyhdr)                \setlength{\headheight}{14.49998pt}.
+(fancyhdr)                You might also make \topmargin smaller:
+(fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
+
+[24]
+File: Imagenes/img_RotMap_0000.png Graphic file (type bmp)
+<Imagenes/img_RotMap_0000.png>
+File: Imagenes/img_DistMap_0000.png Graphic file (type bmp)
+<Imagenes/img_DistMap_0000.png>
+
+Underfull \hbox (badness 10000) in paragraph at lines 1071--1071
+\TU/EHUSans-Light.otf(0)/m/n/10.95 (zoom x100) representan el desplaza-
+ []
+
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 14.49998pt, for example:
+(fancyhdr)                \setlength{\headheight}{14.49998pt}.
+(fancyhdr)                You might also make \topmargin smaller:
+(fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
+
+[25]
+Underfull \hbox (badness 10000) in paragraph at lines 1121--1122
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1168--1169
+
+ []
+
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 14.49998pt, for example:
+(fancyhdr)                \setlength{\headheight}{14.49998pt}.
+(fancyhdr)                You might also make \topmargin smaller:
+(fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
+
+[26]
+Underfull \hbox (badness 10000) in paragraph at lines 1175--1176
+
+ []
+
+File: Imagenes/psfgrid.PNG Graphic file (type bmp)
+<Imagenes/psfgrid.PNG>
+
+Underfull \hbox (badness 10000) in paragraph at lines 1184--1186
+
+ []
+
+File: Imagenes/Dark.PNG Graphic file (type bmp)
+<Imagenes/Dark.PNG>
+File: Imagenes/processed_psfgrid.PNG Graphic file (type bmp)
+<Imagenes/processed_psfgrid.PNG>
+
+Underfull \hbox (badness 10000) in paragraph at lines 1201--1202
+
+ []
+
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 14.49998pt, for example:
+(fancyhdr)                \setlength{\headheight}{14.49998pt}.
+(fancyhdr)                You might also make \topmargin smaller:
+(fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
+
+[27]
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 14.49998pt, for example:
+(fancyhdr)                \setlength{\headheight}{14.49998pt}.
+(fancyhdr)                You might also make \topmargin smaller:
+(fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
+
+[28]
+File: Imagenes/flat_centro_optico.png Graphic file (type bmp)
+<Imagenes/flat_centro_optico.png>
+
+
+LaTeX Warning: Reference `fig:flat' on page 29 undefined on input line 1210.
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1210--1211
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1230--1231
+
+ []
+
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 14.49998pt, for example:
+(fancyhdr)                \setlength{\headheight}{14.49998pt}.
+(fancyhdr)                You might also make \topmargin smaller:
+(fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
+
+[29]
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 14.49998pt, for example:
+(fancyhdr)                \setlength{\headheight}{14.49998pt}.
+(fancyhdr)                You might also make \topmargin smaller:
+(fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
+
+[30]
+
+Package caption Warning: \label without proper reference on input line 1246.
+See the caption package documentation for explanation.
+
+
+LaTeX Warning: Reference `fig:maps_real' on page 31 undefined on input line 123
+2.
+
+File: Imagenes/img_RotMap_0000_real.png Graphic file (type bmp)
+<Imagenes/img_RotMap_0000_real.png>
+
+Underfull \hbox (badness 7925) in paragraph at lines 1241--1241
+[]\TU/EHUSans-Light.otf(0)/m/n/10.95 (a) |Ejes principales calculados por
+ []
+
+
+Underfull \hbox (badness 3460) in paragraph at lines 1241--1241
+\TU/EHUSans-Light.otf(0)/m/n/10.95 el algoritmo en la imagen propor-
+ []
+
+File: Imagenes/img_DistMap_0000_real.png Graphic file (type bmp)
+<Imagenes/img_DistMap_0000_real.png>
+
+Underfull \hbox (badness 3460) in paragraph at lines 1248--1248
+\TU/EHUSans-Light.otf(0)/m/n/10.95 el algoritmo en la imagen propor-
+ []
+
+
+Underfull \hbox (badness 2384) in paragraph at lines 1248--1248
+\TU/EHUSans-Light.otf(0)/m/n/10.95 flechas (zoom x100) representan el
+ []
+
+
+Underfull \hbox (badness 1052) in paragraph at lines 1248--1248
+\OML/cmm/m/it/10.95 P[]$\TU/EHUSans-Light.otf(0)/m/n/10.95 . Los puntos rojo y 
+verde son el
+ []
+
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 14.49998pt, for example:
+(fancyhdr)                \setlength{\headheight}{14.49998pt}.
+(fancyhdr)                You might also make \topmargin smaller:
+(fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
+
+[31]
+Overfull \hbox (8.96692pt too wide) in paragraph at lines 1260--1260
+[]\TU/EHUSans-Light.otf(0)/m/n/12 R. N. Bracewell, \TU/EHUSans-Light.otf(0)/m/i
+t/12 The fourier transform and its applications\TU/EHUSans-Light.otf(0)/m/n/12 
+, 3rd (McGraw-Hill, 2000). 
+ []
+
+
+Overfull \hbox (25.69049pt too wide) in paragraph at lines 1260--1260
+[]\TU/EHUSans-Light.otf(0)/m/n/12 E. Optics, \TU/EHUSans-Light.otf(0)/m/it/12 I
+ntroduction to modulation transfer function\TU/EHUSans-Light.otf(0)/m/n/12 , []
+[]$[][][][][] [] [] [] [][][] [] [][][][][][][][][][][][] []
+ []
+
+
+Overfull \hbox (22.61536pt too wide) in paragraph at lines 1260--1260
+[][] [] [][][][][][][][][] [][] [][][][][][] [] [][][][][][][][][][][] [][] [][
+][][][] [] [][][][][][] [] [][][][][][][][][][][][] [][] [][] [][] [][][][][][]
+[][][][] [][]
+ []
+
+
+Overfull \hbox (14.0705pt too wide) in paragraph at lines 1260--1260
+\TU/EHUSans-Light.otf(0)/m/n/12 single image camera calibration with radial dis
+tortion”, in Proceedings of the ieee/cvf
+ []
+
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 14.49998pt, for example:
+(fancyhdr)                \setlength{\headheight}{14.49998pt}.
+(fancyhdr)                You might also make \topmargin smaller:
+(fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
+
+[32]
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 14.49998pt, for example:
+(fancyhdr)                \setlength{\headheight}{14.49998pt}.
+(fancyhdr)                You might also make \topmargin smaller:
+(fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
+
+[33] (main.aux)
+ ***********
+LaTeX2e <2023-11-01> patch level 1
+L3 programming layer <2024-01-04>
+ ***********
+
+
+LaTeX Warning: There were undefined references.
+
+
+LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
+
+Package rerunfilecheck Info: File `main.out' has not changed.
+(rerunfilecheck)             Checksum: 7A5A546AAF2B96446DE7734E86AC5625;7259.
+Package logreq Info: Writing requests to 'main.run.xml'.
+\openout1 = `main.run.xml'.
+
+ ) 
+Here is how much of TeX's memory you used:
+ 39575 strings out of 409616
+ 836933 string characters out of 5773991
+ 1942191 words of memory out of 5000000
+ 61122 multiletter control sequences out of 15000+600000
+ 565489 words of font info for 91 fonts, out of 8000000 for 9000
+ 1348 hyphenation exceptions out of 8191
+ 86i,13n,131p,1802b,5604s stack positions out of 10000i,1000n,20000p,200000b,200000s
+
+Output written on main.pdf (34 pages).
