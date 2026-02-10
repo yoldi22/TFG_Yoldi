@@ -297,7 +297,7 @@ def Main_sim(
         resultados_data.append({
             "Number"           : i,
             "Measured_k(m^-2)" : k_medida, #m
-            "RMSE(m)"          : errores[2] * px, #px to meters 
+            "RMSE(m)"          : errores[2] / px , #px to meters 
             "R2"               : errores[3],
             "Error_Type"       : error_type,
             "DistC_o(px)"      : dist_centro_optimo, #px
@@ -467,10 +467,10 @@ Flat_crpt = r"ImgReales\VNIR90_PSFgrid36\Flats"
 Processed_Img = r"ImgReales\girado_90_grados\psf_20000\Zone5_whiteposition_00_processed"
 
 # Paths NADAFIJO_SPACING_REAL
-DistImg_crpt = r"Simulaciones_tfg\NADAFIJO_intensidad_2\Imagenes_distorsionadas"
-IdealImg_crpt = r"Simulaciones_tfg\NADAFIJO_intensidad_2\Imagenes_ideales"
+DistImg_crpt = r"c:\Users\xabie\Documents\TFG\Codigo\DistortionMeasurement\Simulaciones_tfg\NADAFIJO_intensidad_2\Imagenes_distorsionadas"
+IdealImg_crpt = r"c:\Users\xabie\Documents\TFG\Codigo\DistortionMeasurement\Simulaciones_tfg\NADAFIJO_intensidad_2_2\Imagenes_ideales"
 MainCarpet = r"Simulaciones_tfg\NADAFIJO_intensidad_2"
-SimCsv_path = r"Simulaciones_tfg\NADAFIJO_intensidad_2\Simulaciones_data.csv" 
+SimCsv_path = r"c:\Users\xabie\Documents\TFG\Codigo\DistortionMeasurement\Simulaciones_tfg\NADAFIJO_intensidad_2\Simulaciones_data.csv" 
 Dark_crpt = ""
 Flat_crpt = None
 Processed_Img = ""

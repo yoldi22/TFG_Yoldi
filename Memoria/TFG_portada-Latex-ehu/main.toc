@@ -4,8 +4,8 @@
 \contentsline {subsubsection}{\numberline {2.1.1}Respuesta al impulso}{3}{subsubsection.2.1.1}%
 \contentsline {subsubsection}{\numberline {2.1.2}Dominio de frecuencias}{4}{subsubsection.2.1.2}%
 \contentsline {subsection}{\numberline {2.2}Fuentes de degradación en la calidad de la imagen}{7}{subsection.2.2}%
-\contentsline {subsubsection}{\numberline {2.2.1}Aberraciones ópticas}{7}{subsubsection.2.2.1}%
-\contentsline {subsubsection}{\numberline {2.2.2}Relación señal a ruido (SNR)}{7}{subsubsection.2.2.2}%
+\contentsline {subsubsection}{\numberline {2.2.1}Relación señal a ruido (SNR)}{7}{subsubsection.2.2.1}%
+\contentsline {subsubsection}{\numberline {2.2.2}Aberraciones ópticas}{8}{subsubsection.2.2.2}%
 \contentsline {subsubsection}{\numberline {2.2.3}Distorsión Óptica}{9}{subsubsection.2.2.3}%
 \contentsline {subsubsection}{\numberline {2.2.4}Modelado Matemático}{9}{subsubsection.2.2.4}%
 \contentsline {subsection}{\numberline {2.3}Métodos de corrección de distorsión}{10}{subsection.2.3}%

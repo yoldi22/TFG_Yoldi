@@ -186,20 +186,20 @@ Iñigo Irizar Loibide
 
 \section{Introducción}
 
-La industria aeroespacial y de observación terrestre ha crecido en los últimos años ampliamente y cada vez demanda sistemas más precisos debido a la carrera tecnológica que existe. En este contexto, la empresa Satlantis Microsats se ha especializado en el desarrollo de cámaras de alta resolución para pequeños satélites (microsatélites). Para garantizar la calidad y la fiabilidad de las imágenes capturadas, es esencial el desarrollo de sistemas con una calidad excelente y una mecánica cuidada al detalle. Sin  embargo, es fundamental procesar las imágenes para caracterizar y corregir las posibles aberraciones ópticas que pudieran tener los sistemas de captura. Este campo, denominado comúnmente como \textit{Image Proccessing}, es el encargado de realizar dichas correcciones, así como de aumentar la calidad de las imágenes o caracterizar patrones para futuras aplicaciones \textit{(en Satlantis la detección de metano es un proyecto en curso)}.\\
+La industria aeroespacial y de observación terrestre ha crecido en los últimos años ampliamente y cada vez demanda sistemas más precisos debido a la carrera tecnológica que existe. En este contexto, la empresa Satlantis Microsats se ha especializado en el desarrollo de cámaras de alta resolución para pequeños satélites (microsatélites). Para garantizar la calidad y la fiabilidad de las imágenes capturadas, es esencial el desarrollo de sistemas con una calidad excelente y una mecánica cuidada al detalle. Sin  embargo, es fundamental procesar las imágenes para caracterizar y corregir las posibles aberraciones ópticas que pudieran tener los sistemas de captura. Este campo, denominado comúnmente como \textit{Image Proccessing}, es el encargado de realizar dichas correcciones, así como de aumentar la calidad de las imágenes o caracterizar patrones para futuras aplicaciones.\\
 
-En la actualidad, una aberración presente en todos los sistemas ópticos es la distorsión óptica. Esta aberración es producida por la forma esférica característica de muchas lentes y provoca un ligero desplazamiento en las posiciones de la imagen. Principalmente, existen dos formas en las que se distorsionan las capturas, denominadas tipo barril o cojín. Debido a la gran sensibilidad que existe para caracterizar esta aberración, la forma más sencilla y utilizada para abordar este problema es corregirla en base a medidas experimentales de cada sistema. Es por ello que en este Trabajo de Fin de Grado se desarrolla una metodología para la medida y análisis de la distorsión óptica con el objetivo final de aplicarlas en las cámaras de Satlantis.\\
+En la actualidad, una aberración presente en todos los sistemas ópticos es la distorsión óptica. Esta aberración es producida por la forma esférica característica de muchas lentes y provoca un ligero desplazamiento en las posiciones de la imagen. Principalmente, existen dos formas en las que se distorsionan las capturas, denominadas tipo \textit{barrel} o \textit{pincushion}. Debido a la gran sensibilidad que existe para caracterizar esta aberración, la forma más sencilla y utilizada para abordar este problema es corregirla en base a medidas experimentales de cada sistema. Es por ello que en este Trabajo de Fin de Grado se desarrolla una metodología para la medida y análisis de la distorsión óptica con el objetivo final de aplicarlas en las cámaras de Satlantis.\\
 
-Para ello se ha empleado un banco de ensayo experimental que consiste en una placa de pinholes (orificios del orden de los micrómetros), que, al alumbrarlos, actúan como fuentes puntuales de luz. Las fotografías tomadas de dicha placa permiten, mediante técnicas desarrolladas en este Trabajo de Fin de Grado, medir los desplazamientos relativos de cada punto y así calcular el perfil de distorsión introducido por la lente.\\
+Para ello, el algortimo desarrollado se ha planteado en el contexto de un banco de ensayo experimental que consiste en una placa de pinholes (orificios del orden de los micrómetros), que, al alumbrarlos, actúan como fuentes puntuales de luz. Las fotografías tomadas de esta placa permiten, mediante técnicas desarrolladas en este Trabajo de Fin de Grado, medir los desplazamientos relativos de cada punto y así calcular el perfil de distorsión introducido por la lente.\\
 
 Como fase preliminar y para realizar una validación de la metodología, se ha elaborado una etapa de simulaciones. En esta etapa se han generado imágenes replicando las imágenes proporcionadas por Satlantis, y se les ha aplicado una distorsión artificial. Esto ha permitido desarrollar y ajustar los algoritmos de detección y medición del perfil de distorsión.\\
 
-La memoria se estructura en los siguientes apartados: en primer lugar, se explica el marco teórico y el fenómeno de distorsión óptica y como modelarlo matemáticamente. A continuación, se desarrolla la metodología propuesta para la detección de distorsión y se valida y valora con diferentes simulaciones. Finalmente, se presentan los resultados obtenidos con las imágenes de Satlantis y se concluye con una valoración del método propuesto.
+La memoria se estructura en los siguientes apartados: en primer lugar, se explica el marco teórico, el fenómeno de distorsión óptica y como modelarlo matemáticamente. A continuación, se desarrolla la metodología propuesta para la detección de distorsión y se valida con diferentes simulaciones. Finalmente, se presentan los resultados obtenidos con las imágenes de Satlantis y se concluye con una valoración general del método propuesto.
 
 \newpage
 \section{Sistemas Electro-Ópticos}
 \label{sec: Sistemas Electro-Ópticos}
-Los sistemas ópticos conforman un campo muy interesante en el contexto científico debido a la variedad de sistemas que podemos encontrar. Desde un ojo humano hasta una cámara o, incluso, un telescopio son parte de este área. Sin embargo, cuando se desea caracterizar un sistema óptico en concreto, una medida comúnmente utilizada es la Función de Dispersión de Punto (PSF), que es una función en el dominio espacial. En concreto, se utiliza su función análoga en el espacio de frecuencias, la Función de Transferencia Óptica (OTF), que no es más que su transformada de Fourier bidimensional. Esta función da cuenta de la respuesta a una señal sinusoidal periódica a través de los diferentes componentes del sistema óptico, en función de su frecuencia espacial \cite{williamsOTF}. 
+Los sistemas ópticos conforman un campo muy interesante en el contexto científico debido a, principalmente, a su variedad en este campo. Desde un ojo humano hasta una cámara o, incluso, un telescopio son parte de este área. Sin embargo, cuando se desea caracterizar un sistema óptico en concreto, una medida comúnmente utilizada es la Función de Dispersión de Punto (PSF), que es una función en el dominio espacial. En concreto, se utiliza su función análoga en el espacio de frecuencias, la Función de Transferencia Óptica (OTF), que no es más que su transformada de Fourier bidimensional. Esta función da cuenta de la respuesta a una señal sinusoidal periódica a través de los diferentes componentes del sistema óptico, en función de su frecuencia espacial \cite{williamsOTF}. 
 
 \begin{equation}
     OTF = F[PSF]
@@ -345,20 +345,6 @@ En la siguiente sección se dará una introducción a diferentes fuentes que dan
 
 Como bien se ha comentado, los sistemas ópticos cuentan con multitud de imperfecciones que afectan a la formación de imágenes. Dos grandes causas de una mala formación en las imágenes son las aberraciones ópticas y el ruido electrónico que, como se ha comentado en la Sección\ \ref{sec: Sistemas Electro-Ópticos} afecta a la OTF.\\
 
-\subsubsection{Aberraciones ópticas}
-Las aberraciones ópticas son desviaciones de la propagación ideal de los rayos de luz a través de un sistema óptico. Estas desviaciones provocan que los rayos no converjan adecuadamente, provocando errores en la imagen. Las aberraciones se clasifican comúnmente en dos grandes grupos: aberraciones monocromáticas y aberraciones cromáticas. La principal diferencia entre ambas es la respuesta que tienen a diferentes colores. 
-
-Las aberraciones monocromáticas aparecen incluso si la luz utilizada es de un solo color (longitud de onda fija) y son principalmente las siguientes:
-
-\begin{itemize}
-\item \textbf{Aberración esférica}: Se produce cuando los rayos incidentes alejados del eje óptico se enfocan en diferentes puntos que los rayos cercanos al eje.
-\item \textbf{Coma}: Afecta a los rayos que inciden oblicuamente al sistema óptico, generando imágenes de puntos como manchas asimétricas.
-\item \textbf{Astigmatismo}: Provoca que los rayos en diferentes planos focales tengan distintos puntos de enfoque.
-\item \textbf{Curvatura de campo}: Hace que una imagen plana se proyecte en una superficie curva.
-\item \textbf{Distorsión}: Provoca un desplazamiento de las posiciones de los puntos de la imagen respecto a su posición ideal, sin afectar la nitidez.
-\end{itemize}
-
-En cambio, las cromáticas se originan debido a que el índice de refracción de los materiales ópticos depende de la longitud de onda de la luz. Los rayos de diferentes colores se enfocan en distintos puntos, dando lugar a halos o bordes coloreados en las imágenes.
 
 \subsubsection{Relación señal a ruido (SNR)}
 \label{sec:ruido}
@@ -382,12 +368,28 @@ Hay tres fuentes principales de ruido que afectan a los sistemas electro-óptico
 
 
 Como los diferentes ruidos no están correlacionados, el ruido total será simplemente la suma de todos ellos. Pero, evidentemente, todo el ruido descrito ahora, depende de la señal de entrada. Para cuantificar la relación entre la señal de entrada y el ruido generado se define la Relación señal a ruido (SNR). Esta cantidad cuenta la relación entre la potencia de la señal y del ruido.
+
 \begin{equation}
     SNR=\frac{P_{signal}}{P_{noise}}
     \label{eq:SNR}
 \end{equation}
 
 Esta SNR varía dependiendo de la señal, y por lo tanto, en una sola imagen, pueden existir múltiples valores de SNR, principalmente porque depende de la reflectividad de la superficie del objeto. Por eso, es difícil definir la SNR de una sola imagen.
+
+\subsubsection{Aberraciones ópticas}
+Las aberraciones ópticas son desviaciones de la propagación ideal de los rayos de luz a través de un sistema óptico. Estas desviaciones provocan que los rayos no converjan adecuadamente, provocando errores en la imagen. Las aberraciones se clasifican comúnmente en dos grandes grupos: aberraciones monocromáticas y aberraciones cromáticas. La principal diferencia entre ambas es la respuesta que tienen a diferentes colores.\\ 
+
+Las aberraciones monocromáticas aparecen incluso si la luz utilizada es de un solo color (longitud de onda fija) y son principalmente las siguientes:
+
+\begin{itemize}
+\item \textbf{Aberración esférica}: Se produce cuando los rayos incidentes alejados del eje óptico se enfocan en diferentes puntos que los rayos cercanos al eje.
+\item \textbf{Coma}: Afecta a los rayos que inciden oblicuamente al sistema óptico, generando imágenes de puntos como manchas asimétricas.
+\item \textbf{Astigmatismo}: Provoca que los rayos en diferentes planos focales tengan distintos puntos de enfoque.
+\item \textbf{Curvatura de campo}: Hace que una imagen plana se proyecte en una superficie curva.
+\item \textbf{Distorsión}: Provoca un desplazamiento de las posiciones de los puntos de la imagen respecto a su posición ideal, sin afectar la nitidez.
+\end{itemize}
+
+En cambio, las cromáticas se originan debido a que el índice de refracción de los materiales ópticos depende de la longitud de onda de la luz. Los rayos de diferentes colores se enfocan en distintos puntos, dando lugar a halos o bordes coloreados en las imágenes.
 
 \subsubsection{Distorsión Óptica}
 
@@ -428,8 +430,8 @@ En la actualidad, existen dos modelos dominantes en el contexto científico. El 
 \begin{equation}
 \left\{
 \begin{aligned}
-x = (1 + k_1 ||p||^2 + k_2 ||p||^4 + k_3 ||p||^6 + \dots) u\\
-y = (1 + k_1 ||p||^2 + k_2 ||p||^4 + k_3 ||p||^6 + \dots) v 
+x = (1 + k_1 \|p\|^2 + k_2 \|p\|^4 + k_3 \|p\|^6 + \dots) u\\
+y = (1 + k_1 \|p\|^2 + k_2 \|p\|^4 + k_3 \|p\|^6 + \dots) v 
 \end{aligned}
 \right.
 \label{eq: Duane}
@@ -439,14 +441,14 @@ donde \(k_1, k_2, k_3, \dots\) son los parámetros de distorsión radial (o coef
 \begin{equation}
 \left\{
 \begin{aligned}
-u = \frac{1}{(1 + \lambda_1 ||X||^2 + \lambda_2 ||X||^4 + \lambda_3 ||X||^6 + \dots)} x\\
-v = \frac{1}{(1 + \lambda_1 ||X||^2 + \lambda_2 ||X||^4 + \lambda_3 ||X||^6 + \dots)} y
+u = \frac{1}{(1 + \lambda_1 \|X\|^2 + \lambda_2 \|X\|^4 + \lambda_3 \|X\|^6 + \dots)} x\\
+v = \frac{1}{(1 + \lambda_1 \|X\|^2 + \lambda_2 \|X\|^4 + \lambda_3 \|X\|^6 + \dots)} y
 \end{aligned}
 \right.
 \end{equation}
 donde \(\lambda_1, \lambda_2, \lambda_3, \dots\) son los coeficientes del modelo.\\
 
-Evidentemente, el nivel de precisión que se puede llegar a alcanzar con estos modelos es proporcional al número de coeficientes que se usen. En cualquier caso, para la mayoría de aplicaciones donde la distorsión es mínima, basta con tener en cuenta únicamente el primer coeficiente. \\
+Evidentemente, el nivel de precisión que se puede llegar a alcanzar con estos modelos es proporcional al número de coeficientes que se usen. En cualquier caso, para la mayoría de aplicaciones donde la distorsión es mínima, basta con tener en cuenta únicamente el primer coeficiente.\\
 
 En este contexto se diferencian dos formas de distorsión: \textit{barrel} y \textit{pincushion} (ver Figura\ \ref{fig:distorsiones}), denominadas de esta forma por su similitud precisamente con un barril (en inglés, \textit{barrel}) y con un cojín (en inglés \textit{cushion}). Ambas, definidas por los modelos recién explicados, difieren exclusivamente en el signo de los coeficientes de cada modelo. En ambos modelos, coeficientes positivos darían lugar a una distorsión \textit{pincushion} y negativos a una \textit{barrel}.\\
 
@@ -455,7 +457,7 @@ En el caso concreto que se estudia en este trabajo, el modelo utilizado es el pr
 R´ = (1 + k R^2 ) R
 \label{eq: Duane_radial}
 \end{equation}
-donde se han eliminado los demás coeficientes del modelo, \(R=||p||=\sqrt{u^2+v^2}\) y \(R´=||X||=\sqrt{x^2+y^2}\).\\
+donde se han eliminado los demás coeficientes del modelo, \(R=\|p\|=\sqrt{u^2+v^2}\) y \(R´=\|X\|=\sqrt{x^2+y^2}\).\\
 
 Reorganizando un poco la ecuación y definiendo la distorsión como \(d(u, v)=1+kR^2\), se obtiene:
 \begin{equation}
@@ -474,10 +476,10 @@ Bukhari y Dailey \cite{bukhari2013automatic} propusieron ajustar círculos en se
 Rong et al. \cite{rong2016radial} utilizaron un enfoque de clasificación para estimar el parámetro de distorsión con precisión finita como uno de 401 valores discretos posibles. López et al. \cite{lopez2019deep} entrenaron exitosamente una red neuronal convolucional para estimar conjuntamente la orientación de la cámara (inclinación, balanceo) y los parámetros intrínsecos (distancia focal y distorsión radial) a partir de imágenes individuales. Su método utilizó datos sintéticos generados a partir de imágenes panorámicas del conjunto de datos SUN360 presentado por Xiao et al. \cite{xiao2012recognizing}, que contiene objetos artificiales de la vida cotidiana. El método estimó dos parámetros de distorsión del modelo polinomial, expresando el parámetro \(k_2\) como función de \(k_1\). Liao et al. \cite{liao2021deep} extendieron el marco propuesto por Rong et al. \cite{rong2016radial} añadiendo una nueva representación para la distorsión de lente llamada \textit{Ordinal Distortion}. 
 
 \subsubsection{Métodos de aprendizaje basados en reconstrucción}
-Podemos encontrar varios métodos que abordan la corrección de distorsión como un problema de traducción de imagen a imagen. Liao et al. \cite{liao2019dr} utilizaron entrenamiento adversarial para entrenar una GAN que modela el mapeo entre imágenes distorsionadas y rectificadas. En los trabajos de Li et al. \cite{li2019blind}, Chao et al. \cite{chao2020self} y Zhu et al. \cite{zhu2022semi}, los autores intentaron mejorar la interpretabilidad de las predicciones incorporando el \textit{flujo de corrección}. Li et al. \cite{li2019blind} ajustaron un modelo de división de un solo parámetro al flujo de corrección de baja resolución predicho, lo que permite calcular analíticamente la distorsión incluso para imágenes de alta resolución. En \cite{chao2020self}, los autores aprendieron un previo geométrico para mejorar la consistencia del flujo de corrección. En \cite{zhu2022semi}, los autores exploraron una arquitectura UNet basada en transformadores para la predicción del flujo de corrección. En \cite{yang2021progressively}, los autores proponen una red complementaria que contiene ramas paralelas para la predicción del flujo de corrección y la corrección de distorsión. En cada nivel del decodificador de distorsión, la estimación adecuada del flujo de corrección se utiliza para producir características no distorsionadas. En \cite{wang2023model}, los autores proponen un pre-entrenamiento consciente del modelo, donde un codificador inspirado en transformadores aprende a predecir el tipo de distorsión y los parámetros de distorsión. Después de completar el pre-entrenamiento, el decodificador de rectificación se ajusta para predecir el flujo de corrección.
+Se pueden encontrar varios métodos que abordan la corrección de distorsión como un problema de traducción de imagen a imagen. Liao et al. \cite{liao2019dr} utilizaron entrenamiento adversarial para entrenar una GAN que modela el mapeo entre imágenes distorsionadas y rectificadas. En los trabajos de Li et al. \cite{li2019blind}, Chao et al. \cite{chao2020self} y Zhu et al. \cite{zhu2022semi}, los autores intentaron mejorar la interpretabilidad de las predicciones incorporando el \textit{flujo de corrección}. Li et al. \cite{li2019blind} ajustaron un modelo de división de un solo parámetro al flujo de corrección de baja resolución predicho, lo que permite calcular analíticamente la distorsión incluso para imágenes de alta resolución. En \cite{chao2020self}, los autores aprendieron un previo geométrico para mejorar la consistencia del flujo de corrección. En \cite{zhu2022semi}, los autores exploraron una arquitectura UNet basada en transformadores para la predicción del flujo de corrección. En \cite{yang2021progressively}, los autores proponen una red complementaria que contiene ramas paralelas para la predicción del flujo de corrección y la corrección de distorsión. En cada nivel del decodificador de distorsión, la estimación adecuada del flujo de corrección se utiliza para producir características no distorsionadas. En \cite{wang2023model}, los autores proponen un pre-entrenamiento consciente del modelo, donde un codificador inspirado en transformadores aprende a predecir el tipo de distorsión y los parámetros de distorsión. Después de completar el pre-entrenamiento, el decodificador de rectificación se ajusta para predecir el flujo de corrección.
 
 \subsection{Métricas}
-En este trabajo se propone estudiar un conjunto de coeficientes \(\{ k_1, k_2, \dots, k_N \}\) asociado a un conjunto de posiciones de la imagen \(\{ M_1, M_2, \dots, M_N \}\), explicado más adelante en profundidad. La exactitud y precisión de este conjunto de datos se puede y se debe evaluar en base a unas métricas. En esta sección se proponen distintas cantidades que más adelante se utilizarán para validar o no este método de detección de distorsión.\\
+En este trabajo se propone estudiar un conjunto de coeficientes \(\{ k_1, k_2, \dots, k_N \}\) asociado a un conjunto de posiciones de la imagen \(\{ M_1, M_2, \dots, M_N \}\), explicado más adelante en profundidad. La exactitud y precisión de este conjunto de datos se puede y se debe evaluar en base a unas métricas. En esta sección se proponen distintas cantidades que más adelante se utilizarán para validar el método de detección de distorsión.\\
 
 A la hora de evaluar la precisión parece natural usar un parámetro que mida la diferencia entre el coeficiente de distorsión real y el medido, por ejemplo \(L=k_{real}-k_{m}\). Sin embargo, para hacer una valoración más completa del perfil de distorsión medido, Liao et al. \cite{liao2021deep} proponen lo que ellos denominan como \textit{mean distortion level deviation} (MDLD):
 \begin{equation}
@@ -485,11 +487,11 @@ A la hora de evaluar la precisión parece natural usar un parámetro que mida la
     \label{eq:MDLD}
 \end{equation}
 
-donde \(N\) es la cantidad de coeficientes a estudiar, \(\hat{d}_i\) es la distorsión generada por el coeficiente \(k_{i}\) en la posición \(M_i\) y \(d_i\) la distorsión generada por el coeficiente \(k_{real}\) en la posición \(M_i\). Esta cantidad (adimensional) mide el efecto práctico que produce el error en la medida del coeficiente. En caso de querer recuperar la imagen original (sin distorsionar), cuanto mayor sea el MDLD, mayor será la diferencia absoluta entre la imagen distorsionada y la imagen sin "desdistorsionada".\\
+donde \(N\) es la cantidad de coeficientes a estudiar, \(\hat{d}_i\) la distorsión generada por el coeficiente \(k_{i}\) en la posición \(M_i\) y \(d_i\) la distorsión generada por el coeficiente \(k_{real}\) en la posición \(M_i\). Esta cantidad (adimensional) mide el efecto práctico que produce el error en la medida del coeficiente. En caso de querer recuperar la imagen original (sin distorsionar), cuanto mayor sea el MDLD, mayor será la diferencia absoluta entre la imagen distorsionada y la imagen sin "desdistorsionada".\\
 
 Siguiendo con una propuesta más sencilla, se propone medir \textit{root mean square error} (RMSE) entre los coeficientes reales y medidos\cite{liao2021deep}.
 \begin{equation}
-    RMSE=\frac{1}{N}\sum_{i=1}^N\sqrt{(k_i-\hat{k_i})^2}
+    RMSE=\frac{1}{N}\sum_{i=1}^N\sqrt{(k_i-k_{real})^2}
 \end{equation}
 Esta medida se centra más en valorar la precisión del conjunto y se complementa con el \textit{error relativo} común.
 \begin{equation}
