@@ -497,14 +497,14 @@ Esta medida se centra más en valorar la precisión del conjunto y se complement
 \begin{equation}
     E_r=|\frac{k_m-k_{real}}{k_{real}}|\times100
 \end{equation}
-En este caso \(k_m\) es el valor final que se mide con este método; por lo que, esta métrica da mucha información; además de ser la más fácil de interpretar. 
+En este caso \(k_m\) es el valor final que se mide con este método; por lo que, esta métrica es la más concluyente además de ser la más fácil de interpretar. 
 
 
 \section{Método propuesto}
 \label{sec:Metodo}
 El método propuesto en este trabajo se centra en el estudio de imágenes de un \textit{pinhole grid}. A partir de adquisiciones reales y simuladas de los \textit{pinholes} se podrá estimar el desajuste en las posiciones de estos y concluir con un perfil de distorsión del sistema óptico. A lo largo del trabajo se hará referencia a los pinholes sin distorsión como \textit{pinholes ideales} y a los pinholes con distorsión como \textit{pinholes reales}. Además, es fundamental tener en cuenta algunos parámetros que se definen a continuación:
 \begin{itemize}
-    \item \textit{\(spacing\)}: distancia (en píxeles) entre pinholes ideales.
+    \item \textit{\(spacing\)}: distancia (en píxeles) entre pinholes ideales contiguos.
     \item \textit{\(px\)}: pixelsize, dimensiones del píxel en metros.
     \item \textit{\(n_{ph}\)}: número de pinholes en cada dimensión, \(n_{px} \times n_{py}\).
     \item \textit{\(C_{o}\)}:(\(C_x, C_y\)) centro óptico del sistema. Por simetría esférica de la óptica del sistema, este 
@@ -515,59 +515,60 @@ El método propuesto en este trabajo se centra en el estudio de imágenes de un 
 
 \subsection{Primer paso: detección de los centroides de los pinholes}
 
-La primera etapa del método es detectar los centroides de cada pinhole en la imagen, dando su posición en píxeles: \(P_i=(P_{i_x}, P_{i_y})\). Para detectar estos pinholes se ha propuesto un algoritmo con umbral adaptativo en el que se divide la imagen en ventanas que deben contener únicamente un pinhole. Después, se divide la ventana en regiones que superen el umbral y se escoge la región más extensa (esta será la región del pinhole). De esta forma se evita que se detecte el ruido como pinhole. Finalmente, se calcula el centro de masa de la región del pinhole y se define este como el centroide del pinhole \cite{Yin2010Centroid}.\\
+La primera etapa del método es detectar los centroides de cada pinhole en la imagen, dando su posición en píxeles: \(P_i=(P_{i_x}, P_{i_y})\). Para detectar estos pinholes se ha propuesto un algoritmo con umbral adaptativo en el que se divide la imagen en ventanas que contengan únicamente un pinhole. Después, se binariza la ventana en regiones con el umbral adaptativo y se escoge la región más extensa (esta será la región del pinhole). De esta forma se descartan píxeles brillantes fuera del pinhole. Finalmente, se calcula el centro de masa de la región del pinhole y se define este como el centroide del pinhole \cite{Yin2010Centroid}.\\
 
-Para dividir la imagen en ventanas se utiliza una máscara de máximos relativos con un umbral mínimo para elimiar la mayoría del ruido. Esta primera etapa dará lugar a un conjunto de puntos \(\{ Q_i \}\) que serán los máximos de los pinholes y ruido electrónico en puntos aleatorios de la imagen. Para eliminar el ruido se evalúan los píxeles vecinos de cada máximo, eliminando los máximos rodeados de píxeles con intensidades muy bajas. Este nuevo conjunto de puntos \(\{ Q'_i \}\) serán los centros de las ventanas.\\
+Para dividir la imagen en ventanas se utiliza una máscara de máximos relativos con un umbral mínimo \(U_{min}\), de esta forma se genera un primer conjunto de candidatos a pinhole. Esta primer conjunto de puntos \(\{ Q_i \}\) serán una mezcla entre los máximos de los pinholes y ruido electrónico en puntos aleatorios de la imagen. Para eliminar el ruido se evalúan los píxeles vecinos para cada \(Q_i\), eliminando los puntos que tengan menos de 4 vecinos con intensidad menor que el \(40\%\) de la intensidad de \(Q_i\). Este umbral depende mucho del rango del ruido de las imágenes y, aunque, los valores utilizados en este trabajo son generales, se recomienda adaptarlos a cada caso. Este nuevo conjunto de puntos \(\{ Q'_i \}\) serán los centros de las ventanas.\\
 
 \begin{figure}[h]
     \centering
     \includegraphics[width=0.9\linewidth]{Imagenes/Centroide_candidatos.png}
-    \caption{\small Imagen de un pinhole grid real hecha con xxxx. Representados el conjunto de puntos \(\{ Q_i \}\) (cruces rojas y verdes) y \(\{ Q'_i \}\) (cruces verdes). Dibujada una ventana en rojo centrada en un punto \( Q'_i \)  aleatorio.}
+    \caption{\small Imagen de un pinhole grid proporcionada por Satlantis Microsats. Representados el conjunto de puntos \(\{ Q_i \}\) (cruces rojas y verdes) y \(\{ Q'_i \}\) (cruces verdes). Dibujada una ventana en rojo centrada en un punto \( Q'_i \) aleatorio.}
     \label{fig:candidatos}
 \end{figure}
 
-El umbral que se propone en \cite{Yin2010Centroid} es el \(n\)-ésimo valor máximo de la intensidad en la ventana, pero en este método se propone como umbral adaptativo:
+Para binarizar cada ventana el umbral adaptativo que se propone en \cite{Yin2010Centroid} es el \(n\)-ésimo valor máximo de la intensidad en cada ventana. Sin embargo, esto puede acarrear problemas si los tamaños de los pinholes no son iguales, así que se propone otro umbral más acorde a lo que se puede ver en la Figura\ \ref{fig:candidatos}:
+
 \begin{equation}
     I_{umbral}=I_{max} \times 0.4
     \label{eq:umbral_adaptativo}
 \end{equation}
-donde \(I_{max}\) es la intensidad máxima de la ventana. Esto se hace así para evitar problemas con los diferentes tamaños de los pinholes.\\
 
-Una vez binariazada la ventana, podría suceder que algún píxel de ruido supere el umbral y empeore la medida del centroide. Para evitar esto, se secciona la ventana en regiones y solo se hace el cálculo del centroide con la región más extensa.\\
+donde \(I_{max}\) es la intensidad máxima de la ventana. Esto hace que sea cual sea el tamaño del pinhole se pueda binarizar con sentido.\\
 
-\newpage
+Una vez binariazada la ventana, podría suceder que algún píxel no perteneciente al pinhole superase el umbral. Para evitar tenerlos en cuenta a la hora de calcular el centroide, se realiza el cálculo solo sobre la región de puntos más extensa.\\
+
 Las ecuaciones con las que se calcula el centroide en cada ventana son las siguientes:
 
 \begin{equation}
-x_c =
+M_{i_x} =
 \frac{
-\displaystyle \sum_{i=1}^{U} \sum_{j=1}^{V} \left( I(i,j) - I_{umbral} \right) H(i,j)\, x_{ij}
+\displaystyle \sum_{j=1}^{U} \sum_{k=1}^{V} \left( I(j,k) - I_{umbral} \right) H(j,k)\, x_{jk}
 }{
-\displaystyle \sum_{i=1}^{U} \sum_{j=1}^{V} \left( I(i,j) - I_{umbral} \right) H(i,j)
+\displaystyle \sum_{j=1}^{U} \sum_{k=1}^{V} \left( I(j,k) - I_{umbral} \right) H(j,k)
 }
-\label{eq:xc}
+\label{eq:M_ix}
 \end{equation}
 
 \begin{equation}
-y_c =
+M_{i_y} =
 \frac{
-\displaystyle \sum_{i=1}^{U} \sum_{j=1}^{V} \left( I(i,j) - I_{umbral} \right) H(i,j)\, y_{ij}
+\displaystyle \sum_{j=1}^{U} \sum_{k=1}^{V} \left( I(j,k) - I_{umbral} \right) H(j,k)\, y_{jk}
 }{
-\displaystyle \sum_{i=1}^{U} \sum_{j=1}^{V} \left( I(i,j) - I_{umbral} \right) H(i,j)
+\displaystyle \sum_{j=1}^{U} \sum_{k=1}^{V} \left( I(j,k) - I_{umbral} \right) H(j,k)
 }
-\label{eq:yc}
+\label{eq:M_iy}
 \end{equation}
 
 \begin{equation}
-H(i,j) =
+H(j, k) =
 \begin{cases}
-1, & \text{si } I(i,j) \geq I_{umbral} \\
-0, & \text{si } I(i,j) < I_{umbral}
+1, & \text{si } I(j,k) \geq I_{umbral} \\
+0, & \text{si } I(j,k) < I_{umbral}
 \end{cases}
 \label{eq:heaviside}
 \end{equation}
 
-donde $x_c$ e $y_c$ son las coordenadas del centroide \(M_i\) del \(i\)-ésimo pinhole. $I(i,j)$ representa el valor de intensidad del píxel $(i,j)$, mientras que $I_{umbral}$ es el valor umbral de intensidad. Las variables $x_{ij}$ e $y_{ij}$ denotan las coordenadas del píxel $(i,j)$ en la imagen completa de pinholes. Por último, $U$ y $V$ representan el número de píxeles en las direcciones $X$ e $Y$, respectivamente, dentro de la ventana de detección.
+donde $M_{i_x}$ y $M_{i_y}$ son las coordenadas del centroide del \(i\)-ésimo pinhole \(M_i\). $I(j,k)$ representa el valor de intensidad del píxel $(j,k)$, mientras que $I_{umbral}$ es el valor umbral de intensidad. Las variables $x_{jk}$ e $y_{jk}$ denotan las coordenadas del píxel $(j,k)$ en la imagen completa de pinholes. Por último, $U$ y $V$ representan el número de píxeles en las direcciones $X$ e $Y$, respectivamente, dentro de cada ventana de detección.
 
 \begin{figure}[htbp]
     \centering
@@ -591,12 +592,12 @@ donde $x_c$ e $y_c$ son las coordenadas del centroide \(M_i\) del \(i\)-ésimo p
     \label{fig:ventanas}
 \end{figure}
 
-Como se puede observar en la Figura\ \ref{fig:ventana_binaria} el conjunto de puntos \(\{ Q_i \}\) no coincide con el conjunto \(\{ M_i \}\). Por eso es necesario realizar este segundo paso de binarizar la imagen para refinar el cálculo del centroide.
+Como se puede observar en la Figura\ \ref{fig:ventana_binaria} el conjunto de puntos \(\{ Q'_i \}\) no coincide con el conjunto \(\{ M_i \}\). Por eso es necesario realizar este segundo paso de binarizar la imagen para refinar el cálculo del centroide.
 
 \begin{figure}[h]
     \centering
     \includegraphics[width=0.9\linewidth]{Imagenes/Centroides.png}
-    \caption{\small Imagen de un pinhole grid real hecha con xxxx. Representados el conjunto de puntos \(\{ M_i \}\), es decir, los centroides de los pinholes.}
+    \caption{\small Imagen de un pinhole grid proporcionada por Satlantis Microsats. Representados el conjunto de puntos \(\{ M_i \}\), es decir, los centroides de los pinholes.}
     \label{fig:centroides}
 \end{figure}
 
@@ -604,7 +605,7 @@ Como se puede observar en la Figura\ \ref{fig:ventana_binaria} el conjunto de pu
 \label{sec:segundo_paso}
 En el caso de cámaras profesionales como es este, la distorisón medida será de apenas unos pocos píxeles en los pinholes más alejados del centro óptico; por lo que, es esencial realizar un modelo de las posiciones de los pinholes ideales (sin distorsión) excelente. Para ello, en este método se evalúa y modeliza: la orientación de la placa, su posición y posibles pinholes que la cámara no haya podido detectar por errores de fabricación de la placa. Se seguirán los siguientes pasos: creación de una malla de pinholes regular, determinar su orientación y girarla, calcular su desplazamiento y corregirlo, emparejar las posiciones \(M_i\) con las \(P_i\).\\
 
-Para calcular el ángulo de orientación de la placa se propone estudiar los pinholes reales más cercanos al centro óptico. En concreto, los centros que disten hasta \(3\times spacing\) desde \(C_{o}\) para que tengan la mínima distorsión. Emparejándolos a pares y estudiando los vectores que los unen se obtienen los ejes de orientación de la placa (ver Figura\ \ref{fig:pinholes_rot}). \\
+Para calcular el ángulo de orientación de la placa se propone estudiar los pinholes reales más cercanos al centro óptico. En concreto, se propone estudiar los centros que disten hasta \(3\times spacing\) desde \(C_{o}\) para que tengan la mínima distorsión y haya suficientes. Emparejando a pares los pinholes contiguos y estudiando los vectores que los unen se obtienen los ejes de orientación de la placa (ver Figura\ \ref{fig:pinholes_rot}). \\
 
 \begin{figure}[htbp]
     \centering
@@ -615,12 +616,12 @@ Para calcular el ángulo de orientación de la placa se propone estudiar los pin
 
 Para calcular el desplazamiento se va a optar por suponer que la posición del pinhole real mas cercano al \(C_o\) coincide con la posición de su pinhole ideal correspondiente. Es decir, si el \(j\)-ésimo pinhole real es el más cercano a \(C_o\): \(M_j=P_j\), salvando una distancia de \(\Delta C_o\):
 \begin{equation}
-    \Delta C_o=\|M_j-P_j\|    
+    \Delta C_o=\|M_j-C_o\|    
     \label{eq:error_centrooptico} 
 \end{equation}
 Esta suposición parece ser válida solo si la distorsión es pequeña y si se ha detectado un pinhole lo suficientemente cerca del \(C_o\). Más adelante severificará o no.\\
 
-En este momento surge un problema de cómo emparejar cada pinhole real con su correspondiente ideal. Se ha propuesto utilizar el método de asignación lineal propuesto por Kuhn, comúnmente conocido como método húngaro~\cite{kuhn1955hungarian}. Este método empareja cada \(M_i\) con un \(P_i\) de modo que se minimice la suma de todas las distancias \(\|P_i-M_i\|\). En la práctica funciona porque la distorsión es pequeña y el pinhole ideal más cercano a un pinhole real, es precisamente su pinhole correspondiente. Si la distorsión fuera más grande, la asignación fallaría; ya que, podría ocurrir que un pinhole real tuviera más cerca otro pinhole ideal que su correspondiente pinhole ideal.
+En este momento surge un problema de cómo emparejar cada pinhole real con su correspondiente ideal. Se ha propuesto utilizar el método de asignación lineal propuesto por Kuhn, comúnmente conocido como método húngaro~\cite{kuhn1955hungarian}. Este algoritmo empareja cada \(M_i\) con un único \(P_i\) (por lo que no hay problema si hay pinholes no detectados) de modo que se minimice la suma de todas las distancias \(\|P_i-M_i\|\). En la práctica funciona porque la distorsión es pequeña y el pinhole ideal más cercano a un pinhole real, es precisamente su pinhole correspondiente. Si la distorsión fuera más grande, la asignación fallaría; ya que, podría ocurrir que un pinhole real tuviera más cerca otro pinhole ideal que su correspondiente pinhole ideal.
 Para su implementación se utiliza la función \texttt{linear\_sum\_assignment} de la librería \texttt{SciPy}~\cite {virtanen2020scipy}, que proporciona una solución óptima y computacionalmente eficiente.
 
 \subsection{Tercer paso: cálculo de la constante de distorsión.}
