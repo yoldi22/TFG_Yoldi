@@ -1,0 +1,38 @@
+# =========================
+# Datos y resultados (NO subir)
+# =========================
+
+DatosResultados/ImgReales/**
+DatosResultados/ResultsReales/**
+DatosResultados/Simulaciones_tfg/**
+
+# =========================
+# Formatos de datos pesados
+# =========================
+
+*.fits
+*.tif
+*.tiff
+*.png
+*.jpg
+*.jpeg
+*.npy
+*.npz
+
+# =========================
+# Logs y basura
+# =========================
+
+*.log
+*.aux
+*.out
+*.toc
+*.synctex.gz
+
+# =========================
+# Python
+# =========================
+
+__pycache__/
+*.pyc
+

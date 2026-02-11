@@ -378,13 +378,17 @@ def Calculation_k(
     # Calcular la distorsión mediante mínimos cuadrados y graficar
     k_medida = np.sum(x_i * y_i) / np.sum(x_i ** 2)
 
-    return k_medida, x_i, y_i
+    # Calcular la distorsión medida en cada centroide
+    k_values = (r_dist - r_sindist) / (r_sindist) ** 3
+
+    return k_medida, k_values, x_i, y_i
 
 def Validation(
         centros_dist,
         centros_sindist,
         simulacion,
         k_real,
+        k_values,
         k_medida,
         umbral_dist,
         sen_dim,
@@ -399,11 +403,13 @@ def Validation(
     # medidad con el Método de Z-Score
     z_scores = (residuos - np.mean(residuos)) / np.std(residuos)
     mask = np.abs(z_scores) < umbral_dist  # solo puntos con |z| < 3
+
+    # Se actualizan las listas
     x_filtrado = x_i[mask]
     y_filtrado = y_i[mask]
     centros_sindist = centros_sindist[mask]
     centros_dist = centros_dist[mask]
-    residuos = residuos[mask]
+    k_values = k_values[mask]
     n_sindist, n_dist = len(centros_sindist), len(centros_dist)
     
     # Verificamos que no se hayan eliminado demasiados pinholes
@@ -424,14 +430,14 @@ def Validation(
     # del filtrado
     k_medida = np.sum(x_filtrado * y_filtrado) / np.sum(x_filtrado ** 2) # px^-2
 
-    # después de recalcular k_medida
-
+    # después de recalcular k_medida se recalculan los residuos
+    y_i_ajuste = x_filtrado * k_medida #px^3 * px^-2
+    residuos = y_i_ajuste - y_filtrado #px
 
     # Se calculan errores del ajuste
     # RMSE
-    y_ajuste_final = x_filtrado * k_medida
-    residuos_final = y_ajuste_final - y_filtrado
-    RMSE = np.sqrt(np.mean(residuos_final**2)) #px
+    k_medida_list = [k_medida] * len(k_values) 
+    RMSE = np.sqrt(np.mean(k_medida_list - k_values))  #px
 
     # R^2
     R2 = 1 - np.sum(residuos ** 2) / np.sum((y_filtrado - np.mean(y_filtrado)) ** 2) #adimensional
@@ -447,8 +453,8 @@ def Validation(
 
         # MDLD
         R = np.linalg.norm(centros_dist, axis=1)  # matriz de distancias al centro
-        d_ground = 1 + k_real * R ** 2
-        d_medida = 1 + k_medida * R ** 2
+        d_ground = 1 + k_real * (R ** 2)
+        d_medida = 1 + k_values * (R ** 2)
         MDLD = np.mean(np.abs(d_medida - d_ground))
 
         # Se verifica la validez 
@@ -572,7 +578,7 @@ def Distortion_Detector(
     centros_sindist, centros_dist = centros_sindist[mask], centros_dist[mask]
 
     # Se calcula la constante de distorsión
-    k_medida, x_i, y_i = Calculation_k(centros_dist=centros_dist,
+    k_medida, k_values, x_i, y_i = Calculation_k(centros_dist=centros_dist,
                             centros_sindist=centros_sindist)
 
     # Se validan los resultados si provienen de una simulación
@@ -582,6 +588,7 @@ def Distortion_Detector(
                 simulacion=simulacion,
                 k_medida=k_medida,
                 k_real=k_real,
+                k_values=k_values,
                 umbral_dist=umbral_dist,
                 sen_dim=sen_dim,
                 x_i=x_i,

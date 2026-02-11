@@ -742,6 +742,7 @@
       \strng{authorbibnamehash}{d43b5c9185836bc37db7b03b072edd61}
       \strng{authornamehash}{82258e666869d4f882ef5ec016bc3fdb}
       \strng{authorfullhash}{d43b5c9185836bc37db7b03b072edd61}
+      \field{extraname}{1}
       \field{sortinit}{2}
       \field{sortinithash}{8b555b3791beccb63322c22f3320aa9a}
       \field{labelnamesource}{author}
@@ -792,6 +793,167 @@
       \range{pages}{1}
       \verb{doi}
       \verb 10.1088/0957-0233/21/1/015304
+      \endverb
+    \endentry
+    \entry{kuhn1955hungarian}{article}{}
+      \name{author}{1}{}{%
+        {{hash=9ed32c5059c74c243ab6d851d2010faf}{%
+           family={Kuhn},
+           familyi={K\bibinitperiod},
+           given={Harold\bibnamedelima W.},
+           giveni={H\bibinitperiod\bibinitdelim W\bibinitperiod}}}%
+      }
+      \strng{namehash}{9ed32c5059c74c243ab6d851d2010faf}
+      \strng{fullhash}{9ed32c5059c74c243ab6d851d2010faf}
+      \strng{bibnamehash}{9ed32c5059c74c243ab6d851d2010faf}
+      \strng{authorbibnamehash}{9ed32c5059c74c243ab6d851d2010faf}
+      \strng{authornamehash}{9ed32c5059c74c243ab6d851d2010faf}
+      \strng{authorfullhash}{9ed32c5059c74c243ab6d851d2010faf}
+      \field{sortinit}{2}
+      \field{sortinithash}{8b555b3791beccb63322c22f3320aa9a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Naval Research Logistics Quarterly}
+      \field{number}{1--2}
+      \field{title}{The Hungarian method for the assignment problem}
+      \field{volume}{2}
+      \field{year}{1955}
+      \field{pages}{83\bibrangedash 97}
+      \range{pages}{15}
+    \endentry
+    \entry{virtanen2020scipy}{article}{}
+      \true{moreauthor}
+      \true{morelabelname}
+      \name{author}{1}{}{%
+        {{hash=18703a2bb6a62484483c193a212da2f8}{%
+           family={Virtanen},
+           familyi={V\bibinitperiod},
+           given={Pauli},
+           giveni={P\bibinitperiod}}}%
+      }
+      \strng{namehash}{f252038edd7f112d75da3bf0c1edecbc}
+      \strng{fullhash}{f252038edd7f112d75da3bf0c1edecbc}
+      \strng{bibnamehash}{f252038edd7f112d75da3bf0c1edecbc}
+      \strng{authorbibnamehash}{f252038edd7f112d75da3bf0c1edecbc}
+      \strng{authornamehash}{f252038edd7f112d75da3bf0c1edecbc}
+      \strng{authorfullhash}{f252038edd7f112d75da3bf0c1edecbc}
+      \field{sortinit}{3}
+      \field{sortinithash}{ad6fe7482ffbd7b9f99c9e8b5dccd3d7}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Nature Methods}
+      \field{title}{SciPy 1.0: fundamental algorithms for scientific computing in Python}
+      \field{volume}{17}
+      \field{year}{2020}
+      \field{pages}{261\bibrangedash 272}
+      \range{pages}{12}
+    \endentry
+    \entry{montgomery2014}{book}{}
+      \name{author}{2}{}{%
+        {{hash=7d4a838891cb5c31eb1e3e089777efa0}{%
+           family={Montgomery},
+           familyi={M\bibinitperiod},
+           given={Douglas\bibnamedelima C.},
+           giveni={D\bibinitperiod\bibinitdelim C\bibinitperiod}}}%
+        {{hash=8108d2e426afcc5c75c1354a09e619c9}{%
+           family={Runger},
+           familyi={R\bibinitperiod},
+           given={George\bibnamedelima C.},
+           giveni={G\bibinitperiod\bibinitdelim C\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {Wiley}%
+      }
+      \strng{namehash}{067de60f00c7226f2b76c917ad4941f5}
+      \strng{fullhash}{067de60f00c7226f2b76c917ad4941f5}
+      \strng{bibnamehash}{067de60f00c7226f2b76c917ad4941f5}
+      \strng{authorbibnamehash}{067de60f00c7226f2b76c917ad4941f5}
+      \strng{authornamehash}{067de60f00c7226f2b76c917ad4941f5}
+      \strng{authorfullhash}{067de60f00c7226f2b76c917ad4941f5}
+      \field{sortinit}{3}
+      \field{sortinithash}{ad6fe7482ffbd7b9f99c9e8b5dccd3d7}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{edition}{6}
+      \field{title}{Applied Statistics and Probability for Engineers}
+      \field{year}{2014}
+    \endentry
+    \entry{Wang2019DistortionDBS}{article}{}
+      \name{author}{10}{}{%
+        {{hash=ee2b4a15025ecfaafcb95983b2d2623d}{%
+           family={Wang},
+           familyi={W\bibinitperiod},
+           given={Feng},
+           giveni={F\bibinitperiod}}}%
+        {{hash=751cbe8b31adace0aaba586229808118}{%
+           family={Zhang},
+           familyi={Z\bibinitperiod},
+           given={Zhiyu},
+           giveni={Z\bibinitperiod}}}%
+        {{hash=4c231105cc9164a1f1ad9521f584c81f}{%
+           family={Wang},
+           familyi={W\bibinitperiod},
+           given={Ruoqiu},
+           giveni={R\bibinitperiod}}}%
+        {{hash=9e70f95f89da527e167ef6286f1020a0}{%
+           family={Zeng},
+           familyi={Z\bibinitperiod},
+           given={Xuefeng},
+           giveni={X\bibinitperiod}}}%
+        {{hash=9eda43a644030ac3eceaf837cb2489ac}{%
+           family={Xu},
+           familyi={X\bibinitperiod},
+           given={Yang},
+           giveni={Y\bibinitperiod}}}%
+        {{hash=b9aa95a8d45b45b949e18994242e7236}{%
+           family={Lv},
+           familyi={L\bibinitperiod},
+           given={Shiliang},
+           giveni={S\bibinitperiod}}}%
+        {{hash=65afd11c8e50cacdbd6ae4f35d03e308}{%
+           family={Zhang},
+           familyi={Z\bibinitperiod},
+           given={Feng},
+           giveni={F\bibinitperiod}}}%
+        {{hash=46590b03a242b93dbe6af17c22164376}{%
+           family={Xue},
+           familyi={X\bibinitperiod},
+           given={Donglin},
+           giveni={D\bibinitperiod}}}%
+        {{hash=9ac6b990fa85d4b7ed77f720cd55aaf8}{%
+           family={Yan},
+           familyi={Y\bibinitperiod},
+           given={Jiwang},
+           giveni={J\bibinitperiod}}}%
+        {{hash=1aafbdbd13c2d9a5aa9016059c099948}{%
+           family={Zhang},
+           familyi={Z\bibinitperiod},
+           given={Xuejun},
+           giveni={X\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {Optical Society of America}%
+      }
+      \strng{namehash}{4fad24a73fd343b446f9bae8b7b79d4a}
+      \strng{fullhash}{03578d20a348e1a0842ccbe267133d86}
+      \strng{bibnamehash}{03578d20a348e1a0842ccbe267133d86}
+      \strng{authorbibnamehash}{03578d20a348e1a0842ccbe267133d86}
+      \strng{authornamehash}{4fad24a73fd343b446f9bae8b7b79d4a}
+      \strng{authorfullhash}{03578d20a348e1a0842ccbe267133d86}
+      \field{extraname}{2}
+      \field{sortinit}{3}
+      \field{sortinithash}{ad6fe7482ffbd7b9f99c9e8b5dccd3d7}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Optics Express}
+      \field{number}{21}
+      \field{title}{Distortion measurement of optical system using phase diffractive beam splitter}
+      \field{volume}{27}
+      \field{year}{2019}
+      \field{pages}{29803\bibrangedash 29817}
+      \range{pages}{15}
+      \verb{doi}
+      \verb 10.1364/OE.27.029803
       \endverb
     \endentry
   \enddatalist
