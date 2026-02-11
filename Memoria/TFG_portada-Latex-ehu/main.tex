@@ -75,8 +75,12 @@ sorting=none
 ]
 \newfontface\lightfont{EHUSans-Light.otf}[Path=./EHU Sans/]
 \newfontface\blackfont{EHUSans-Black.otf}[Path=./EHU Sans/]
+\newfontface\lightitfont{EHUSans-Light.otf}[Path=./EHU Sans/,FakeSlant=0.2]
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%% SIMULACIÓN DE LIGHT ITALIC %%%%%%%%%%%%
+\newcommand{\lightit}[1]{{\lightitfont #1}}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 
 \geometry{top=2.5cm, bottom=2.5cm, left=2.5cm, right=2.5cm}
@@ -145,9 +149,7 @@ Iñigo Irizar Loibide
 
     \parbox{11cm}{
          \begin{center}
-    \footnotesize © 2021, se puede proteger poniendo nombre y apellido/izen abizenak ezarriz babes zaitezke edo lizentzia CC batekin babestu / o con una licencia CC
-    \\
-   \small http://es.creativecommons.org/blog/licencias/
+    \footnotesize © 2026, Xabier Yoldi
 
         \end{center}
     }
@@ -184,13 +186,13 @@ Iñigo Irizar Loibide
 \tableofcontents
 \newpage
 
-\section{Introducción}
+\section{Introducción y objetivos}
 
-La industria aeroespacial y de observación terrestre ha crecido en los últimos años ampliamente y cada vez demanda sistemas más precisos debido a la carrera tecnológica que existe. En este contexto, la empresa Satlantis Microsats se ha especializado en el desarrollo de cámaras de alta resolución para pequeños satélites (microsatélites). Para garantizar la calidad y la fiabilidad de las imágenes capturadas, es esencial el desarrollo de sistemas con una calidad excelente y una mecánica cuidada al detalle. Sin  embargo, es fundamental procesar las imágenes para caracterizar y corregir las posibles aberraciones ópticas que pudieran tener los sistemas de captura. Este campo, denominado comúnmente como \textit{Image Proccessing}, es el encargado de realizar dichas correcciones, así como de aumentar la calidad de las imágenes o caracterizar patrones para futuras aplicaciones.\\
+La industria aeroespacial y de observación terrestre ha crecido en los últimos años ampliamente y cada vez demanda sistemas más precisos debido a la carrera tecnológica que existe. En este contexto, la empresa Satlantis Microsats se ha especializado en el desarrollo de cámaras de alta resolución para pequeños satélites (microsatélites). Para garantizar la calidad y la fiabilidad de las imágenes capturadas, es esencial el desarrollo de sistemas con una calidad excelente y una mecánica cuidada al detalle. Sin  embargo, es fundamental procesar las imágenes para caracterizar y corregir las posibles aberraciones ópticas que pudieran tener los sistemas de captura. Este campo, denominado comúnmente como \lightit{Image Proccessing}, es el encargado de realizar dichas correcciones, así como de aumentar la calidad de las imágenes o caracterizar patrones para futuras aplicaciones.\\
 
-En la actualidad, una aberración presente en todos los sistemas ópticos es la distorsión óptica. Esta aberración es producida por la forma esférica característica de muchas lentes y provoca un ligero desplazamiento en las posiciones de la imagen. Principalmente, existen dos formas en las que se distorsionan las capturas, denominadas tipo \textit{barrel} o \textit{pincushion}. Debido a la gran sensibilidad que existe para caracterizar esta aberración, la forma más sencilla y utilizada para abordar este problema es corregirla en base a medidas experimentales de cada sistema. Es por ello que en este Trabajo de Fin de Grado se desarrolla una metodología para la medida y análisis de la distorsión óptica con el objetivo final de aplicarlas en las cámaras de Satlantis.\\
+En la actualidad, una aberración presente en todos los sistemas ópticos es la distorsión óptica. Esta aberración es producida por la forma esférica característica de muchas lentes y provoca un ligero desplazamiento en las posiciones de la imagen. Principalmente, existen dos formas en las que se distorsionan las capturas, denominadas tipo \lightit{barrel} o \lightit{pincushion}. Debido a la gran sensibilidad que existe para caracterizar esta aberración, la forma más sencilla y utilizada para abordar este problema es corregirla en base a medidas experimentales de cada sistema. Es por ello que en este Trabajo de Fin de Grado se desarrolla una metodología para la medida y análisis de la distorsión óptica con el objetivo final de aplicarlas en las cámaras de Satlantis.\\
 
-Para ello, el algortimo desarrollado se ha planteado en el contexto de un banco de ensayo experimental que consiste en una placa de pinholes (orificios del orden de los micrómetros), que, al alumbrarlos, actúan como fuentes puntuales de luz. Las fotografías tomadas de esta placa permiten, mediante técnicas desarrolladas en este Trabajo de Fin de Grado, medir los desplazamientos relativos de cada punto y así calcular el perfil de distorsión introducido por la lente.\\
+Para ello, el algortimo desarrollado se ha planteado en el contexto de un banco de ensayo experimental que consiste en una placa de \lightit{pinhole}-s (orificios del orden de los micrómetros), que, al alumbrarlos, actúan como fuentes puntuales de luz. Las fotografías tomadas de esta placa permiten, mediante técnicas desarrolladas en este Trabajo de Fin de Grado, medir los desplazamientos relativos de cada punto y así calcular el perfil de distorsión introducido por la lente.\\
 
 Como fase preliminar y para realizar una validación de la metodología, se ha elaborado una etapa de simulaciones. En esta etapa se han generado imágenes replicando las imágenes proporcionadas por Satlantis, y se les ha aplicado una distorsión artificial. Esto ha permitido desarrollar y ajustar los algoritmos de detección y medición del perfil de distorsión.\\
 
@@ -223,7 +225,7 @@ Comúnmente, la PSF es interpretada como la distribución del brillo en función
 \end{equation}
 
 \newpage
-\textit{Prueba:}\\
+\lightit{Prueba:}\\
 
 Considerando una situación unidimensional, la señal de entrada \( f(x) \) es analizada por el sistema óptico (lineal e invariante) aplicando la transformación \( T \) a la señal de entrada, y este sistema devuelve la señal de salida \( g(x) \).
 
@@ -322,7 +324,7 @@ donde
 
 Como consecuencia de las propiedades de las transformadas de Fourier, el hecho de tener una PSF simétrica \(h(\xi, \mu) = h(-\xi, -\mu)\), hace que su transformada (OTF) sea una función real pura \cite{bracewell2000}. En otras palabras, una PSF simétrica implica una OTF igual a la MTF y una PTF nula.\\
 
-Como bien se acaba de introducir, la MTF se define como el módulo de la OTF. En concreto, la MTF es la función que define la capacidad de resolución del sistema óptico. Es decir, con esta herramienta se mide la efectividad que tiene el sistema para representar el contraste de la imagen original a diferentes frecuencias. De esta forma se define la cantidad \(M\) (en inglés \textit{modulation depth}) como:
+Como bien se acaba de introducir, la MTF se define como el módulo de la OTF. En concreto, la MTF es la función que define la capacidad de resolución del sistema óptico. Es decir, con esta herramienta se mide la efectividad que tiene el sistema para representar el contraste de la imagen original a diferentes frecuencias. De esta forma se define la cantidad \(M\) (en inglés \lightit{modulation depth}) como:
 
 \begin{equation}
     M = \frac{A_{max}-A_{min}}{A_{max}+A_{min}}
@@ -351,9 +353,9 @@ Como bien se ha comentado, los sistemas ópticos cuentan con multitud de imperfe
 Hay tres fuentes principales de ruido que afectan a los sistemas electro-ópticos: corriente oscura, ruido de disparo y ruido de lectura.
 
 \begin{itemize}
-    \item \textbf{Corriente oscura:} Es el efecto de la corriente eléctrica relativamente pequeña que fluye a través de dispositivos fotosensibles como los sensores, incluso cuando no entran fotones en el dispositivo. Físicamente, la corriente oscura es debida a la generación aleatoria de electrones y huecos dentro de la región de agotamiento del dispositivo. Estos pares electrón-hueco se generan por energía térmica, por lo que este ruido está directamente relacionado con la temperatura. Cuanto mayor es la temperatura a la que trabaja el detector, mayor será este ruido. Además, este ruido depende del tiempo de exposición, ya que se generarán más electrones cuanto más tiempo dure el uso. Se puede corregir restando a la imagen un fotograma (incluso se podría mejorar haciéndolo con la media de muchos) oscuro, denominado \textit{Dark Frame}.
+    \item \textbf{Corriente oscura:} Es el efecto de la corriente eléctrica relativamente pequeña que fluye a través de dispositivos fotosensibles como los sensores, incluso cuando no entran fotones en el dispositivo. Físicamente, la corriente oscura es debida a la generación aleatoria de electrones y huecos dentro de la región de agotamiento del dispositivo. Estos pares electrón-hueco se generan por energía térmica, por lo que este ruido está directamente relacionado con la temperatura. Cuanto mayor es la temperatura a la que trabaja el detector, mayor será este ruido. Además, este ruido depende del tiempo de exposición, ya que se generarán más electrones cuanto más tiempo dure el uso. Se puede corregir restando a la imagen un fotograma (incluso se podría mejorar haciéndolo con la media de muchos) oscuro, denominado \lightit{Dark Frame}.
     
-    \item \textbf{Ruido de disparo:} El ruido de disparo existe porque fenómenos como la luz y la corriente eléctrica consisten en el movimiento de paquetes discretos. Las fluctuaciones en la corriente de luz que se dan por la cuantización de la luz son la causa de este tipo de ruido. Con un ejemplo se entiende mejor. Un sensor es golpeado por una intensidad lumínica \(I\), esto quiere decir que, de media, en un segundo golpearán un número de fotones proporcionales a \(I\). Sin embargo, dependiendo del tiempo de exposición de la imagen y más variables aleatorias, la cantidad de fotones que recibe el sensor es \textit{pseudo-aleatoria}, dano lugar a deteecciones parásitas que son más significativas a bajas intensidades (por ejemplo al obtener una \textit{Dark Frame}). Estas fluctuaciones siguen una distibución de Poisson. 
+    \item \textbf{Ruido de disparo:} El ruido de disparo existe porque fenómenos como la luz y la corriente eléctrica consisten en el movimiento de paquetes discretos. Las fluctuaciones en la corriente de luz que se dan por la cuantización de la luz son la causa de este tipo de ruido. Con un ejemplo se entiende mejor. Un sensor es golpeado por una intensidad lumínica \(I\), esto quiere decir que, de media, en un segundo golpearán un número de fotones proporcionales a \(I\). Sin embargo, dependiendo del tiempo de exposición de la imagen y más variables aleatorias, la cantidad de fotones que recibe el sensor es \lightit{pseudo-aleatoria}, dando lugar a deteecciones parásitas que son más significativas a bajas intensidades (por ejemplo al obtener una \lightit{Dark Frame}). Estas fluctuaciones siguen una distibución de Poisson. 
     \begin{equation}
         P[X=k] = \frac{e^{-S}S^k}{k!}
     \end{equation}
@@ -393,30 +395,30 @@ En cambio, las cromáticas se originan debido a que el índice de refracción de
 
 \subsubsection{Distorsión Óptica}
 
-La distorsión óptica altera la posición de los puntos de la imagen. Dada  la geometría esférica de las lentes, la distorsión es, a grandes rasgos, una aberración radial. Es decir, la desviación de la posición ideal de los puntos depende de la distancia a la que se encuentren del centro de distorsión. A diferencia de otras aberraciones, no degrada directamente la nitidez de la imagen, pero sí modifica su forma. De forma general, se pueden diferenciar dos tipos de distorsión radial que corresponden a un modelado matemático análogo (en la siguiente sección se explica más en detalle): \textit{pincushion} y \textit{barrel}. 
+La distorsión óptica altera la posición de los puntos de la imagen. Dada  la geometría esférica de las lentes, la distorsión es, a grandes rasgos, una aberración radial. Es decir, la desviación de la posición ideal de los puntos depende de la distancia a la que se encuentren del centro de distorsión. A diferencia de otras aberraciones, no degrada directamente la nitidez de la imagen, pero sí modifica su forma. De forma general, se pueden diferenciar dos tipos de distorsión radial que corresponden a un modelado matemático análogo (en la siguiente sección se explica más en detalle): \lightit{pincushion} y \lightit{barrel}. 
 
 \begin{figure}[htbp]
     \centering
     \begin{minipage}{\textwidth}
         \centering
         % Subfigura 1
-        \begin{subfigure}[b]{0.31\textwidth}
+        \begin{subfigure}[t]{0.31\textwidth}
             \includegraphics[width=\linewidth]{Imagenes/imagen_original.jpg}
-            \caption{\small Imagen original\\sin distorsión}
+            \caption{\small Imagen original sin distorsión}
             \label{fig:original}
         \end{subfigure}
         \hfill
         % Subfigura 2
-        \begin{subfigure}[b]{0.31\textwidth}
+        \begin{subfigure}[t]{0.31\textwidth}
             \includegraphics[width=\linewidth]{Imagenes/imagen_distorsionada_pincushion.png}
-            \caption{\small Distorsión\\\textit{pincushion}}
+            \caption{\small Distorsión \lightit{pincushion}}
             \label{fig:pincushion}
         \end{subfigure}
         \hfill
         % Subfigura 3
-        \begin{subfigure}[b]{0.31\textwidth}
+        \begin{subfigure}[t]{0.31\textwidth}
             \includegraphics[width=\linewidth]{Imagenes/imagen_distorsionada_barrel.png}
-            \caption{\small Distorsión\\\textit{barrel}}
+            \caption{\small Distorsión \lightit{barrel}}
             \label{fig:barrel}
         \end{subfigure}
     \end{minipage}
@@ -450,7 +452,7 @@ donde \(\lambda_1, \lambda_2, \lambda_3, \dots\) son los coeficientes del modelo
 
 Evidentemente, el nivel de precisión que se puede llegar a alcanzar con estos modelos es proporcional al número de coeficientes que se usen. En cualquier caso, para la mayoría de aplicaciones donde la distorsión es mínima, basta con tener en cuenta únicamente el primer coeficiente.\\
 
-En este contexto se diferencian dos formas de distorsión: \textit{barrel} y \textit{pincushion} (ver Figura\ \ref{fig:distorsiones}), denominadas de esta forma por su similitud precisamente con un barril (en inglés, \textit{barrel}) y con un cojín (en inglés \textit{cushion}). Ambas, definidas por los modelos recién explicados, difieren exclusivamente en el signo de los coeficientes de cada modelo. En ambos modelos, coeficientes positivos darían lugar a una distorsión \textit{pincushion} y negativos a una \textit{barrel}.\\
+En este contexto se diferencian dos formas de distorsión: \lightit{barrel} y \lightit{pincushion} (ver Figura\ \ref{fig:distorsiones}), denominadas de esta forma por su similitud precisamente con un barril (en inglés, \lightit{barrel}) y con un cojín (en inglés \lightit{cushion}). Ambas, definidas por los modelos recién explicados, difieren exclusivamente en el signo de los coeficientes de cada modelo. En ambos modelos, coeficientes positivos darían lugar a una distorsión \lightit{pincushion} y negativos a una \lightit{barrel}.\\
 
 En el caso concreto que se estudia en este trabajo, el modelo utilizado es el propuesto por Duane de la Ecuación\ \eqref{eq: Duane} y con un solo coeficiente (suficiente para cámaras profesionales) por motivos de optimización. Además, debido a la geometría esférica de la óptica, es razonable reducir las dos ecuaciones en una sola, de la siguiente forma:
 \begin{equation}
@@ -473,15 +475,15 @@ Esta ecuación será la que se utilizará en el modelo de detección de distorsi
 Bukhari y Dailey \cite{bukhari2013automatic} propusieron ajustar círculos en segmentos de líneas detectadas. En \cite{aleman2014line}, los autores propusieron la Transformada de Hough Mejorada, que puede detectar líneas distorsionadas, y en \cite{aleman2014automatic}, propusieron un método para corregir la distorsión radial usando la Transformada de Hough Mejorada (IHT) y un modelo de Fitzgibbon de un solo coeficiente. En \cite{santana2016iterative}, se propuso una extensión de la transformada de Hough modificada que puede optimizar iterativamente modelos de distorsión radial de dos parámetros, tanto polinomiales como de división.
 
 \subsubsection{Métodos de aprendizaje basados en regresión}
-Rong et al. \cite{rong2016radial} utilizaron un enfoque de clasificación para estimar el parámetro de distorsión con precisión finita como uno de 401 valores discretos posibles. López et al. \cite{lopez2019deep} entrenaron exitosamente una red neuronal convolucional para estimar conjuntamente la orientación de la cámara (inclinación, balanceo) y los parámetros intrínsecos (distancia focal y distorsión radial) a partir de imágenes individuales. Su método utilizó datos sintéticos generados a partir de imágenes panorámicas del conjunto de datos SUN360 presentado por Xiao et al. \cite{xiao2012recognizing}, que contiene objetos artificiales de la vida cotidiana. El método estimó dos parámetros de distorsión del modelo polinomial, expresando el parámetro \(k_2\) como función de \(k_1\). Liao et al. \cite{liao2021deep} extendieron el marco propuesto por Rong et al. \cite{rong2016radial} añadiendo una nueva representación para la distorsión de lente llamada \textit{Ordinal Distortion}. 
+Rong et al. \cite{rong2016radial} utilizaron un enfoque de clasificación para estimar el parámetro de distorsión con precisión finita como uno de 401 valores discretos posibles. López et al. \cite{lopez2019deep} entrenaron exitosamente una red neuronal convolucional para estimar conjuntamente la orientación de la cámara (inclinación, balanceo) y los parámetros intrínsecos (distancia focal y distorsión radial) a partir de imágenes individuales. Su método utilizó datos sintéticos generados a partir de imágenes panorámicas del conjunto de datos SUN360 presentado por Xiao et al. \cite{xiao2012recognizing}, que contiene objetos artificiales de la vida cotidiana. El método estimó dos parámetros de distorsión del modelo polinomial, expresando el parámetro \(k_2\) como función de \(k_1\). Liao et al. \cite{liao2021deep} extendieron el marco propuesto por Rong et al. \cite{rong2016radial} añadiendo una nueva representación para la distorsión de lente llamada \lightit{Ordinal\ Distortion}. 
 
 \subsubsection{Métodos de aprendizaje basados en reconstrucción}
-Se pueden encontrar varios métodos que abordan la corrección de distorsión como un problema de traducción de imagen a imagen. Liao et al. \cite{liao2019dr} utilizaron entrenamiento adversarial para entrenar una GAN que modela el mapeo entre imágenes distorsionadas y rectificadas. En los trabajos de Li et al. \cite{li2019blind}, Chao et al. \cite{chao2020self} y Zhu et al. \cite{zhu2022semi}, los autores intentaron mejorar la interpretabilidad de las predicciones incorporando el \textit{flujo de corrección}. Li et al. \cite{li2019blind} ajustaron un modelo de división de un solo parámetro al flujo de corrección de baja resolución predicho, lo que permite calcular analíticamente la distorsión incluso para imágenes de alta resolución. En \cite{chao2020self}, los autores aprendieron un previo geométrico para mejorar la consistencia del flujo de corrección. En \cite{zhu2022semi}, los autores exploraron una arquitectura UNet basada en transformadores para la predicción del flujo de corrección. En \cite{yang2021progressively}, los autores proponen una red complementaria que contiene ramas paralelas para la predicción del flujo de corrección y la corrección de distorsión. En cada nivel del decodificador de distorsión, la estimación adecuada del flujo de corrección se utiliza para producir características no distorsionadas. En \cite{wang2023model}, los autores proponen un pre-entrenamiento consciente del modelo, donde un codificador inspirado en transformadores aprende a predecir el tipo de distorsión y los parámetros de distorsión. Después de completar el pre-entrenamiento, el decodificador de rectificación se ajusta para predecir el flujo de corrección.
+Se pueden encontrar varios métodos que abordan la corrección de distorsión como un problema de traducción de imagen a imagen. Liao et al. \cite{liao2019dr} utilizaron entrenamiento adversarial para entrenar una GAN que modela el mapeo entre imágenes distorsionadas y rectificadas. En los trabajos de Li et al. \cite{li2019blind}, Chao et al. \cite{chao2020self} y Zhu et al. \cite{zhu2022semi}, los autores intentaron mejorar la interpretabilidad de las predicciones incorporando el flujo de corrección. Li et al. \cite{li2019blind} ajustaron un modelo de división de un solo parámetro al flujo de corrección de baja resolución predicho, lo que permite calcular analíticamente la distorsión incluso para imágenes de alta resolución. En \cite{chao2020self}, los autores aprendieron un previo geométrico para mejorar la consistencia del flujo de corrección. En \cite{zhu2022semi}, los autores exploraron una arquitectura UNet basada en transformadores para la predicción del flujo de corrección. En \cite{yang2021progressively}, los autores proponen una red complementaria que contiene ramas paralelas para la predicción del flujo de corrección y la corrección de distorsión. En cada nivel del decodificador de distorsión, la estimación adecuada del flujo de corrección se utiliza para producir características no distorsionadas. En \cite{wang2023model}, los autores proponen un pre-entrenamiento consciente del modelo, donde un codificador inspirado en transformadores aprende a predecir el tipo de distorsión y los parámetros de distorsión. Después de completar el pre-entrenamiento, el decodificador de rectificación se ajusta para predecir el flujo de corrección.
 
 \subsection{Métricas}
 En este trabajo se propone estudiar un conjunto de coeficientes \(\{ k_1, k_2, \dots, k_N \}\) asociado a un conjunto de posiciones de la imagen \(\{ M_1, M_2, \dots, M_N \}\), explicado más adelante en profundidad. La exactitud y precisión de este conjunto de datos se puede y se debe evaluar en base a unas métricas. En esta sección se proponen distintas cantidades que más adelante se utilizarán para validar el método de detección de distorsión.\\
 
-A la hora de evaluar la precisión parece natural usar un parámetro que mida la diferencia entre el coeficiente de distorsión real y el medido, por ejemplo \(L=k_{real}-k_{m}\). Sin embargo, para hacer una valoración más completa del perfil de distorsión medido, Liao et al. \cite{liao2021deep} proponen lo que ellos denominan como \textit{mean distortion level deviation} (MDLD):
+A la hora de evaluar la precisión parece natural usar un parámetro que mida la diferencia entre el coeficiente de distorsión real y el medido, por ejemplo \(L=k_{real}-k_{m}\). Sin embargo, para hacer una valoración más completa del perfil de distorsión medido, Liao et al. \cite{liao2021deep} proponen lo que ellos denominan como \lightit{mean distortion level deviation} (MDLD):
 \begin{equation}
     MDLD=\frac{1}{N}\sum_{i=1}^N|\hat{d}_i-d_i|
     \label{eq:MDLD}
@@ -489,11 +491,11 @@ A la hora de evaluar la precisión parece natural usar un parámetro que mida la
 
 donde \(N\) es la cantidad de coeficientes a estudiar, \(\hat{d}_i\) la distorsión generada por el coeficiente \(k_{i}\) en la posición \(M_i\) y \(d_i\) la distorsión generada por el coeficiente \(k_{real}\) en la posición \(M_i\). Esta cantidad (adimensional) mide el efecto práctico que produce el error en la medida del coeficiente. En caso de querer recuperar la imagen original (sin distorsionar), cuanto mayor sea el MDLD, mayor será la diferencia absoluta entre la imagen distorsionada y la imagen sin "desdistorsionada".\\
 
-Siguiendo con una propuesta más sencilla, se propone medir \textit{root mean square error} (RMSE) entre los coeficientes reales y medidos\cite{liao2021deep}.
+Siguiendo con una propuesta más sencilla, se propone medir \lightit{root mean square error} (RMSE) entre los coeficientes reales y medidos\cite{liao2021deep}.
 \begin{equation}
     RMSE=\frac{1}{N}\sum_{i=1}^N\sqrt{(k_i-k_{real})^2}
 \end{equation}
-Esta medida se centra más en valorar la precisión del conjunto y se complementa con el \textit{error relativo} común.
+Esta medida se centra más en valorar la precisión del conjunto y se complementa con el error relativo.
 \begin{equation}
     E_r=|\frac{k_m-k_{real}}{k_{real}}|\times100
 \end{equation}
@@ -502,44 +504,42 @@ En este caso \(k_m\) es el valor final que se mide con este método; por lo que,
 
 \section{Método propuesto}
 \label{sec:Metodo}
-El método propuesto en este trabajo se centra en el estudio de imágenes de un \textit{pinhole grid}. A partir de adquisiciones reales y simuladas de los \textit{pinholes} se podrá estimar el desajuste en las posiciones de estos y concluir con un perfil de distorsión del sistema óptico. A lo largo del trabajo se hará referencia a los pinholes sin distorsión como \textit{pinholes ideales} y a los pinholes con distorsión como \textit{pinholes reales}. Además, es fundamental tener en cuenta algunos parámetros que se definen a continuación:
+El método propuesto en este trabajo se centra en el estudio de imágenes de un \lightit{pinhole grid}. A partir de adquisiciones reales y simuladas de los \lightit{pinhole}-s se podrá estimar el desajuste en las posiciones de estos y concluir con un perfil de distorsión del sistema óptico. A lo largo del trabajo se hará referencia a los \lightit{pinhole}-s sin distorsión como \lightit{pinhole}-s ideales y a los \lightit{pinhole}-s con distorsión como \lightit{pinhole}-s reales. Además, es fundamental tener en cuenta algunos parámetros que se definen a continuación:
 \begin{itemize}
-    \item \textit{\(spacing\)}: distancia (en píxeles) entre pinholes ideales contiguos.
-    \item \textit{\(px\)}: pixelsize, dimensiones del píxel en metros.
-    \item \textit{\(n_{ph}\)}: número de pinholes en cada dimensión, \(n_{px} \times n_{py}\).
-    \item \textit{\(C_{o}\)}:(\(C_x, C_y\)) centro óptico del sistema. Por simetría esférica de la óptica del sistema, este 
+    \item \lightit{spacing}: distancia (en píxeles) entre \lightit{pinhole}-s ideales contiguos.
+    \item \lightit{px}: pixelsize, dimensiones del píxel en metros.
+    \item $n_{ph}$: número de \lightit{pinhole}-s en cada dimensión, \(n_{px} \times n_{py}\).
+    \item $C_{o}$:(\(C_x, C_y\)) centro óptico del sistema. Por simetría esférica de la óptica del sistema, este 
     coincidirá con el centro de distorsión. Se dará generalmente en dimensiones de píxel.
-    \item \textit{\(P_i\)}: posición del centroide del \(i\)-ésimo pinhole ideal en píxeles, \((P_{i_x}, P_{i_y})\).
-    \item \textit{\(M_i\)}: posición del centroide del \(i\)-ésimo pinhole real en píxeles, \((M_{i_x}, M_{i_y})\).
+    \item $P_i$: posición del centroide del \(i\)-ésimo \lightit{pinhole} ideal en píxeles, \((P_{i_x}, P_{i_y})\) relativa a \(C_o\).
+    \item $M_i$: posición del centroide del \(i\)-ésimo \lightit{pinhole} real en píxeles, \((M_{i_x}, M_{i_y})\) relativa a \(C_o\).
 \end{itemize}
 
-\subsection{Primer paso: detección de los centroides de los pinholes}
+\subsection{Primer paso: detección de los centroides de los \lightit{pinhole}-s}
 
-La primera etapa del método es detectar los centroides de cada pinhole en la imagen, dando su posición en píxeles: \(P_i=(P_{i_x}, P_{i_y})\). Para detectar estos pinholes se ha propuesto un algoritmo con umbral adaptativo en el que se divide la imagen en ventanas que contengan únicamente un pinhole. Después, se binariza la ventana en regiones con el umbral adaptativo y se escoge la región más extensa (esta será la región del pinhole). De esta forma se descartan píxeles brillantes fuera del pinhole. Finalmente, se calcula el centro de masa de la región del pinhole y se define este como el centroide del pinhole \cite{Yin2010Centroid}.\\
+La primera etapa del método es detectar los centroides de cada \lightit{pinhole} en la imagen, dando su posición en píxeles: \(M_i=(M_{i_x}, M_{i_y})\). Para detectar estos \lightit{pinhole}-s se ha propuesto un algoritmo con umbral adaptativo en el que se divide la imagen en ventanas que contengan únicamente un \lightit{pinhole}. Después, se binariza la ventana en regiones con el umbral adaptativo y se escoge la región más extensa (esta será la región del \lightit{pinhole}). De esta forma se descartan píxeles brillantes fuera del \lightit{pinhole}. Finalmente, se calcula el centro de masa de la región del \lightit{pinhole} y se define este como el centroide del \lightit{pinhole} \cite{Yin2010Centroid}.\\
 
-Para dividir la imagen en ventanas se utiliza una máscara de máximos relativos con un umbral mínimo \(U_{min}\), de esta forma se genera un primer conjunto de candidatos a pinhole. Esta primer conjunto de puntos \(\{ Q_i \}\) serán una mezcla entre los máximos de los pinholes y ruido electrónico en puntos aleatorios de la imagen. Para eliminar el ruido se evalúan los píxeles vecinos para cada \(Q_i\), eliminando los puntos que tengan menos de 4 vecinos con intensidad menor que el \(40\%\) de la intensidad de \(Q_i\). Este umbral depende mucho del rango del ruido de las imágenes y, aunque, los valores utilizados en este trabajo son generales, se recomienda adaptarlos a cada caso. Este nuevo conjunto de puntos \(\{ Q'_i \}\) serán los centros de las ventanas.\\
+Para dividir la imagen en ventanas se utiliza una máscara de máximos relativos con un umbral mínimo \(U_{min}\), de esta forma se genera un primer conjunto de candidatos a \lightit{pinhole}. Esta primer conjunto de puntos \(\{ Q_i \}\) serán una mezcla entre los máximos de los \lightit{pinhole}-s y ruido electrónico en puntos aleatorios de la imagen. Para eliminar el ruido se evalúan los píxeles vecinos para cada \(Q_i\), eliminando los puntos que tengan menos de 4 vecinos con intensidad menor que el \(40\%\) de la intensidad de \(Q_i\). Este umbral depende mucho del rango del ruido de las imágenes y, aunque, los valores utilizados en este trabajo son generales, se recomienda adaptarlos a cada caso. Este nuevo conjunto de puntos \(\{ Q'_i \}\) serán los centros de las ventanas.\\
 
 \begin{figure}[h]
     \centering
     \includegraphics[width=0.9\linewidth]{Imagenes/Centroide_candidatos.png}
-    \caption{\small Imagen de un pinhole grid proporcionada por Satlantis Microsats. Representados el conjunto de puntos \(\{ Q_i \}\) (cruces rojas y verdes) y \(\{ Q'_i \}\) (cruces verdes). Dibujada una ventana en rojo centrada en un punto \( Q'_i \) aleatorio.}
+    \caption{\small Imagen de un \lightit{pinhole grid} proporcionada por Satlantis Microsats. Representados el conjunto de puntos \(\{ Q_i \}\) (cruces rojas y verdes) y \(\{ Q'_i \}\) (cruces verdes). Dibujada una ventana en rojo centrada en un punto \( Q'_i \) aleatorio.}
     \label{fig:candidatos}
 \end{figure}
 
-Para binarizar cada ventana el umbral adaptativo que se propone en \cite{Yin2010Centroid} es el \(n\)-ésimo valor máximo de la intensidad en cada ventana. Sin embargo, esto puede acarrear problemas si los tamaños de los pinholes no son iguales, así que se propone otro umbral más acorde a lo que se puede ver en la Figura\ \ref{fig:candidatos}:
+Para binarizar cada ventana el umbral adaptativo que se propone en \cite{Yin2010Centroid} es el \(n\)-ésimo valor máximo de la intensidad en cada ventana. Sin embargo, esto puede acarrear problemas si los tamaños de los \lightit{pinhole}-s no son iguales, así que se propone otro umbral más acorde a lo que se puede ver en la Figura\ \ref{fig:candidatos}:
 
 \begin{equation}
     I_{umbral}=I_{max} \times 0.4
     \label{eq:umbral_adaptativo}
 \end{equation}
 
-donde \(I_{max}\) es la intensidad máxima de la ventana. Esto hace que sea cual sea el tamaño del pinhole se pueda binarizar con sentido.\\
+donde \(I_{max}\) es la intensidad máxima de la ventana. Esto hace que sea cual sea el tamaño del \lightit{pinhole} se pueda binarizar con sentido.\\
 
-Una vez binariazada la ventana, podría suceder que algún píxel no perteneciente al pinhole superase el umbral. Para evitar tenerlos en cuenta a la hora de calcular el centroide, se realiza el cálculo solo sobre la región de puntos más extensa.\\
+Una vez binariazada la ventana, podría suceder que algún píxel no perteneciente al \lightit{pinhole} superase el umbral. Para evitar tenerlos en cuenta a la hora de calcular el centroide, se realiza el cálculo solo sobre la región de puntos más extensa. Las ecuaciones con las que se calcula el centroide en cada ventana son las siguientes:
 
-Las ecuaciones con las que se calcula el centroide en cada ventana son las siguientes:
-
-\begin{equation}
+\begin{equation*}
 M_{i_x} =
 \frac{
 \displaystyle \sum_{j=1}^{U} \sum_{k=1}^{V} \left( I(j,k) - I_{umbral} \right) H(j,k)\, x_{jk}
@@ -547,9 +547,9 @@ M_{i_x} =
 \displaystyle \sum_{j=1}^{U} \sum_{k=1}^{V} \left( I(j,k) - I_{umbral} \right) H(j,k)
 }
 \label{eq:M_ix}
-\end{equation}
+\end{equation*}
 
-\begin{equation}
+\begin{equation*}
 M_{i_y} =
 \frac{
 \displaystyle \sum_{j=1}^{U} \sum_{k=1}^{V} \left( I(j,k) - I_{umbral} \right) H(j,k)\, y_{jk}
@@ -557,182 +557,186 @@ M_{i_y} =
 \displaystyle \sum_{j=1}^{U} \sum_{k=1}^{V} \left( I(j,k) - I_{umbral} \right) H(j,k)
 }
 \label{eq:M_iy}
-\end{equation}
+\end{equation*}
 
-\begin{equation}
+\begin{equation*}
 H(j, k) =
 \begin{cases}
 1, & \text{si } I(j,k) \geq I_{umbral} \\
 0, & \text{si } I(j,k) < I_{umbral}
 \end{cases}
 \label{eq:heaviside}
-\end{equation}
+\end{equation*}
 
-donde $M_{i_x}$ y $M_{i_y}$ son las coordenadas del centroide del \(i\)-ésimo pinhole \(M_i\). $I(j,k)$ representa el valor de intensidad del píxel $(j,k)$, mientras que $I_{umbral}$ es el valor umbral de intensidad. Las variables $x_{jk}$ e $y_{jk}$ denotan las coordenadas del píxel $(j,k)$ en la imagen completa de pinholes. Por último, $U$ y $V$ representan el número de píxeles en las direcciones $X$ e $Y$, respectivamente, dentro de cada ventana de detección.
+donde $M_{i_x}$ y $M_{i_y}$ son las coordenadas del centroide del \(i\)-ésimo \lightit{pinhole}. $I(j,k)$ representa el valor de intensidad del píxel $(j,k)$, mientras que $I_{umbral}$ es el valor umbral de intensidad. Las variables $x_{jk}$ e $y_{jk}$ denotan las coordenadas del píxel $(j,k)$ en la imagen completa de \lightit{pinhole}-s. Por último, $U$ y $V$ representan el número de píxeles en las direcciones $X$ e $Y$, respectivamente, dentro de cada ventana de detección.
 
 \begin{figure}[htbp]
     \centering
     \begin{minipage}{\textwidth}
         \centering
         % Subfigura 1
-        \begin{subfigure}[t]{0.4\textwidth}
+        \begin{subfigure}[t]{0.45\textwidth}
             \includegraphics[width=\linewidth]{Imagenes/Centroide_ventana.png}
             \caption{\small Ventana ampliada de la Figura~\ref{fig:candidatos}.}
             \label{fig:ventana}
         \end{subfigure}
         \hfill
         % Subfigura 2
-        \begin{subfigure}[t]{0.4\textwidth}
+        \begin{subfigure}[t]{0.45\textwidth}
             \includegraphics[width=\linewidth]{Imagenes/Centroide_ventana_binaria.png}
-            \caption{\small Ventana ampliada de la Figura~\ref{fig:candidatos} binarizada con umbral adaptativo \(I=I_{max} \times 0.4\). Marcado en azul el centroide medido \(M_i\).}
+            \caption{\small Ventana ampliada de la Figura~\ref{fig:candidatos} binarizada con umbral adaptativo \(I=I_{max} \times 0.4\). Marcado en azul \(M_i\).}
             \label{fig:ventana_binaria}
         \end{subfigure}
         \hfill
     \end{minipage}
+    \caption{\small Análisis de una ventana de detección.}
     \label{fig:ventanas}
 \end{figure}
 
-Como se puede observar en la Figura\ \ref{fig:ventana_binaria} el conjunto de puntos \(\{ Q'_i \}\) no coincide con el conjunto \(\{ M_i \}\). Por eso es necesario realizar este segundo paso de binarizar la imagen para refinar el cálculo del centroide.
+Como se puede observar en la Figura\ \ref{fig:ventana_binaria} el conjunto de puntos \(\{ Q'_i \}\) no coincide con el conjunto \(\{ M_i \}\). Por eso es necesario realizar este segundo paso de binarizar la imagen para refinar el cálculo del centroide. El resultado final con todos los centroides calculados (ver Figura\ \ref{fig:centroides}) es válido y se pueden detectar una gran cantidad de centroides sin importar tamaño o brillo del \lightit{pinhole}.
 
 \begin{figure}[h]
     \centering
     \includegraphics[width=0.9\linewidth]{Imagenes/Centroides.png}
-    \caption{\small Imagen de un pinhole grid proporcionada por Satlantis Microsats. Representados el conjunto de puntos \(\{ M_i \}\), es decir, los centroides de los pinholes.}
+    \caption{\small Imagen de un \lightit{pinhole grid} proporcionada por Satlantis Microsats. Representados el conjunto de puntos \(\{ M_i \}\), es decir, los centroides de los \lightit{pinhole}-s.}
     \label{fig:centroides}
 \end{figure}
 
-\subsection{Segundo paso: caracterización de la placa de pinholes, y modelización de las pinholes ideales}
+\subsection{Segundo paso: caracterización de la placa de \lightit{pinhole}-s, y modelización de las \lightit{pinhole}-s ideales}
 \label{sec:segundo_paso}
-En el caso de cámaras profesionales como es este, la distorisón medida será de apenas unos pocos píxeles en los pinholes más alejados del centro óptico; por lo que, es esencial realizar un modelo de las posiciones de los pinholes ideales (sin distorsión) excelente. Para ello, en este método se evalúa y modeliza: la orientación de la placa, su posición y posibles pinholes que la cámara no haya podido detectar por errores de fabricación de la placa. Se seguirán los siguientes pasos: creación de una malla de pinholes regular, determinar su orientación y girarla, calcular su desplazamiento y corregirlo, emparejar las posiciones \(M_i\) con las \(P_i\).\\
+En el caso de cámaras profesionales como es este, la distorisón medida será de apenas unos pocos píxeles en los \lightit{pinhole}-s más alejados del centro óptico; por lo que, es esencial realizar un modelo de las posiciones de los \lightit{pinhole}-s ideales (sin distorsión) excelente. Para ello, en este método se evalúa y modeliza: la orientación de la placa, su posición y posibles \lightit{pinhole}-s que la cámara no haya podido detectar por errores de fabricación de la placa. Se seguirán los siguientes pasos: creación de una malla de \lightit{pinhole}-s regular, determinar su orientación y girarla, calcular su desplazamiento y corregirlo, emparejar las posiciones \(M_i\) con las \(P_i\).\\
 
-Para calcular el ángulo de orientación de la placa se propone estudiar los pinholes reales más cercanos al centro óptico. En concreto, se propone estudiar los centros que disten hasta \(3\times spacing\) desde \(C_{o}\) para que tengan la mínima distorsión y haya suficientes. Emparejando a pares los pinholes contiguos y estudiando los vectores que los unen se obtienen los ejes de orientación de la placa (ver Figura\ \ref{fig:pinholes_rot}). \\
+Para calcular el ángulo de orientación de la placa se propone estudiar los \lightit{pinhole}-s reales más cercanos al centro óptico. En concreto, se propone estudiar los centros que disten hasta \(3\times \text{\lightit{spacing}}\) desde \(C_{o}\) para que tengan la mínima distorsión y haya suficientes. Emparejando a pares los \lightit{pinhole}-s contiguos y estudiando los vectores que los unen se obtienen los ejes de orientación de la placa (ver Figura\ \ref{fig:pinholes_rot}). 
 
 \begin{figure}[htbp]
     \centering
-    \includegraphics[width=0.9\linewidth]{Imagenes/img_RotMap_000.png}
-    \caption{\small Ejes principales de la placa calculados.}
+    \includegraphics[width=0.9\linewidth]{Imagenes/img_RotMap_0000_real.png}
+    \caption{\small Imagen de un \lightit{pinhole grid} proporcionada por Satlantis Microsats. Dibujados los ejes principales calculados por el algortimo.}
     \label{fig:pinholes_rot}
 \end{figure}
 
-Para calcular el desplazamiento se va a optar por suponer que la posición del pinhole real mas cercano al \(C_o\) coincide con la posición de su pinhole ideal correspondiente. Es decir, si el \(j\)-ésimo pinhole real es el más cercano a \(C_o\): \(M_j=P_j\), salvando una distancia de \(\Delta C_o\):
+Para calcular el desplazamiento se va a optar por suponer que la posición del \lightit{pinhole} real mas cercano al \(C_o\) tiene distorsión nula. Es decir, suponer que su posición coincide con la posición de su \lightit{pinhole} ideal correspondiente. Computacionalmente, si el \(j\)-ésimo \lightit{pinhole} real es el más cercano a \(C_o\): \(M_j=P_j\), salvando una distancia de \(\Delta C_o\):
 \begin{equation}
     \Delta C_o=\|M_j-C_o\|    
     \label{eq:error_centrooptico} 
 \end{equation}
-Esta suposición parece ser válida solo si la distorsión es pequeña y si se ha detectado un pinhole lo suficientemente cerca del \(C_o\). Más adelante severificará o no.\\
+Esta suposición parece ser válida solo si la distorsión es pequeña y si se ha detectado un \lightit{pinhole} lo suficientemente cerca del \(C_o\). Más adelante, severificará que para este contexto de cámaras profesionales, es una aproximación válida que no altera los resultados demasiado.\\
 
-En este momento surge un problema de cómo emparejar cada pinhole real con su correspondiente ideal. Se ha propuesto utilizar el método de asignación lineal propuesto por Kuhn, comúnmente conocido como método húngaro~\cite{kuhn1955hungarian}. Este algoritmo empareja cada \(M_i\) con un único \(P_i\) (por lo que no hay problema si hay pinholes no detectados) de modo que se minimice la suma de todas las distancias \(\|P_i-M_i\|\). En la práctica funciona porque la distorsión es pequeña y el pinhole ideal más cercano a un pinhole real, es precisamente su pinhole correspondiente. Si la distorsión fuera más grande, la asignación fallaría; ya que, podría ocurrir que un pinhole real tuviera más cerca otro pinhole ideal que su correspondiente pinhole ideal.
-Para su implementación se utiliza la función \texttt{linear\_sum\_assignment} de la librería \texttt{SciPy}~\cite {virtanen2020scipy}, que proporciona una solución óptima y computacionalmente eficiente.
+En este momento surge un problema de cómo emparejar cada \lightit{pinhole} real con su correspondiente ideal para calcular su desplazamiento. Se ha propuesto utilizar el método de asignación lineal propuesto por Kuhn, comúnmente conocido como método húngaro~\cite{kuhn1955hungarian}. Este algoritmo empareja cada \(M_i\) con un único \(P_i\) (por lo que no hay problema si hay \lightit{pinhole}-s no detectados) de modo que se minimice la suma de todas las distancias \(\|P_i-M_i\|\). En la práctica funciona porque la distorsión es pequeña y el \lightit{pinhole} ideal más cercano a un \lightit{pinhole} real, es precisamente su \lightit{pinhole} correspondiente. Si la distorsión fuera más grande, la asignación podría fallar; ya que, podría ocurrir que un \lightit{pinhole} real tuviera más cerca otro \lightit{pinhole} ideal que su correspondiente \lightit{pinhole} ideal. Para su implementación se utiliza la función \texttt{linear\_sum\_assignment} de la librería \texttt{SciPy}~\cite {virtanen2020scipy}, que proporciona una solución óptima y computacionalmente eficiente.
 
 \subsection{Tercer paso: cálculo de la constante de distorsión.}
-En este paso se calcula la constante de distorsión mediante un ajuste de mínimos cuadrados. Se tienen \(N\) pares de puntos ideal-real: (\(P_i\), \(M_i\)) que obedecen a \eqref{eq: Duane_radial} que, si se reordena queda:
+En este paso se calcula la constante de distorsión mediante un ajuste de mínimos cuadrados. Se tienen \(N\) pares de puntos ideal-real (\(P_i\), \(M_i\)) que obedecen a \eqref{eq: Duane_radial}. Reordenando la ecuación para el \(i\)-ésimo \lightit{pinhole} queda:
 \begin{equation}
-    R'-R =  k R^3
+    R'_i-R_i = k_i\cdot R_i^3
     \label{eq: reg}
 \end{equation}
-donde \(R(i)=\sqrt{M^2_{i_x}+M^2_{i_y}}\) y \(R´(i)=\sqrt{P^2_{i_x}+P^2_{i_y}}\).\\
+donde \(R'_i=\sqrt{M^2_{i_x}+M^2_{i_y}}\) y \(R_i=\sqrt{P^2_{i_x}+P^2_{i_y}}\).\\
 
 Definiendo:
 \begin{equation*}
 \begin{aligned}
-y_i &= R'(i) - R(i)
-     = \sqrt{M_{i_x}^2 + M_{i_y}^2} - \sqrt{P_{i_x}^2 + P_{i_y}^2} \\
+y_i &= R'_i - R_i\\
 x_i &= R^3
-     = \left(\sqrt{M_{i_x}^2 + M_{i_y}^2}\right)^{\frac{3}{2}}
 \end{aligned}
 \end{equation*}
-la constante queda como:
+la ecuación queda de la siguiente forma:
+\begin{equation}
+    y_i=k_i\cdot x_i
+\end{equation}
+y sabiendo que la recta pasa por (0,0), el coeficiente de distorsión se calcula del siguiente modo con un error de ajuste definido por \(R^2\):
 \begin{equation}
    k_m=\frac{\sum_{i=0}^{n}x_i y_i}{\sum_{i=0}^{n}x_i^2} 
    \label{eq:k_medida}
 \end{equation}
-con un error de dispersión definido por:
 \begin{equation}
    R^2 = 1 - \frac{\sum_{i=0}^{n}(y_i-y'_i)^2}{\sum_{i=0}^{n}(y_i-\bar{y_i})^2} 
    \label{eq:R2}
 \end{equation}
 donde \(y'_i = k_m \cdot x_i\) es el valor ajustado a la medida y \(\bar{y_i}\) es la media de valores \(y_i\). Se interpreta de la siguiente manera: si \(R^{2}=1\) significa que el modelo explica toda la variabilidad (error de dispersión cero). Sin embargo, si \(R^{2}=0\) quiere decir que el modelo explica la misma variabilidad que la media (el modelo no ajusta mejor que una línea horizontal).\\
 
-A este proceso se le añade un filtro de \textit{outilers} utilizando el método \textit{Z-Score} \cite{montgomery2014}. Este método consiste en normalizar cada muestra con respecto a la media y la desviación típica del conjunto de datos, de acuerdo con la siguiente expresión:
+A este proceso se le añade un filtro de \lightit{outilers} utilizando el método \lightit{Z-Score} \cite{montgomery2014}. Este método consiste en normalizar cada muestra con respecto a la media y la desviación típica del conjunto de datos, de acuerdo con la siguiente expresión:
 \begin{equation}
     z_i = \frac{x_i - \bar{x_i}}{\sigma},
 \end{equation}
 donde \(\bar{x_i}\) es la media del conjunto y \(\sigma\) su desviación típica.\\
 
-Aquellos valores cuyo \(\lvert z_i \rvert\) supera un umbral predefinido (comúnmente se utiliza como umbral 3) se consideran atípicos y se descartan del conjunto de datos. Es un modelo ampliamente utilizado en estadística para la identificación de outliers.
+Aquellos valores cuyo \(\lvert z_i \rvert\) supera un umbral predefinido (comúnmente y en este trabajo se utiliza como umbral 3) se consideran atípicos y se descartan del conjunto de datos. Es un modelo ampliamente utilizado en estadística para la identificación de outliers.\\
+
+Para el estudio de las métricas como el RMSE y el MDLD simplemente se utiliza:
+\begin{equation}
+    k_i=\frac{y_i}{x_i}
+\end{equation}
 
 \section{Etapa de simulación}
 \label{sec:Simulacion}
 
-Los objetivos principales de esta etapa se basan en el  desarrollo y validación del método propuesto en la sección previa. Para ello, se ha desarrollado un entorno de simulación que permite generar imágenes de los pinhole grids bajo condiciones controladas. Esta etapa se ha subdividido en 4 subetapas con diferentes funciones:   
+Los objetivos principales de esta etapa se basan en el  desarrollo y validación del método propuesto en la sección previa. Para ello, se ha desarrollado un entorno de simulación que permite generar imágenes de los \lightit{pinhole grid}-s bajo condiciones controladas. Esta etapa se ha subdividido en 4 subetapas con diferentes funciones:   
 
-\begin{itemize}
-\item Generación de una imagen de pinholes grid ideal, sin distorsión.
+\begin{enumerate}
+\item Generación de una imagen de \lightit{pinhole\ grid} ideal, sin distorsión.
 \item Introducción de la distorsión radial en la imagen ideal.
-\item Aplicación del método propuesto para la detección de la distorsión.
+\item Aplicación del método propuesto en un entorno simulado.
 \item Evaluación de los resultados obtenidos.
-\end{itemize}
+\end{enumerate}
 
-Todas las imágenes generadas en las simulaciones se almacenan en formato FITS. Este formato de archivos es comúnmente utilizado para procesamiento de imágenes. Además, las imágenes se han generado en 12 bits en grayscale, por lo que, las imágenes computacionalmente son arrays bidimensionales con valores (intensidades) entre 0 y 4095. 
+Todas las imágenes generadas en las simulaciones se almacenan en formato FITS. Este formato de archivos es comúnmente utilizado para procesamiento de imágenes. Además, las imágenes se han generado en 12 bits en grayscale, por lo que, las imágenes computacionalmente son arrays bidimensionales con valores o intensidades entre 0 y 4095. 
 
 \subsection{Generación de la imagen ideal}
 \label{sec:gen_img_ideal}
-En esta etapa se generan imágenes de los pinholes sin distorsión. Las simulaciones se han diseñado para reproducir de forma fiel las imágenes reales proporcionadas por Satlantis Microsats, como se muestra en la Figura~\ref{fig:pinholes_reales}.\\
+En esta etapa se generan imágenes de los \lightit{pinhole}-s sin distorsión. Las simulaciones se han diseñado para reproducir de forma fiel las imágenes reales proporcionadas por Satlantis Microsats, como se muestra en la Figura~\ref{fig:pinholes_reales}.\\
 
-De todos los parámetros que constutuyen la imagen, se han diferenciado dos tipos: las fijas y las variables. Los parámetros fijos permanecen constantes en todas las simulaciones y son los siguientes:
+De todos los parámetros que constutuyen la imagen, se han diferenciado dos tipos: los fijos y los variables. Los parámetros fijos permanecen constantes en todas las simulaciones y son los siguientes:
 \begin{itemize}
-    \item \textit{\(px\)}: pixelsize, medida de un píxel en metros.
-    \item \textit{\(sendim\)}: dimensiones de la imagen en píxeles.
-    \item \(n_{ph}\): número de pinholes en cada dimensión \(n_{px}\times n_{py}\).
-    \item \textit{\(spacing\)}: distancia entre pinholes
+    \item \text{\lightit{px}}: pixelsize, medida de un píxel en metros.
+    \item \text{\lightit{sendim}}: dimensiones de la imagen en píxeles.
+    \item $n_{ph}$: número de \text{\lightit{pinhole}}-s en cada dimensión \(n_{px}\times n_{py}\).
+    \item \text{\lightit{spacing}}: distancia entre \text{\lightit{pinhole}}-s
 \end{itemize}
-A partir de estos parámetros se calculan las posiciones teóricas de los centros de los pinholes, asegurando un espaciado uniforme.\\
+A partir de estos parámetros se calculan las posiciones teóricas de los centros de los \lightit{pinhole}-s, asegurando un espaciado uniforme.\\
 
 En cambio, los parámetros variables serán aquellos que irán variando y que permiten simular las incertidumbres presentes en un sistema real:
 
 \begin{itemize}
-    \item \(O\): centro de la placa de pinholes. Se situará en el centro de la imagen con una incertidumbre de $\delta h$, $\delta w$ en cada dimensión.
+    \item \(O\): centro de la placa de \text{\lightit{pinhole}}-s. Se situará en el centro de la imagen con una incertidumbre de $\delta h$, $\delta w$ en cada dimensión.
     \item \(C_o\): centro óptico. Se situará en un punto concreto con una incertidumbre de $\delta cx$, $\delta cy$ en cada dimensión.
-    \item \(I_i\): Intensidad de cada pinhole, \(I_i\in[I_{min}, I_{max}]\).
-    \item \(\theta\): rotación global de los pinholes, acotada por un ángulo máximo $\theta_{max}$.
+    \item \(I_i\): Intensidad de cada \text{\lightit{pinhole}}, \(I_i\in[I_{min}, I_{max}]\).
+    \item \(\theta\): rotación global de los \text{\lightit{pinhole}}-s, $\theta\in[-\theta_{max}, \theta_{max}]$.
 \end{itemize}
 
-La etapa comienza calculando los centros de los pinholes ideales, estos se modelan como fuentes puntuales dandoles una intensidad aleatoria \(I_i\in[I_{min}, I_{max}]\). Con esto se simula una posible falla del sistema óptico o de la placa de pinholes (pihnoles demasiado pequeños) en la que no se detectan algunos pinholes de forma clara. Esto es análogo a la imagen ideal \(f(x,y)\) en la Ecuación\ \ref{eq: convolucion}; por lo que, obteniendo la PSF o \(h(x,y)\) del sistema se podría obtener la imagen resultante convolucionando ambas funciones (ver Figura\ \ref{fig:PSF}). En esta simulación, la PSF del sistema se aproxima mediante un disco de Airy, representativo de un sistema óptico limitado por difracción. \\
-
-Al mismo tiempo, se aplica un desenfoque suave mediante un filtrado gaussiano para reproducir imperfecciones del sistema óptico y efectos de desenfoque residual. Para finalizar con la imagen ideal, se rota un ángulo \(\theta\) y se desplaza la placa entera para descentrarla una distancia ($\delta h$, $\delta w$). \\
+La etapa comienza calculando los centros de los \lightit{pinhole}-s ideales centrados en el centro de la imagen y siguiendo una distribución de red cuadrada. Estos se modelan como fuentes puntuales dandoles una intensidad aleatoria \(I_i\in[I_{min}, I_{max}]\). Además, se han eliminado el \(20\%\) de los \lightit{pinhole}-s por completo. Con esto se simula una posible falla del sistema óptico o en la fabricación de la placa de \lightit{pinhole}-s (agujeros mal hehcos) en la que no se detectan algunos \lightit{pinhole}-s. Este modelo es análogo a la imagen ideal \(f(x,y)\) en la Ecuación\ \ref{eq: convolucion}; por lo que, obteniendo la PSF o \(h(x,y)\) del sistema se podría obtener la imagen resultante convolucionando ambas funciones (ver Figura\ \ref{fig:PSF}). En esta simulación, la PSF del sistema se aproxima mediante un disco de Airy, representativo de un sistema óptico limitado por difracción. Al mismo tiempo, se aplica un desenfoque suave mediante un filtrado gaussiano para reproducir imperfecciones del sistema óptico y efectos de desenfoque residual. Para finalizar con la imagen ideal, se rota un ángulo \(\theta\) y se desplaza la placa entera para descentrarla una distancia dentro de la incertidumbre ($\delta h$, $\delta w$). \\
 
 \subsection{Introducción de la distorsión radial en la imagen ideal}
-Se aplica la distorsión caracterizada por un único coeficiente de distorsión \(k_{real}\). Dicho coeficiente se selecciona aleatoriamente dentro de un rango razonable en este contexto, definido de forma que el desplazamiento máximo inducido en los pinholes más alejados del centro no supere unos pocos píxeles. La distorsión se aplica utilizando un remapeo que permite deformar la imagen ideal y obtener la imagen distorsionada final.\\
+Se aplica la distorsión caracterizada por un único coeficiente de distorsión \(k_{real}\). Dicho coeficiente se selecciona aleatoriamente dentro de un rango razonable en este contexto, definido de forma que el desplazamiento máximo inducido en los \lightit{pinhole}-s más alejados del centro no supere unos pocos píxeles. La distorsión se aplica utilizando un remapeo que permite deformar la imagen ideal y obtener la imagen distorsionada final.\\
 
 Como pequeño apunte, es después de distorsionar la imagen cuando se añade ruido (gaussiano) para simular el ruido electrónico del sensor. Esto es coherente ya que, la distorsión es un efecto geométrico de la lente, mientras que el ruido es un defecto de muestreo del sensor\ \ref{sec:ruido}. Añadir el ruido al final simula el proceso real donde el sensor captura la imagen ya distorsionada.\\
 
 Como resultado de esta etapa se obtienen, para cada simulación, tanto la imagen ideal como la imagen distorsionada (ambas con el mismo ruido), junto con los parámetros reales utilizados en la generación, lo que permite una evaluación precisa del método propuesto.\\
 
-Analizando las imágenes (Figuras\ \ref{fig:pinholes_reales} y\ \ref{fig:pinholes_sim}) se observa que la única diferencia notable es la diferencia entre tamaños de pinholes. Mientras que en la imagen simulada el tamaño de los pinholes es siempre el mismo, en las reales el tamaño varía. Por motivos de optimización, se ha optado por mantener de esta forma las simulaciones, pero se tiene en cuenta a la hora de calcular el umbral adaptativo\ \ref{eq:umbral_adaptativo}
+Analizando las imágenes (Figuras\ \ref{fig:pinholes_reales} y\ \ref{fig:pinholes_sim}) se observa que la única diferencia notable es la diferencia entre tamaños de \lightit{pinhole}-s. Mientras que en la imagen simulada el tamaño de los \lightit{pinhole}-s es siempre el mismo, en las reales el tamaño varía. Por motivos de optimización, se ha optado por mantener de esta forma las simulaciones, pero se tiene en cuenta a la hora de calcular el umbral adaptativo\ \ref{eq:umbral_adaptativo}.
 
 \begin{figure}[htbp]
     \centering
     \includegraphics[width=0.75\linewidth]{Imagenes/Pinholes.PNG}
-    \caption{\small Imagen de un pinhole grid real hecha con xxxx.}
+    \caption{\small Imagen de un \lightit{pinhole grid} real hecha con xxxx.}
     \label{fig:pinholes_reales}
 \end{figure}
 
 \begin{figure}[htbp]
     \centering
     \includegraphics[width=0.75\linewidth]{Imagenes/img_distor_ruido.png}
-    \caption{\small Imagen de un pinhole grid simulada.}
+    \caption{\small Imagen de un \lightit{pinhole grid} simulada.}
     \label{fig:pinholes_sim}
 \end{figure}
 
-\subsection{Aplicación del método propuesto para la detección de la distorsión}
+\subsection{Aplicación del método propuesto en un entorno simulado}
 \label{subsec:simulaciones}
 
-En esta etapa se aplca el método propuesto a las imágenes simuladas. Para hacer un estudio completo y ver cuándo y cómo funciona mejor este método, se propone estudiar los parámetros variables citados en\ \ref{sec:gen_img_ideal}. Se han realizado tiradas de 100 simulaciones con las siguientes condiciones:
+En esta etapa se aplica el método propuesto en las imágenes simuladas. Para hacer un estudio completo y ver cuándo y cómo funciona mejor este método, se propone estudiar los parámetros variables citados en la Sección\ \ref{sec:gen_img_ideal}. Se han realizado tiradas de 100 simulaciones con las siguientes condiciones:
 
 \begin{itemize}
-    \item Simulación 1: todas las variables controladas: \(\theta=0\), \(C_o\) centrado en un pinhole, \(O\) centrado en la mitad de la imagen, \(I_i\) lo suficientemente grande como para que se detecten todos los pinholes y misma distorsión \(k_{real}\).
+    \item Simulación 1: todas las variables controladas: \(\theta=0\), \(C_o\) centrado en un \text{\lightit{pinhole}}, \(O\) centrado en la mitad de la imagen, \(I_i\) lo suficientemente grande como para que se detecten todos los \text{\lightit{pinhole}}-s y misma distorsión \(k_{real}\).
     \item Simulación 2: todas las variables controladas menos la distorsión \(k_{real}\).
-    \item Simulación 3: todas las variables controladas menos el centro óptico \(C_o\) centrado en un pinhole.
+    \item Simulación 3: todas las variables controladas menos el centro óptico \(C_o\) centrado en un \text{\lightit{pinhole}}.
     \item Simulación 4: todas las variables controladas menos la rotación \(\theta\).
     \item Simulación 5: todas las variables controladas menos la intensidad \(I_i\).
     \item Simulación 6: ninguna variable controlada.
@@ -742,7 +746,7 @@ Además, se ha hecho un estudio sobre cómo afecta al resultado un posible error
 
 \begin{itemize}
     \item Simulación 7: todas las variables controladas pero error en la medida del \(spacing\).
-    \item Simulacion 8: ninguna controlada y error en la medida del \(spacing\)
+    \item Simulacion 8: ninguna variable controlada y error en la medida del \(spacing\)
 \end{itemize}
 
 \subsection{Evaluación de los resultados obtenidos.}
@@ -758,13 +762,13 @@ En esta tirada de simulaciones se han fijado los párametros de la Tabla\ \ref{t
 \textbf{Parámetro} & \textbf{Valor} \\
 \hline
 Coeficiente de distorsión \(k_{\text{real}}\) & \(15.8145\ \text{m}^{-2}\) \\
-Tamaño de píxel \(px\) & \(5.5\ \mu\text{m}\) \\
-Dimensión del sensor \(\textit{sen\_dim}\) & \(3072 \times 4096\ \text{px}\) \\
-Número de pinholes \(n_{ph}\) & \(20 \times 15\) \\
-Espaciado entre pinholes \textit{spacing} & \(172\ \text{px}\) \\
+Tamaño de píxel \lightit{px} & \(5.5\ \mu\text{m}\) \\
+Dimensión del sensor \text{\lightit{sendim}} & \(3072 \times 4096\ \text{px}\) \\
+Número de \lightit{pinhole}-s \(n_{ph}\) & \(20 \times 15\) \\
+Espaciado entre \lightit{pinhole}-s \lightit{spacing} & \(172\ \text{px}\) \\
 Centro de la placa \(O\) & \([1536,\ 2048]\ \text{px}\) \\
 Centro óptico \(C_o\) & \(O + [0,\ 258]\ \text{px}\) \\
-Intensidad de pinhole \(I_i\) & \(3000\) \\
+Intensidad de \lightit{pinhole} \(I_i\) & \(3000\) \\
 Ángulo de rotación \(\theta\) & \(0\) \\
 \hline
 \end{tabular}
@@ -803,13 +807,13 @@ Los resultados mostrados en la Tabla\ \ref{tab:resultados1} demuestran un excele
 \textbf{Parámetro} & \textbf{Valor} \\
 \hline
 Coeficiente de distorsión \(k_{\text{real}}\) & \(\in [-39,5364, 39,5364]\text{m}^{-2}\) \\
-Tamaño de píxel \(px\) & \(5.5\ \mu\text{m}\) \\
-Dimensión del sensor \(\textit{sen\_dim}\) & \(3072 \times 4096\ \text{px}\) \\
-Número de pinholes \(n_{ph}\) & \(20 \times 15\) \\
-Espaciado entre pinholes \textit{spacing} & \(172\ \text{px}\) \\
+Tamaño de píxel \lightit{px} & \(5.5\ \mu\text{m}\) \\
+Dimensión del sensor \text{\lightit{sendim}} & \(3072 \times 4096\ \text{px}\) \\
+Número de \lightit{pinhole}-s \(n_{ph}\) & \(20 \times 15\) \\
+Espaciado entre \lightit{pinhole}-s \lightit{spacing} & \(172\ \text{px}\) \\
 Centro de la placa \(O\) & \([1536,\ 2048]\ \text{px}\) \\
 Centro óptico \(C_o\) & \(O + [0,\ 258]\ \text{px}\) \\
-Intensidad de pinhole \(I_i\) & \(3000\) \\
+Intensidad de \lightit{pinhole} \(I_i\) & \(3000\) \\
 Ángulo de rotación \(\theta\) & \(0\) \\
 \hline
 \end{tabular}
@@ -826,7 +830,7 @@ Intensidad de pinhole \(I_i\) & \(3000\) \\
 Coeficiente de distorsión medido \(k_{\text{m}}\)  & - \\
 Error en el centro óptico \(\Delta C_o\)\ref{eq:error_centrooptico} & 0.0303 px\\
 MDLD & \(1.8935\times 10^{-9}\) \\
-RMSE \(px\) & \(1.91415\times 10^{-7}\) \\
+RMSE & \(1.91415\times 10^{-7}\) \\
 \(E_r\) & 1.1194 \\
 \(R^2\) & 0.9798 \\
 \hline
@@ -860,7 +864,7 @@ Se observa en la Tabla\ \ref{tab:resultados2} como no funciona tan bien como en 
 
 De la Figura\ \ref{fig:k_real} se puede estimar un intervalo muy fiable de coeficientes de distorsión \( |k_{real}|\in(5,\inf) \text{ m}^{-2}\), en el que el error relativo es menor a 5. Aunque, como ya se ha comentado previamente, una distorsión (en valor absoluto) muy grande puede dar otros problemas como por ejemplo, en la asignación de puntos (\(M_i, P_i\)).\\
 
-En la Figura\ \ref{fig:kreal_kvalues} se muestra la enorme diferencia que existe en las medidas si se comparan coeficientes de distorsión más altos y más bajos en valor absoluto. Los coeficientes más pequeños distorsionan menos los pinholes; en consecuencia, el error que existe en la etapa de detección de centroides del algoritmo es más notorio y por eso se ven más dispersos los puntos del ajuste.
+En la Figura\ \ref{fig:kreal_kvalues} se muestra la enorme diferencia que existe en las medidas si se comparan coeficientes de distorsión más altos y más bajos en valor absoluto. Los coeficientes más pequeños distorsionan menos los \lightit{pinhole}-s; en consecuencia, el error que existe en la etapa de detección de centroides del algoritmo es más notorio y por eso se ven más dispersos los puntos del ajuste.
 
 \begin{figure}[htbp]
     \centering
@@ -896,13 +900,13 @@ En la Figura\ \ref{fig:kreal_kvalues} se muestra la enorme diferencia que existe
 \textbf{Parámetro} & \textbf{Valor} \\
 \hline
 Coeficiente de distorsión \(k_{\text{real}}\) & \(19.7682\text{m}^{-2}\) \\
-Tamaño de píxel \(px\) & \(5.5\ \mu\text{m}\) \\
-Dimensión del sensor \(\textit{sen\_dim}\) & \(3072 \times 4096\ \text{px}\) \\
-Número de pinholes \(n_{ph}\) & \(20 \times 15\) \\
-Espaciado entre pinholes \textit{spacing} & \(172\ \text{px}\) \\
+Tamaño de píxel \lightit{px} & \(5.5\ \mu\text{m}\) \\
+Dimensión del sensor \text{\lightit{sendim}} & \(3072 \times 4096\ \text{px}\) \\
+Número de \lightit{pinhole}-s \(n_{ph}\) & \(20 \times 15\) \\
+Espaciado entre \lightit{pinhole}-s \lightit{spacing} & \(172\ \text{px}\) \\
 Centro de la placa \(O\) & \([1536,\ 2048]\ \text{px}\) \\
 Centro óptico \(C_o\) & \(O + [0,\ 258]\ \text{px}\) \\
-Intensidad de pinhole \(I_i\) & \(\in [0,3000]\) \\
+Intensidad de \lightit{pinhole} \(I_i\) & \(\in [0,3000]\) \\
 Ángulo de rotación \(\theta\) & \(0\) \\
 \hline
 \end{tabular}
@@ -919,14 +923,14 @@ Intensidad de pinhole \(I_i\) & \(\in [0,3000]\) \\
 Coeficiente de distorsión medido \(k_{\text{m}}\)  & \(19.7457\text{m}^{-2}\)\\
 Error en el centro óptico \(\Delta C_o\)\ref{eq:error_centrooptico} & 61.9480 px\\
 MDLD & \(4.5937\times 10^{-9}\) \\
-RMSE \(px\) & \(4.5773\times 10^{-6}\) \\
+RMSE & \(4.5773\times 10^{-6}\) \\
 \(E_r\) & 0.6502 \\
 \(R^2\) & 0.9957 \\
 \hline
 \end{tabular}
 \end{table}
 
-Se observa en la Tabla\ \ref{tab:resultados3} un aumento notorio en \(\Delta C_o\) y esto tiene sentido. En alguna simulación puede ocurrir que el pinhole fijo (aquel que se aproxima como centro óptico) no haya sido detectado. En ese caso el pihnole fijo pasa a ser el siguiente más cercano que, como cerca estará a \(spacing=172\) píxeles de distancia. Esto quiere decir que \(\Delta C_o\) ha cogido valores de \(\approx0\) y \(\approx172\), lo que resulta en la media mostrada en la Tabla\ \ref{tab:resultados3}. No obstante, se obtiene un \(E_r\) medio muy bajo que significa que el método de detección funciona correctamente bajo esta condición. 
+Se observa en la Tabla\ \ref{tab:resultados3} un aumento notorio en \(\Delta C_o\) y esto tiene sentido. En alguna simulación puede ocurrir que el \lightit{pinhole} fijo (aquel que se aproxima como centro óptico) no haya sido detectado. En ese caso el pihnole fijo pasa a ser el siguiente más cercano que, como cerca estará a \(spacing=172\) píxeles de distancia. Esto quiere decir que \(\Delta C_o\) ha cogido valores de \(\approx0\) y \(\approx172\), lo que resulta en la media mostrada en la Tabla\ \ref{tab:resultados3}. No obstante, se obtiene un \(E_r\) medio muy bajo que significa que el método de detección funciona correctamente bajo esta condición. 
 
 \subsubsection{Simulación 4}
 
@@ -939,13 +943,13 @@ Se observa en la Tabla\ \ref{tab:resultados3} un aumento notorio en \(\Delta C_o
 \textbf{Parámetro} & \textbf{Valor} \\
 \hline
 Coeficiente de distorsión \(k_{\text{real}}\) & \(19.7682\text{m}^{-2}\) \\
-Tamaño de píxel \(px\) & \(5.5\ \mu\text{m}\) \\
-Dimensión del sensor \(\textit{sen\_dim}\) & \(3072 \times 4096\ \text{px}\) \\
-Número de pinholes \(n_{ph}\) & \(20 \times 15\) \\
-Espaciado entre pinholes \textit{spacing} & \(172\ \text{px}\) \\
+Tamaño de píxel \lightit{px} & \(5.5\ \mu\text{m}\) \\
+Dimensión del sensor \text{\lightit{sendim}} & \(3072 \times 4096\ \text{px}\) \\
+Número de \lightit{pinhole}-s \(n_{ph}\) & \(20 \times 15\) \\
+Espaciado entre \lightit{pinhole}-s \lightit{spacing} & \(172\ \text{px}\) \\
 Centro de la placa \(O\) & \([1536,\ 2048]\ \text{px}\) \\
 Centro óptico \(C_o\) & \(O + [\pm 100,\ 258 \pm100 ] \ \text{px}\) \\
-Intensidad de pinhole \(I_i\) & 3000 \\
+Intensidad de \lightit{pinhole} \(I_i\) & 3000 \\
 Ángulo de rotación \(\theta\) & \(0\) \\
 \hline
 \end{tabular}
@@ -962,14 +966,14 @@ Intensidad de pinhole \(I_i\) & 3000 \\
 Coeficiente de distorsión medido \(k_{\text{m}}\)  & \(19.7502\text{m}^{-2}\)\\
 Error en el centro óptico \(\Delta C_o\)\ref{eq:error_centrooptico} & 76.4961 px\\
 MDLD & \(2.0860\times 10^{-9}\) \\
-RMSE \(px\) & \(1.8843\times 10^{-7}\) \\
+RMSE & \(1.8843\times 10^{-7}\) \\
 \(E_r\) & 0.2944 \\
 \(R^2\) & 0.9994 \\
 \hline
 \end{tabular}
 \end{table}
 
-La Tabla\ \ref{tab:resultados4} muestra resultados muy buenos. Esto no hace más que reforzar la suposición inicial de fijar un el pinhole más cercano al centro óptico. Sin embargo, esto puede dar errores si los pinholes más cercanos, desafortunadamente, no son lo suficientemente brillantes para que el algoritmo los detecte.
+La Tabla\ \ref{tab:resultados4} muestra resultados muy buenos. Esto no hace más que reforzar la suposición inicial de fijar un el \lightit{pinhole} más cercano al centro óptico. Sin embargo, esto puede dar errores si los \lightit{pinhole}-s más cercanos, desafortunadamente, no son lo suficientemente brillantes para que el algoritmo los detecte.
 
 \subsubsection{Simulación 5}
 
@@ -982,13 +986,13 @@ La Tabla\ \ref{tab:resultados4} muestra resultados muy buenos. Esto no hace más
 \textbf{Parámetro} & \textbf{Valor} \\
 \hline
 Coeficiente de distorsión \(k_{\text{real}}\) & \(19.7682\text{m}^{-2}\) \\
-Tamaño de píxel \(px\) & \(5.5\ \mu\text{m}\) \\
-Dimensión del sensor \(\textit{sen\_dim}\) & \(3072 \times 4096\ \text{px}\) \\
-Número de pinholes \(n_{ph}\) & \(20 \times 15\) \\
-Espaciado entre pinholes \textit{spacing} & \(172\ \text{px}\) \\
+Tamaño de píxel \lightit{px} & \(5.5\ \mu\text{m}\) \\
+Dimensión del sensor \text{\lightit{sendim}} & \(3072 \times 4096\ \text{px}\) \\
+Número de \lightit{pinhole}-s \(n_{ph}\) & \(20 \times 15\) \\
+Espaciado entre \lightit{pinhole}-s \lightit{spacing} & \(172\ \text{px}\) \\
 Centro de la placa \(O\) & \([1536,\ 2048]\ \text{px}\) \\
 Centro óptico \(C_o\) & \(O + [0,\ 258 ] \ \text{px}\) \\
-Intensidad de pinhole \(I_i\) & 3000 \\
+Intensidad de \lightit{pinhole} \(I_i\) & 3000 \\
 Ángulo de rotación \(\theta\) & \(\in [-15, 15]\) \\
 \hline
 \end{tabular}
@@ -1006,13 +1010,13 @@ Intensidad de pinhole \(I_i\) & 3000 \\
 Coeficiente de distorsión medido \(k_{\text{m}}\)  & \(19.7657\text{m}^{-2}\)\\
 Error en el centro óptico \(\Delta C_o\)\ref{eq:error_centrooptico} & 31.7046 px\\
 MDLD & \(1.8737\times 10^{-9}\) \\
-RMSE \(px\) & \(2.0017\times 10^{-6}\) \\
+RMSE & \(2.0017\times 10^{-6}\) \\
 \(E_r\) & 0.2653 \\
 \(R^2\) & 0.9993 \\
 \hline
 \end{tabular}
 \end{table}
-En estas simulaciones se vuelve a ver el aumento de \(\Delta C_o\), esta vez debida a desalineamiento de la placa de pinholes con el centro óptico. Sin embargo, esto no influye casi en los resultados. Esto tiene mucho sentido; ya que, se ha modelado la distorsión exclusivamente radial, lo que quiere decir que las distancias \( \|M_i-C_o\| = R \) no van a variar y en consecuencia \(k_{real}\) tampoco(\ \ref{eq: Duane_radial}).
+En estas simulaciones se vuelve a ver el aumento de \(\Delta C_o\), esta vez debida a desalineamiento de la placa de \lightit{pinhole}-s con el centro óptico. Sin embargo, esto no influye casi en los resultados. Esto tiene mucho sentido; ya que, se ha modelado la distorsión exclusivamente radial, lo que quiere decir que las distancias \( \|M_i-C_o\| = R \) no van a variar y en consecuencia \(k_{real}\) tampoco(\ \ref{eq: Duane_radial}).
 
 
 \subsubsection{Simulación 6}
@@ -1025,13 +1029,13 @@ En estas simulaciones se vuelve a ver el aumento de \(\Delta C_o\), esta vez deb
 \textbf{Parámetro} & \textbf{Valor} \\
 \hline
 Coeficiente de distorsión \(k_{\text{real}}\) & \(|k_{real}|\in [5.93, 31.63]\text{m}^{-2}\) \\
-Tamaño de píxel \(px\) & \(5.5\ \mu\text{m}\) \\
-Dimensión del sensor \(\textit{sen\_dim}\) & \(3072 \times 4096\ \text{px}\) \\
-Número de pinholes \(n_{ph}\) & \(20 \times 15\) \\
-Espaciado entre pinholes \textit{spacing} & \(172\ \text{px}\) \\
+Tamaño de píxel \lightit{px} & \(5.5\ \mu\text{m}\) \\
+Dimensión del sensor \text{\lightit{sendim}} & \(3072 \times 4096\ \text{px}\) \\
+Número de \lightit{pinhole}-s \(n_{ph}\) & \(20 \times 15\) \\
+Espaciado entre \lightit{pinhole}-s \lightit{spacing} & \(172\ \text{px}\) \\
 Centro de la placa \(O\) & \([1536,\ 2048] + [\pm 100,\pm 100]\ \text{px}\) \\
 Centro óptico \(C_o\) & \(O + [\pm 100,\ 258 \pm 100] \ \text{px}\) \\
-Intensidad de pinhole \(I_i\) & \(\in[0, 3000]\) \\
+Intensidad de \lightit{pinhole} \(I_i\) & \(\in[0, 3000]\) \\
 Ángulo de rotación \(\theta\) & \(\in[-15,15]\) rad \\
 \hline
 \end{tabular}
@@ -1048,14 +1052,14 @@ Intensidad de pinhole \(I_i\) & \(\in[0, 3000]\) \\
 Coeficiente de distorsión medido \(k_{\text{m}}\)  & - \\
 Error en el centro óptico \(\Delta C_o\)\ref{eq:error_centrooptico} & 93.149 px\\
 MDLD & \(4.1747\times 10^{-9}\) \\
-RMSE \(px\) & \(4.2894\times 10^{-7}\) \\
+RMSE & \(4.2894\times 10^{-7}\) \\
 \(E_r\) & 0.7586 \\
 \(R^2\) & 0.9926 \\
 \hline
 \end{tabular}
 \end{table}
 
-Este es un escenario bastante realista y los resultados de la Tabla\ \ref{tab:resultados6} muestran que el algoritmo es bastante fiable en este contexto, lo cual es muy positivo. Además, se ha observado como al mezclar rotación y eliminación de pinholes, el algoritmo es más propenso a fallar en el calculo de la rotación, dando resultados como el mostrado en la Figura\ \ref{fig:nadafijo_mal}. Estos \textit{outliers} pueden eliminarse de manera más o menos sencilla porque se identifican muy fácil, por lo que no suponen una gran preocupación. 
+Este es un escenario bastante realista y los resultados de la Tabla\ \ref{tab:resultados6} muestran que el algoritmo es bastante fiable en este contexto, lo cual es muy positivo. Además, se ha observado como al mezclar rotación y eliminación de \lightit{pinhole}-s, el algoritmo es más propenso a fallar en el calculo de la rotación, dando resultados como el mostrado en la Figura\ \ref{fig:nadafijo_mal}. Estos \lightit{outliers} pueden eliminarse de manera más o menos sencilla porque se identifican muy fácil, por lo que no suponen una gran preocupación. 
 
 \begin{figure}[htbp]
     \centering
@@ -1064,14 +1068,14 @@ Este es un escenario bastante realista y los resultados de la Tabla\ \ref{tab:re
         % Subfigura 1
         \begin{subfigure}[t]{0.45\textwidth}
             \includegraphics[width=\linewidth]{Imagenes/img_RotMap_0000.png}
-            \caption{\small Ejes principales de la placa medidos por el algoritmo. Se aprecia la mala medida de la orientación por la falta de pinholes detectados.}
+            \caption{\small Ejes principales de la placa medidos por el algoritmo. Se aprecia la mala medida de la orientación por la falta de \lightit{pinhole}-s detectados.}
             \label{fig:nadafijo_mal_rot}
         \end{subfigure}
         \hfill
         % Subfigura 2
         \begin{subfigure}[t]{0.45\textwidth}
             \includegraphics[width=\linewidth]{Imagenes/img_DistMap_0000.png}
-            \caption{\small Mapa de distorsión donde las flechas (zoom x100) representan el desplazamiento de los pinholes \(M_i-P_i\). Los puntos rojo y verde son el centro de la placa y óptico respectivamente. Se aprecian las desviaciones de los pinholes debidas a la mala orientación de los pinholes ideales.}
+            \caption{\small Mapa de distorsión donde las flechas (zoom x100) representan el desplazamiento de los \lightit{pinhole}-s \(M_i-P_i\). Los puntos rojo y verde son el centro de la placa y óptico respectivamente. Se aprecian las desviaciones de los \lightit{pinhole}-s debidas a la mala orientación de los \lightit{pinhole}-s ideales.}
             \label{fig:nadafijo_mal_mapdist}
         \end{subfigure}
         \hfill
@@ -1091,13 +1095,13 @@ Este es un escenario bastante realista y los resultados de la Tabla\ \ref{tab:re
 \textbf{Parámetro} & \textbf{Valor} \\
 \hline
 Coeficiente de distorsión \(k_{\text{real}}\) & \(19.7682\text{m}^{-2}\) \\
-Tamaño de píxel \(px\) & \(5.5\ \mu\text{m}\) \\
-Dimensión del sensor \(\textit{sen\_dim}\) & \(3072 \times 4096\ \text{px}\) \\
-Número de pinholes \(n_{ph}\) & \(20 \times 15\) \\
-Espaciado entre pinholes \textit{spacing} & \(172\ \text{px}\) \\
+Tamaño de píxel \lightit{px} & \(5.5\ \mu\text{m}\) \\
+Dimensión del sensor \text{\lightit{sendim}} & \(3072 \times 4096\ \text{px}\) \\
+Número de \lightit{pinhole}-s \(n_{ph}\) & \(20 \times 15\) \\
+Espaciado entre \lightit{pinhole}-s \lightit{spacing} & \(172\ \text{px}\) \\
 Centro de la placa \(O\) & \([1536,\ 2048] \text{px}\) \\
 Centro óptico \(C_o\) & \(O + [0,\ 258] \ \text{px}\) \\
-Intensidad de pinhole \(I_i\) & 3000 \\
+Intensidad de \lightit{pinhole} \(I_i\) & 3000 \\
 Ángulo de rotación \(\theta\) & 0 rad \\
 \hline
 \end{tabular}
@@ -1115,13 +1119,13 @@ Intensidad de pinhole \(I_i\) & 3000 \\
 Coeficiente de distorsión medido \(k_{\text{m}}\)  & \(18.3018\text{m}^{-2}\)\\
 Error en el centro óptico \(\Delta C_o\)\ref{eq:error_centrooptico} & 0.0298 px\\
 MDLD & \(5.1698\times 10^{-8}\) \\
-RMSE \(px\) & \(4.0255\times 10^{-7}\) \\
+RMSE & \(4.0255\times 10^{-7}\) \\
 \(E_r\) & 7.4181 \\
 \(R^2\) & 0.9965 \\
 \hline
 \end{tabular}
 \end{table}
-Estos resultados son muy claros, medir mal el \textit{spacing} repercute en un aumento del \(E_r\) y del MDLD sobre todo. Este error, aún por muy pequeño que sea (\(0.01\%\) del \textit{spacing} en estas simulaciones) empaña los resultados notoriamente. Esto tiene mucho sentido; ya que, en la segunda etapa del algoritmo\ \ref{sec:segundo_paso} el modelo de los pinholes ideales se crea de forma que se va propagando y multiplicando el error hacia los pinholes más alejados del centro óptico. De esta forma el algoritmo mide una distorsión falsa provocada por el mal modelo de los pinholes ideales.\\
+Estos resultados son muy claros, medir mal el \lightit{spacing} repercute en un aumento del \(E_r\) y del MDLD sobre todo. Este error, aún por muy pequeño que sea (\(0.01\%\) del \lightit{spacing} en estas simulaciones) empaña los resultados notoriamente. Esto tiene mucho sentido; ya que, en la segunda etapa del algoritmo\ \ref{sec:segundo_paso} el modelo de los \lightit{pinhole}-s ideales se crea de forma que se va propagando y multiplicando el error hacia los \lightit{pinhole}-s más alejados del centro óptico. De esta forma el algoritmo mide una distorsión falsa provocada por el mal modelo de los \lightit{pinhole}-s ideales.\\
 
 Esta es, sin duda, la condición más sensible que tiene este algoritmo. Otros autores como Wang et al. \cite{Wang2019DistortionDBS} proponen distintos mecanismos para calibrar, alinear y medir la distorsión que se podrían implementar en un caso práctico de detección de distorsión.
 
@@ -1137,13 +1141,13 @@ Esta es, sin duda, la condición más sensible que tiene este algoritmo. Otros a
 \textbf{Parámetro} & \textbf{Valor} \\
 \hline
 Coeficiente de distorsión \(k_{\text{real}}\) & \(|k_{real}|\in [5.93, 31.63]\text{m}^{-2}\) \\
-Tamaño de píxel \(px\) & \(5.5\ \mu\text{m}\) \\
-Dimensión del sensor \(\textit{sen\_dim}\) & \(3072 \times 4096\ \text{px}\) \\
-Número de pinholes \(n_{ph}\) & \(20 \times 15\) \\
-Espaciado entre pinholes \textit{spacing} & \(172\ \text{px}\) \\
+Tamaño de píxel \lightit{px} & \(5.5\ \mu\text{m}\) \\
+Dimensión del sensor \text{\lightit{sendim}} & \(3072 \times 4096\ \text{px}\) \\
+Número de \lightit{pinhole}-s \(n_{ph}\) & \(20 \times 15\) \\
+Espaciado entre \lightit{pinhole}-s \lightit{spacing} & \(172\ \text{px}\) \\
 Centro de la placa \(O\) & \([1536,\ 2048] + [\pm 100,\pm 100]\ \text{px}\) \\
 Centro óptico \(C_o\) & \(O + [\pm 100,\ 258 \pm 100] \ \text{px}\) \\
-Intensidad de pinhole \(I_i\) & \(\in[0, 3000]\) \\
+Intensidad de \lightit{pinhole} \(I_i\) & \(\in[0, 3000]\) \\
 Ángulo de rotación \(\theta\) & \(\in[-15,15]\) rad \\
 \hline
 \end{tabular}
@@ -1161,7 +1165,7 @@ Intensidad de pinhole \(I_i\) & \(\in[0, 3000]\) \\
 Coeficiente de distorsión medido \(k_{\text{m}}\)  & - \\
 Error en el centro óptico \(\Delta C_o\)\ref{eq:error_centrooptico} & 93.1498 px\\
 MDLD & \(5.0418\times 10^{-8}\) \\
-RMSE \(px\) & \(5.9380\times 10^{-7}\) \\
+RMSE & \(5.9380\times 10^{-7}\) \\
 \(E_r\) & 8.3555 \\
 \(R^2\) & 0.9857 \\
 \hline
@@ -1170,7 +1174,7 @@ RMSE \(px\) & \(5.9380\times 10^{-7}\) \\
 
 Los resultados obtenidos en\ \ref{tab:resultados8} muestran que el error cometido en la medida es pequeño. Evidentemente, ha aumentado respecto a otras condiciones más controladas pero, un error relativo \(E_r=8.3555\) es lo suficientemente pequeño para considerar esta metodología existosa en todas las condiciones presentadas.\\
 
-Como pequeña conclusión, los parámetros más sensibles y los que más hay que cuidar para que el algoritmo arroje resultados fiables son el \(spacing\) y el brillo de los pinholes.
+Como pequeña conclusión, los parámetros más sensibles y los que más hay que cuidar para que el algoritmo arroje resultados fiables son el \(spacing\) y el brillo de los \lightit{pinhole}-s.
 
 
 \section{Aplicación en sistemas ópticos de Satlantis}
@@ -1180,37 +1184,37 @@ Aunque gran parte del trabajo desarrollado en este proyecto se ha basado en simu
 \begin{figure}[htbp]
     \centering
     \includegraphics[width=0.75\linewidth]{Imagenes/psfgrid.PNG}
-    \caption{\small Imagen en bruto de un pinhole grid hecha con xxx.}
+    \caption{\small Imagen en bruto de un \lightit{pinhole grid} hecha con xxx.}
     \label{fig:psfgrid}
 \end{figure}
 
-La Figura\ \ref{fig:psfgrid} muestra una captura en concreto de las que se han analizado. Como se puede observar la imagen en bruto es mala, cuenta con demasiado ruido y sería bastante complicado que el algoritmo detectara los pinholes con precisión. Para eliminar este exceso de ruido se procesan las imagenes utilizando un \textit{Dark Frame} (\ref{fig:psfdark}) tal y como se ha explicado en la Sección\ \ref{sec:ruido}. La imagen procesada (\ref{fig:psfgrid_processed}) es el resultado de restar el \textit{Dark Frame} a la imagen en bruto.
+La Figura\ \ref{fig:psfgrid} muestra una captura en concreto de las que se han analizado. Como se puede observar la imagen en bruto es mala, cuenta con demasiado ruido y sería bastante complicado que el algoritmo detectara los \lightit{pinhole}-s con precisión. Para eliminar este exceso de ruido se procesan las imagenes utilizando un \lightit{Dark Frame} (\ref{fig:psfdark}) tal y como se ha explicado en la Sección\ \ref{sec:ruido}. La imagen procesada (\ref{fig:psfgrid_processed}) es el resultado de restar el \lightit{Dark Frame} a la imagen en bruto.
 \\
 
 \begin{figure}[htbp]
     \centering
     \includegraphics[width=0.75\linewidth]{Imagenes/Dark.PNG}
-    \caption{\small \textit{Dark Frame} asociado a \ \ref{fig:psfgrid}.}
+    \caption{\small \lightit{Dark Frame} asociado a \ \ref{fig:psfgrid}.}
     \label{fig:psfdark}
 \end{figure}
 
 \begin{figure}[htbp]
     \centering
     \includegraphics[width=0.75\linewidth]{Imagenes/processed_psfgrid.PNG}
-    \caption{\small Imagen procesada de un pinhole grid hecha con xxx.}
+    \caption{\small Imagen procesada de un \lightit{pinhole grid} hecha con xxx.}
     \label{fig:psfgrid_processed}
 \end{figure}
 
-Es apreciable que las imágenes no han sido realizadas controlando los parámetros variables de \ \ref{subsec:simulaciones}. La placa no está centrada (el centro se diferencia con unos pinholes en forma de cruz) ni recta (hay algo de rotación), no se ha alineado previamente con el eje óptico y el centro óptico es una incognita, no todos los pinholes son lo suficientemente brillantes y tampoco se ha medido con precisión el \textit{spacing}. Es decir, esta imagen entra en el marco de simulaciones 8 y los resultados tendrán, probablemente, los errores mostrados en la Tabla\ \ref{tab:resultados8}.\\
+Es apreciable que las imágenes no han sido realizadas controlando los parámetros variables de \ \ref{subsec:simulaciones}. La placa no está centrada (el centro se diferencia con unos \lightit{pinhole}-s en forma de cruz) ni recta (hay algo de rotación), no se ha alineado previamente con el eje óptico y el centro óptico es una incognita, no todos los \lightit{pinhole}-s son lo suficientemente brillantes y tampoco se ha medido con precisión el \lightit{spacing}. Es decir, esta imagen entra en el marco de simulaciones 8 y los resultados tendrán, probablemente, los errores mostrados en la Tabla\ \ref{tab:resultados8}.\\
 
 \begin{figure}[htbp]
     \centering
     \includegraphics[width=0.75\linewidth]{Imagenes/flat_centro_optico.png}
-    \caption{\small Ejemplo de flat con su ajuste de círculo dibujado en azul y el centro óptico en verde.}
+    \caption{\small Ejemplo de \lightit{Flat Frame} con su ajuste de círculo dibujado en azul y el centro óptico en verde.}
     \label{fig:flat}
 \end{figure}
 
-Para dar una estimación del centro óptico se ha propone utilizar el \textit{Flat Frame}. Esto es una imagen de calibración utilizada en astrofotografía para corregir irregularidades ópticas como el viñeteo (esquinas oscuras), manchas de polvo en el sensor o filtro, y desalineaciones del campo. Se obtienen tomando una foto de una fuente de luz uniforme, permitiendo al software de procesado eliminar estos defectos. Debido a su simetría radial, es posible ajustar un círculo y usar el centro de este como centro óptico. En la Figura\ \ref{fig:flat} se puede observar un ejemplo de flat con su correspondiente ajuste y centro óptico marcado. Esto es simplemente una proposición y no se ha implementado en este caso concreto debido a la falta del flat. En cambio, se ha recurrido a la siguiente opción que es suponer como centro óptico el centro de la imagen que. Esta es una muy pobre aproximación y puede alterar notoriamente los resultados. Aunque, ante la falta de un flat se puede utilizar como opción de último recurso.\\
+Para dar una estimación del centro óptico se ha propone utilizar el \lightit{Flat Frame}. Esto es una imagen de calibración utilizada en astrofotografía para corregir irregularidades ópticas como el viñeteo (esquinas oscuras), manchas de polvo en el sensor o filtro, y desalineaciones del campo. Se obtienen tomando una foto de una fuente de luz uniforme, permitiendo al software de procesado eliminar estos defectos. Debido a su simetría radial, es posible ajustar un círculo y usar el centro de este como centro óptico. En la Figura\ \ref{fig:flat} se puede observar un ejemplo de \lightit{Flat Frame} con su correspondiente ajuste y centro óptico marcado. Esto es simplemente una proposición y no se ha implementado en este caso concreto debido a la falta del \lightit{Flat Frame}. En cambio, se ha recurrido a la siguiente opción que es suponer como centro óptico el centro de la imagen que. Esta es una muy pobre aproximación y puede alterar notoriamente los resultados. Aunque, ante la falta de un \lightit{Flat Frame} se puede utilizar como opción de último recurso.\\
 
 \begin{table}[ht]
 \centering
@@ -1223,7 +1227,7 @@ Para dar una estimación del centro óptico se ha propone utilizar el \textit{Fl
 Coeficiente de distorsión medido \(k_{\text{m}}\)  & \(29.2157\text{m}^{-2}\)\\
 Error en el centro óptico \(\Delta C_o\)\ref{eq:error_centrooptico} &  - \\
 MDLD & - \\
-RMSE \(px\) & \(6.1427\times 10^{-6}\) \\
+RMSE & \(6.1427\times 10^{-6}\) \\
 \(E_r\) & - \\
 \(R^2\) & 0.7859 \\
 \hline
@@ -1248,7 +1252,7 @@ En la Figura\ \ref{fig:maps_real} se muestra el mapa de distorsión y los ejes p
         % Subfigura 2
         \begin{subfigure}[t]{0.4\textwidth}
             \includegraphics[width=\linewidth]{Imagenes/img_DistMap_0000_real.png}
-            \caption{\small Mapa de distorsión calculado por el algoritmo en la imagen proporcionada por Satlantis Microsats. Las flechas (zoom x100) representan el desplazamiento de los pinholes \(M_i-P_i\). Los puntos rojo y verde son el centro de la placa y óptico respectivamente.}
+            \caption{\small Mapa de distorsión calculado por el algoritmo en la imagen proporcionada por Satlantis Microsats. Las flechas (zoom x100) representan el desplazamiento de los \lightit{pinhole}-s \(M_i-P_i\). Los puntos rojo y verde son el centro de la placa y óptico respectivamente.}
             \label{fig:mapdist_real}
         \end{subfigure}
         \hfill
@@ -1258,6 +1262,6 @@ En la Figura\ \ref{fig:maps_real} se muestra el mapa de distorsión y los ejes p
 \end{figure}
 
 \section{Conclusiones}
-En este trabajo se ha propuesto un algortimo de detección de distorsión y se ha puesto en práctica con imágenes proporcionadas por Satlantis. Además, se han estudiado los límites y condiciones en los que la metodología poropuesta trabaja mejor y peor. Exitosamente se ha validado el algoritmo para calcular el perfil de distorsión de un único parametro que para cámaras profesionales es suficiente. El método, aún teniendo sus limitaciones y requerimientos como preparar el banco experimental (placa de pinholes, alineamiento de centro óptico, medidas del \(spacing\dots\)) se ha demostrado que es muy fiable. Para futuros trabajos se propone mejorar la modelización y alineamiento de los pinholes ideales.
+En este trabajo se ha propuesto un algortimo de detección de distorsión y se ha puesto en práctica con imágenes proporcionadas por Satlantis. Además, se han estudiado los límites y condiciones en los que la metodología poropuesta trabaja mejor y peor. Exitosamente se ha validado el algoritmo para calcular el perfil de distorsión de un único parametro que para cámaras profesionales es suficiente. El método, aún teniendo sus limitaciones y requerimientos como preparar el banco experimental (placa de \lightit{pinhole}-s, alineamiento de centro óptico, medidas del \(spacing\)\dots) se ha demostrado que es muy fiable. Para futuros trabajos se propone mejorar la modelización y alineamiento de los \lightit{pinhole}-s ideales.
 \printbibliography
 \end{document}
