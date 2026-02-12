@@ -168,6 +168,10 @@ def Theroretical_Centers(
                         centros_dist,
                         centro_optico, 
                         spacing)
+        angulo = 0
+        eje1 = [np.cos(angulo), np.sin(angulo)]
+        eje2 = [np.cos(angulo + np.pi / 2), np.sin(angulo + np.pi / 2)]
+        components = np.array([eje1, eje2])
     else:
         angulo=-rot
         eje1 = [np.cos(angulo), np.sin(angulo)]
@@ -176,7 +180,7 @@ def Theroretical_Centers(
         spacing_medido = spacing
     
     error_spacing = np.abs(spacing - spacing_medido)
-    #spacing = spacing_medido #Usar el medido (o no-->comentar esta linea)
+    spacing = spacing_medido #Usar el medido (o no-->comentar esta linea)
 
     # Generamos coordenadas centradas en (0,0)
     n_x, n_y = np.array(n_ph) * 2 # Se dibujan el doble de pinholes para cubrir toda la imagen
@@ -434,7 +438,7 @@ def Validation(
 
     # Se calculan errores del ajuste
     # RMSE
-    RMSE = np.sqrt(np.mean(k_values - k_medida))  #px
+    RMSE = np.mean(np.sqrt((k_values - k_medida) ** 2))  #px
 
     # R^2
     R2 = 1 - np.sum(residuos ** 2) / np.sum((y_filtrado - np.mean(y_filtrado)) ** 2) #adimensional

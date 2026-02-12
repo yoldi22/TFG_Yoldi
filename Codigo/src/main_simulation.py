@@ -4,7 +4,7 @@ import time
 import pandas as pd
 
 # Paths
-MainCarpet = r"Simulaciones_tfg/NADAFIJO_intensidad_2"
+MainCarpet = r"DatosResultados/Simulaciones_tfg/prueba7"
 
 # Simulation parameters
 px = 5.5e-6 # pixelsize in meters
@@ -28,7 +28,7 @@ kpx_max = 5 # Max distortion (in px)
 kpx_min = 5 # Min distortion (in px)
 
 I_max = 3000 # I max pinhole
-I_min = 0 # I min pinhole
+I_min = 3000 # I min pinhole
 
 # Initialization of the simulation
 paths = Init_Simulation_Directories(MainCarpet)

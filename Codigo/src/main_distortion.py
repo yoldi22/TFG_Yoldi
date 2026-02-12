@@ -105,7 +105,7 @@ def Main_real(
         resultados_data.append({
             "Number"           : i,
             "Measured_k(m^-2)" : k_medida, #m
-            "RMSE(m)"          : errores[2] * px, #px to meters 
+            "RMSE(m)"          : errores[2] / (px ** 2), #px to meters 
             "R2"               : errores[3],
             "Error_Type"       : error_type,
             "DistC_o(px)"      : dist_centro_optimo,
@@ -203,7 +203,7 @@ def Main_sim(
         spacing = spacing_arr[i] #meters
         k_real = k_real_arr[i] #meters
         px = px_arr[i] #meters
-        rot = rot_arr[i] #rad
+        rot = None #rot_arr[i] #rad
         t_csv_read = time.perf_counter() - t0
 
         # Se detecta la distorsión de la imagen real
@@ -297,7 +297,7 @@ def Main_sim(
         resultados_data.append({
             "Number"           : i,
             "Measured_k(m^-2)" : k_medida, #m
-            "RMSE(m)"          : errores[2] / px , #px to meters 
+            "RMSE(m)"          : errores[2] / (px ** 2) , #px to meters 
             "R2"               : errores[3],
             "Error_Type"       : error_type,
             "DistC_o(px)"      : dist_centro_optimo, #px
@@ -475,6 +475,15 @@ Dark_crpt = ""
 Flat_crpt = None
 Processed_Img = ""
 
+# Paths prueba
+DistImg_crpt = r"DatosResultados\Simulaciones_tfg\prueba7\Imagenes_distorsionadas"
+IdealImg_crpt = r"DatosResultados\Simulaciones_tfg\prueba7\Imagenes_ideales"
+MainCarpet = r"DatosResultados\Simulaciones_tfg\prueba7"
+SimCsv_path = r"DatosResultados\Simulaciones_tfg\prueba7\Simulaciones_data.csv" 
+Dark_crpt = ""
+Flat_crpt = None
+Processed_Img = ""
+
 # PARAMETERS
 # Sensor parameters
 px_sim = 1e-6 #m/px # Pixelsize in meters
@@ -504,10 +513,10 @@ umbral_min = 700 # Minimum intensity to be detected as a pinhole
 # Contador de cuantos mapas/imagenes generar
 # Si np.inf se generan para todas las simulaciones
 UndistImg_cont=0
-DistMap_cont=0
+DistMap_cont=100
 ErrorMap_cont=0
 RotMap_cont=0
-KValuesMap_cont=0
+KValuesMap_cont=100
 
 if simulacion:
     Main_sim(
