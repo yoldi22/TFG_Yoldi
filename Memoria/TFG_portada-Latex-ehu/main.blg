@@ -1,17 +1,17 @@
-[0] Config.pm:307> INFO - This is Biber 2.19
-[1] Config.pm:310> INFO - Logfile is 'main.blg'
-[216] biber-MSWIN64:340> INFO - === 
-[294] Biber.pm:419> INFO - Reading 'main.bcf'
-[482] Biber.pm:979> INFO - Found 24 citekeys in bib section 0
-[500] Biber.pm:4419> INFO - Processing section 0
-[533] Biber.pm:4610> INFO - Looking for bibtex file 'referencias.bib' for section 0
-[618] bibtex.pm:1713> INFO - LaTeX decoding ...
-[677] bibtex.pm:1519> INFO - Found BibTeX data source 'referencias.bib'
-[948] UCollate.pm:68> INFO - Overriding locale 'en-US' defaults 'variable = shifted' with 'variable = non-ignorable'
-[949] UCollate.pm:68> INFO - Overriding locale 'en-US' defaults 'normalization = NFD' with 'normalization = prenormalized'
-[949] Biber.pm:4239> INFO - Sorting list 'none/global//global/global' of type 'entry' with template 'none' and locale 'en-US'
-[949] Biber.pm:4245> INFO - No sort tailoring available for locale 'en-US'
-[984] bbl.pm:660> INFO - Writing 'main.bbl' with encoding 'UTF-8'
-[1000] bbl.pm:763> INFO - Output to main.bbl
-[1000] Biber.pm:131> WARN - legacy year field 'n.d.' in entry 'EdmundOpticsMTF' is not an integer - this will probably not sort properly.
-[1000] Biber.pm:133> INFO - WARNINGS: 1
+[1] Config.pm:307> INFO - This is Biber 2.19
+[3] Config.pm:310> INFO - Logfile is 'main.blg'
+[461] biber-MSWIN64:340> INFO - === 
+[594] Biber.pm:419> INFO - Reading 'main.bcf'
+[913] Biber.pm:979> INFO - Found 24 citekeys in bib section 0
+[1002] Biber.pm:4419> INFO - Processing section 0
+[1032] Biber.pm:4610> INFO - Looking for bibtex file 'referencias.bib' for section 0
+[1200] bibtex.pm:1713> INFO - LaTeX decoding ...
+[1350] bibtex.pm:1519> INFO - Found BibTeX data source 'referencias.bib'
+[1857] UCollate.pm:68> INFO - Overriding locale 'en-US' defaults 'variable = shifted' with 'variable = non-ignorable'
+[1858] UCollate.pm:68> INFO - Overriding locale 'en-US' defaults 'normalization = NFD' with 'normalization = prenormalized'
+[1858] Biber.pm:4239> INFO - Sorting list 'none/global//global/global' of type 'entry' with template 'none' and locale 'en-US'
+[1858] Biber.pm:4245> INFO - No sort tailoring available for locale 'en-US'
+[1920] bbl.pm:660> INFO - Writing 'main.bbl' with encoding 'UTF-8'
+[1969] bbl.pm:763> INFO - Output to main.bbl
+[1970] Biber.pm:131> WARN - legacy year field 'n.d.' in entry 'EdmundOpticsMTF' is not an integer - this will probably not sort properly.
+[1970] Biber.pm:133> INFO - WARNINGS: 1
