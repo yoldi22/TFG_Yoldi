@@ -146,7 +146,8 @@ def Theroretical_Centers(
         centros_dist_filtrados,
         centro_placa, 
         centro_optico,
-        rot=None
+        rot=None,
+        medir_spacing=False
 ):
     """
     Calcula centros de pinholes con espaciado entero uniforme en píxeles,
@@ -169,14 +170,19 @@ def Theroretical_Centers(
                         centro_optico, 
                         spacing)
     else:
+        _, _, spacing_medido = Detect_Rotation_Spacing(
+                        centros_dist,
+                        centro_optico, 
+                        spacing)
         angulo=-rot
         eje1 = [np.cos(angulo), np.sin(angulo)]
         eje2 = [np.cos(angulo + np.pi / 2), np.sin(angulo + np.pi / 2)]
         components = np.array([eje1, eje2])
-        spacing_medido = spacing
     
     error_spacing = np.abs(spacing - spacing_medido)
-    #spacing = spacing_medido #Usar el medido (o no-->comentar esta linea)
+
+    if medir_spacing:
+        spacing = spacing_medido #Usar el medido
 
     # Generamos coordenadas centradas en (0,0)
     n_x, n_y = np.array(n_ph) * 2 # Se dibujan el doble de pinholes para cubrir toda la imagen
@@ -214,7 +220,8 @@ def Center_Proccessing(
         spacing, #pixels
         umbral_min=70,
         centro_optico = None,
-        rot=None
+        rot=None,
+        medir_spacing=False
 ):
     # Indicador de simulación erronea
     simulacion_erronea = [False, ""]
@@ -243,7 +250,8 @@ def Center_Proccessing(
                 centros_dist_filtrados=centros_dist_filtrados,
                 centro_placa=centro_placa,
                 centro_optico=centro_optico, 
-                rot=rot)
+                rot=rot,
+                medir_spacing=medir_spacing)
     centros_dist = centros_dist_filtrados
 
     #Centramos los pinholes en el centro óptico
@@ -431,10 +439,10 @@ def Validation(
 
     # Se calcula el coeficiente para cada pinhole
     k_values = y_filtrado / x_filtrado
-
+    print((k_values-k_medida) / (5.5e-6)**2)
     # Se calculan errores del ajuste
     # RMSE
-    RMSE = np.sqrt(np.mean(k_values - k_medida))  #px
+    RMSE = np.mean(np.sqrt((k_values - k_medida) ** 2))  #px
 
     # R^2
     R2 = 1 - np.sum(residuos ** 2) / np.sum((y_filtrado - np.mean(y_filtrado)) ** 2) #adimensional
@@ -529,7 +537,8 @@ def Distortion_Detector(
         umbral_distancia,   #[min_dist, max_dist] px
         k_real=np.nan, #px
         umbral_min=70,
-        rot=None
+        rot=None,
+        medir_spacing=False
 ):
   
     # Se detectan los centros
@@ -539,7 +548,8 @@ def Distortion_Detector(
                     spacing=spacing,
                     centro_optico=centro_optico,
                     umbral_min=umbral_min,
-                    rot=rot)
+                    rot=rot,
+                    medir_spacing=medir_spacing)
     centros_sindist = data[0] #px relativos a centro optico
     centros_dist = data[1] #px relativos a centro optico
     simulacion_erronea = data[2]

@@ -2400,7 +2400,8 @@
     <bcf:citekey order="29" intorder="1">kuhn1955hungarian</bcf:citekey>
     <bcf:citekey order="30" intorder="1">virtanen2020scipy</bcf:citekey>
     <bcf:citekey order="31" intorder="1">montgomery2014</bcf:citekey>
-    <bcf:citekey order="32" intorder="1">Wang2019DistortionDBS</bcf:citekey>
+    <bcf:citekey order="32" intorder="1">liao2021deep</bcf:citekey>
+    <bcf:citekey order="33" intorder="1">Wang2019DistortionDBS</bcf:citekey>
   </bcf:section>
   <!-- SORTING TEMPLATES -->
   <bcf:sortingtemplate name="none">

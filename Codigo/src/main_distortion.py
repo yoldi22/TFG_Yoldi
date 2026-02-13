@@ -22,6 +22,7 @@ def Main_real(
         umbral_dist,
         umbral_distancia, 
         spacing,
+        medir_spacing,
         n_ph,
         centro_optico=None
 ):
@@ -59,7 +60,8 @@ def Main_real(
                     umbral_dist=umbral_dist,
                     simulacion=simulacion,
                     umbral_distancia=umbral_distancia,
-                    umbral_min=umbral_min)
+                    umbral_min=umbral_min,
+                    medir_spacing=medir_spacing)
         k_medida           = results[0] / (px ** 2) #pixels to meters
         errores            = results[1]
         simulacion_erronea = results[2]
@@ -105,7 +107,7 @@ def Main_real(
         resultados_data.append({
             "Number"           : i,
             "Measured_k(m^-2)" : k_medida, #m
-            "RMSE(m)"          : errores[2] * px, #px to meters 
+            "RMSE(m)"          : errores[2] / (px ** 2), #px to meters 
             "R2"               : errores[3],
             "Error_Type"       : error_type,
             "DistC_o(px)"      : dist_centro_optimo,
@@ -144,6 +146,8 @@ def Main_sim(
         umbral_dist,
         umbral_distancia,
         umbral_min,
+        medir_rot,
+        medir_spacing,
         UndistImg_cont,
         DistMap_cont,
         ErrorMap_cont,
@@ -203,7 +207,10 @@ def Main_sim(
         spacing = spacing_arr[i] #meters
         k_real = k_real_arr[i] #meters
         px = px_arr[i] #meters
-        rot = rot_arr[i] #rad
+        if medir_rot:
+            rot = None 
+        else:
+            rot = rot_arr[i] #rad
         t_csv_read = time.perf_counter() - t0
 
         # Se detecta la distorsión de la imagen real
@@ -219,7 +226,8 @@ def Main_sim(
                     simulacion=simulacion,
                     k_real=k_real * (px ** 2), #meters to pixels
                     umbral_distancia=umbral_distancia,
-                    umbral_min=umbral_min)
+                    umbral_min=umbral_min,
+                    medir_spacing=medir_spacing)
         k_medida           = results[0] / (px ** 2) #pixels to meters
         errores            = results[1]
         simulacion_erronea = results[2]
@@ -297,7 +305,7 @@ def Main_sim(
         resultados_data.append({
             "Number"           : i,
             "Measured_k(m^-2)" : k_medida, #m
-            "RMSE(m)"          : errores[2] / px , #px to meters 
+            "RMSE(m)"          : errores[2] / (px ** 2) , #px to meters 
             "R2"               : errores[3],
             "Error_Type"       : error_type,
             "DistC_o(px)"      : dist_centro_optimo, #px
@@ -457,15 +465,6 @@ Dark_crpt = r"ImgReales\SWIR90_PSFgrid21\Test2_tanda50imagenes_enfocadas\dark"
 Flat_crpt = None
 Processed_Img = r"ImgReales\SWIR90_PSFgrid21\Test2_tanda50imagenes_enfocadas\white_Newton_temp_22.0position_00_proccesed"
 
-# Paths girado90 2000
-DistImg_crpt = r"ImgReales\girado_90_grados\psf_20000\Zone5_whiteposition_00"
-IdealImg_crpt = ""
-MainCarpet = r"ResultsReales\girado_90_grados_2\psf_20000\Zone5_whiteposition_00"
-SimCsv_path = "" 
-Dark_crpt = r"ImgReales\girado_90_grados\dark_20000\Zone5_whiteposition_00"
-Flat_crpt = r"ImgReales\VNIR90_PSFgrid36\Flats"
-Processed_Img = r"ImgReales\girado_90_grados\psf_20000\Zone5_whiteposition_00_processed"
-
 # Paths NADAFIJO_SPACING_REAL
 DistImg_crpt = r"c:\Users\xabie\Documents\TFG\Codigo\DistortionMeasurement\Simulaciones_tfg\NADAFIJO_intensidad_2\Imagenes_distorsionadas"
 IdealImg_crpt = r"c:\Users\xabie\Documents\TFG\Codigo\DistortionMeasurement\Simulaciones_tfg\NADAFIJO_intensidad_2_2\Imagenes_ideales"
@@ -474,6 +473,24 @@ SimCsv_path = r"c:\Users\xabie\Documents\TFG\Codigo\DistortionMeasurement\Simula
 Dark_crpt = ""
 Flat_crpt = None
 Processed_Img = ""
+
+# Paths prueba
+DistImg_crpt = r"DatosResultados\Simulaciones_tfg\prueba6\Imagenes_distorsionadas"
+IdealImg_crpt = r"DatosResultados\Simulaciones_tfg\prueba6\Imagenes_ideales"
+MainCarpet = r"DatosResultados\Simulaciones_tfg\prueba8.2"
+SimCsv_path = r"DatosResultados\Simulaciones_tfg\prueba6\Simulaciones_data.csv" 
+Dark_crpt = ""
+Flat_crpt = None
+Processed_Img = ""
+
+# Paths girado90 2000
+DistImg_crpt = r"DatosResultados\ImgReales\girado_90_grados\psf_20000\Zone5_whiteposition_00"
+IdealImg_crpt = ""
+MainCarpet = r"DatosResultados\ResultsReales\girado_90_grados_3\psf_20000\Zone5_whiteposition_00"
+SimCsv_path = "" 
+Dark_crpt = r"DatosResultados\ImgReales\girado_90_grados\dark_20000\Zone5_whiteposition_00"
+Flat_crpt = None
+Processed_Img = r"DatosResultados\ImgReales\girado_90_grados\psf_20000\Zone5_whiteposition_00_processed"
 
 # PARAMETERS
 # Sensor parameters
@@ -495,7 +512,7 @@ n_ph = [20, 15] # Number of pinholes in each dimension
 spacing = spacing_girado90 / px #meters to px
 
 # Detection parameters
-simulacion = True # Simulation index
+simulacion = False # Simulation index
 umbral_dist = 3 # Z-Score threshold for 
 umbral_distancia = [0, 50] # Threshold for the distance between distorted and theoretical pinholes
 umbral_min = 700 # Minimum intensity to be detected as a pinhole
@@ -503,11 +520,15 @@ umbral_min = 700 # Minimum intensity to be detected as a pinhole
 # Resultls parameter
 # Contador de cuantos mapas/imagenes generar
 # Si np.inf se generan para todas las simulaciones
-UndistImg_cont=0
-DistMap_cont=0
-ErrorMap_cont=0
-RotMap_cont=0
-KValuesMap_cont=0
+UndistImg_cont=10
+DistMap_cont=10
+ErrorMap_cont=10
+RotMap_cont=10
+KValuesMap_cont=10
+medir_rot=True #Si False se coge el angulo real computado de la simulacion
+                #Si True el algoritmo mide el anglo de la placa 
+medir_spacing=True #Si True se el algoritmo calcula spacing
+                    #Si False se coge el spacing proporcionado (no error para sim)
 
 if simulacion:
     Main_sim(
@@ -518,6 +539,8 @@ if simulacion:
         umbral_dist=umbral_dist,
         umbral_distancia=umbral_distancia,
         umbral_min=umbral_min,
+        medir_rot=medir_rot,
+        medir_spacing=medir_spacing,
         UndistImg_cont=UndistImg_cont,
         DistMap_cont=DistMap_cont,
         ErrorMap_cont=ErrorMap_cont,
@@ -535,6 +558,7 @@ else:
         umbral_dist=umbral_dist,
         umbral_distancia=umbral_distancia,
         spacing=spacing,
+        medir_spacing=medir_spacing,
         n_ph=n_ph,
         centro_optico=centro_optico)
 
