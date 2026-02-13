@@ -4,7 +4,7 @@ import time
 import pandas as pd
 
 # Paths
-MainCarpet = r"DatosResultados/Simulaciones_tfg/prueba7"
+MainCarpet = r"DatosResultados/Simulaciones_tfg/prueba6"
 
 # Simulation parameters
 px = 5.5e-6 # pixelsize in meters
@@ -16,19 +16,20 @@ n_ph = [15,20] # number of pinholes in each dimension
 centro_optico = [sen_dim[1]/2 + 258,sen_dim[0]/2] #position in px of the optic center
 
 # Errors parameters
-delta_w = 0 * px # displacement of the plate center
-delta_h = 0 * px # in each dimension
+delta_w = 100 * px # displacement of the plate center
+delta_h = 100 * px # in each dimension
 
-delta_cx = 0 * px # displacement of the optic center
-delta_cy = 0 * px # in each dimension
+delta_cx = 100 * px # displacement of the optic center
+delta_cy = 100 * px # in each dimension
 
-delta_degree = 0 # rotation of the plate
+delta_degree = 15 # rotation of the plate
 
-kpx_max = 5 # Max distortion (in px)
-kpx_min = 5 # Min distortion (in px)
+kpx_max = 10 # Max distortion (in px)
+kpx_min = 0 # Min distortion (in px)
 
 I_max = 3000 # I max pinhole
-I_min = 3000 # I min pinhole
+I_min = 0 # I min pinhole
+I_oscuro = 0.7 # Solo se alumbran el 70% de los pinholes
 
 # Initialization of the simulation
 paths = Init_Simulation_Directories(MainCarpet)
@@ -55,7 +56,8 @@ for i in range(num_imagenes):
         kpx_max=kpx_max,
         kpx_min=kpx_min,
         I_max=I_max,
-        I_min=I_min)
+        I_min=I_min,
+        I_oscuro=I_oscuro)
 
     Save_Simulation(
         IdealImg=results[0],

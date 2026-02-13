@@ -15,7 +15,7 @@
 \contentsline {subsection}{\numberline {2.4}Métricas}{11}{subsection.2.4}%
 \contentsline {section}{\numberline {3}Método propuesto}{12}{section.3}%
 \contentsline {subsection}{\numberline {3.1}Primer paso: detección de los centroides de los {\lightitfont pinhole}-s}{12}{subsection.3.1}%
-\contentsline {subsection}{\numberline {3.2}Segundo paso: caracterización de la placa de {\lightitfont pinhole}-s, y modelización de las {\lightitfont pinhole}-s ideales}{15}{subsection.3.2}%
+\contentsline {subsection}{\numberline {3.2}Segundo paso: caracterización de la placa de {\lightitfont pinhole}-s, y modelización de los {\lightitfont pinhole}-s ideales}{15}{subsection.3.2}%
 \contentsline {subsection}{\numberline {3.3}Tercer paso: cálculo de la constante de distorsión.}{17}{subsection.3.3}%
 \contentsline {section}{\numberline {4}Etapa de simulación}{18}{section.4}%
 \contentsline {subsection}{\numberline {4.1}Generación de la imagen ideal}{18}{subsection.4.1}%
@@ -24,13 +24,15 @@
 \contentsline {subsection}{\numberline {4.4}Evaluación de los resultados obtenidos.}{21}{subsection.4.4}%
 \contentsline {subsubsection}{\numberline {4.4.1}Simulación 1}{21}{subsubsection.4.4.1}%
 \contentsline {subsubsection}{\numberline {4.4.2}Simulación 2}{22}{subsubsection.4.4.2}%
-\contentsline {subsubsection}{\numberline {4.4.3}Simulación 3}{22}{subsubsection.4.4.3}%
-\contentsline {subsubsection}{\numberline {4.4.4}Simulación 4}{24}{subsubsection.4.4.4}%
-\contentsline {subsubsection}{\numberline {4.4.5}Simulación 5}{24}{subsubsection.4.4.5}%
+\contentsline {subsubsection}{\numberline {4.4.3}Simulación 3}{23}{subsubsection.4.4.3}%
+\contentsline {subsubsection}{\numberline {4.4.4}Simulación 4}{23}{subsubsection.4.4.4}%
+\contentsline {subsubsection}{\numberline {4.4.5}Simulación 5}{23}{subsubsection.4.4.5}%
 \contentsline {subsubsection}{\numberline {4.4.6}Simulación 6}{24}{subsubsection.4.4.6}%
-\contentsline {subsubsection}{\numberline {4.4.7}Simulacion 7}{25}{subsubsection.4.4.7}%
+\contentsline {subsubsection}{\numberline {4.4.7}Simulacion 7}{24}{subsubsection.4.4.7}%
 \contentsline {subsubsection}{\numberline {4.4.8}Simulacion 8}{25}{subsubsection.4.4.8}%
-\contentsline {section}{\numberline {5}Aplicación en sistemas ópticos de Satlantis}{26}{section.5}%
+\contentsline {section}{\numberline {5}Aplicación en sistemas ópticos de Satlantis}{25}{section.5}%
+\contentsline {subsection}{\numberline {5.1}Procesado de imagen}{25}{subsection.5.1}%
+\contentsline {subsection}{\numberline {5.2}Determinación del centro óptico}{28}{subsection.5.2}%
+\contentsline {subsection}{\numberline {5.3}Resultados}{28}{subsection.5.3}%
 \contentsline {section}{\numberline {6}Conclusiones}{29}{section.6}%
-\contentsline {section}{\numberline {7}Conclusiones}{29}{section.7}%
-\contentsline {section}{\numberline {8}Objetivos de Desarrollo Sostenible (ODS)}{30}{section.8}%
+\contentsline {section}{\numberline {7}Objetivos de Desarrollo Sostenible (ODS)}{30}{section.7}%

@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.141592653-2.6-0.999995 (MiKTeX 24.1) (preloaded format=xelatex 2025.10.15)  12 FEB 2026 19:02
+This is XeTeX, Version 3.141592653-2.6-0.999995 (MiKTeX 24.1) (preloaded format=xelatex 2025.10.15)  13 FEB 2026 00:58
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1973,7 +1973,7 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
 [20]
-Overfull \hbox (2.67934pt too wide) in paragraph at lines 771--839
+Overfull \hbox (2.4114pt too wide) in paragraph at lines 771--839
  [][] 
  []
 
@@ -1983,11 +1983,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 917--918
  []
 
 
-LaTeX Warning: Reference `tab:resultados2' on page 21 undefined on input line 9
-23.
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 923--924
+Underfull \hbox (badness 10000) in paragraph at lines 921--922
 
  []
 
@@ -2004,29 +2000,9 @@ File: Imagenes/RelativeError_vs_k.png Graphic file (type bmp)
 File: Imagenes/R2_vs_k.png Graphic file (type bmp)
 <Imagenes/R2_vs_k.png>
 
-Underfull \hbox (badness 10000) in paragraph at lines 948--949
+Underfull \hbox (badness 10000) in paragraph at lines 950--952
 
  []
-
-File: Imagenes/img_KValuesMap_0012_kreal.png Graphic file (type bmp)
-<Imagenes/img_KValuesMap_0012_kreal.png>
-File: Imagenes/img_KValuesMap_0013_kreal.png Graphic file (type bmp)
-<Imagenes/img_KValuesMap_0013_kreal.png>
-
-Underfull \hbox (badness 1205) in paragraph at lines 966--966
-\TU/EHUSans-Light.otf(0)/m/n/10.95 dos para $\OML/cmm/m/it/10.95 k[] \OT1/cmr/m
-/n/10.95 = \OMS/cmsy/m/n/10.95 ^^@\OT1/cmr/m/n/10.95 36\OML/cmm/m/it/10.95 :\OT
-1/cmr/m/n/10.95 1677[][]$\TU/EHUSans-Light.otf(0)/m/n/10.95 , $\OML/cmm/m/it/10
-.95 R[] \OT1/cmr/m/n/10.95 =
- []
-
-
-LaTeX Warning: Reference `tab:resultados3' on page 22 undefined on input line 9
-77.
-
-
-LaTeX Warning: Reference `tab:resultados3' on page 22 undefined on input line 9
-77.
 
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
@@ -2044,25 +2020,17 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
 [23]
-
-LaTeX Warning: Reference `tab:resultados4' on page 24 undefined on input line 9
-81.
-
-
-LaTeX Warning: Reference `tab:resultados6' on page 24 undefined on input line 9
-90.
-
 File: Imagenes/img_RotMap_0000.png Graphic file (type bmp)
 <Imagenes/img_RotMap_0000.png>
 File: Imagenes/img_DistMap_0000.png Graphic file (type bmp)
 <Imagenes/img_DistMap_0000.png>
 
-Underfull \hbox (badness 10000) in paragraph at lines 1006--1006
+Underfull \hbox (badness 10000) in paragraph at lines 984--984
 \TU/EHUSans-Light.otf(0)/m/n/10.95 (zoom x100) representan el desplaza-
  []
 
 
-Underfull \hbox (badness 2020) in paragraph at lines 1006--1006
+Underfull \hbox (badness 2020) in paragraph at lines 984--984
 \TU/EHUSans-Light.otf(0)/m/n/10.95 miento de los \TU/EHUSans-Light.otf(2)/m/n/1
 0.95 pinhole\TU/EHUSans-Light.otf(0)/m/n/10.95 -s $\OML/cmm/m/it/10.95 M[] \OMS
 /cmsy/m/n/10.95 ^^@ \OML/cmm/m/it/10.95 P[]$\TU/EHUSans-Light.otf(0)/m/n/10.95 
@@ -2070,18 +2038,23 @@ Underfull \hbox (badness 2020) in paragraph at lines 1006--1006
  []
 
 
-Underfull \hbox (badness 5924) in paragraph at lines 1006--1006
+Underfull \hbox (badness 5924) in paragraph at lines 984--984
 \TU/EHUSans-Light.otf(0)/m/n/10.95 puntos rojo y verde son el centro de
  []
 
 
-Underfull \hbox (badness 2717) in paragraph at lines 1006--1006
+Underfull \hbox (badness 2717) in paragraph at lines 984--984
 \TU/EHUSans-Light.otf(0)/m/n/10.95 la placa y óptico respectivamente. Se
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1006--1006
+Underfull \hbox (badness 10000) in paragraph at lines 984--984
 \TU/EHUSans-Light.otf(0)/m/n/10.95 debidas a la mala orientación de los
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 995--996
+
  []
 
 
@@ -2092,21 +2065,30 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
 [24]
-Underfull \hbox (badness 10000) in paragraph at lines 1018--1019
+Underfull \hbox (badness 10000) in paragraph at lines 1041--1042
 
  []
 
+File: Imagenes/psfgrid.PNG Graphic file (type bmp)
+<Imagenes/psfgrid.PNG>
 
-LaTeX Warning: Reference `tab:resultados8' on page 25 undefined on input line 1
-025.
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 1025--1026
+Underfull \hbox (badness 10000) in paragraph at lines 1052--1054
 
  []
 
+File: Imagenes/Dark.PNG Graphic file (type bmp)
+<Imagenes/Dark.PNG>
+File: Imagenes/processed_psfgrid.PNG Graphic file (type bmp)
+<Imagenes/processed_psfgrid.PNG>
 
-Underfull \hbox (badness 10000) in paragraph at lines 1032--1033
+Underfull \hbox (badness 10000) in paragraph at lines 1069--1070
+
+ []
+
+File: Imagenes/flat_centro_optico.png Graphic file (type bmp)
+<Imagenes/flat_centro_optico.png>
+
+Underfull \hbox (badness 10000) in paragraph at lines 1080--1081
 
  []
 
@@ -2118,29 +2100,6 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
 [25]
-File: Imagenes/psfgrid.PNG Graphic file (type bmp)
-<Imagenes/psfgrid.PNG>
-
-Underfull \hbox (badness 10000) in paragraph at lines 1041--1043
-
- []
-
-File: Imagenes/Dark.PNG Graphic file (type bmp)
-<Imagenes/Dark.PNG>
-File: Imagenes/processed_psfgrid.PNG Graphic file (type bmp)
-<Imagenes/processed_psfgrid.PNG>
-
-Underfull \hbox (badness 10000) in paragraph at lines 1058--1059
-
- []
-
-File: Imagenes/flat_centro_optico.png Graphic file (type bmp)
-<Imagenes/flat_centro_optico.png>
-
-Underfull \hbox (badness 10000) in paragraph at lines 1067--1068
-
- []
-
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
 (fancyhdr)                Make it at least 14.49998pt, for example:
@@ -2157,13 +2116,48 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
 [27]
-Underfull \hbox (badness 10000) in paragraph at lines 1069--1070
+Underfull \hbox (badness 10000) in paragraph at lines 1082--1083
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1078--1079
+Underfull \hbox (badness 10000) in paragraph at lines 1093--1094
 
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1095--1096
+
+ []
+
+File: Imagenes/img_RotMap_0000_real.png Graphic file (type bmp)
+<Imagenes/img_RotMap_0000_real.png>
+
+Underfull \hbox (badness 7925) in paragraph at lines 1104--1104
+[]\TU/EHUSans-Light.otf(0)/m/n/10.95 (a) |Ejes principales calculados por
+ []
+
+
+Underfull \hbox (badness 3460) in paragraph at lines 1104--1104
+\TU/EHUSans-Light.otf(0)/m/n/10.95 el algoritmo en la imagen propor-
+ []
+
+File: Imagenes/img_DistMap_0000_real.png Graphic file (type bmp)
+<Imagenes/img_DistMap_0000_real.png>
+
+Underfull \hbox (badness 3460) in paragraph at lines 1111--1111
+\TU/EHUSans-Light.otf(0)/m/n/10.95 el algoritmo en la imagen propor-
+ []
+
+
+Underfull \hbox (badness 2384) in paragraph at lines 1111--1111
+\TU/EHUSans-Light.otf(0)/m/n/10.95 flechas (zoom x100) representan el
+ []
+
+
+Underfull \hbox (badness 1052) in paragraph at lines 1111--1111
+\OML/cmm/m/it/10.95 P[]$\TU/EHUSans-Light.otf(0)/m/n/10.95 . Los puntos rojo y 
+verde son el
  []
 
 
@@ -2174,44 +2168,30 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
 [28]
-File: Imagenes/img_RotMap_0000_real.png Graphic file (type bmp)
-<Imagenes/img_RotMap_0000_real.png>
-
-Underfull \hbox (badness 7925) in paragraph at lines 1089--1089
-[]\TU/EHUSans-Light.otf(0)/m/n/10.95 (a) |Ejes principales calculados por
- []
-
-
-Underfull \hbox (badness 3460) in paragraph at lines 1089--1089
-\TU/EHUSans-Light.otf(0)/m/n/10.95 el algoritmo en la imagen propor-
- []
-
-File: Imagenes/img_DistMap_0000_real.png Graphic file (type bmp)
-<Imagenes/img_DistMap_0000_real.png>
-
-Underfull \hbox (badness 3460) in paragraph at lines 1096--1096
-\TU/EHUSans-Light.otf(0)/m/n/10.95 el algoritmo en la imagen propor-
- []
-
-
-Underfull \hbox (badness 2384) in paragraph at lines 1096--1096
-\TU/EHUSans-Light.otf(0)/m/n/10.95 flechas (zoom x100) representan el
- []
-
-
-Underfull \hbox (badness 1052) in paragraph at lines 1096--1096
-\OML/cmm/m/it/10.95 P[]$\TU/EHUSans-Light.otf(0)/m/n/10.95 . Los puntos rojo y 
-verde son el
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 1110--1111
+Underfull \hbox (badness 10000) in paragraph at lines 1123--1124
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1112--1113
+Underfull \hbox (badness 10000) in paragraph at lines 1125--1126
 
+ []
+
+
+Overfull \hbox (0.89601pt too wide) in paragraph at lines 1127--1128
+\TU/EHUSans-Light.otf(0)/m/n/12 mental. Entre los principales requisitos se enc
+uentran la correcta preparación del banco
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1127--1128
+
+ []
+
+
+Overfull \hbox (1.03114pt too wide) in paragraph at lines 1129--1130
+[]\TU/EHUSans-Light.otf(0)/m/n/12 A pesar de estas limitaciones, el algoritmo s
+e ha demostrado como una herramienta
  []
 
 
@@ -2222,39 +2202,22 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
 [29]
-Overfull \hbox (0.89601pt too wide) in paragraph at lines 1114--1115
-\TU/EHUSans-Light.otf(0)/m/n/12 mental. Entre los principales requisitos se enc
-uentran la correcta preparación del banco
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 1114--1115
+Underfull \hbox (badness 10000) in paragraph at lines 1135--1136
 
  []
 
 
-Overfull \hbox (1.03114pt too wide) in paragraph at lines 1116--1117
-[]\TU/EHUSans-Light.otf(0)/m/n/12 A pesar de estas limitaciones, el algoritmo s
-e ha demostrado como una herramienta
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 1120--1121
+Underfull \hbox (badness 10000) in paragraph at lines 1137--1138
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1122--1123
+Underfull \hbox (badness 10000) in paragraph at lines 1139--1140
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1124--1125
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 1126--1127
+Underfull \hbox (badness 10000) in paragraph at lines 1141--1142
 
  []
 
@@ -2266,28 +2229,28 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
 [30]
-Overfull \hbox (8.96692pt too wide) in paragraph at lines 1129--1129
+Overfull \hbox (8.96692pt too wide) in paragraph at lines 1146--1146
 []\TU/EHUSans-Light.otf(0)/m/n/12 R. N. Bracewell, \TU/EHUSans-Light.otf(0)/m/i
 t/12 The fourier transform and its applications\TU/EHUSans-Light.otf(0)/m/n/12 
 , 3rd (McGraw-Hill, 2000). 
  []
 
 
-Overfull \hbox (25.69049pt too wide) in paragraph at lines 1129--1129
+Overfull \hbox (25.69049pt too wide) in paragraph at lines 1146--1146
 []\TU/EHUSans-Light.otf(0)/m/n/12 E. Optics, \TU/EHUSans-Light.otf(0)/m/it/12 I
 ntroduction to modulation transfer function\TU/EHUSans-Light.otf(0)/m/n/12 , []
 []$[][][][][] [] [] [] [][][] [] [][][][][][][][][][][][] []
  []
 
 
-Overfull \hbox (22.61536pt too wide) in paragraph at lines 1129--1129
+Overfull \hbox (22.61536pt too wide) in paragraph at lines 1146--1146
 [][] [] [][][][][][][][][] [][] [][][][][][] [] [][][][][][][][][][][] [][] [][
 ][][][] [] [][][][][][] [] [][][][][][][][][][][][] [][] [][] [][] [][][][][][]
 [][][][] [][]
  []
 
 
-Overfull \hbox (14.0705pt too wide) in paragraph at lines 1129--1129
+Overfull \hbox (14.0705pt too wide) in paragraph at lines 1146--1146
 \TU/EHUSans-Light.otf(0)/m/n/12 single image camera calibration with radial dis
 tortion”, in Proceedings of the ieee/cvf
  []
@@ -2316,22 +2279,19 @@ L3 programming layer <2024-01-04>
 
 LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 
-
-LaTeX Warning: There were undefined references.
-
 Package rerunfilecheck Info: File `main.out' has not changed.
-(rerunfilecheck)             Checksum: A0F65FC9A8F4DB429A950B23B41A5141;7634.
+(rerunfilecheck)             Checksum: E573304F87E918E3AC5F7072DE4350CF;8025.
 Package logreq Info: Writing requests to 'main.run.xml'.
 \openout1 = `main.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 39575 strings out of 409616
- 837126 string characters out of 5773991
- 1945191 words of memory out of 5000000
- 61119 multiletter control sequences out of 15000+600000
+ 39550 strings out of 409616
+ 836209 string characters out of 5773991
+ 1943191 words of memory out of 5000000
+ 61096 multiletter control sequences out of 15000+600000
  565505 words of font info for 93 fonts, out of 8000000 for 9000
  1348 hyphenation exceptions out of 8191
- 86i,12n,131p,1808b,5607s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 86i,12n,131p,1808b,5606s stack positions out of 10000i,1000n,20000p,200000b,200000s
 
 Output written on main.pdf (33 pages).

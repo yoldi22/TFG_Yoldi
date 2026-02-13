@@ -58,7 +58,8 @@ def GenerateImage(
         kpx_max,
         kpx_min,
         I_min,
-        I_max        
+        I_max,
+        I_oscuro        
 ):
     
     # Se escoge aleatoriamente el numero de ph vertical y
@@ -97,7 +98,7 @@ def GenerateImage(
     for x, y in centros:
         # Se simula una incertidumbre en el brillo
         # de cada pinhole
-        if random.random() <= 1: # un 30% de pinholes no se dibujan
+        if random.random() <= I_oscuro: # un 30% de pinholes no se dibujan
             img[y,x] = random.randint(I_min, I_max ) 
                                             
     # El centro de la placa se puede detectar

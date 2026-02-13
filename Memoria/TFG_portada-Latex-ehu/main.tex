@@ -165,7 +165,7 @@ Iñigo Irizar Loibide
         \parbox{\paperwidth}{
             \begin{center}
     
-                 Leioa, 2025eko maiatzaren 12a / Leioa, 12 de Mayo de 2025
+                 Leioa, 2026eko otsailaren 13a / Leioa, 13 de Febrero de 2026
 
             \end{center}
         }
@@ -491,7 +491,7 @@ A la hora de evaluar la precisión parece natural usar un parámetro que mida la
     \label{eq:MDLD}
 \end{equation}
 
-donde \(N\) es la cantidad de coeficientes a estudiar, \(\hat{d}_i\) la distorsión generada por el coeficiente \(k_{i}\) en la posición \(M_i\) y \(d_i\) la distorsión generada por el coeficiente \(k_{real}\) en la posición \(M_i\). Esta cantidad (adimensional) mide el efecto práctico que produce el error en la medida del coeficiente. En caso de querer recuperar la imagen original (sin distorsionar), cuanto mayor sea el MDLD, mayor será la diferencia absoluta entre la imagen distorsionada y la imagen sin "desdistorsionada".\\
+donde \(N\) es la cantidad de coeficientes a estudiar, \(\hat{d}_i\) la distorsión generada por el coeficiente \(k_{i}\) en la posición \(M_i\) y \(d_i\) la distorsión generada por el coeficiente \(k_{real}\) en la posición \(M_i\). Esta cantidad (adimensional) mide el efecto práctico que produce el error en la medida del coeficiente. En caso de querer recuperar la imagen original (sin distorsionar), cuanto mayor sea el MDLD, mayor será la diferencia absoluta entre la imagen distorsionada y la imagen "desdistorsionada".\\
 
 Siguiendo con una propuesta más sencilla, se propone medir \lightit{root mean square error} (RMSE) entre los coeficientes reales y medidos\cite{liao2021deep}.
 \begin{equation}
@@ -604,7 +604,7 @@ Como se puede observar en la Figura\ \ref{fig:ventana_binaria} el conjunto de pu
     \label{fig:centroides}
 \end{figure}
 
-\subsection{Segundo paso: caracterización de la placa de \lightit{pinhole}-s, y modelización de las \lightit{pinhole}-s ideales}
+\subsection{Segundo paso: caracterización de la placa de \lightit{pinhole}-s, y modelización de los \lightit{pinhole}-s ideales}
 \label{sec:segundo_paso}
 En el caso de cámaras profesionales como es este, la distorisón medida será de apenas unos pocos píxeles en los \lightit{pinhole}-s más alejados del centro óptico; por lo que, es esencial realizar un modelo de las posiciones de los \lightit{pinhole}-s ideales (sin distorsión) excelente. Para ello, en este método se evalúa y modeliza: la orientación de la placa, su posición y posibles \lightit{pinhole}-s que la cámara no haya podido detectar por errores de fabricación de la placa. Se seguirán los siguientes pasos: creación de una malla de \lightit{pinhole}-s regular, determinar su orientación y girarla, calcular su desplazamiento y corregirlo, emparejar las posiciones \(M_i\) con las \(P_i\).\\
 
@@ -711,11 +711,11 @@ La etapa comienza calculando los centros de los \lightit{pinhole}-s ideales cent
 \subsection{Introducción de la distorsión radial en la imagen ideal}
 Se aplica la distorsión caracterizada por un único coeficiente de distorsión \(k_{real}\). Dicho coeficiente se selecciona aleatoriamente dentro de un rango razonable en este contexto, definido de forma que el desplazamiento máximo inducido en los \lightit{pinhole}-s más alejados del centro no supere unos pocos píxeles. La distorsión se aplica utilizando un remapeo que permite deformar la imagen ideal y obtener la imagen distorsionada final.\\
 
-Como pequeño apunte, es después de distorsionar la imagen cuando se añade ruido (gaussiano) para simular el ruido electrónico del sensor. Esto es coherente ya que, la distorsión es un efecto geométrico de la lente, mientras que el ruido es un defecto de muestreo del sensor\ \ref{sec:ruido}. Añadir el ruido al final simula el proceso real donde el sensor captura la imagen ya distorsionada.\\
+Como pequeño apunte, es después de distorsionar la imagen cuando se añade ruido (gaussiano) para simular el ruido electrónico del sensor. Esto es coherente ya que, la distorsión es un efecto geométrico de la lente, mientras que el ruido es un defecto de muestreo del sensor (ver Sección\ \ref{sec:ruido}). Añadir el ruido al final simula el proceso real donde el sensor captura la imagen ya distorsionada.\\
 
 Como resultado de esta etapa se obtienen, para cada simulación, tanto la imagen ideal como la imagen distorsionada (ambas con el mismo ruido), junto con los parámetros reales utilizados en la generación, lo que permite una evaluación precisa del método propuesto.\\
 
-Analizando las imágenes (Figuras\ \ref{fig:pinholes_reales} y\ \ref{fig:pinholes_sim}) se observa que la única diferencia notable es la diferencia entre tamaños de \lightit{pinhole}-s. Mientras que en la imagen simulada el tamaño de los \lightit{pinhole}-s es siempre el mismo, en las reales el tamaño varía. Por motivos de optimización, se ha optado por mantener de esta forma las simulaciones, pero se tiene en cuenta a la hora de calcular el umbral adaptativo\ \ref{eq:umbral_adaptativo}.
+Analizando las imágenes (Figuras\ \ref{fig:pinholes_reales} y\ \ref{fig:pinholes_sim}) se observa que la única diferencia notable es la diferencia entre tamaños de \lightit{pinhole}-s. Mientras que en la imagen simulada el tamaño de los \lightit{pinhole}-s es siempre el mismo, en las reales el tamaño varía. Por motivos de optimización, se ha optado por mantener de esta forma las simulaciones, pero se tiene en cuenta a la hora de calcular el umbral adaptativo (ver Ecuación\ \ref{eq:umbral_adaptativo}).
 
 \begin{figure}[htbp]
     \centering
@@ -776,7 +776,7 @@ $O$ (px) &
 $C_o$ (px) &
 $I_i$ &
 $\theta$ &
-$\delta s$ \\
+$\delta s$ ($\%$) \\
 \hline
 1 &
 $19.7682$ &
@@ -826,14 +826,14 @@ $-$       &
 $-$       &
 $-$       &
 $-$       &
-$0.01\%$ \\
+$0.01$ \\
 8 &
 $[-39.5364,\ 39.5364]$ &
 $[\pm 100,\ \pm 100]$  &
 $[\pm 100,\ \pm 100]$ &
 $[0,\ 3000]$ &
 $[-15^{\circ},\ 15^{\circ}]$ &
-$0.01\%$ \\
+$0.01$ \\
 \hline
 \end{tabular}
 \end{table}
@@ -849,7 +849,7 @@ $k_{m}\ (\text{m}^{-2})$ &
 $\Delta C_o$ (px) &
 MDLD &
 RMSE ($\text{m}^{-2}$) &
-$E_r$ &
+$E_r$ ($\%$) &
 $R^2$ \\
 \hline
 1 &
@@ -916,11 +916,9 @@ $0.9099$ \\
 
 Los resultados mostrados en la Tabla\ \ref{tab:results} demuestran un excelente funcionamiento del método propuesto en condiciones controladas. En este contexto el perfil de distorsión medido es totalmente fiable; sin embargo, conseguir este marco de parámetros controlados es muy complicado en la práctica. Es por ello que se han realizado más simulaciones con el fin de determinar en que condiciones es fiable este método.\\
 
-
-
 \subsubsection{Simulación 2}
 
-Se observa en la Tabla\ \ref{tab:resultados2} como no funciona tan bien como en el contexto anterior, evidentemente. Aún así, los resultados arrojados siguen siendo muy fiables.\\
+Se observa en la Tabla\ \ref{tab:results} como el \(E_r\) aumenta por encima del resto de cantidades. Esto indica un empeoramiento en la fiabilidad del algoritmo; sin embargo, el RMSE se mantiene constante al igual que el MDLD y el \(R^2\). Esto podría significar una falla de la metodología cuando el coeficiente \(k_{real}\) es bajo en valor absoluto. En este supuesto, el error absoluto (en concreto, el RMSE) se mantendría constante, mientras que el error relativo aumentaría, exactamente los mismo que ocurre en este caso. Para confimar esta hipótesis se ha estudiado el \(E_r\) y el \(R^2\) en función del coeficiente \(k_{real}\) (ver Figura\ \ref{fig:k_real}).\\
 
 \begin{figure}[htbp]
     \centering
@@ -945,49 +943,29 @@ Se observa en la Tabla\ \ref{tab:resultados2} como no funciona tan bien como en 
     \label{fig:k_real}
 \end{figure}
 
-De la Figura\ \ref{fig:k_real} se puede estimar un intervalo muy fiable de coeficientes de distorsión \( |k_{real}|\in(5,\inf) \text{ m}^{-2}\), en el que el error relativo es menor a 5. Aunque, como ya se ha comentado previamente, una distorsión (en valor absoluto) muy grande puede dar otros problemas como por ejemplo, en la asignación de puntos (\(M_i, P_i\)).\\
-
-En la Figura\ \ref{fig:kreal_kvalues} se muestra la enorme diferencia que existe en las medidas si se comparan coeficientes de distorsión más altos y más bajos en valor absoluto. Los coeficientes más pequeños distorsionan menos los \lightit{pinhole}-s; en consecuencia, el error que existe en la etapa de detección de centroides del algoritmo es más notorio y por eso se ven más dispersos los puntos del ajuste.
-
-\begin{figure}[htbp]
-    \centering
-    \begin{minipage}{\textwidth}
-        \centering
-        % Subfigura 1
-        \begin{subfigure}[t]{0.45\textwidth}
-            \includegraphics[width=\linewidth]{Imagenes/img_KValuesMap_0012_kreal.png}
-            \caption{\small Representados los valores del ajuste\ \ref{eq:k_medida} calculados para \(k_{real}=-0.6844\text{m}^{-2}\), \(R^2=0.5432\) y \(E_r=6.1800\).}
-            \label{fig:kreal_kvalues12}
-        \end{subfigure}
-        \hfill
-        % Subfigura 2
-        \begin{subfigure}[t]{0.45\textwidth}
-            \includegraphics[width=\linewidth]{Imagenes/img_KValuesMap_0013_kreal.png}
-            \caption{\small Representados los valores\ \ref{eq:k_medida} calculados para \(k_{real}=-36.1677\text{m}^{-2}\), \(R^2=0.9999\) y \(E_r=0.0371\).}
-            \label{fig:kreal_kvalues13}
-        \end{subfigure}
-        \hfill
-    \end{minipage}
-    \caption{\small Se observa la diferencia en la precisión y exactitud de la medida para \(k_{real}\) grande y pequeño en valor absoluto.}
-    \label{fig:kreal_kvalues}
-\end{figure}
+De la Figura\ \ref{fig:k_real} se puede estimar una condición para la distorsión en el que los resultados sean fiables con un \(E_r<5\%\) y \(R^2\approx1\):
+\begin{equation}
+    |k_{real}|>5 \text{ m}^{-2}
+    \label{eq:condi_kreal}
+\end{equation} 
+Aunque, como ya se ha comentado previamente, una distorsión (en valor absoluto) muy grande puede dar otros problemas como por ejemplo, en la asignación de puntos (\(M_i, P_i\)).\\
 
 \subsubsection{Simulación 3}
 
-Se observa en la Tabla\ \ref{tab:resultados3} un aumento notorio en \(\Delta C_o\) y esto tiene sentido. En alguna simulación puede ocurrir que el \lightit{pinhole} fijo (aquel que se aproxima como centro óptico) no haya sido detectado. En ese caso el pihnole fijo pasa a ser el siguiente más cercano que, como cerca estará a \(spacing=172\) píxeles de distancia. Esto quiere decir que \(\Delta C_o\) ha cogido valores de \(\approx0\) y \(\approx172\), lo que resulta en la media mostrada en la Tabla\ \ref{tab:resultados3}. No obstante, se obtiene un \(E_r\) medio muy bajo que significa que el método de detección funciona correctamente bajo esta condición. 
+Se observa en la Tabla\ \ref{tab:results} un aumento notorio en \(\Delta C_o\) (Ecuación\ \ref{eq:error_centrooptico}) y esto tiene sentido. En alguna simulación puede ocurrir que el \lightit{pinhole} fijo (aquel que se aproxima como centro óptico) no haya sido detectado. En ese caso el \lightit{pinhole} fijo pasa a ser el siguiente más cercano que, como cerca estará a \lightit{spacing}\(=172\) píxeles de distancia. Esto quiere decir que \(\Delta C_o\) ha cogido valores de \(\approx0\) y \(\approx172\), lo que resulta en la media mostrada en la Tabla\ \ref{tab:results}. No obstante, se obtiene un valor del \(E_r\) medio muy bajo que significa que la medida del coeficiente de distorsión es muy buena. Sin embargo, el MDLD se duplica respecto a las simulaciones anteriores (aunque sigue siendo muy bajo, ver valores referencia en \cite{liao2021deep}). Esto significa que pese a obtener una medida del coeficiente exacta, si se quisiera procesar la imagen y \lightit{desdistorsionarla} el resultado sería peor que en los casos anteriores.
 
 \subsubsection{Simulación 4}
 
-La Tabla\ \ref{tab:resultados4} muestra resultados muy buenos. Esto no hace más que reforzar la suposición inicial de fijar un el \lightit{pinhole} más cercano al centro óptico. Sin embargo, esto puede dar errores si los \lightit{pinhole}-s más cercanos, desafortunadamente, no son lo suficientemente brillantes para que el algoritmo los detecte.
+Para esta simulación se obtienen resultados muy buenos. Un \(E_r\) muy bajo, un RMSE no demasiado alto y un excelente ajuste ($R^2=0.9994$). Esto no hace más que reforzar la suposición inicial de fijar un el \lightit{pinhole} más cercano al centro óptico. Sin embargo, esto puede dar errores si los \lightit{pinhole}-s más cercanos, desafortunadamente, no son lo suficientemente brillantes para que el algoritmo los detecte.
 
 \subsubsection{Simulación 5}
 
-En estas simulaciones se vuelve a ver el aumento de \(\Delta C_o\), esta vez debida a desalineamiento de la placa de \lightit{pinhole}-s con el centro óptico. Sin embargo, esto no influye casi en los resultados. Esto tiene mucho sentido; ya que, se ha modelado la distorsión exclusivamente radial, lo que quiere decir que las distancias \( \|M_i-C_o\| = R \) no van a variar y en consecuencia \(k_{real}\) tampoco(\ \ref{eq: Duane_radial}).
+En estas simulaciones se vuelve a ver el aumento de \(\Delta C_o\), esta vez debida a desalineamiento de la placa de \lightit{pinhole}-s con el centro óptico. Sin embargo, esto no influye casi en los resultados. Esto tiene mucho sentido; ya que, se ha modelado la distorsión exclusivamente radial, lo que quiere decir que las distancias \( \|M_i-C_o\| = R \) no van a variar en exceso y; en consecuencia, \(k_{real}\) tampoco(ver Ecuación\ \ref{eq: Duane_radial}).
 
 
 \subsubsection{Simulación 6}
 
-Este es un escenario bastante realista y los resultados de la Tabla\ \ref{tab:resultados6} muestran que el algoritmo es bastante fiable en este contexto, lo cual es muy positivo. Además, se ha observado como al mezclar rotación y eliminación de \lightit{pinhole}-s, el algoritmo es más propenso a fallar en el calculo de la rotación, dando resultados como el mostrado en la Figura\ \ref{fig:nadafijo_mal}. Estos \lightit{outliers} pueden eliminarse de manera más o menos sencilla porque se identifican muy fácil, por lo que no suponen una gran preocupación. 
+Este es un escenario bastante realista y los resultados de la Tabla\ \ref{tab:results} muestran que el algoritmo sigue siendo fiable en este contexto, lo cual es muy positivo. Es verdad que el RMSE, el \(E_r\) y el MDLD aumentan, pero siguen siendo valores muy bajos, menos el RMSE que es relativamente grande. Essto podría deberse a que al mezclar rotación y eliminación de \lightit{pinhole}-s, el algoritmo es más propenso a fallar en el calculo de la rotación, dando resultados como el mostrado en la Figura\ \ref{fig:nadafijo_mal}. Estos \lightit{outliers} pueden eliminarse de manera más o menos sencilla porque se identifican muy fácil, por lo que no suponen una gran preocupación. 
 
 \begin{figure}[htbp]
     \centering
@@ -1012,24 +990,57 @@ Este es un escenario bastante realista y los resultados de la Tabla\ \ref{tab:re
     \label{fig:nadafijo_mal}
 \end{figure}
 
-\newpage
 \subsubsection{Simulacion 7}
 
-Estos resultados son muy claros, medir mal el \lightit{spacing} repercute en un aumento del \(E_r\) y del MDLD sobre todo. Este error, aún por muy pequeño que sea (\(0.01\%\) del \lightit{spacing} en estas simulaciones) empaña los resultados notoriamente. Esto tiene mucho sentido; ya que, en la segunda etapa del algoritmo\ \ref{sec:segundo_paso} el modelo de los \lightit{pinhole}-s ideales se crea de forma que se va propagando y multiplicando el error hacia los \lightit{pinhole}-s más alejados del centro óptico. De esta forma el algoritmo mide una distorsión falsa provocada por el mal modelo de los \lightit{pinhole}-s ideales.\\
+Estos resultados son muy claros, medir mal el \lightit{spacing} repercute en un aumento del \(E_r\) y del MDLD sobre todo. Este error, aún por muy pequeño que sea (\(0.01\%\) del \lightit{spacing} en estas simulaciones) empaña los resultados notoriamente. Esto tiene mucho sentido; ya que, en la segunda etapa del algoritmo(ver Sección\ \ref{sec:segundo_paso}) el modelo de los \lightit{pinhole}-s ideales se crea de forma que se va propagando y multiplicando el error hacia los \lightit{pinhole}-s más alejados del centro óptico. De esta forma el algoritmo mide una distorsión falsa provocada por el mal modelo de los \lightit{pinhole}-s ideales.\\
 
 Esta es, sin duda, la condición más sensible que tiene este algoritmo. Otros autores como Wang et al. \cite{Wang2019DistortionDBS} proponen distintos mecanismos para calibrar, alinear y medir la distorsión que se podrían implementar en un caso práctico de detección de distorsión.
 
 
 \subsubsection{Simulacion 8}
 
-Los resultados obtenidos en\ \ref{tab:resultados8} muestran que el error cometido en la medida es pequeño. Evidentemente, ha aumentado respecto a otras condiciones más controladas pero, un error relativo \(E_r=8.3555\) es lo suficientemente pequeño para considerar esta metodología existosa en todas las condiciones presentadas.\\
+Esta es la casuística más fiel a la realidad en donde no se tiene ningún parámetro controlado al \(100\%\). Pese a existir un aumento muy notorio en todos los valores medidos, no son resultados tan negativos. Además, se ha estudiado el mismo caso pero eliminando todas las simulaciones en las que la distorsión real no cumple la condición de la Ecuación\ \ref{eq:condi_kreal} y se han obtenido los resultados mostrados en la Tabla\ \ref{tab:results8}. Es evidente la mejoría en el \(E_r\) aunque no en las demás métricas. Esto se debe, tal y como se ha explicado anteriormente, a que cuando la distorsión es pequeña, el error absoluto que se comete es pequeño, pero el relativo muy grande. Por eso el RMSE y el MDLD no varían demasiado y el \(E_r\) sí.
 
-Como pequeña conclusión, los parámetros más sensibles y los que más hay que cuidar para que el algoritmo arroje resultados fiables son el \(spacing\) y el brillo de los \lightit{pinhole}-s.
+\begin{table}[ht]
+\centering
+\caption{\small Comparación de métricas antes y después del filtrado por $|k_{real}| > 5\text{ m}^{-2}$.}
+\label{tab:results8}
+\begin{tabular}{llllll}
+\hline
+
+Conjunto de datos &
+$\Delta C_o$ (px) &
+MDLD &
+RMSE ($\text{m}^{-2}$) &
+$E_r$ ($\%$) &
+$R^2$ \\
+\hline
+
+Datos completos &
+$97.9410$ &
+$1.6428\cdot10^{-4}$ &
+$14.8076$ &
+$18.9509$ &
+$0.9099$ \\
+
+$|k_{real}|>5\text{ m}^{-2}$ &
+$99.4077$ &
+$1.9334\cdot10^{-4}$ &
+$14.9942$ &
+$9.4498$ &
+$0.9882$ \\
+
+\hline
+\end{tabular}
+\end{table}
+
 
 
 \section{Aplicación en sistemas ópticos de Satlantis}
 
 Aunque gran parte del trabajo desarrollado en este proyecto se ha basado en simulaciones, el objeto del trabajo requiere un contexto realista. En esta sección se ha puesto a prueba el algortimo con imágenes proporcionadas por Satlantis Microsats. En concreto, se ha evaluado una tirada de 10 imágenes.\\
+
+\subsection{Procesado de imagen}
 
 \begin{figure}[htbp]
     \centering
@@ -1044,18 +1055,20 @@ La Figura\ \ref{fig:psfgrid} muestra una captura en concreto de las que se han a
 \begin{figure}[htbp]
     \centering
     \includegraphics[width=0.75\linewidth]{Imagenes/Dark.PNG}
-    \caption{\small \lightit{Dark Frame} asociado a \ \ref{fig:psfgrid}.}
+    \caption{\small \lightit{Dark Frame} asociado a la imagen del \lightit{pinhole grid} de la Figura\ \ref{fig:psfgrid}.}
     \label{fig:psfdark}
 \end{figure}
 
 \begin{figure}[htbp]
     \centering
     \includegraphics[width=0.75\linewidth]{Imagenes/processed_psfgrid.PNG}
-    \caption{\small Imagen procesada de un \lightit{pinhole grid} hecha con xxx.}
+    \caption{\small Figura\ \ref{fig:psfgrid} después de aplicarle el \lightit{Dark Frame}.}
     \label{fig:psfgrid_processed}
 \end{figure}
 
 Es apreciable que las imágenes no han sido realizadas controlando los parámetros variables comentados en la Sección\ \ref{subsec:simulaciones}. La placa no está centrada (el centro se diferencia con unos \lightit{pinhole}-s en forma de cruz) ni recta (hay algo de rotación), no se ha alineado previamente con el eje óptico, el centro óptico es una incognita, no todos los \lightit{pinhole}-s son lo suficientemente brillantes y tampoco se ha medido con precisión el \lightit{spacing}. Es decir, esta imagen entra en el marco de simulaciones 8 y los resultados tendrán, probablemente, los errores correspondientes a estas simulaciones.\\
+
+\subsection{Determinación del centro óptico}
 
 \begin{figure}[htbp]
     \centering
@@ -1068,16 +1081,18 @@ Para dar una estimación del centro óptico se ha propone utilizar el \lightit{F
 
 La idea es utilizar el viñeteo del \lightit{Flat Frame} y su simetría radial, para ajustar un círculo y usar el centro de este como centro óptico. En la Figura\ \ref{fig:flat} se puede observar un ejemplo de \lightit{Flat Frame} con su correspondiente ajuste y centro óptico marcado. Esto es simplemente una proposición y no se ha implementado en este caso concreto debido a la falta de un \lightit{Flat Frame}. En cambio, se ha recurrido a la siguiente opción que es suponer como centro óptico el centro de la imagen. Esta es una muy pobre aproximación y puede alterar notoriamente los resultados. Aunque, ante la falta de un \lightit{Flat Frame} y sin información sobre el centro óptico se puede utilizar como opción de último recurso.\\
 
+\subsection{Resultados}
+
 Los resultados medios obtenidos despúes de aplicar el método propuesto a las imágenes proporcionadas por Satlantis Microsats son los siguientes:
 \begin{itemize}
     \item \(k_m=29.2157\text{m}^{-2}\) 
-    \item \(\text{RMSE}=-\)
+    \item \(\text{RMSE}=14.2870\text{m}^{-2}\)
     \item \(R^2=0.7859\)
 \end{itemize}
 
-La medida del coeficiente \(k_m\) es de la misma magnitud que la de las simulaciones; por lo que, entra dentro del rango razonable que se esperaba. El error medio de los ajustes \(R^2\) no es bueno, pero es razonable. El \(\Delta C_o\) no tiene mucho sentido en este caso; ya que, se ha partido de un \(C_o\) sin deamsiado rigor. El MDLD y el \(E_r\) no se pueden calcular; ya que, no se tienen los valores verdaderos.\\
+La medida del coeficiente \(k_m\) es de la misma magnitud que la de las simulaciones; por lo que, entra dentro del rango razonable que se esperaba. El error medio de los ajustes \(R^2\) no es bueno, pero es razonable. El RMSE es algo elevado pero noexagerado.  El \(\Delta C_o\) no tiene mucho sentido en este caso; ya que, se ha partido de un \(C_o\) sin deamsiado rigor. El MDLD y el \(E_r\) no se pueden calcular; ya que, no se tienen los valores verdaderos.\\
 
-En la Figura\ \ref{fig:maps_real} se muestra el mapa de distorsión y los ejes principales de la placa calculado por el algoritmo. Observando ambas figuras se puede intuir un pequeño error en el cálculo de la orientación; sobre todo, si nos fijamos en la silueta tipo "vórtice" del mapa de distorsión. Este peqeuño error ha podido empeorar la medida del coeficiente de distorisón. 
+En la Figura\ \ref{fig:maps_real} se muestra el mapa de distorsión y los ejes principales de la placa calculado por el algoritmo. Observando ambas figuras se puede intuir un pequeño error en el cálculo de la orientación; sobre todo, si nos fijamos en la silueta tipo "vórtice" del mapa de distorsión. Este peqeuño error ha podido empeorar la medida del coeficiente de distorisón.\\
 
 \begin{figure}[htbp]
     \centering
@@ -1102,18 +1117,18 @@ En la Figura\ \ref{fig:maps_real} se muestra el mapa de distorsión y los ejes p
     \label{fig:maps_real}
 \end{figure}
 
-\section{Conclusiones}
-En este trabajo se ha propuesto un algortimo de detección de distorsión y se ha puesto en práctica con imágenes proporcionadas por Satlantis. Además, se han estudiado los límites y condiciones en los que la metodología poropuesta trabaja mejor y peor. Exitosamente se ha validado el algoritmo para calcular el perfil de distorsión de un único parametro que para cámaras profesionales es suficiente. El método, aún teniendo sus limitaciones y requerimientos como preparar el banco experimental (placa de \lightit{pinhole}-s, alineamiento de centro óptico, medidas del \(spacing\)\dots) se ha demostrado que es muy fiable. Para futuros trabajos se propone mejorar la modelización y alineamiento de los \lightit{pinhole}-s ideales.
-
+\newpage
 \section{Conclusiones}
 
 En este trabajo se ha desarrollado e implementado un algoritmo para la detección y caracterización de distorsión óptica, el cual ha sido puesto en práctica con imágenes reales proporcionadas por Satlantis Microsats. Además, se han estudiado los límites y condiciones en los que la metodología poropuesta trabaja mejor y peor.\\
 
 Los resultados obtenidos muestran que el algoritmo es capaz de medir de forma fiable el perfil de distorsión utilizando un modelo de un único parámetro, un modelo más que suficiente en el contexto de cámaras profesionales. La validación realizada confirma el buen funcionamiento del algortimo incluso frente a pequeñas variaciones experimentales, siempre que se respeten las condiciones de adquisición adecuadas.\\
 
-No obstante, el método presenta ciertas limitaciones asociadas al diseño experimental. Entre los principales requisitos se encuentran la correcta preparación del banco experimental; en concreto, el uso de una placa de \lightit{pinhole}-s bien caracterizada, el alineamiento del centro óptico y la medida adecuada del \textit{spacing}. Estos factores influyen directamente en la precisión final de la medición; por lo que, constituyen aspectos críticos de la metodología.\\
+No obstante, el método presenta ciertas limitaciones asociadas al diseño experimental. Entre los principales requisitos se encuentran la correcta preparación del banco experimental; en concreto, el uso de una placa de \lightit{pinhole}-s bien caracterizada, el alineamiento del centro óptico y la medida adecuada del \lightit{spacing}. Estos factores influyen directamente en la precisión final de la medición; por lo que, constituyen aspectos críticos de la metodología.\\
 
-A pesar de estas limitaciones, el algoritmo se ha demostrado como una herramienta fiable y sistemática para la estimación de distorsión, combinando simplicidad de implementación con resultados precisos. Como líneas futuras de trabajo, se propone mejorar la modelización geométrica de los \textit{pinhole}-s ideales, así como optimizar los procedimientos de alineamiento para reducir posibles fuentes de error sistemático. Asimismo, podría explorarse la ampliación del modelo a más parámetros en aquellos casos donde se requiera una caracterización más detallada de la distorsión.
+A pesar de estas limitaciones, el algoritmo se ha demostrado como una herramienta fiable y sistemática para la estimación de distorsión, combinando simplicidad de implementación con resultados precisos. Como líneas futuras de trabajo, se propone mejorar la modelización geométrica de los \lightit{pinhole}-s ideales, así como optimizar los procedimientos de alineamiento para reducir posibles fuentes de error sistemático. Asimismo, podría explorarse la ampliación del modelo a más parámetros en aquellos casos donde se requiera una caracterización más detallada de la distorsión.
+
+Como obejtivo final, se había poropuesto poner a prueba el algoritmo en imágenes proporcionadas por Satlantis Microsats. Aunque no se contaban con ninguna de las condiciones mencionadas anteriormente, os resultados obtenidos son aceptables y podrían considerarse válidos.
 
 \section{Objetivos de Desarrollo Sostenible (ODS)}
 
@@ -1124,6 +1139,8 @@ Uno de los aspectos más relevantes en relación con los valores democráticos e
 En cuanto a los Objetivos de Desarrollo Sostenible, el trabajo se relaciona especialmente con el ODS 4 (Educación de calidad), al aplicar y consolidar competencias científicas y tecnológicas adquiridas durante el grado, y con el ODS 9 (Industria, innovación e infraestructura), por el uso de herramientas digitales avanzadas para el análisis y modelización de datos. Además, el empleo de simulaciones computacionales en lugar de procesos experimentales más costosos en recursos puede contribuir indirectamente a un uso más eficiente de materiales y energía, en línea con el ODS 12 (Producción y consumo responsables).\\
 
 En definitiva, aunque el trabajo no aborda de forma directa cuestiones sociales o políticas, sí se desarrolla dentro de un marco de responsabilidad científica, sostenibilidad y respeto por los principios de transparencia, igualdad y acceso al conocimiento.\\
+
+\newpage
 
 \printbibliography
 \end{document}
