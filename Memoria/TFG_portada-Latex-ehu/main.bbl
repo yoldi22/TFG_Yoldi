@@ -19,34 +19,43 @@
 
 \refsection{0}
   \datalist[entry]{none/global//global/global}
-    \entry{williamsOTF}{online}{}
-      \name{author}{1}{}{%
+    \entry{williamsOTF}{book}{}
+      \name{author}{2}{}{%
         {{hash=ffb0b88f1b8f9c1fcdd0b338ff3538c4}{%
            family={Williams},
            familyi={W\bibinitperiod},
            given={Charles\bibnamedelima S.},
            giveni={C\bibinitperiod\bibinitdelim S\bibinitperiod}}}%
+        {{hash=70cf9630628036e7a0a3487f69b912e0}{%
+           family={Becklund},
+           familyi={B\bibinitperiod},
+           given={Orville\bibnamedelima A.},
+           giveni={O\bibinitperiod\bibinitdelim A\bibinitperiod}}}%
+      }
+      \list{location}{1}{%
+        {Bellingham, WA}%
       }
       \list{publisher}{1}{%
-        {SPIE – The International Society for Optical Engineering}%
+        {SPIE Press}%
       }
-      \strng{namehash}{ffb0b88f1b8f9c1fcdd0b338ff3538c4}
-      \strng{fullhash}{ffb0b88f1b8f9c1fcdd0b338ff3538c4}
-      \strng{bibnamehash}{ffb0b88f1b8f9c1fcdd0b338ff3538c4}
-      \strng{authorbibnamehash}{ffb0b88f1b8f9c1fcdd0b338ff3538c4}
-      \strng{authornamehash}{ffb0b88f1b8f9c1fcdd0b338ff3538c4}
-      \strng{authorfullhash}{ffb0b88f1b8f9c1fcdd0b338ff3538c4}
+      \strng{namehash}{0c1ae6e82665eb15ad342c788784ddac}
+      \strng{fullhash}{0c1ae6e82665eb15ad342c788784ddac}
+      \strng{bibnamehash}{0c1ae6e82665eb15ad342c788784ddac}
+      \strng{authorbibnamehash}{0c1ae6e82665eb15ad342c788784ddac}
+      \strng{authornamehash}{0c1ae6e82665eb15ad342c788784ddac}
+      \strng{authorfullhash}{0c1ae6e82665eb15ad342c788784ddac}
       \field{sortinit}{1}
       \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
+      \field{isbn}{9780819443366}
       \field{title}{Introduction to the Optical Transfer Function}
       \field{year}{2002}
       \verb{urlraw}
-      \verb https://archive.org/details/introductiontoop0000will
+      \verb https://www.spiedigitallibrary.org/ebooks/PM/Introduction-to-the-Optical-Transfer-Function/eISBN-9781510607828/10.1117/3.2265056
       \endverb
       \verb{url}
-      \verb https://archive.org/details/introductiontoop0000will
+      \verb https://www.spiedigitallibrary.org/ebooks/PM/Introduction-to-the-Optical-Transfer-Function/eISBN-9781510607828/10.1117/3.2265056
       \endverb
     \endentry
     \entry{bracewell2000}{book}{}
@@ -56,6 +65,9 @@
            familyi={B\bibinitperiod},
            given={Ronald\bibnamedelima N.},
            giveni={R\bibinitperiod\bibinitdelim N\bibinitperiod}}}%
+      }
+      \list{location}{1}{%
+        {New York}%
       }
       \list{publisher}{1}{%
         {McGraw-Hill}%
@@ -71,6 +83,7 @@
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{edition}{3rd}
+      \field{isbn}{9780073039381}
       \field{title}{The Fourier Transform and Its Applications}
       \field{year}{2000}
     \endentry
@@ -93,8 +106,8 @@
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{howpublished}{\url{https://www.edmundoptics.eu/knowledge-center/application-notes/optics/introduction-to-modulation-transfer-function/}}
-      \field{note}{Accedido el 17 de junio de 2025}
-      \field{title}{Introduction to modulation transfer function}
+      \field{note}{Accedido el 13 de febrero de 206}
+      \field{title}{Introduction to mModulation Transfer Function}
       \field{year}{n.d.}
     \endentry
     \entry{Duane}{article}{}
@@ -116,19 +129,12 @@
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{journaltitle}{Photogrammetric Engineering}
-      \field{note}{Accedido el 15 de septiembre de 2021}
-      \field{number}{5}
+      \field{number}{8}
       \field{title}{Close-Range Camera Calibration}
       \field{volume}{37}
       \field{year}{1971}
       \field{pages}{855\bibrangedash 866}
       \range{pages}{12}
-      \verb{urlraw}
-      \verb https://archive.org/details/introductiontoop0000will
-      \endverb
-      \verb{url}
-      \verb https://archive.org/details/introductiontoop0000will
-      \endverb
     \endentry
     \entry{Fitzgibbon}{inproceedings}{}
       \name{author}{1}{}{%
@@ -137,6 +143,9 @@
            familyi={F\bibinitperiod},
            given={A.W.},
            giveni={A\bibinitperiod}}}%
+      }
+      \list{organization}{1}{%
+        {IEEE}%
       }
       \strng{namehash}{1091cf68594d509c8ab56ecfb0e14732}
       \strng{fullhash}{1091cf68594d509c8ab56ecfb0e14732}
@@ -152,11 +161,8 @@
       \field{title}{Simultaneous linear estimation of multiple view geometry and lens distortion}
       \field{volume}{1}
       \field{year}{2001}
-      \field{pages}{I\bibrangedash I}
-      \range{pages}{1}
-      \verb{doi}
-      \verb 10.1109/CVPR.2001.990465
-      \endverb
+      \field{pages}{I--125--I\bibrangedash 132}
+      \range{pages}{-1}
     \endentry
     \entry{bukhari2013automatic}{article}{}
       \name{author}{2}{}{%
@@ -168,8 +174,8 @@
         {{hash=f26142e0a0e616cd52ee7fb7256500f4}{%
            family={Dailey},
            familyi={D\bibinitperiod},
-           given={M.N.},
-           giveni={M\bibinitperiod}}}%
+           given={M.\bibnamedelimi N.},
+           giveni={M\bibinitperiod\bibinitdelim N\bibinitperiod}}}%
       }
       \strng{namehash}{ccce597f69eab79eb1aa975ec50f64bf}
       \strng{fullhash}{ccce597f69eab79eb1aa975ec50f64bf}
@@ -182,8 +188,7 @@
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{journaltitle}{Journal of Mathematical Imaging and Vision}
-      \field{number}{1}
-      \field{title}{Automatic radial distortion estimation from a single image}
+      \field{title}{Automatic Radial Distortion Estimation from a Single Image}
       \field{volume}{45}
       \field{year}{2013}
       \field{pages}{31\bibrangedash 45}
@@ -791,9 +796,6 @@
       \field{year}{2010}
       \field{pages}{015304}
       \range{pages}{1}
-      \verb{doi}
-      \verb 10.1088/0957-0233/21/1/015304
-      \endverb
     \endentry
     \entry{kuhn1955hungarian}{article}{}
       \name{author}{1}{}{%
@@ -952,9 +954,6 @@
       \field{year}{2019}
       \field{pages}{29803\bibrangedash 29817}
       \range{pages}{15}
-      \verb{doi}
-      \verb 10.1364/OE.27.029803
-      \endverb
     \endentry
   \enddatalist
 \endrefsection
