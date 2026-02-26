@@ -1,4 +1,25 @@
+%!TEX program = xelatex
 \documentclass[aspectratio=169]{beamer}
+\usepackage{fontspec}
+
+%%%%%%%%%%%% LETRAREN ITURRIA ALDATZEKO (EHUSans) %%%%%%%%%%%%
+\setsansfont{EHUSans-Light.otf}[
+  Path = {./EHU Sans/},
+  BoldFont = EHUSans-Regular.otf,
+  ItalicFont = EHUSans-Italic.otf,
+  BoldItalicFont = EHUSans-BoldItalic.otf
+]
+
+\renewcommand{\familydefault}{\sfdefault}
+\newfontface\lightfont{EHUSans-Light.otf}[Path=./EHU Sans/]
+\newfontface\blackfont{EHUSans-Black.otf}[Path=./EHU Sans/]
+\newfontface\lightitfont{EHUSans-Light.otf}[Path=./EHU Sans/,FakeSlant=0.2]
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%% SIMULACIÓN DE LIGHT ITALIC %%%%%%%%%%%%
+\newcommand{\lightit}[1]{{\lightitfont #1}}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
 
 % Tema clásico académico
 \usetheme{CambridgeUS}
@@ -13,8 +34,8 @@
 
 % Datos portada
 \title[Corrección distorsión óptica]{Desarrollo de un algoritmo para la calibración de la distorsión óptica en adquisición de imágenes satelitales y comprobación experimental}
-\author{Xabier Yoldi}
-\institute{Euskal Herriko Unibertsitatea}
+\author{Xabier Joel Yoldi García}
+\institute{Grado en Física \\ EHU}
 \date{\today}
 
 \begin{document}
@@ -29,45 +50,716 @@
 \tableofcontents
 \end{frame}
 
-%------------------------------------------------
-\section{Introducción}
+\section{Contexto y motivación}
+%-------------------------------------------------
+\begin{frame}{Contexto y motivación}
+\begin{itemize}
+    \item Crecimiento de la observación terrestre mediante microsatélites
+    \item Cámaras de alta resolución espacial
+    \item Necesidad de precisión geométrica
+    \item \lightit{Image Processing}
+\end{itemize}
+\end{frame}
 
-\begin{frame}{Motivación}
+%-------------------------------------------------
+\begin{frame}{Fuentes de degradación en la calidad de la imagen}
+\begin{columns}[T,onlytextwidth]
+    \column{0.44\textwidth}
+    \textbf{Ruido electrónico}
+    \begin{itemize}
+        \item Ruido de lectura
+        \item Ruido de disparo
+        \item Corriente oscura
+    \end{itemize}
+
+    \column{0.56\textwidth}
+    \textbf{Aberraciones ópticas}
+    \begin{itemize}
+        \item Cromáticas
+        \item Monocromáticas
+        \begin{itemize}
+            \item Aberración esférica
+            \item Coma
+            \item Astigmatismo
+            \item Curvatura de campo
+            \item Distorsión
+        \end{itemize}
+    \end{itemize}
+\end{columns}
+\end{frame}
+
+%-------------------------------------------------
+\begin{frame}{Distorsión óptica}
+\begin{itemize}
+    \item \textbf{Qué es:} deformación geométrica variable con la distancia al centro óptico.
+    \item \textbf{Tipos:}
+    \begin{itemize}
+        \item \textbf{Barrel}: líneas rectas se curvan hacia fuera.
+        \item \textbf{Pincushion}: líneas rectas se curvan hacia dentro.
+    \end{itemize}
+    \item \textbf{Impacto:} errores de medida/registro y georreferenciación.
+    \item \textbf{Corrección:} modelado mátematico $\rightarrow$ cuantificar $\rightarrow$ remapear (corregir la imagen).
+\end{itemize}
+\end{frame}
+
+\section{Modelado matemático de la distorsión}
+%-------------------------------------------------
+\begin{frame}{Modelos clásicos de distorsión}
+
+\small
+\begin{columns}[T,onlytextwidth]
+
+\column{0.5\textwidth}
+\centering
+\textbf{Modelo polinómico (Duane)}
+\vspace{0.2cm}
+\[
+\left\{
+\begin{aligned}
+x &= \left(1 + k_1 \|P\|^2 + k_2 \|P\|^4 + \dots \right) u \\
+y &= \left(1 + k_1 \|P\|^2 + k_2 \|P\|^4 + \dots \right) v
+\end{aligned}
+\right.
+\]
+
+\vspace{0.45cm}
+
+\scriptsize
+\(k_1, k_2, \dots\): parámetros de distorsión.
+
+\column{0.5\textwidth}
+\centering
+\textbf{Modelo de división (Fitzgibbon)}
+\[
+\left\{
+\begin{aligned}
+u &= \dfrac{x}{1 + \lambda_1 \|X\|^2 + \lambda_2 \|X\|^4 + \dots} \\
+v &= \dfrac{y}{1 + \lambda_1 \|X\|^2 + \lambda_2 \|X\|^4 + \dots}
+\end{aligned}
+\right.
+\]
+
+\scriptsize
+\(\lambda_1, \lambda_2, \dots\): parámetros de distorsión.
+
+\end{columns}
+
+\vspace{0.3cm}
+{\footnotesize
+\(P=(u,v)\): coordenadas ideales, sin distorsión, relativas al centro de distorsión del sistema.\\
+\(X=(x,y)\): coordenadas distorsionadas relativas al centro de distorsión del sistema.\\
+}
+\vspace{0.4cm}
+\begin{itemize}
+    \item Más coeficientes $\Rightarrow$ más precisión; para cámaras profesionales suele bastar 1 coeficiente.
+\end{itemize}
+\end{frame}
+
+%-------------------------------------------------
+\begin{frame}{Modelo utilizado}
+Modelo radial con un coeficiente:
+\begin{equation}
+    R' = (1 + kR^2)R
+\end{equation}
+
+\begin{itemize}
+    \item $R$ : posición ideal
+    \item $R'$ : posición distorsionada
+    \item $k$ : coeficiente de distorsión
+\end{itemize}
+
+\begin{itemize}
+    \item $k > 0$ $\rightarrow$ pincushion
+    \item $k < 0$ $\rightarrow$ barrel
+\end{itemize}
+\end{frame}
+
+%-------------------------------------------------
+\begin{frame}{Visualización de la distorsión}
+\begin{columns}[T]
+
+\column{0.3\textwidth}
+\centering
+\includegraphics[width=\linewidth]{Imagenes/imagen_original.jpg}
+\\[0.3cm]
+\small Imagen ideal
+
+\column{0.3\textwidth}
+\centering
+\includegraphics[width=\linewidth]{Imagenes/imagen_distorsionada_pincushion.png}
+\\[0.3cm]
+\small Distorsión pincushion ($k>0$)
+
+\column{0.3\textwidth}
+\centering
+\includegraphics[width=\linewidth]{Imagenes/imagen_distorsionada_barrel.png}
+\\[0.3cm]
+\small Distorsión barrel ($k<0$)
+
+\end{columns}
 
 \end{frame}
 
-%------------------------------------------------
-\section{Modelo Teórico}
+\section{Método propuesto}
+%-------------------------------------------------
+\begin{frame}{\lightit{Pipeline} de la metodología}
+\begin{columns}[T,onlytextwidth]
+  \column{0.46\textwidth}
+  \centering
+  \textbf{Ejemplo}\\[0.2em]
+  \includegraphics[width=\linewidth]{Imagenes/centers.png}\\[-0.2em]
 
-\begin{frame}{Modelo de distorsión radial}
+
+  \column{0.54\textwidth}
+  \centering
+  \textbf{Pipeline}\\[0.2em]
+  \setlength{\tabcolsep}{0.6em}
+  \renewcommand{\arraystretch}{1.15}
+  \begin{tabular}{c}
+  \fbox{\strut Imagen pinhole grid}\\[-0.15em]
+  {\Large$\Downarrow$}\\[-0.15em]
+  \fbox{\strut Detección de centroides}\\[-0.15em]
+  {\Large$\Downarrow$}\\[-0.15em]
+  \fbox{\strut Modelado de la placa ideal}\\[-0.15em]
+  {\Large$\Downarrow$}\\[-0.15em]
+  \fbox{\strut Ajuste por mínimos cuadrados}\\[-0.15em]
+  {\Large$\Downarrow$}\\[-0.15em]
+  \fcolorbox{black}{gray!10}{\strut \textbf{Estimación del coeficiente $k$}}
+  \end{tabular}
+\end{columns}
+\end{frame}
+
+%-------------------------------------------------
+\begin{frame}{Detección de centroides: pipeline}
+\begin{columns}[T,onlytextwidth]
+    \column{0.46\textwidth}
+    \centering
+    \textbf{Flujo de procesado}\\[0.2em]
+    \setlength{\tabcolsep}{0.6em}
+    \renewcommand{\arraystretch}{1.15}
+    \begin{tabular}{@{}c@{}}
+    \fbox{\strut Máscara de máximos relativos}\\[-0.15em]
+    {\Large$\Downarrow$}\\[-0.15em]
+    \fbox{\strut Filtrado por vecinos}\\[-0.15em]
+    {\Large$\Downarrow$}\\[-0.15em]
+    \fbox{\strut División en ventanas}\\[-0.15em]
+    {\Large$\Downarrow$}\\[-0.15em]
+    \fbox{\strut Umbral adaptativo y binarización}\\[-0.15em]
+    {\Large$\Downarrow$}\\[-0.15em]
+    \fcolorbox{black}{gray!10}{\strut \textbf{Centroide ponderado (subpíxel)}}
+    \end{tabular}
+    \vspace{0.4em}
+    
+    {\footnotesize \textbf{Salida:} coordenadas subpíxel de cada pinhole.}
+
+    \column{0.54\textwidth}
+    \centering
+    \includegraphics[width=\linewidth]{Imagenes/Pinholes.PNG}
+    \vspace{0.2em}
+    {\scriptsize Ejemplo de procesado.}
+\end{columns}
+\end{frame}
+
+
+%-------------------------------------------------
+\begin{frame}{1) Máscara de máximos relativos}
+\begin{columns}[T,onlytextwidth]
+    \column{0.52\textwidth}
+    \begin{itemize}
+        \item Se buscan picos locales (candidatos a pinhole).
+        \item Se descartan respuestas planas/no aisladas.
+    \end{itemize}
+
+    \column{0.48\textwidth}
+    \centering
+    \includegraphics[width=\linewidth]{Imagenes/Centroide_candidatos.png}
+\end{columns}
+\end{frame}
+
+%-------------------------------------------------
+\begin{frame}{2) Filtrado por vecinos}
+\begin{columns}[T,onlytextwidth]
+    \column{0.52\textwidth}
+    \begin{itemize}
+        \item Se valida cada candidato por consistencia con su vecindad.
+        \item Se eliminan falsos positivos (ruido/artefactos).
+    \end{itemize}
+
+    \column{0.48\textwidth}
+    \centering
+    \includegraphics[width=\linewidth]{Imagenes/Centroide_candidatos.png}
+\end{columns}
+\end{frame}
+
+%-------------------------------------------------
+\begin{frame}{3) División en ventanas}
+\begin{columns}[T,onlytextwidth]
+    \column{0.52\textwidth}
+    \begin{itemize}
+        \item Se divide la imagen en ventanas.
+        \item Reduce el coste y evita confundir picos cercanos.
+    \end{itemize}
+
+    \column{0.48\textwidth}
+    \centering
+    \includegraphics[width=0.75\linewidth]{Imagenes/Centroide_ventana.png}\\
+    \vspace{0.2em}
+    {\scriptsize Ventanas de búsqueda.}
+\end{columns}
+\end{frame}
+
+%-------------------------------------------------
+\begin{frame}{4) Umbral adaptativo y binarización}
+\begin{columns}[T,onlytextwidth]
+    \column{0.52\textwidth}
+    \begin{itemize}
+        \item Umbral por ventana: $I_{\text{umbral}} = 0.4\, I_{\max}$.
+        \item Se binariza para aislar el spot.
+        \item Se escoge solo la región más extensa.
+    \end{itemize}
+
+    \column{0.48\textwidth}
+    \centering
+    \includegraphics[width=0.75\linewidth]{Imagenes/Centroide_ventana_binaria.png}\\
+    \vspace{0.2em}
+    {\scriptsize Resultado tras binarización.}
+\end{columns}
+\end{frame}
+
+%-------------------------------------------------
+\begin{frame}{5) Cálculo del centroide ponderado}
+\begin{columns}[T,onlytextwidth]
+    \column{0.52\textwidth}
+        {\scriptsize
+        \begin{equation*}
+        M_{i_x} =
+        \frac{
+        \displaystyle \sum_{j=1}^{U} \sum_{k=1}^{V} \left( I(j,k) - I_{umbral} \right) H(j,k)\, x_{jk}
+        }{
+        \displaystyle \sum_{j=1}^{U} \sum_{k=1}^{V} \left( I(j,k) - I_{umbral} \right) H(j,k)
+        }
+        \end{equation*}
+        \vspace{-0.6em}
+        \begin{equation*}
+        M_{i_y} =
+        \frac{
+        \displaystyle \sum_{j=1}^{U} \sum_{k=1}^{V} \left( I(j,k) - I_{umbral} \right) H(j,k)\, y_{jk}
+        }{
+        \displaystyle \sum_{j=1}^{U} \sum_{k=1}^{V} \left( I(j,k) - I_{umbral} \right) H(j,k)
+        }
+        \end{equation*}
+        \vspace{-0.6em}
+        \begin{equation*}
+        H(j, k) =
+        \begin{cases}
+        1, & \text{si } I(j,k) \geq I_{umbral} \\
+        0, & \text{si } I(j,k) < I_{umbral}
+        \end{cases}
+        \end{equation*}
+        }
+    \begin{itemize}
+        \item Precisión subpíxel.
+    \end{itemize}
+
+    \column{0.48\textwidth}
+    \centering
+    \includegraphics[width=0.75\linewidth]{Imagenes/Centroides.png}\\
+    \vspace{0.2em}
+    {\scriptsize Centroide estimado.}
+\end{columns}
+\end{frame}
+%-------------------------------------------------
+\begin{frame}{Modelado de los pinholes ideales: pipeline}
+\begin{columns}[T,onlytextwidth]
+    \column{0.46\textwidth}
+    \centering
+    \textbf{Flujo de procesado}\\[0.2em]
+    \setlength{\tabcolsep}{0.6em}
+    \renewcommand{\arraystretch}{1.15}
+    \begin{tabular}{@{}c@{}}
+    \fbox{\strut Placa de pinholes ideal}\\[-0.15em]
+    {\Large$\Downarrow$}\\[-0.15em]
+    \fbox{\strut Calcular orientación y corregirla}\\[-0.15em]
+    {\Large$\Downarrow$}\\[-0.15em]
+    \fbox{\strut Calcular desplazamiento y corregirlo}\\[-0.15em]
+    {\Large$\Downarrow$}\\[-0.15em]
+    \fbox{\strut Asignación de cada pareja de pinholes}\\[-0.15em]
+    {\Large$\Downarrow$}\\[-0.15em]
+    \fcolorbox{black}{gray!10}{\strut \textbf{Parejas de pinholes ideal-real}}
+    \end{tabular}
+
+    \column{0.54\textwidth}
+    \centering
+    \includegraphics[width=\linewidth]{Imagenes/Centroides.png}
+    \vspace{0.2em}
+    {\scriptsize Ejemplo de procesado.}
+\end{columns}
+\end{frame}
+
+%-------------------------------------------------
+\begin{frame}{1) Calcular orientación y corregirla}
+\begin{columns}[T,onlytextwidth]
+    \column{0.52\textwidth}
+    \begin{itemize}
+        \item Se utilizan los pinholes cercanos al centro óptico.
+    \end{itemize}
+
+    \column{0.48\textwidth}
+    \centering
+    \includegraphics[width=0.75\linewidth]{Imagenes/img_RotMap_0000_real.png}\\
+    \vspace{0.2em}
+    {\scriptsize Ejes principales de la placa.}
+\end{columns}
+\end{frame}
+
+%-------------------------------------------------
+\begin{frame}{2) Calcular desplazamiento y corregirlo}
+\begin{columns}[T,onlytextwidth]
+    \column{0.52\textwidth}
+    \begin{itemize}
+        \item Se mantiene fijo el pinhole más cercano al centro óptico.
+    \end{itemize}
+
+    \column{0.48\textwidth}
+    \centering
+    \includegraphics[width=0.75\linewidth]{Imagenes/img_DistMap_0000_real.png}\\
+    \vspace{0.2em}
+    {\scriptsize Desplazamientos de cada pinhole (flechas zoom x100).}
+\end{columns}
+\end{frame}
+
+%-------------------------------------------------
+\begin{frame}{3) Asignación de cada pareja de pinholes}
+\begin{columns}[T,onlytextwidth]
+    \column{0.52\textwidth}
+    \begin{itemize}
+        \item Para la asignación se utiliza el método húngaro de emparejamiento.
+        \item Emparejamientos que minimicen la suma de desplazamientos.
+        \item A cada pinhole real se le asigna un pinhole ideal. 
+        \item Pinholes reales: $P_i$
+        \item Pinholes ideales: $M_i$
+    \end{itemize}
+
+    \column{0.48\textwidth}
+    \centering
+    \includegraphics[width=0.75\linewidth]{Imagenes/img_DistMap_0000_real.png}\\
+    \vspace{0.2em}
+    {\scriptsize Desplazamientos de cada pinhole (flechas zoom x100).}
+\end{columns}
+\end{frame}
+
+%-------------------------------------------------
+\begin{frame}{Ajuste por mínimos cuadrados}
+
+\small
+\begin{columns}[T,onlytextwidth]
+
+% -------- IZQUIERDA --------
+\column{0.52\textwidth}
+
+Modelo radial:
+
+\[
+R' = (1 + kR^2)R
+\]
+
+Reordenando:
+
+\[
+R' - R = kR^3
+\]
+
+\vspace{0.3cm}
+
+\[
+R_i = \|M_i\|, 
+\quad 
+R'_i = \|P_i\|
+\]
+
+{\footnotesize
+$M_i$: punto ideal \\
+$P_i$: punto distorsionado
+}
+
+% -------- DERECHA --------
+\column{0.48\textwidth}
+
+Relación lineal:
+
+\[
+y_i = x_i\, k
+\]
+
+\[
+y_i = R'_i - R_i
+\]
+
+\[
+x_i = R_i^3
+\]
+
+\vspace{0.5cm}
+
+\centering
+\textbf{Estimación de $k$ \\ mediante regresión lineal}
+
+\end{columns}
 
 \end{frame}
 
-%------------------------------------------------
-\section{Metodología}
+\section{Etapa de simulación}
+%-------------------------------------------------
+\begin{frame}{Entorno de simulación}
+\begin{columns}[T,onlytextwidth]
+    \column{0.46\textwidth}
+    \centering
+    \textbf{Flujo de procesado}\\[0.2em]
+    \setlength{\tabcolsep}{0.6em}
+    \renewcommand{\arraystretch}{1.15}
+    \begin{tabular}{@{}c@{}}
+    \fbox{\strut Generación de pinhole grid ideal}\\[-0.15em]
+    {\Large$\Downarrow$}\\[-0.15em]
+    \fbox{\strut Introducción de distorsión}\\[-0.15em]
+    {\Large$\Downarrow$}\\[-0.15em]
+    \fbox{\strut Aplicación del método propuesto}\\[-0.15em]
+    {\Large$\Downarrow$}\\[-0.15em]
+    \fbox{\strut Evaluación de los resultados}
+    \end{tabular}
+    \vspace{0.4em}
+    
 
-\begin{frame}{Pipeline del algoritmo}
+    \column{0.54\textwidth}
+    \centering
+    \includegraphics[width=\linewidth]{Imagenes/img_pinholes.png}
+    \vspace{0.2em}
+    {\scriptsize Ejemplo de procesado.}
+\end{columns}
+\end{frame}
+
+%-------------------------------------------------
+\begin{frame}{1) Generación de pinhole grid ideal}
+\begin{columns}[T,onlytextwidth]
+    \column{0.52\textwidth}
+    \begin{itemize}
+        \item Convolución
+        \item PSF aproximada mediante disco de Airy
+        \item Aplicación de rotación, desplazamiento y desenfoque
+    \end{itemize}
+
+    \column{0.48\textwidth}
+    \centering
+    \includegraphics[width=0.75\linewidth]{Imagenes/convolucion.png}\\
+    \vspace{0.2em}
+    {\scriptsize Visualización de la convolución.}
+\end{columns}
+\end{frame}
+
+%-------------------------------------------------
+\begin{frame}{2) Introducción de distorsión}
+\begin{columns}[T,onlytextwidth]
+    \column{0.52\textwidth}
+    \begin{itemize}
+        \item Convolución
+        \item PSF aproximada mediante disco de Airy
+        \item Aplicación de rotación, desplazamiento y desenfoque
+    \end{itemize}
+
+    \column{0.48\textwidth}
+    \centering
+    \includegraphics[width=0.75\linewidth]{Imagenes/convolucion.png}\\
+    \vspace{0.2em}
+    {\scriptsize Visualización de la convolución.}
+\end{columns}
+\end{frame}
+
+%-------------------------------------------------
+\begin{frame}{3) Aplicación del método propuesto}
+\begin{columns}[T,onlytextwidth]
+    \column{0.52\textwidth}
+    Parámetros variables:
+    \begin{itemize}
+        \item Coeficiente $k_{real}$
+        \item Centro óptico
+        \item Rotación
+        \item Intensidad
+        \item Error en el spacing
+    \end{itemize}
+
+    \column{0.48\textwidth}
+    \small
+    \centering
+    \begin{tabular}{l c}
+    \toprule
+    Parámetro variado & Rango estudiado \\
+    \midrule
+    Coeficiente $k_{real}$ & $[-39.5,\ 39.5]$ m$^{-2}$ \\
+    Centro óptico $C_o$ & $\pm 100$ px \\
+    Rotación $\theta$ & $\pm 15^\circ$ \\
+    Intensidad $I_i$ & $[0,\ 3000]$ \\
+    Error en spacing $\delta s$ & 0.01\% \\
+    \bottomrule
+    \end{tabular}
+\end{columns}
+\end{frame}
+
+%-------------------------------------------------
+\begin{frame}{4) Evaluación de los resultados}
+\centering
+\begin{tabular}{l c c}
+\toprule
+Escenario & $E_r$ (\%) & $R^2$ \\
+\midrule
+Nominal & 0.28 & 0.9994 \\
+Centro desplazado & 0.70 & 0.9953 \\
+Rotación & 0.32 & 0.9993 \\
+Error spacing (0.01\%) & 7.43 & 0.9964 \\
+Completo + spacing & 18.95 & 0.9099 \\
+\bottomrule
+\end{tabular}
+\end{frame}
+
+
+%-------------------------------------------------
+\begin{frame}{Sensibilidad crítica: spacing}
+\begin{itemize}
+    \item Error del 0.01\% en spacing $\rightarrow$ degradación notable
+    \item El error se propaga radialmente
+    \item Condición más sensible del algoritmo
+\end{itemize}
+
+\vspace{0.4cm}
+\textbf{La medida precisa del spacing es fundamental}
+\end{frame}
+
+\section{Aplicación en imágenes reales de Satlantis}%-------------------------------------------------
+\begin{frame}{Aplicación en las imágenes de Satlantis}
+\begin{columns}[T,onlytextwidth]
+  \column{0.46\textwidth}
+  \centering
+  \textbf{Imagen en bruto}\\[0.2em]
+  \includegraphics[width=\linewidth]{Imagenes/psfgrid.PNG}\\[-0.2em]
+
+
+  \column{0.54\textwidth}
+  \centering
+  \textbf{Pipeline}\\[0.2em]
+  \setlength{\tabcolsep}{0.6em}
+  \renewcommand{\arraystretch}{1.15}
+  \begin{tabular}{c}
+  \fbox{\strut Imagen en bruto}\\[-0.15em]
+  {\Large$\Downarrow$}\\[-0.15em]
+  \fbox{\strut Procesado con Dark Frame}\\[-0.15em]
+  {\Large$\Downarrow$}\\[-0.15em]
+  \fbox{\strut Determinación del centro óptico}\\[-0.15em]
+  {\Large$\Downarrow$}\\[-0.15em]
+  \fbox{\strut Aplicación del algoritmo}\\[-0.15em]
+  \end{tabular}
+\end{columns}
+\end{frame}
+
+%-------------------------------------------------
+\begin{frame}{1) Procesado con Dark Frame}
+\begin{columns}[T]
+
+\column{0.3\textwidth}
+\centering
+\includegraphics[width=\linewidth]{Imagenes/psfgrid.PNG}
+\\[0.3cm]
+\small Imagen en bruto
+
+\column{0.3\textwidth}
+\centering
+\includegraphics[width=\linewidth]{Imagenes/Dark.PNG}
+\\[0.3cm]
+\small Dark Frame
+
+\column{0.3\textwidth}
+\centering
+\includegraphics[width=\linewidth]{Imagenes/Pinholes.PNG}
+\\[0.3cm]
+\small Imagen procesada
+
+\end{columns}
 
 \end{frame}
 
-%------------------------------------------------
-\section{Resultados}
+%-------------------------------------------------
+\begin{frame}{2)Determinación del centro óptico}
+\begin{columns}[T,onlytextwidth]
+    \column{0.52\textwidth}
+    \begin{itemize}
+        \item Se utiliza el Flat Frame
+        \item Se aprovecha el viñeteo y su simetría
+        \item Otra alternativa si no se dispone del Flat Frame: centro de la imagen
+    \end{itemize}
 
-\begin{frame}{Resultados en simulación}
+    \column{0.48\textwidth}
+    \centering
+    \includegraphics[width=0.75\linewidth]{Imagenes/flat_centro_optico.png}\\
+    \vspace{0.2em}
+    {\scriptsize Visualización de la convolución.}
+\end{columns}
+\end{frame}
+
+%-------------------------------------------------
+\begin{frame}{Resultados obtenidos}
+
+\begin{columns}[T,onlytextwidth]
+\column{0.48\textwidth}
+\centering
+\Large
+\[
+k_m = 29.22\ \text{m}^{-2}
+\]
+\vspace{0.4cm}
+\large
+\[
+R^2 = 0.786
+\]
+\vspace{0.2cm}
+\[
+\text{RMSE} = 23.29\ \text{m}^{-2}
+\]
+\vspace{0.5cm}
+\footnotesize
+Estimación consistente del coeficiente de distorsión  
+en condiciones experimentales reales.
+\column{0.52\textwidth}
+\centering
+\includegraphics[width=\linewidth]{Imagenes/img_DistMap_0000_real.png}
+
+\end{columns}
 
 \end{frame}
 
-%------------------------------------------------
-\section{Conclusiones}
-
+\section{Conclusiones y futuros trabajos}
+%-------------------------------------------------
 \begin{frame}{Conclusiones}
-
+\begin{itemize}
+    \item Desarrollo completo de algoritmo de calibración
+    \item Validación exhaustiva mediante simulación
+    \item Aplicación en sistema óptico profesional
+    \item Alta sensibilidad al spacing
+    \item Un coeficiente suficiente en este contexto
+\end{itemize}
 \end{frame}
 
-%------------------------------------------------
+%-------------------------------------------------
+\begin{frame}{Impacto y trabajo futuro}
+\begin{itemize}
+    \item Aplicable a calibración industrial
+    \item Extensible a modelos con más coeficientes
+    \item Posible automatización del proceso
+    \item Integración en pipelines de calibración óptica
+\end{itemize}
+\end{frame}
+
+%-------------------------------------------------
 \begin{frame}
 \centering
-
+\Huge{Gracias por su atención}
 \end{frame}
+
 
 \end{document}

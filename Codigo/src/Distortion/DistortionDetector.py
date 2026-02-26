@@ -439,7 +439,7 @@ def Validation(
 
     # Se calcula el coeficiente para cada pinhole
     k_values = y_filtrado / x_filtrado
-    print((k_values-k_medida) / (5.5e-6)**2)
+
     # Se calculan errores del ajuste
     # RMSE
     RMSE = np.mean(np.sqrt((k_values - k_medida) ** 2))  #px
