@@ -1,6 +1,7 @@
 %!TEX program = xelatex
 \documentclass[aspectratio=169]{beamer}
 \usepackage{fontspec}
+\usepackage[most]{tcolorbox}
 
 %%%%%%%%%%%% LETRAREN ITURRIA ALDATZEKO (EHUSans) %%%%%%%%%%%%
 \setsansfont{EHUSans-Light.otf}[
@@ -98,7 +99,7 @@
         \item \textbf{Pincushion}: líneas rectas se curvan hacia dentro.
     \end{itemize}
     \item \textbf{Impacto:} errores de medida/registro y georreferenciación.
-    \item \textbf{Corrección:} modelado mátematico $\rightarrow$ cuantificar $\rightarrow$ remapear (corregir la imagen).
+    \item \textbf{Corrección:} modelado matemático $\rightarrow$ cuantificar $\rightarrow$ remapear (corregir la imagen).
 \end{itemize}
 \end{frame}
 
@@ -158,9 +159,9 @@ v &= \dfrac{y}{1 + \lambda_1 \|X\|^2 + \lambda_2 \|X\|^4 + \dots}
 %-------------------------------------------------
 \begin{frame}{Modelo utilizado}
 Modelo radial con un coeficiente:
-\begin{equation}
+\begin{equation*}
     R' = (1 + kR^2)R
-\end{equation}
+\end{equation*}
 
 \begin{itemize}
     \item $R$ : posición ideal
@@ -204,13 +205,13 @@ Modelo radial con un coeficiente:
 %-------------------------------------------------
 \begin{frame}{\lightit{Pipeline} de la metodología}
 \begin{columns}[T,onlytextwidth]
-  \column{0.46\textwidth}
+  \column{0.52\textwidth}
   \centering
   \textbf{Ejemplo}\\[0.2em]
   \includegraphics[width=\linewidth]{Imagenes/centers.png}\\[-0.2em]
 
 
-  \column{0.54\textwidth}
+  \column{0.48\textwidth}
   \centering
   \textbf{Pipeline}\\[0.2em]
   \setlength{\tabcolsep}{0.6em}
@@ -232,7 +233,7 @@ Modelo radial con un coeficiente:
 %-------------------------------------------------
 \begin{frame}{Detección de centroides: pipeline}
 \begin{columns}[T,onlytextwidth]
-    \column{0.46\textwidth}
+    \column{0.48\textwidth}
     \centering
     \textbf{Flujo de procesado}\\[0.2em]
     \setlength{\tabcolsep}{0.6em}
@@ -252,11 +253,9 @@ Modelo radial con un coeficiente:
     
     {\footnotesize \textbf{Salida:} coordenadas subpíxel de cada pinhole.}
 
-    \column{0.54\textwidth}
+    \column{0.52\textwidth}
     \centering
     \includegraphics[width=\linewidth]{Imagenes/Pinholes.PNG}
-    \vspace{0.2em}
-    {\scriptsize Ejemplo de procesado.}
 \end{columns}
 \end{frame}
 
@@ -264,13 +263,13 @@ Modelo radial con un coeficiente:
 %-------------------------------------------------
 \begin{frame}{1) Máscara de máximos relativos}
 \begin{columns}[T,onlytextwidth]
-    \column{0.52\textwidth}
+    \column{0.48\textwidth}
     \begin{itemize}
-        \item Se buscan picos locales (candidatos a pinhole).
+        \item Se buscan picos locales (candidatos a pinhole) superiores a un umbral.
         \item Se descartan respuestas planas/no aisladas.
     \end{itemize}
 
-    \column{0.48\textwidth}
+    \column{0.52\textwidth}
     \centering
     \includegraphics[width=\linewidth]{Imagenes/Centroide_candidatos.png}
 \end{columns}
@@ -279,13 +278,14 @@ Modelo radial con un coeficiente:
 %-------------------------------------------------
 \begin{frame}{2) Filtrado por vecinos}
 \begin{columns}[T,onlytextwidth]
-    \column{0.52\textwidth}
+    \column{0.48\textwidth}
     \begin{itemize}
         \item Se valida cada candidato por consistencia con su vecindad.
         \item Se eliminan falsos positivos (ruido/artefactos).
+        \item Este será el centro de la ventana de detección.
     \end{itemize}
 
-    \column{0.48\textwidth}
+    \column{0.52\textwidth}
     \centering
     \includegraphics[width=\linewidth]{Imagenes/Centroide_candidatos.png}
 \end{columns}
@@ -294,42 +294,38 @@ Modelo radial con un coeficiente:
 %-------------------------------------------------
 \begin{frame}{3) División en ventanas}
 \begin{columns}[T,onlytextwidth]
-    \column{0.52\textwidth}
+    \column{0.48\textwidth}
     \begin{itemize}
-        \item Se divide la imagen en ventanas.
+        \item Se divide la imagen en ventanas que contengan únicamente un pinhole.
         \item Reduce el coste y evita confundir picos cercanos.
     \end{itemize}
 
-    \column{0.48\textwidth}
+    \column{0.52\textwidth}
     \centering
     \includegraphics[width=0.75\linewidth]{Imagenes/Centroide_ventana.png}\\
-    \vspace{0.2em}
-    {\scriptsize Ventanas de búsqueda.}
 \end{columns}
 \end{frame}
 
 %-------------------------------------------------
 \begin{frame}{4) Umbral adaptativo y binarización}
 \begin{columns}[T,onlytextwidth]
-    \column{0.52\textwidth}
+    \column{0.48\textwidth}
     \begin{itemize}
         \item Umbral por ventana: $I_{\text{umbral}} = 0.4\, I_{\max}$.
         \item Se binariza para aislar el spot.
         \item Se escoge solo la región más extensa.
     \end{itemize}
 
-    \column{0.48\textwidth}
+    \column{0.52\textwidth}
     \centering
     \includegraphics[width=0.75\linewidth]{Imagenes/Centroide_ventana_binaria.png}\\
-    \vspace{0.2em}
-    {\scriptsize Resultado tras binarización.}
 \end{columns}
 \end{frame}
 
 %-------------------------------------------------
 \begin{frame}{5) Cálculo del centroide ponderado}
 \begin{columns}[T,onlytextwidth]
-    \column{0.52\textwidth}
+    \column{0.48\textwidth}
         {\scriptsize
         \begin{equation*}
         M_{i_x} =
@@ -361,68 +357,57 @@ Modelo radial con un coeficiente:
         \item Precisión subpíxel.
     \end{itemize}
 
-    \column{0.48\textwidth}
+    \column{0.52\textwidth}
     \centering
-    \includegraphics[width=0.75\linewidth]{Imagenes/Centroides.png}\\
-    \vspace{0.2em}
-    {\scriptsize Centroide estimado.}
+    \includegraphics[width=0.75\linewidth]{Imagenes/Centroide_ventana_binaria.png}\\
 \end{columns}
 \end{frame}
+
 %-------------------------------------------------
 \begin{frame}{Modelado de los pinholes ideales: pipeline}
-\begin{columns}[T,onlytextwidth]
-    \column{0.46\textwidth}
-    \centering
-    \textbf{Flujo de procesado}\\[0.2em]
-    \setlength{\tabcolsep}{0.6em}
-    \renewcommand{\arraystretch}{1.15}
-    \begin{tabular}{@{}c@{}}
-    \fbox{\strut Placa de pinholes ideal}\\[-0.15em]
-    {\Large$\Downarrow$}\\[-0.15em]
-    \fbox{\strut Calcular orientación y corregirla}\\[-0.15em]
-    {\Large$\Downarrow$}\\[-0.15em]
-    \fbox{\strut Calcular desplazamiento y corregirlo}\\[-0.15em]
-    {\Large$\Downarrow$}\\[-0.15em]
-    \fbox{\strut Asignación de cada pareja de pinholes}\\[-0.15em]
-    {\Large$\Downarrow$}\\[-0.15em]
-    \fcolorbox{black}{gray!10}{\strut \textbf{Parejas de pinholes ideal-real}}
-    \end{tabular}
-
-    \column{0.54\textwidth}
-    \centering
-    \includegraphics[width=\linewidth]{Imagenes/Centroides.png}
-    \vspace{0.2em}
-    {\scriptsize Ejemplo de procesado.}
-\end{columns}
+\centering
+\textbf{Flujo de procesado}\\[0.2em]
+\setlength{\tabcolsep}{0.6em}
+\renewcommand{\arraystretch}{1.15}
+\begin{tabular}{@{}c@{}}
+\fbox{\strut Placa de pinholes ideal}\\[-0.15em]
+{\Large$\Downarrow$}\\[-0.15em]
+\fbox{\strut Calcular orientación y corregirla}\\[-0.15em]
+{\Large$\Downarrow$}\\[-0.15em]
+\fbox{\strut Calcular desplazamiento y corregirlo}\\[-0.15em]
+{\Large$\Downarrow$}\\[-0.15em]
+\fbox{\strut Asignación de cada pareja de pinholes}\\[-0.15em]
+{\Large$\Downarrow$}\\[-0.15em]
+\fcolorbox{black}{gray!10}{\strut \textbf{Parejas de pinholes ideal-real}}
+\end{tabular}
 \end{frame}
 
 %-------------------------------------------------
 \begin{frame}{1) Calcular orientación y corregirla}
 \begin{columns}[T,onlytextwidth]
-    \column{0.52\textwidth}
+    \column{0.5\textwidth}
     \begin{itemize}
         \item Se utilizan los pinholes cercanos al centro óptico.
+        \item Se calculan los ejes principales de la placa.
     \end{itemize}
 
-    \column{0.48\textwidth}
+    \column{0.5\textwidth}
     \centering
-    \includegraphics[width=0.75\linewidth]{Imagenes/img_RotMap_0000_real.png}\\
-    \vspace{0.2em}
-    {\scriptsize Ejes principales de la placa.}
+    \includegraphics[width=\linewidth]{Imagenes/img_RotMap_0000_real.png}\\
 \end{columns}
 \end{frame}
 
 %-------------------------------------------------
 \begin{frame}{2) Calcular desplazamiento y corregirlo}
 \begin{columns}[T,onlytextwidth]
-    \column{0.52\textwidth}
+    \column{0.5\textwidth}
     \begin{itemize}
         \item Se mantiene fijo el pinhole más cercano al centro óptico.
     \end{itemize}
 
-    \column{0.48\textwidth}
+    \column{0.5\textwidth}
     \centering
-    \includegraphics[width=0.75\linewidth]{Imagenes/img_DistMap_0000_real.png}\\
+    \includegraphics[width=\linewidth]{Imagenes/img_DistMap_0000_real.png}\\
     \vspace{0.2em}
     {\scriptsize Desplazamientos de cada pinhole (flechas zoom x100).}
 \end{columns}
@@ -431,7 +416,7 @@ Modelo radial con un coeficiente:
 %-------------------------------------------------
 \begin{frame}{3) Asignación de cada pareja de pinholes}
 \begin{columns}[T,onlytextwidth]
-    \column{0.52\textwidth}
+    \column{0.5\textwidth}
     \begin{itemize}
         \item Para la asignación se utiliza el método húngaro de emparejamiento.
         \item Emparejamientos que minimicen la suma de desplazamientos.
@@ -440,9 +425,9 @@ Modelo radial con un coeficiente:
         \item Pinholes ideales: $M_i$
     \end{itemize}
 
-    \column{0.48\textwidth}
+    \column{0.5\textwidth}
     \centering
-    \includegraphics[width=0.75\linewidth]{Imagenes/img_DistMap_0000_real.png}\\
+    \includegraphics[width=\linewidth]{Imagenes/img_DistMap_0000_real.png}\\
     \vspace{0.2em}
     {\scriptsize Desplazamientos de cada pinhole (flechas zoom x100).}
 \end{columns}
@@ -454,8 +439,7 @@ Modelo radial con un coeficiente:
 \small
 \begin{columns}[T,onlytextwidth]
 
-% -------- IZQUIERDA --------
-\column{0.52\textwidth}
+\column{0.5\textwidth}
 
 Modelo radial:
 
@@ -482,8 +466,7 @@ $M_i$: punto ideal \\
 $P_i$: punto distorsionado
 }
 
-% -------- DERECHA --------
-\column{0.48\textwidth}
+\column{0.5\textwidth}
 
 Relación lineal:
 
@@ -512,7 +495,7 @@ x_i = R_i^3
 %-------------------------------------------------
 \begin{frame}{Entorno de simulación}
 \begin{columns}[T,onlytextwidth]
-    \column{0.46\textwidth}
+    \column{0.5\textwidth}
     \centering
     \textbf{Flujo de procesado}\\[0.2em]
     \setlength{\tabcolsep}{0.6em}
@@ -529,54 +512,44 @@ x_i = R_i^3
     \vspace{0.4em}
     
 
-    \column{0.54\textwidth}
+    \column{0.5\textwidth}
     \centering
     \includegraphics[width=\linewidth]{Imagenes/img_pinholes.png}
-    \vspace{0.2em}
-    {\scriptsize Ejemplo de procesado.}
 \end{columns}
 \end{frame}
 
 %-------------------------------------------------
 \begin{frame}{1) Generación de pinhole grid ideal}
 \begin{columns}[T,onlytextwidth]
-    \column{0.52\textwidth}
+    \column{0.5\textwidth}
     \begin{itemize}
         \item Convolución
         \item PSF aproximada mediante disco de Airy
         \item Aplicación de rotación, desplazamiento y desenfoque
     \end{itemize}
 
-    \column{0.48\textwidth}
+    \column{0.5\textwidth}
     \centering
     \includegraphics[width=0.75\linewidth]{Imagenes/convolucion.png}\\
     \vspace{0.2em}
-    {\scriptsize Visualización de la convolución.}
+    {\scriptsize Visualización de convolución.}
 \end{columns}
 \end{frame}
 
 %-------------------------------------------------
 \begin{frame}{2) Introducción de distorsión}
-\begin{columns}[T,onlytextwidth]
-    \column{0.52\textwidth}
-    \begin{itemize}
-        \item Convolución
-        \item PSF aproximada mediante disco de Airy
-        \item Aplicación de rotación, desplazamiento y desenfoque
-    \end{itemize}
-
-    \column{0.48\textwidth}
-    \centering
-    \includegraphics[width=0.75\linewidth]{Imagenes/convolucion.png}\\
-    \vspace{0.2em}
-    {\scriptsize Visualización de la convolución.}
-\end{columns}
+\begin{itemize}
+    \item Se aplica el modelo radial con un coeficiente $k$.
+    \item Centro óptico configurable para simular desalineaciones.
+    \item Remapeo e interpolación para generar la imagen distorsionada.
+    \item Adición de ruido para escenarios realistas.
+\end{itemize}
 \end{frame}
 
 %-------------------------------------------------
 \begin{frame}{3) Aplicación del método propuesto}
 \begin{columns}[T,onlytextwidth]
-    \column{0.52\textwidth}
+    \column{0.48\textwidth}
     Parámetros variables:
     \begin{itemize}
         \item Coeficiente $k_{real}$
@@ -586,8 +559,7 @@ x_i = R_i^3
         \item Error en el spacing
     \end{itemize}
 
-    \column{0.48\textwidth}
-    \small
+    \column{0.52\textwidth}
     \centering
     \begin{tabular}{l c}
     \toprule
@@ -605,43 +577,40 @@ x_i = R_i^3
 
 %-------------------------------------------------
 \begin{frame}{4) Evaluación de los resultados}
-\centering
-\begin{tabular}{l c c}
-\toprule
-Escenario & $E_r$ (\%) & $R^2$ \\
-\midrule
-Nominal & 0.28 & 0.9994 \\
-Centro desplazado & 0.70 & 0.9953 \\
-Rotación & 0.32 & 0.9993 \\
-Error spacing (0.01\%) & 7.43 & 0.9964 \\
-Completo + spacing & 18.95 & 0.9099 \\
-\bottomrule
-\end{tabular}
-\end{frame}
+\begin{columns}[T,onlytextwidth]
+    \column{0.48\textwidth}
+    \begin{itemize}
+        \item Error del 0.01\% en spacing $\rightarrow$ degradación notable
+        \item El error se propaga radialmente
+        \item Condición más sensible del algoritmo
+    \end{itemize}
 
-
-%-------------------------------------------------
-\begin{frame}{Sensibilidad crítica: spacing}
-\begin{itemize}
-    \item Error del 0.01\% en spacing $\rightarrow$ degradación notable
-    \item El error se propaga radialmente
-    \item Condición más sensible del algoritmo
-\end{itemize}
-
-\vspace{0.4cm}
-\textbf{La medida precisa del spacing es fundamental}
+    \column{0.52\textwidth}
+    \centering
+    \begin{tabular}{l c c}
+    \toprule
+    Escenario & $E_r$ (\%) & $R^2$ \\
+    \midrule
+    Nominal & 0.28 & 0.9994 \\
+    Centro desplazado & 0.70 & 0.9953 \\
+    Rotación & 0.32 & 0.9993 \\
+    Error spacing (0.01\%) & 7.43 & 0.9964 \\
+    Completo + spacing & 18.95 & 0.9099 \\
+    \bottomrule
+    \end{tabular}
+\end{columns}
 \end{frame}
 
 \section{Aplicación en imágenes reales de Satlantis}%-------------------------------------------------
 \begin{frame}{Aplicación en las imágenes de Satlantis}
 \begin{columns}[T,onlytextwidth]
-  \column{0.46\textwidth}
+  \column{0.52\textwidth}
   \centering
   \textbf{Imagen en bruto}\\[0.2em]
   \includegraphics[width=\linewidth]{Imagenes/psfgrid.PNG}\\[-0.2em]
 
 
-  \column{0.54\textwidth}
+  \column{0.48\textwidth}
   \centering
   \textbf{Pipeline}\\[0.2em]
   \setlength{\tabcolsep}{0.6em}
@@ -687,18 +656,17 @@ Completo + spacing & 18.95 & 0.9099 \\
 %-------------------------------------------------
 \begin{frame}{2)Determinación del centro óptico}
 \begin{columns}[T,onlytextwidth]
-    \column{0.52\textwidth}
+    \column{0.48\textwidth}
     \begin{itemize}
         \item Se utiliza el Flat Frame
         \item Se aprovecha el viñeteo y su simetría
+        \item Se ajusta un circulo y el centro se determina como el centro óptico.
         \item Otra alternativa si no se dispone del Flat Frame: centro de la imagen
     \end{itemize}
 
-    \column{0.48\textwidth}
+    \column{0.52\textwidth}
     \centering
-    \includegraphics[width=0.75\linewidth]{Imagenes/flat_centro_optico.png}\\
-    \vspace{0.2em}
-    {\scriptsize Visualización de la convolución.}
+    \includegraphics[width=\linewidth]{Imagenes/flat_centro_optico.png}
 \end{columns}
 \end{frame}
 
@@ -708,20 +676,22 @@ Completo + spacing & 18.95 & 0.9099 \\
 \begin{columns}[T,onlytextwidth]
 \column{0.48\textwidth}
 \centering
-\Large
-\[
-k_m = 29.22\ \text{m}^{-2}
-\]
+
+\fbox{$\displaystyle k_m = 29.22\ \text{m}^{-2}$}
+
+\vspace{0.6cm}
+
+\fbox{
+$\displaystyle
+\begin{aligned}
+R^2 &= 0.786 \\
+\text{RMSE} &= 23.29\ \text{m}^{-2}
+\end{aligned}
+$
+}
+
 \vspace{0.4cm}
-\large
-\[
-R^2 = 0.786
-\]
-\vspace{0.2cm}
-\[
-\text{RMSE} = 23.29\ \text{m}^{-2}
-\]
-\vspace{0.5cm}
+
 \footnotesize
 Estimación consistente del coeficiente de distorsión  
 en condiciones experimentales reales.
@@ -733,7 +703,7 @@ en condiciones experimentales reales.
 
 \end{frame}
 
-\section{Conclusiones y futuros trabajos}
+\section{Conclusiones}
 %-------------------------------------------------
 \begin{frame}{Conclusiones}
 \begin{itemize}
