@@ -485,7 +485,9 @@ x_i = R_i^3
 \vspace{0.5cm}
 
 \centering
-\textbf{Estimación de $k$ \\ mediante regresión lineal}
+\begin{itemize}
+    \item Validación con método Z-Score.
+\end{itemize}
 
 \end{columns}
 
@@ -579,12 +581,10 @@ x_i = R_i^3
 \begin{frame}{4) Evaluación de los resultados}
 \begin{columns}[T,onlytextwidth]
     \column{0.48\textwidth}
+    \includegraphics[width=0.9\linewidth]{Imagenes/RelativeError_vs_k.png}
     \begin{itemize}
-        \item Error del 0.01\% en spacing $\rightarrow$ degradación notable
-        \item El error se propaga radialmente
-        \item Condición más sensible del algoritmo
+        \item Mejor funcionamiento para $|k|>5\text{ m}^{-2}$
     \end{itemize}
-
     \column{0.52\textwidth}
     \centering
     \begin{tabular}{l c c}
@@ -598,6 +598,12 @@ x_i = R_i^3
     Completo + spacing & 18.95 & 0.9099 \\
     \bottomrule
     \end{tabular}
+    \vspace{0.5cm}
+    \begin{itemize}
+        \item Condición más sensible del algoritmo
+        \item Error del 0.01\% en spacing $\rightarrow$ degradación notable
+        \item El error se propaga radialmente
+    \end{itemize}
 \end{columns}
 \end{frame}
 
