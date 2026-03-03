@@ -63,44 +63,54 @@
 \end{frame}
 
 %-------------------------------------------------
-\begin{frame}{Fuentes de degradación en la calidad de la imagen}
+\begin{frame}{Degradaciones en sistemas ópticos}
+
 \begin{columns}[T,onlytextwidth]
-    \column{0.44\textwidth}
-    \textbf{Ruido electrónico}
+
+\column{0.48\textwidth}
+
+\textbf{Principales fuentes de degradación}
+
+\begin{itemize}
+    \item Ruido electrónico
     \begin{itemize}
-        \item Ruido de lectura
-        \item Ruido de disparo
+        \item Lectura
+        \item Disparo
         \item Corriente oscura
     \end{itemize}
-
-    \column{0.56\textwidth}
-    \textbf{Aberraciones ópticas}
+    \item Aberraciones ópticas
     \begin{itemize}
-        \item Cromáticas
-        \item Monocromáticas
-        \begin{itemize}
-            \item Aberración esférica
-            \item Coma
-            \item Astigmatismo
-            \item Curvatura de campo
-            \item Distorsión
-        \end{itemize}
+        \item Esférica, coma, astigmatismo
+        \item Curvatura de campo
+        \item \alert{\textbf{Distorsión}}
     \end{itemize}
-\end{columns}
-\end{frame}
-
-%-------------------------------------------------
-\begin{frame}{Distorsión óptica}
-\begin{itemize}
-    \item \textbf{Qué es:} deformación geométrica variable con la distancia al centro óptico.
-    \item \textbf{Tipos:}
-    \begin{itemize}
-        \item \textbf{Barrel}: líneas rectas se curvan hacia fuera.
-        \item \textbf{Pincushion}: líneas rectas se curvan hacia dentro.
-    \end{itemize}
-    \item \textbf{Impacto:} errores de medida/registro y georreferenciación.
-    \item \textbf{Corrección:} modelado matemático $\rightarrow$ cuantificar $\rightarrow$ remapear (corregir la imagen).
 \end{itemize}
+
+\vspace{0.3cm}
+
+\alert{En este trabajo nos centramos en la distorsión geométrica.}
+
+\column{0.52\textwidth}
+
+\textbf{Distorsión óptica}
+
+\vspace{0.3cm}
+
+Deformación geométrica que aumenta con la distancia al centro óptico.
+
+\vspace{0.4cm}
+
+\begin{itemize}
+    \item \textbf{Barrel}: líneas se curvan hacia fuera
+    \item \textbf{Pincushion}: líneas se curvan hacia dentro
+\end{itemize}
+
+\vspace{0.4cm}
+
+Impacto: errores en medida y georreferenciación.
+
+\end{columns}
+
 \end{frame}
 
 \section{Modelado matemático de la distorsión}
@@ -113,59 +123,44 @@
 \column{0.5\textwidth}
 \centering
 \textbf{Modelo polinómico (Duane)}
-\vspace{0.2cm}
+\vspace{0.3cm}
 \[
-\left\{
-\begin{aligned}
-x &= \left(1 + k_1 \|P\|^2 + k_2 \|P\|^4 + \dots \right) u \\
-y &= \left(1 + k_1 \|P\|^2 + k_2 \|P\|^4 + \dots \right) v
-\end{aligned}
-\right.
+R_d = (1 + k_1 R^2 + k_2 R^4 + \dots)\ R
 \]
 
-\vspace{0.45cm}
-
-\scriptsize
-\(k_1, k_2, \dots\): parámetros de distorsión.
 
 \column{0.5\textwidth}
 \centering
 \textbf{Modelo de división (Fitzgibbon)}
+\vspace{0.25cm}
 \[
-\left\{
-\begin{aligned}
-u &= \dfrac{x}{1 + \lambda_1 \|X\|^2 + \lambda_2 \|X\|^4 + \dots} \\
-v &= \dfrac{y}{1 + \lambda_1 \|X\|^2 + \lambda_2 \|X\|^4 + \dots}
-\end{aligned}
-\right.
+R = \dfrac{R_d}{1 + \lambda_1 R_d^2 + \lambda_2 R_d^4 + \dots}
 \]
 
-\scriptsize
-\(\lambda_1, \lambda_2, \dots\): parámetros de distorsión.
-
 \end{columns}
-
-\vspace{0.3cm}
-{\footnotesize
-\(P=(u,v)\): coordenadas ideales, sin distorsión, relativas al centro de distorsión del sistema.\\
-\(X=(x,y)\): coordenadas distorsionadas relativas al centro de distorsión del sistema.\\
-}
 \vspace{0.4cm}
-\begin{itemize}
-    \item Más coeficientes $\Rightarrow$ más precisión; para cámaras profesionales suele bastar 1 coeficiente.
-\end{itemize}
-\end{frame}
+\scriptsize
+$R$: posición ideal, sin distorisón\\
+$R_d$: posición real, distorsionada
+\vspace{0.6cm}
 
+\begin{itemize}
+    \item Ambos modelos utilizan expansiones radiales.
+    \item Más coeficientes $\Rightarrow$ mayor precisión.
+    \item \alert{\textbf{En sistemas ópticos profesionales suele ser suficiente un único coeficiente.}}
+\end{itemize}
+
+\end{frame}
 %-------------------------------------------------
 \begin{frame}{Modelo utilizado}
 Modelo radial con un coeficiente:
 \begin{equation*}
-    R' = (1 + kR^2)R
+    R_d = (1 + kR^2)R
 \end{equation*}
 
 \begin{itemize}
     \item $R$ : posición ideal
-    \item $R'$ : posición distorsionada
+    \item $R_d$ : posición distorsionada
     \item $k$ : coeficiente de distorsión
 \end{itemize}
 
@@ -231,136 +226,68 @@ Modelo radial con un coeficiente:
 \end{frame}
 
 %-------------------------------------------------
-\begin{frame}{Detección de centroides: pipeline}
+\begin{frame}{Detección de centroides}
+
 \begin{columns}[T,onlytextwidth]
-    \column{0.48\textwidth}
-    \centering
-    \textbf{Flujo de procesado}\\[0.2em]
-    \setlength{\tabcolsep}{0.6em}
-    \renewcommand{\arraystretch}{1.15}
-    \begin{tabular}{@{}c@{}}
-    \fbox{\strut Máscara de máximos relativos}\\[-0.15em]
-    {\Large$\Downarrow$}\\[-0.15em]
-    \fbox{\strut Filtrado por vecinos}\\[-0.15em]
-    {\Large$\Downarrow$}\\[-0.15em]
-    \fbox{\strut División en ventanas}\\[-0.15em]
-    {\Large$\Downarrow$}\\[-0.15em]
-    \fbox{\strut Umbral adaptativo y binarización}\\[-0.15em]
-    {\Large$\Downarrow$}\\[-0.15em]
-    \fcolorbox{black}{gray!10}{\strut \textbf{Centroide ponderado (subpíxel)}}
-    \end{tabular}
-    \vspace{0.4em}
-    
-    {\footnotesize \textbf{Salida:} coordenadas subpíxel de cada pinhole.}
 
-    \column{0.52\textwidth}
-    \centering
-    \includegraphics[width=\linewidth]{Imagenes/Pinholes.PNG}
+\column{0.48\textwidth}
+
+\textbf{Pipeline de detección}
+
+\begin{enumerate}
+    \item Detección de máximos locales
+    \item Filtrado por vecindad (eliminación de falsos positivos)
+    \item División en ventanas individuales
+    \item Umbral adaptativo y binarización
+\end{enumerate}
+
+\vspace{0.4cm}
+
+\begin{itemize}
+    \item Aislamiento robusto de cada pinhole
+    \item Reducción de ruido y artefactos
+\end{itemize}
+
+\column{0.52\textwidth}
+\centering
+\includegraphics[width=0.85\linewidth]{Imagenes/Centroide_candidatos.png}
+
 \end{columns}
-\end{frame}
 
-
-%-------------------------------------------------
-\begin{frame}{1) Máscara de máximos relativos}
-\begin{columns}[T,onlytextwidth]
-    \column{0.48\textwidth}
-    \begin{itemize}
-        \item Se buscan picos locales (candidatos a pinhole) superiores a un umbral.
-        \item Se descartan respuestas planas/no aisladas.
-    \end{itemize}
-
-    \column{0.52\textwidth}
-    \centering
-    \includegraphics[width=\linewidth]{Imagenes/Centroide_candidatos.png}
-\end{columns}
 \end{frame}
 
 %-------------------------------------------------
-\begin{frame}{2) Filtrado por vecinos}
+\begin{frame}{Cálculo del centroide subpíxel}
+
 \begin{columns}[T,onlytextwidth]
-    \column{0.48\textwidth}
-    \begin{itemize}
-        \item Se valida cada candidato por consistencia con su vecindad.
-        \item Se eliminan falsos positivos (ruido/artefactos).
-        \item Este será el centro de la ventana de detección.
-    \end{itemize}
 
-    \column{0.52\textwidth}
-    \centering
-    \includegraphics[width=\linewidth]{Imagenes/Centroide_candidatos.png}
+\column{0.45\textwidth}
+
+\small
+Centroide como media ponderada de intensidades:
+
+\vspace{0.3cm}
+
+\[
+M_i = 
+\frac{\sum I(x,y)\, (x,y)}
+     {\sum I(x,y)}
+\]
+
+\vspace{0.4cm}
+
+\begin{itemize}
+    \item Umbral adaptativo por ventana
+    \item Eliminación de fondo
+    \item \alert{\textbf{Precisión subpíxel}}
+\end{itemize}
+
+\column{0.55\textwidth}
+\centering
+\includegraphics[width=0.8\linewidth]{Imagenes/Centroide_ventana_binaria.png}
+
 \end{columns}
-\end{frame}
 
-%-------------------------------------------------
-\begin{frame}{3) División en ventanas}
-\begin{columns}[T,onlytextwidth]
-    \column{0.48\textwidth}
-    \begin{itemize}
-        \item Se divide la imagen en ventanas que contengan únicamente un pinhole.
-        \item Reduce el coste y evita confundir picos cercanos.
-    \end{itemize}
-
-    \column{0.52\textwidth}
-    \centering
-    \includegraphics[width=0.75\linewidth]{Imagenes/Centroide_ventana.png}\\
-\end{columns}
-\end{frame}
-
-%-------------------------------------------------
-\begin{frame}{4) Umbral adaptativo y binarización}
-\begin{columns}[T,onlytextwidth]
-    \column{0.48\textwidth}
-    \begin{itemize}
-        \item Umbral por ventana: $I_{\text{umbral}} = 0.4\, I_{\max}$.
-        \item Se binariza para aislar el spot.
-        \item Se escoge solo la región más extensa.
-    \end{itemize}
-
-    \column{0.52\textwidth}
-    \centering
-    \includegraphics[width=0.75\linewidth]{Imagenes/Centroide_ventana_binaria.png}\\
-\end{columns}
-\end{frame}
-
-%-------------------------------------------------
-\begin{frame}{5) Cálculo del centroide ponderado}
-\begin{columns}[T,onlytextwidth]
-    \column{0.48\textwidth}
-        {\scriptsize
-        \begin{equation*}
-        M_{i_x} =
-        \frac{
-        \displaystyle \sum_{j=1}^{U} \sum_{k=1}^{V} \left( I(j,k) - I_{umbral} \right) H(j,k)\, x_{jk}
-        }{
-        \displaystyle \sum_{j=1}^{U} \sum_{k=1}^{V} \left( I(j,k) - I_{umbral} \right) H(j,k)
-        }
-        \end{equation*}
-        \vspace{-0.6em}
-        \begin{equation*}
-        M_{i_y} =
-        \frac{
-        \displaystyle \sum_{j=1}^{U} \sum_{k=1}^{V} \left( I(j,k) - I_{umbral} \right) H(j,k)\, y_{jk}
-        }{
-        \displaystyle \sum_{j=1}^{U} \sum_{k=1}^{V} \left( I(j,k) - I_{umbral} \right) H(j,k)
-        }
-        \end{equation*}
-        \vspace{-0.6em}
-        \begin{equation*}
-        H(j, k) =
-        \begin{cases}
-        1, & \text{si } I(j,k) \geq I_{umbral} \\
-        0, & \text{si } I(j,k) < I_{umbral}
-        \end{cases}
-        \end{equation*}
-        }
-    \begin{itemize}
-        \item Precisión subpíxel.
-    \end{itemize}
-
-    \column{0.52\textwidth}
-    \centering
-    \includegraphics[width=0.75\linewidth]{Imagenes/Centroide_ventana_binaria.png}\\
-\end{columns}
 \end{frame}
 
 %-------------------------------------------------
@@ -372,9 +299,7 @@ Modelo radial con un coeficiente:
 \begin{tabular}{@{}c@{}}
 \fbox{\strut Placa de pinholes ideal}\\[-0.15em]
 {\Large$\Downarrow$}\\[-0.15em]
-\fbox{\strut Calcular orientación y corregirla}\\[-0.15em]
-{\Large$\Downarrow$}\\[-0.15em]
-\fbox{\strut Calcular desplazamiento y corregirlo}\\[-0.15em]
+\fbox{\strut Corrección orientación y desplazamiento}\\[-0.15em]
 {\Large$\Downarrow$}\\[-0.15em]
 \fbox{\strut Asignación de cada pareja de pinholes}\\[-0.15em]
 {\Large$\Downarrow$}\\[-0.15em]
@@ -383,46 +308,29 @@ Modelo radial con un coeficiente:
 \end{frame}
 
 %-------------------------------------------------
-\begin{frame}{1) Calcular orientación y corregirla}
+\begin{frame}{1) Corrección orientación y desplazamiento}
 \begin{columns}[T,onlytextwidth]
     \column{0.5\textwidth}
     \begin{itemize}
-        \item Se utilizan los pinholes cercanos al centro óptico.
-        \item Se calculan los ejes principales de la placa.
-    \end{itemize}
-
-    \column{0.5\textwidth}
-    \centering
-    \includegraphics[width=\linewidth]{Imagenes/img_RotMap_0000_real.png}\\
-\end{columns}
-\end{frame}
-
-%-------------------------------------------------
-\begin{frame}{2) Calcular desplazamiento y corregirlo}
-\begin{columns}[T,onlytextwidth]
-    \column{0.5\textwidth}
-    \begin{itemize}
+        \item Se calculan los ejes principales de la placa utilizando los pinholes cercanos al centro óptico.
         \item Se mantiene fijo el pinhole más cercano al centro óptico.
     \end{itemize}
 
     \column{0.5\textwidth}
     \centering
     \includegraphics[width=\linewidth]{Imagenes/img_DistMap_0000_real.png}\\
-    \vspace{0.2em}
     {\scriptsize Desplazamientos de cada pinhole (flechas zoom x100).}
 \end{columns}
 \end{frame}
 
 %-------------------------------------------------
-\begin{frame}{3) Asignación de cada pareja de pinholes}
+\begin{frame}{2) Asignación de cada pareja de pinholes}
 \begin{columns}[T,onlytextwidth]
     \column{0.5\textwidth}
     \begin{itemize}
         \item Para la asignación se utiliza el método húngaro de emparejamiento.
         \item Emparejamientos que minimicen la suma de desplazamientos.
         \item A cada pinhole real se le asigna un pinhole ideal. 
-        \item Pinholes reales: $P_i$
-        \item Pinholes ideales: $M_i$
     \end{itemize}
 
     \column{0.5\textwidth}
@@ -436,57 +344,55 @@ Modelo radial con un coeficiente:
 %-------------------------------------------------
 \begin{frame}{Ajuste por mínimos cuadrados}
 
-\small
 \begin{columns}[T,onlytextwidth]
 
-\column{0.5\textwidth}
+\column{0.48\textwidth}
 
-Modelo radial:
+\small
+\textbf{Modelo radial}
 
-\[
-R' = (1 + kR^2)R
-\]
-
-Reordenando:
+\vspace{0.2cm}
 
 \[
-R' - R = kR^3
+R_d = (1 + kR^2)R
 \]
+
+\vspace{0.4cm}
+
+\textbf{Reordenación}
+
+\[
+R_d - R = kR^3
+\]
+
+\column{0.52\textwidth}
+
+\small
+\textbf{\alert{Linealización}}
 
 \vspace{0.3cm}
-
-\[
-R_i = \|M_i\|, 
-\quad 
-R'_i = \|P_i\|
-\]
-
-{\footnotesize
-$M_i$: punto ideal \\
-$P_i$: punto distorsionado
-}
-
-\column{0.5\textwidth}
-
-Relación lineal:
 
 \[
 y_i = x_i\, k
 \]
 
-\[
-y_i = R'_i - R_i
-\]
+\vspace{0.3cm}
 
 \[
-x_i = R_i^3
+y = R_d - R
+\quad
+x = R^3
 \]
 
-\vspace{0.5cm}
+\vspace{0.6cm}
 
 \centering
+\alert{\textbf{Estimación de $k$ mediante ajuste lineal}}
+
+\vspace{0.4cm}
+
 \begin{itemize}
-    \item Validación con método Z-Score.
+    \item Eliminación de outliers con Z-Score
 \end{itemize}
 
 \end{columns}
@@ -503,9 +409,7 @@ x_i = R_i^3
     \setlength{\tabcolsep}{0.6em}
     \renewcommand{\arraystretch}{1.15}
     \begin{tabular}{@{}c@{}}
-    \fbox{\strut Generación de pinhole grid ideal}\\[-0.15em]
-    {\Large$\Downarrow$}\\[-0.15em]
-    \fbox{\strut Introducción de distorsión}\\[-0.15em]
+    \fbox{\strut Generación de pinhole grid artificial}\\[-0.15em]
     {\Large$\Downarrow$}\\[-0.15em]
     \fbox{\strut Aplicación del método propuesto}\\[-0.15em]
     {\Large$\Downarrow$}\\[-0.15em]
@@ -521,13 +425,17 @@ x_i = R_i^3
 \end{frame}
 
 %-------------------------------------------------
-\begin{frame}{1) Generación de pinhole grid ideal}
+\begin{frame}{1) Generación de pinhole grid artificial}
 \begin{columns}[T,onlytextwidth]
     \column{0.5\textwidth}
     \begin{itemize}
         \item Convolución
         \item PSF aproximada mediante disco de Airy
         \item Aplicación de rotación, desplazamiento y desenfoque
+        \item Se aplica el modelo radial con un coeficiente $k$.
+        \item Centro óptico configurable para simular desalineaciones.
+        \item Remapeo e interpolación para generar la imagen distorsionada.
+        \item Adición de ruido para escenarios realistas.
     \end{itemize}
 
     \column{0.5\textwidth}
@@ -539,17 +447,7 @@ x_i = R_i^3
 \end{frame}
 
 %-------------------------------------------------
-\begin{frame}{2) Introducción de distorsión}
-\begin{itemize}
-    \item Se aplica el modelo radial con un coeficiente $k$.
-    \item Centro óptico configurable para simular desalineaciones.
-    \item Remapeo e interpolación para generar la imagen distorsionada.
-    \item Adición de ruido para escenarios realistas.
-\end{itemize}
-\end{frame}
-
-%-------------------------------------------------
-\begin{frame}{3) Aplicación del método propuesto}
+\begin{frame}{2) Aplicación del método propuesto}
 \begin{columns}[T,onlytextwidth]
     \column{0.48\textwidth}
     Parámetros variables:
@@ -578,7 +476,7 @@ x_i = R_i^3
 \end{frame}
 
 %-------------------------------------------------
-\begin{frame}{4) Evaluación de los resultados}
+\begin{frame}{3) Evaluación de los resultados}
 \begin{columns}[T,onlytextwidth]
     \column{0.48\textwidth}
     \includegraphics[width=0.9\linewidth]{Imagenes/RelativeError_vs_k.png}
@@ -595,14 +493,13 @@ x_i = R_i^3
     Centro desplazado & 0.70 & 0.9953 \\
     Rotación & 0.32 & 0.9993 \\
     Error spacing (0.01\%) & 7.43 & 0.9964 \\
-    Completo + spacing & 18.95 & 0.9099 \\
+    Completo + spacing & 9.45 & 0.9882 \\
     \bottomrule
     \end{tabular}
     \vspace{0.5cm}
     \begin{itemize}
-        \item Condición más sensible del algoritmo
+        \item Spacing: Condición más sensible
         \item Error del 0.01\% en spacing $\rightarrow$ degradación notable
-        \item El error se propaga radialmente
     \end{itemize}
 \end{columns}
 \end{frame}
