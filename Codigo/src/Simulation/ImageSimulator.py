@@ -100,7 +100,7 @@ def GenerateImage(
         # de cada pinhole
         if random.random() <= I_oscuro: # un 30% de pinholes no se dibujan
             img[y,x] = random.randint(I_min, I_max ) 
-                                            
+                                     
     # El centro de la placa se puede detectar
     # añadiendo unos pinholes extra que lo caracterizan
     if n_x % 2 != 0 and n_y % 2 != 0:

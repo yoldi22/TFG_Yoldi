@@ -492,6 +492,15 @@ Dark_crpt = r"DatosResultados\ImgReales\girado_90_grados\dark_20000\Zone5_whitep
 Flat_crpt = None
 Processed_Img = r"DatosResultados\ImgReales\girado_90_grados\psf_20000\Zone5_whiteposition_00_processed"
 
+# Paths prueba
+DistImg_crpt = r"prueba\Imagenes_distorsionadas"
+IdealImg_crpt = r"prueba\Imagenes_ideales"
+MainCarpet = r"prueba"
+SimCsv_path = r"prueba\Simulaciones_data.csv" 
+Dark_crpt = ""
+Flat_crpt = None
+Processed_Img = ""
+
 # PARAMETERS
 # Sensor parameters
 px_sim = 1e-6 #m/px # Pixelsize in meters
@@ -512,7 +521,7 @@ n_ph = [20, 15] # Number of pinholes in each dimension
 spacing = spacing_girado90 / px #meters to px
 
 # Detection parameters
-simulacion = False # Simulation index
+simulacion = True # Simulation index
 umbral_dist = 3 # Z-Score threshold for 
 umbral_distancia = [0, 50] # Threshold for the distance between distorted and theoretical pinholes
 umbral_min = 700 # Minimum intensity to be detected as a pinhole
@@ -525,9 +534,9 @@ DistMap_cont=10
 ErrorMap_cont=10
 RotMap_cont=10
 KValuesMap_cont=10
-medir_rot=True #Si False se coge el angulo real computado de la simulacion
+medir_rot=False #Si False se coge el angulo real computado de la simulacion
                 #Si True el algoritmo mide el anglo de la placa 
-medir_spacing=True #Si True se el algoritmo calcula spacing
+medir_spacing=False #Si True se el algoritmo calcula spacing
                     #Si False se coge el spacing proporcionado (no error para sim)
 
 if simulacion:
