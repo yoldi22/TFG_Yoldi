@@ -6,10 +6,9 @@ from matplotlib.patches import Rectangle
 from Distortion.DistortionDetector import Center_Detector
 
 # Rutas
-ruta_imagen = r"Codigo\DistortionMeasurement\ImgReales\girado_90_grados\psf_20000\Zone5_whiteposition_00_processed\IMG_000020000_1.fits"
-ruta_destino = r"Memoria\TFG_portada-Latex-ehu\Imagenes"
-ruta_imagen = r"Codigo\DistortionMeasurement\ImgReales\VNIR90_PSFgrid36\Parabola_folder\Zona5\zone05\zone05pos00_processed\IMG_000008000_01.fits"
-ruta_destino = r"Memoria\TFG_portada-Latex-ehu\Imagenes"
+ruta_imagen = # Ruta con la imagen a estudiar
+ruta_destino = # Carpeta donde se almacenan los resultados
+
 # Parámetros de la simulación
 box_dim = 50
 ventana = 75

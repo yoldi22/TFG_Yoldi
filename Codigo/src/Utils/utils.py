@@ -25,15 +25,7 @@ def Save_Plots(
 def load_csv(
         ruta_csv
 ):
-    """
-    Loads the simulation metadata from the given CSV file.
 
-    Args:
-        ruta_csv (str): Full path to the 'Simulaciones_data.csv' file.
-
-    Returns:
-        pd.DataFrame: DataFrame containing the simulation metadata.
-    """
     if not os.path.isfile(ruta_csv):
         raise FileNotFoundError(f"No se encontró el archivo: {ruta_csv}")
     

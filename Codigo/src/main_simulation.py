@@ -1,46 +1,50 @@
 from Simulation.ImageSimulator import GenerateImage
 from Utils.utils import Save_Simulation, Init_Simulation_Directories
-import time
 import pandas as pd
 
 # Paths
-MainCarpet = r"prueba"
+MainCarpet = "" # Nombre de la carpeta donde se almacenan todos los resutlados
 
-# Simulation parameters
-px = 5.5e-6 # pixelsize in meters
-sen_dim = [3072, 4096] # sensor dimension [dimy,dimx]
-radio = 10 # pinholes radius in pixels
-num_imagenes = 1 # number of simulated images
-n_ph = [15,20] # number of pinholes in each dimension
-            # if None, aleatory
-centro_optico = [sen_dim[1]/2, sen_dim[0]/2] #position in px of the optic center
+# Parámetros de la simulación
+px = # pixelsize en metros
+sen_dim = # Dimensiones del sensor [dimy,dimx]
+radio = # Radio aproximado de los pinholes
+num_imagenes =  # Número de imágenes simuladas
+n_ph =  # Número de pinholes en cada dimensión [ny, nx], si None: aleatoria
+centro_optico = #Posición del centro óptico [y,x]
 
-# Errors parameters
-delta_w = 0 * px # displacement of the plate center
-delta_h = 0 * px # in each dimension
+# Errores o variables
+delta_w = # Incertidumbre en el desplazamiento en cada dimensión (en metros)
+delta_h = 
 
-delta_cx = 0 * px # displacement of the optic center
-delta_cy = 0 * px # in each dimension
+delta_cx = # Incertidumbre del centro óptico (en metros)
+delta_cy = 
 
-delta_degree = 0 # rotation of the plate
+delta_degree =  # Incertidumbre en la rotación de la placa
 
-kpx_max = 300 # Max distortion (in px)
-kpx_min = 300 # Min distortion (in px)
+# El algoritmo introduce una distorsión aleatoria entre kpx_max y kpx_min
+# si kpx_max=kpxmin se introduce la misma en todas las simulaciones
+kpx_max = # Desplazamiento del pinhole más alejado del centro (en px) 
+kpx_min =
 
-I_max = 3000 # I max pinhole
-I_min = 3000 # I min pinhole
-I_oscuro = 1 # Solo se alumbran el 70% de los pinholes
+# Los pinholes tendrán picos de intensidad máxima aleatoria 
+# entre I_min e I_max (0, 4095) 
+I_max =  
+I_min = 
+
+# Cantidad de pinholes dibujados 
+# 0: ningún pinhole dibujado
+# 1: Todos los pinholes dibujados
+I_oscuro = 
+
+
 
 # Initialization of the simulation
 paths = Init_Simulation_Directories(MainCarpet)
 DataCsv_path = paths[2]
 resultados_data = []
 
-total_start = time.perf_counter()  # tiempo total del bucle
-
 for i in range(num_imagenes):
-
-    img_start = time.perf_counter()  # tiempo por imagen
 
     results = GenerateImage(
         sen_dim=sen_dim,
@@ -80,9 +84,6 @@ for i in range(num_imagenes):
         "SenDim_x"          : sen_dim[1],
         "SenDim_y"          : sen_dim[0],
         "PX(m)"             : px})
-
-total_time = time.perf_counter() - total_start
-print(f"Total processing time: {total_time:.2f}s for {i+1} images")
 
 # Se cargan los resultados al CSV de resultados
 df_res = pd.DataFrame(resultados_data)

@@ -186,18 +186,7 @@ def Theoretical_Centers(
         n_ph,
         margen=0.1
 ):
-    """
-    Calcula centros de pinholes con espaciado entero uniforme en píxeles,
-    asegurando el mismo espaciado en X e Y y centrado en la imagen.
 
-    Parámetros:
-        - sen_dim: [alto_px, ancho_px] del sensor
-        - n_ph: [n_x, n_y] numero de pinholes en cada dimensión
-        - margen: proporción de margen a dejar en los bordes (opcional)
-
-    Retorna:
-        - np.array shape (N, 2) con coordenadas (x_px, y_px) en enteros
-    """
     n_x, n_y = n_ph
     alto, ancho = sen_dim
     margen_x = int(margen * ancho)

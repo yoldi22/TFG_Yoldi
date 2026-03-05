@@ -7,7 +7,6 @@ from Utils.utils import (load_image, UndistImg_Generator,
 from Distortion.DistortionDetector import Distortion_Detector, Displacement_Detector 
 from Processing.FlatDark import DarkFlat_Correction
 from Processing. OpticCenter import OpticCenter_Detector
-import time
 import pandas as pd
 import matplotlib.pyplot as plt
 
@@ -37,7 +36,7 @@ def Main_real(
     ResultsCsv_path = paths[4]
     
     # Primero, se determina el centro óptico de la lente
-    if Flat_crpt is not None:
+    if centro_optico is None:
         centro_optico = OpticCenter_Detector(Flat_crpt)
     
     # Se corrige el dark y se cargan las imagenes
@@ -185,22 +184,15 @@ def Main_sim(
     resultados_data = []
     errores_data = []
 
-    total_start = time.perf_counter()  # tiempo total del bucle
-
     for DistFit, IdealFit in zip(DistFits, IdealFits):
 
-        img_start = time.perf_counter()  # tiempo por imagen
-
-        t0 = time.perf_counter()
         # Se cargan las imagenes
         DistImg_path  = os.path.join(DistImg_crpt, DistFit)
         IdealImg_path = os.path.join(IdealImg_crpt, IdealFit)
         DistImg       = load_image(DistImg_path)
         IdealImg      = load_image(IdealImg_path)
-        t_img_load = time.perf_counter() - t0
 
         # Se leen los datos de la simulacion
-        t0 = time.perf_counter()
         n_ph = [n_ph_x_arr[i], n_ph_y_arr[i]]
         centro_optico = np.array([co_x_arr[i], co_y_arr[i]])
         sen_dim = np.array([sen_y_arr[i], sen_x_arr[i]])
@@ -211,10 +203,8 @@ def Main_sim(
             rot = None 
         else:
             rot = rot_arr[i] #rad
-        t_csv_read = time.perf_counter() - t0
 
         # Se detecta la distorsión de la imagen real
-        t0 = time.perf_counter()
         results = Distortion_Detector(
                     img=DistImg,
                     n_ph=n_ph,
@@ -240,9 +230,7 @@ def Main_sim(
         y_i                = results[8] #px
         dist_centro_optimo = results[9] #px distancia del centro fijo al centro optico
         error_spacing      = results[10] #px
-        t_distortion = time.perf_counter() - t0
 
-        t0 = time.perf_counter()
         # Se generan todos los mapas que visualizan los resultados
         UndistImg_img = UndistImg_Generator(
                     img=DistImg,
@@ -272,7 +260,6 @@ def Main_sim(
                     y_i=y_i,
                     k_medida=k_medida * px ** 2, #meters to pixels
                     k_real=k_real * px ** 2) #meters to pixels
-        t_maps = time.perf_counter() - t0
 
         # Se especifica si se guardan o no los mapas e imágenes
         if UndistImg_cont <= i:
@@ -290,7 +277,6 @@ def Main_sim(
         if KValuesMap_cont <= i:
             KValuesMap_img = None
             plt.close(KValuesMap_img)
-        t0 = time.perf_counter()
         Save_Data_Sim(
                     DistMap_img=DistMap_img,
                     UndistImg_img=UndistImg_img,
@@ -299,7 +285,6 @@ def Main_sim(
                     RotMap_img=RotMap_img,
                     paths=paths,
                     i=i)
-        t_save = time.perf_counter() - t0
 
         # Se guardan los datos de los CSV
         resultados_data.append({
@@ -316,14 +301,8 @@ def Main_sim(
             "Mx_PX_Error"      : np.max(distancias),
             "R_Error"          : errores[0],
             "MDLD"             : errores[1]})
-        t_img_total = time.perf_counter() - img_start
-        print(f"[Image {i}] load: {t_img_load:.2f}s, CSV: {t_csv_read:.2f}s, "
-              f"distortion: {t_distortion:.2f}s, maps: {t_maps:.2f}s, save: {t_save:.2f}s, total: {t_img_total:.2f}s")
 
         i += 1
-
-    total_time = time.perf_counter() - total_start
-    print(f"Total processing time: {total_time:.2f}s for {i} images")
 
     # Se guardan los datos en el CSV
     df_res = pd.DataFrame(resultados_data)
@@ -364,179 +343,45 @@ def Main_sim(
         index=False,
         sep='\t')
 
-# PATHS
+# RUTAS
+DistImg_crpt = "" # Carpeta con las imagenes reales (distorsionadas)
+IdealImg_crpt = "" # Carpeta con las imagenes ideales (solo para simulaciones)
+MainCarpet = "" # Nombre de la carpeta donde se almacenan todos los resutlados
+SimCsv_path = "" # Ruta al archivo CSV con los datos de la simulación
+Dark_crpt = "" # Carpeta con los Dark Frames
+Flat_crpt = "" # Carpeta con los Flat Frames (si None se )
+Processed_Img = "" # Nombre de la carpeta donde se almacenan las imagenes procesadas (despues de pasar el Dark)
 
-# Paths VNIR170
-DistImg_crpt = r"Data\Reales\VNIR170_PSFgrid\Test1_parab\Parabola_folder\Zona5\zone05\zone05pos00"
-IdealImg_crpt = ""
-MainCarpet = r"Results\Reales\VNIR170\Results_zone05pos00_prueba"
-SimCsv_path = "" 
-Dark_crpt = r"Data\Reales\VNIR170_PSFgrid\Test1_parab\dark"
-Flat_crpt = r"Data\Reales\VNIR170_PSFgrid\Flats"
-Processed_Img = r"Data\Reales\VNIR170_PSFgrid\Test1_parab\Parabola_folder\Zona5\zone05\zone05pos00_processed"
+# PARÁMETROS
+# Parámetros del sensor
+px = # Pixelsize en metros 
+centro_optico = # Posición centro óptico en px (Si None se calcula con el Flat)
+sen_dim_vnir =  # Dimensiones del sesor [dimy, dimx]
 
-# Paths MIKEL y DAVID esquina 2
-DistImg_crpt = r"Esquina 2\Zone5_whiteposition_00"
-IdealImg_crpt = ""
-MainCarpet = r"Results\Reales\Esquina 2\Results_Zone5_whiteposition_00"
-SimCsv_path = "" 
-Dark_crpt = r"Esquina1\dark"
-Flat_crpt = None
-Processed_Img = r"Esquina 2\Zone5_whiteposition_00_processed"
+# Parámetros placa
+spacing_swir = # Espacio entre pinholes en metros
+n_ph = # Número de pinholes [ny, nx]
 
-# Paths MDLD
-DistImg_crpt = r"Simulaciones_tfg\prueba_MDLD\Imagenes_distorsionadas"
-IdealImg_crpt = r"Simulaciones_tfg\prueba_MDLD\Imagenes_ideales"
-MainCarpet = r"Simulaciones_tfg\prueba_MDLD"
-SimCsv_path = r"Simulaciones_tfg\prueba_MDLD\Simulaciones_data.csv" 
-Dark_crpt = ""
-Flat_crpt = None
-Processed_Img = ""
+# Parámetros de detección
+simulacion =  # Indicador de simulación (True o False)
+umbral_dist =  # Umbral Z-Score (umbral clásico: 3)
+umbral_distancia =  # Umbral mínimo y máximo desplazamiento pinholes distorsionados
+                    # si pinhole disotrsionado mas que max: outlier, si pinhole distorsionado 
+                    # menos que min: outlier [min, max]
+umbral_min =  # Intensidad mínima para que un pinhole sea detectado
 
-# Paths MDLD
-DistImg_crpt = r"Simulaciones_tfg\prueba_pocos\Imagenes_distorsionadas"
-IdealImg_crpt = r"Simulaciones_tfg\prueba_pocos\Imagenes_ideales"
-MainCarpet = r"Simulaciones_tfg\prueba_pocos"
-SimCsv_path = r"Simulaciones_tfg\prueba_pocos\Simulaciones_data.csv" 
-Dark_crpt = ""
-Flat_crpt = None
-Processed_Img = ""
-
-# Paths ROT 0 DSPLZMNT 0
-DistImg_crpt = r"Simulaciones_tfg\ROT_0_Spacing_perfecto_Dsplzmt_0\Imagenes_distorsionadas"
-IdealImg_crpt = r"Simulaciones_tfg\ROT_0_Spacing_perfecto_Dsplzmt_0\Imagenes_ideales"
-MainCarpet = r"Simulaciones_tfg\ROT_0_Spacing_perfecto_Dsplzmt_0"
-SimCsv_path = r"Simulaciones_tfg\ROT_0_Spacing_perfecto_Dsplzmt_0\Simulaciones_data.csv" 
-Dark_crpt = ""
-Flat_crpt = None
-Processed_Img = ""
-
-# Paths ROT 0 
-DistImg_crpt = r"Simulaciones_tfg\ROT_0\Imagenes_distorsionadas"
-IdealImg_crpt = r"Simulaciones_tfg\ROT_0\Imagenes_ideales"
-MainCarpet = r"Simulaciones_tfg\ROT_0"
-SimCsv_path = r"Simulaciones_tfg\ROT_0\Simulaciones_data.csv" 
-Dark_crpt = ""
-Flat_crpt = None
-Processed_Img = ""
-
-# Paths NADAFIJO_SPACING_MEDIDO
-DistImg_crpt = r"Simulaciones_tfg\NADAFIJO\Imagenes_distorsionadas"
-IdealImg_crpt = r"Simulaciones_tfg\NADAFIJO\Imagenes_ideales"
-MainCarpet = r"Simulaciones_tfg\NADAFIJO"
-SimCsv_path = r"Simulaciones_tfg\NADAFIJO\Simulaciones_data.csv" 
-Dark_crpt = ""
-Flat_crpt = None
-Processed_Img = ""
-
-# Paths TODOFIJO
-DistImg_crpt = r"Simulaciones_tfg\NADAFIJO_spacing\Imagenes_distorsionadas"
-IdealImg_crpt = r"Simulaciones_tfg\NADAFIJO_spacing\Imagenes_ideales"
-MainCarpet = r"Simulaciones_tfg\NADAFIJO_spacing"
-SimCsv_path = r"Simulaciones_tfg\NADAFIJO_spacing\Simulaciones_data.csv" 
-Dark_crpt = ""
-Flat_crpt = None
-Processed_Img = ""
-
-# Paths VNIR90
-DistImg_crpt = r"ImgReales\VNIR90_PSFgrid36\Parabola_folder\Zona5\zone05\zone05pos00"
-IdealImg_crpt = ""
-MainCarpet = r"ResultsReales\VNIR90\Results_zone05pos00"
-SimCsv_path = "" 
-Dark_crpt = r"ImgReales\VNIR90_PSFgrid36\dark"
-Flat_crpt = r"ImgReales\VNIR90_PSFgrid36\Flats"
-Processed_Img = r"ImgReales\VNIR90_PSFgrid36\Parabola_folder\Zona5\zone05\zone05pos00_processed"
-
-# Paths MIKEL y DAVID esquina 1
-DistImg_crpt = r"ImgReales\Esquina1\Zone5_whiteposition_00"
-IdealImg_crpt = ""
-MainCarpet = r"ResultsReales\Esquina1\Results_Zone5_whiteposition_00"
-SimCsv_path = "" 
-Dark_crpt = r"ImgReales\Esquina1\dark"
-Flat_crpt = None
-Processed_Img = r"ImgReales\Esquina1\Zone5_whiteposition_00_processed"
-
-# Paths SWIR90
-DistImg_crpt = r"ImgReales\SWIR90_PSFgrid21\Test2_tanda50imagenes_enfocadas\white_Newton_temp_22.0position_00"
-IdealImg_crpt = ""
-MainCarpet = r"ResultsReales\SWIR90_3\white_Newton_temp_22.1position_00"
-SimCsv_path = "" 
-Dark_crpt = r"ImgReales\SWIR90_PSFgrid21\Test2_tanda50imagenes_enfocadas\dark"
-Flat_crpt = None
-Processed_Img = r"ImgReales\SWIR90_PSFgrid21\Test2_tanda50imagenes_enfocadas\white_Newton_temp_22.0position_00_proccesed"
-
-# Paths NADAFIJO_SPACING_REAL
-DistImg_crpt = r"c:\Users\xabie\Documents\TFG\Codigo\DistortionMeasurement\Simulaciones_tfg\NADAFIJO_intensidad_2\Imagenes_distorsionadas"
-IdealImg_crpt = r"c:\Users\xabie\Documents\TFG\Codigo\DistortionMeasurement\Simulaciones_tfg\NADAFIJO_intensidad_2_2\Imagenes_ideales"
-MainCarpet = r"Simulaciones_tfg\NADAFIJO_intensidad_2"
-SimCsv_path = r"c:\Users\xabie\Documents\TFG\Codigo\DistortionMeasurement\Simulaciones_tfg\NADAFIJO_intensidad_2\Simulaciones_data.csv" 
-Dark_crpt = ""
-Flat_crpt = None
-Processed_Img = ""
-
-# Paths prueba
-DistImg_crpt = r"DatosResultados\Simulaciones_tfg\prueba6\Imagenes_distorsionadas"
-IdealImg_crpt = r"DatosResultados\Simulaciones_tfg\prueba6\Imagenes_ideales"
-MainCarpet = r"DatosResultados\Simulaciones_tfg\prueba8.2"
-SimCsv_path = r"DatosResultados\Simulaciones_tfg\prueba6\Simulaciones_data.csv" 
-Dark_crpt = ""
-Flat_crpt = None
-Processed_Img = ""
-
-# Paths girado90 2000
-DistImg_crpt = r"DatosResultados\ImgReales\girado_90_grados\psf_20000\Zone5_whiteposition_00"
-IdealImg_crpt = ""
-MainCarpet = r"DatosResultados\ResultsReales\girado_90_grados_3\psf_20000\Zone5_whiteposition_00"
-SimCsv_path = "" 
-Dark_crpt = r"DatosResultados\ImgReales\girado_90_grados\dark_20000\Zone5_whiteposition_00"
-Flat_crpt = None
-Processed_Img = r"DatosResultados\ImgReales\girado_90_grados\psf_20000\Zone5_whiteposition_00_processed"
-
-# Paths prueba
-DistImg_crpt = r"prueba\Imagenes_distorsionadas"
-IdealImg_crpt = r"prueba\Imagenes_ideales"
-MainCarpet = r"prueba"
-SimCsv_path = r"prueba\Simulaciones_data.csv" 
-Dark_crpt = ""
-Flat_crpt = None
-Processed_Img = ""
-
-# PARAMETERS
-# Sensor parameters
-px_sim = 1e-6 #m/px # Pixelsize in meters
-px_VNIR = 5.5e-6 #m/px 
-px = px_VNIR
-centro_optico= None  # px # Optic center of the system
-sen_dim_vnir = [3072, 4096] # Sensor dimension
-sen_dim_swir = [1280, 1024]
-sen_dim = sen_dim_vnir
-
-# Plate parameters
-spacing_swir = 3.8024662e-4 #m # Sapcing between pinholes
-spacing_VNIR170 = 1.1495e-3 #m
-spacing_VNIR90 = 1.1529e-3  #m
-spacing_MD = 1.175e-3 #m
-spacing_girado90 = 1.1371e-3
-n_ph = [20, 15] # Number of pinholes in each dimension
-spacing = spacing_girado90 / px #meters to px
-
-# Detection parameters
-simulacion = True # Simulation index
-umbral_dist = 3 # Z-Score threshold for 
-umbral_distancia = [0, 50] # Threshold for the distance between distorted and theoretical pinholes
-umbral_min = 700 # Minimum intensity to be detected as a pinhole
-
-# Resultls parameter
+# Parámetros de resultados
 # Contador de cuantos mapas/imagenes generar
 # Si np.inf se generan para todas las simulaciones
-UndistImg_cont=10
-DistMap_cont=10
-ErrorMap_cont=10
-RotMap_cont=10
-KValuesMap_cont=10
-medir_rot=False #Si False se coge el angulo real computado de la simulacion
+UndistImg_cont = 
+DistMap_cont =
+ErrorMap_cont = 
+RotMap_cont =
+KValuesMap_cont =
+
+medir_rot = #Si False se coge el angulo real computado de la simulacion
                 #Si True el algoritmo mide el anglo de la placa 
-medir_spacing=False #Si True se el algoritmo calcula spacing
+medir_spacing = #Si True se el algoritmo calcula spacing
                     #Si False se coge el spacing proporcionado (no error para sim)
 
 if simulacion:

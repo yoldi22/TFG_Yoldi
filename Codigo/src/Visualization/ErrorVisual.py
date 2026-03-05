@@ -76,9 +76,9 @@ def AnalyzeErrorsVsK(
 
     plt.show()
 
-results_csv_path = r'Simulaciones_tfg/TODOFIJO_kreal/Total.csv'
-errors_csv_path = r'Simulaciones_tfg/TODOFIJO_kreal/Errors/Etotal.csv'
-save_path = r'Simulaciones_tfg/TODOFIJO_kreal/errores_vs_k.png'
+results_csv_path = # Ruta al CSV de resultados globales (RMSE, R2, k).
+errors_csv_path = # Ruta al CSV de errores geométricos (MDLD, error relativo).
+save_path = # Si se indica, guarda la figura en esta ruta.
 AnalyzeErrorsVsK(
     results_csv_path=results_csv_path,
     errors_csv_path=errors_csv_path,
