@@ -6,7 +6,6 @@ import cv2
 
 
 def _fit_circle_ls(x, y):
-    """Ajuste de círculo por mínimos cuadrados"""
 
     def residuals(p, x, y):
         cx, cy, r = p
@@ -18,7 +17,6 @@ def _fit_circle_ls(x, y):
     res = least_squares(residuals, [cx0, cy0, r0], args=(x, y))
     return res.x  # cx, cy, r
 
-
 def OpticalCenter_FromFlat_Circle_Image(
     fits_path,
     iso_level=0.5,
@@ -26,15 +24,6 @@ def OpticalCenter_FromFlat_Circle_Image(
     thickness_circle=4,
     radius_center=6
 ):
-    """
-    Calcula el centro óptico ajustando un círculo a un flat y devuelve
-    la imagen con el círculo y el centro dibujados.
-
-    Devuelve
-    --------
-    centro_optico : (cx, cy)
-    img_out : ndarray (uint8, RGB)
-    """
 
     # --- Leer FITS ---
     with fits.open(fits_path) as hdul:
@@ -95,8 +84,9 @@ def OpticalCenter_FromFlat_Circle_Image(
 
     return (cx, cy), img_rgb
 
-path = r'ImgReales/VNIR90_PSFgrid36/Flats/centro_optico.fits'
+path = # Ruta flat
 centro_optico, img_resultado = OpticalCenter_FromFlat_Circle_Image(
     path
 )
-cv2.imwrite("flat_centro_optico.png", img_resultado)
+out_path = # ruta imagen final 
+cv2.imwrite(out_path, img_resultado)

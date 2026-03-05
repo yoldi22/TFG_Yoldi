@@ -149,19 +149,7 @@ def Theroretical_Centers(
         rot=None,
         medir_spacing=False
 ):
-    """
-    Calcula centros de pinholes con espaciado entero uniforme en píxeles,
-    asegurando el mismo espaciado en X e Y y centrado en la imagen.
 
-    Parámetros:
-        - spacing: espaciado entre pinholes en px
-        - n_ph: [n_x, n_y] numero de pinholes en cada dimensión
-        - centros_dist: centros de los pinholes en la imagen real (distorsionada)
-        - centro_placa: centro de la placa de pinholes
-
-    Retorna:
-        - np.array shape (N, 2) con coordenadas (x_px, y_px) en enteros
-    """
     # Con los centros detectados estimamos la rotación de la placa,
     # a menos que se especifique
     if rot is None:
@@ -281,19 +269,7 @@ def Detect_Rotation_Spacing(
         spacing,
         tolerance=0.05
 ):
-    """
-    Refina la orientación de la rejilla basado en puntos cercanos al centro óptico
-    
-    Args:
-        points: Array de puntos (N, 2)
-        optical_center: Centro óptico (x, y)
-        spacing: Espaciado esperado entre puntos
-        tolerance: Tolerancia relativa para la distancia (default: 0.05 = 5%)
-    
-    Returns:
-        angle: Ángulo promedio de rotación (radianes)
-        components: Tupla con los vectores unitarios (v1, v2) de las direcciones
-    """
+
     # 1. Filtrar puntos cercanos al centro óptico
     tree = KDTree(points)
     indices_near_center = tree.query_ball_point(optical_center, r=spacing * 3)
