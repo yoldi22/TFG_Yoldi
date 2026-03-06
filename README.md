@@ -82,7 +82,7 @@ cd distortion-estimation
 Install dependencies:
 
 ```bash
-pip install -r src/requirements.txt
+pip install -r Codigo/src/requirements.txt
 ```
 
 ---
