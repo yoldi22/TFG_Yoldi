@@ -40,7 +40,7 @@ The pipeline follows these main steps:
 # 📂 Project Structure
 
 ```
-src/
+Codigo/src/
 │
 ├── main_distortion.py        # Distortion estimation pipeline
 ├── main_simulation.py        # Synthetic image simulation
@@ -92,13 +92,13 @@ pip install -r src/requirements.txt
 Run the distortion estimation pipeline:
 
 ```bash
-python src/main_distortion.py
+python Codigo/src/main_distortion.py
 ```
 
 Run the simulation environment:
 
 ```bash
-python src/main_simulation.py
+python Codigo/src/main_simulation.py
 ```
 
 ---
